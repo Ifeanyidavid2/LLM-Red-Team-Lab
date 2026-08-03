@@ -235,7 +235,7 @@ For example, are you having trouble logging in, making a payment, or something e
 
 ### Why the quality differs
 
-|Factor |	Claer Prompt A  |	Vague Prompt B              |
+|Factor |	Clear Prompt A  |	Vague Prompt B              |
 |-------|-----------------|-----------------------------|
 |Role + Context  |	Tell the AI it’s a bank rep, gives exact customers message  |	No role, no context. AI has guess        |
 |Specific Instructions  |	List 4 things to include: empathy, 3 steps, timeline compliance  |	No guidance on what ”help” means       |
