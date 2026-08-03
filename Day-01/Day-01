@@ -1,4 +1,4 @@
-###Hands-On Exercise
+### Hands-On Exercise
 
 Choose one publicly available chatbot (for example, ChatGPT, Gemini, or another assistant you have access to).
 
@@ -9,7 +9,7 @@ Explain it again for a 10-year-old.
 Explain it as if speaking to a CEO.
 Summarize it in one sentence.
 
-##Observe how the responses change depending on the audience and instructions.
+## Observe how the responses change depending on the audience and instructions.
 
 Write down:
 
@@ -20,7 +20,7 @@ Mini Assignment
 
 ...
 
-##Write a one-page document titled:
+## Write a one-page document titled:
 
 "What I Learned About Large Language Models"
 
@@ -36,7 +36,7 @@ Portfolio Task
 
 ...
 
-##Create a GitHub repository named:
+## Create a GitHub repository named:
 
 LLM-Red-Team-Lab
 
@@ -50,7 +50,7 @@ Even if the repository starts small, documenting your progress from the beginnin
 
 ...
 
-##Mentor's Challenge
+## Mentor's Challenge
 
 Think like a security professional:
 
