@@ -17,8 +17,8 @@ What changed?
 What stayed consistent?
 Did the model follow your instructions?
 Mini Assignment
-
-###Write a one-page document titled:
+...
+##Write a one-page document titled:
 
 "What I Learned About Large Language Models"
 
@@ -31,8 +31,8 @@ The difference between training and inference.
 Why LLM security matters.
 One question you'd like to explore further.
 Portfolio Task
-
-###Create a GitHub repository named:
+...
+##Create a GitHub repository named:
 
 LLM-Red-Team-Lab
 
@@ -43,8 +43,8 @@ A brief description of your goal
 A folder named Day-01
 
 Even if the repository starts small, documenting your progress from the beginning shows consistency and growth.
-
-###Mentor's Challenge
+...
+##Mentor's Challenge
 
 Think like a security professional:
 
