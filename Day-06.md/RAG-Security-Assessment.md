@@ -224,29 +224,32 @@ Instead of relying only on what the model memorized during training, RAG lets th
 [User Question]
         |
         v
-  +-------------------+
-  |  Query Embedding  |  --> Turn question into vector
-  +-------------------+
+  +------------------------+
+  |   Query Embedding      |
+  |  (question -> vector)  |
+  +------------------------+
         |
         v
-  +-------------------+        +---------------------+
-  |  Vector Database  | <----> | Access Control Filter|  --> Only retrieve allowed docs
-  |  Company Docs, KB |        +---------------------+
-  +-------------------+
+  +--------------------------------------+    +------------------------------+
+  |    Vector Database (KB & Docs)       | <--|  Access Control / Filters    |
+  |  (vectors + metadata: customer_id,   |    |  (customer_id, role, scope)  |
+  |   doc_id, source, timestamps, etc.)  |    +------------------------------+
+  +--------------------------------------+
         |
         v
-  +-------------------+
-  | Retrieved Context |  --> Top 3-5 relevant chunks + citations
-  +-------------------+
+  +-----------------------------+
+  |   Retrieved Context         |
+  |  (top 3–5 chunks + citations)|
+  +-----------------------------+
         |
         v
-  +-------------------+        +---------------------+
-  |      LLM +        | <----> | Output Guardrails    |  --> Sanitize, confidence check
-  | Prompt + Context  |        +---------------------+
-  +-------------------+
+  +-------------------------------------------+    +-----------------------------+
+  |   LLM (Prompt + Context)                  | <--|  Output Guardrails & Policy |
+  |   (generate answer using retrieved docs)  |    |  (sanitize, confidence, CIT)|
+  +-------------------------------------------+    +-----------------------------+
         |
         v
-[Answer with Citations to User]
+  [Answer to User — includes citations / links to source docs]
 
 3.	Five Benefits of RAG
 
