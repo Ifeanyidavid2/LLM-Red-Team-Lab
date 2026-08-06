@@ -250,21 +250,21 @@ Instead of relying only on what the model memorized during training, RAG lets th
 
 3.	Five Benefits of RAG
 
-   1. Access to Private Data: Uses company data without expensive retraining. New policy = drop doc in KB and AI knows it.
-   2. Reduces Hallucinations: Answers are grounded in real documents, so the AI can cite sources instead of making things up.
-   3. Always Current: No 6-month model retrain cycle. Update the KB and the AI answers with the latest info.
-   4. Cost Efficient: Cheaper than fine-tuning. You just maintain a vector DB and retrieval pipeline.
-   5. Auditable & Compliant: Every answer can include "Source: Policy v2.3" which is critical for regulated industries like banking and healthcare.
+   * Access to Private Data: Uses company data without expensive retraining. New policy = drop doc in KB and AI knows it.
+   * Reduces Hallucinations: Answers are grounded in real documents, so the AI can cite sources instead of making things up.
+   * Always Current: No 6-month model retrain cycle. Update the KB and the AI answers with the latest info.
+   * Cost Efficient: Cheaper than fine-tuning. You just maintain a vector DB and retrieval pipeline.
+   * Auditable & Compliant: Every answer can include "Source: Policy v2.3" which is critical for regulated industries like        banking and healthcare.
 
 
 4.	Five Security Risks of RAG
 
 
-   1. Unauthorized Data Retrieval (LLM08): Bad metadata filtering lets the AI pull other customer’s or patient’s records.
-   2. Knowledge Base Poisoning (LLM04): Attackers inject fake docs into the KB. The AI then repeats them as fact.
-   3. Sensitive Information Disclosure (LLM02): Retrieved docs contain PII/PHI/SSNs and the AI outputs them directly.
-   4. Improper Output Handling (LLM05): Malicious HTML/links in retrieved docs get rendered to the user = phishing.
-   5. Excessive Agency (LLM06): AI retrieves instructions to "refund account" and triggers actions without human approval.
+    * Unauthorized Data Retrieval (LLM08): Bad metadata filtering lets the AI pull other customer’s or patient’s records.
+    * Knowledge Base Poisoning (LLM04): Attackers inject fake docs into the KB. The AI then repeats them as fact.
+    * Sensitive Information Disclosure (LLM02): Retrieved docs contain PII/PHI/SSNs and the AI outputs them directly.
+    * Improper Output Handling (LLM05): Malicious HTML/links in retrieved docs get rendered to the user = phishing.
+    * Excessive Agency (LLM06): AI retrieves instructions to "refund account" and triggers actions without human approval.
 
 
 5. Three Banking Case Studies
