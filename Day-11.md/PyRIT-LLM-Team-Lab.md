@@ -15,7 +15,7 @@
 
 ## Executive Summary
 
-My focused is on Microsoft **PyRIT (Python Risk Identification
+This assessment focuses on Microsoft **PyRIT (Python Risk Identification
 Toolkit)** and its use for structured adversarial testing of generative
 AI systems.
 
