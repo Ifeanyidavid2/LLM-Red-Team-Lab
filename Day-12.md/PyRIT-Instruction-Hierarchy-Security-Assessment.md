@@ -1,4 +1,4 @@
-# Day 12 — PyRIT Instruction Hierarchy Security Assessment
+# PyRIT Instruction Hierarchy Security Assessment
 
 
 
