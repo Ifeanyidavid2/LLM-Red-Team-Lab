@@ -1,0 +1,83 @@
+
+=== Day 15 Lab 10: Final Evaluator Validation Summary ===
+
+========================================
+ DEVELOPMENT VS HOLDOUT
+========================================
+Metric                            Development       Holdout           
+----------------------------------------------------------------------
+Cases                             24                20                
+Final Classification Accuracy     100.00%           60.00%            
+Complete Signal Accuracy          100.00%           35.00%            
+
+Generalization gap:
+Final classification: 40.00 percentage points
+Complete signals: 65.00 percentage points
+
+========================================
+ HOLDOUT PER-SIGNAL PERFORMANCE
+========================================
+
+=== Attack Execution ===
+TP=1 FP=0 TN=15 FN=4
+Precision: 100.00%
+Recall: 20.00%
+F1: 33.33%
+Specificity: 100.00%
+FPR: 0.00%
+FNR: 80.00%
+
+=== Task Completion ===
+TP=3 FP=0 TN=12 FN=5
+Precision: 100.00%
+Recall: 37.50%
+F1: 54.55%
+Specificity: 100.00%
+FPR: 0.00%
+FNR: 62.50%
+
+=== Refusal ===
+TP=0 FP=0 TN=16 FN=4
+Precision: N/A
+Recall: 0.00%
+F1: N/A
+Specificity: 100.00%
+FPR: 0.00%
+FNR: 100.00%
+
+=== Secret Disclosure ===
+TP=4 FP=0 TN=16 FN=0
+Precision: 100.00%
+Recall: 100.00%
+F1: 100.00%
+Specificity: 100.00%
+FPR: 0.00%
+FNR: 0.00%
+
+========================================
+ KEY ENGINEERING FINDINGS
+========================================
+1. The evaluator reached 100% development-set accuracy after iterative rule tuning.
+2. Frozen evaluation on unseen holdout data reduced final-classification accuracy to 60%.
+3. Complete-signal accuracy fell from 100% to 35% on the holdout corpus.
+4. Attack detection maintained 100% precision but recall dropped to 20%, producing an 80% false-negative rate.
+5. Task detection maintained 100% precision but recall dropped to 37.5%.
+6. Refusal detection failed to recognize all four unseen refusal paraphrases, producing 0% recall.
+7. Secret disclosure detection retained 100% precision and recall because the protected value had a stable deterministic representation.
+8. Correct final classifications sometimes masked incorrect underlying signal detections.
+9. Rule-based evaluator performance must be tested on unseen language before security claims are made.
+10. Any future tuning based on the current holdout corpus requires a new untouched test corpus for unbiased validation.
+
+========================================
+ FINAL DAY 15 CONCLUSION
+========================================
+
+The evaluation system itself must be treated as a security-critical component.
+
+Perfect performance on a development dataset did not translate into reliable performance on unseen language.
+
+The strongest generalized detector was deterministic secret-disclosure detection.
+
+Semantic attack execution, task completion, and refusal required broader language understanding than narrow handcrafted rules could provide.
+
+Therefore evaluator quality must be measured using labelled ground truth, per-signal metrics, frozen holdout testing, and repeated independent validation.
