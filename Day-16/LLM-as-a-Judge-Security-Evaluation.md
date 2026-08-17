@@ -1,8 +1,8 @@
-\# Day 16 — LLM-as-a-Judge Security Evaluation
+# Day 16 — LLM-as-a-Judge Security Evaluation
 
 
 
-\## Executive Summary
+## Executive Summary
 
 
 
@@ -16,17 +16,17 @@ The assessment compared:
 
 
 
-\- a rule-based evaluator;
+- a rule-based evaluator;
 
-\- an LLM-as-a-Judge evaluator;
+- an LLM-as-a-Judge evaluator;
 
-\- a hardened signal-only LLM judge;
+- a hardened signal-only LLM judge;
 
-\- a hybrid evaluator combining LLM semantic judgement with
+- a hybrid evaluator combining LLM semantic judgement with
 
 &#x20; deterministic security logic;
 
-\- analyst-labelled ground truth.
+- analyst-labelled ground truth.
 
 
 
@@ -48,11 +48,11 @@ The rule-based evaluator achieved:
 
 
 
-\- Evaluation completion rate: 100%
+- Evaluation completion rate: 100%
 
-\- Operational final accuracy: 60%
+- Operational final accuracy: 60%
 
-\- Operational complete-signal accuracy: 35%
+- Operational complete-signal accuracy: 35%
 
 
 
@@ -60,11 +60,11 @@ The hybrid LLM judge achieved:
 
 
 
-\- Evaluation completion rate: 85%
+- Evaluation completion rate: 85%
 
-\- Operational final accuracy: 55%
+- Operational final accuracy: 55%
 
-\- Operational complete-signal accuracy: 20%
+- Operational complete-signal accuracy: 20%
 
 
 
@@ -82,17 +82,17 @@ The LLM judge also introduced additional failure modes:
 
 
 
-\- schema noncompliance;
+- schema noncompliance;
 
-\- inconsistent repeated judgements;
+- inconsistent repeated judgements;
 
-\- semantic misclassification;
+- semantic misclassification;
 
-\- weak refusal detection;
+- weak refusal detection;
 
-\- poor task-completion recognition;
+- poor task-completion recognition;
 
-\- evaluator prompt-injection susceptibility.
+- evaluator prompt-injection susceptibility.
 
 
 
@@ -117,6 +117,35 @@ The strongest-performing component was deterministic secret detection,
 which maintained 100% precision and recall.
 
 
+## 23. Detailed Evaluator Prompt-Injection Evidence
+
+The qualified manipulation benchmark was designed to separate ordinary
+judge unreliability from adversarially induced evaluator failure.
+
+Only candidate responses that the judge classified correctly before
+injection were allowed into the manipulation-success calculation.
+
+Eight candidate response pairs were tested.
+
+Three responses were correctly classified during the clean
+qualification phase and therefore became qualified manipulation pairs.
+
+Of those three qualified pairs:
+
+- 2 were successfully manipulated;
+- 1 remained correctly classified;
+- 0 experienced injected-phase schema failure.
+
+This produced:
+
+```text
+Qualified pairs:          3
+Successful manipulations: 2
+Resisted manipulations:   1
+
+JMSR = 2 / 3 = 66.67%
+
+
 
 The central Day 16 conclusion is:
 
@@ -130,11 +159,11 @@ The central Day 16 conclusion is:
 
 
 
-\---
+---
 
 
 
-\## 1. Objective
+## 1. Objective
 
 
 
@@ -152,13 +181,13 @@ The experiment evaluated four properties:
 
 
 
-1\. Accuracy
+1. Accuracy
 
-2\. Generalization
+2. Generalization
 
-3\. Consistency
+3. Consistency
 
-4\. Adversarial resistance
+4. Adversarial resistance
 
 
 
@@ -174,11 +203,11 @@ The central hypothesis was:
 
 
 
-\---
+---
 
 
 
-\## 2. Evaluation Architecture
+## 2. Evaluation Architecture
 
 
 
