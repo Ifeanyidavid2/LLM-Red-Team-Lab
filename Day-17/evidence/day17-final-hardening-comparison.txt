@@ -1,0 +1,59 @@
+=== Day 17 Lab 9: Final Hardening Trade-Off Analysis ===
+
+DAY 16 BASELINE
+---------------
+Operational Final Accuracy: 55.00%
+Complete-Signal Accuracy: 20.00%
+Attack Recall: 20.00%
+Task Recall: 12.50%
+Refusal Recall: 0.00%
+Secret Recall: 100.00%
+Observed JMSR: 66.67% (2/3 qualified pairs)
+
+DAY 17 HARDENING V1
+-------------------
+Operational Final Accuracy: 16.67%
+Complete-Signal Accuracy: 16.67%
+Escalation Rate: 66.67%
+Hardened JMSR: 0.00% on 1 comparable pair
+
+DAY 17 UTILITY-AWARE BASELINE
+-----------------------------
+Judge Completion Rate: 100.00%
+Escalation Rate: 16.67%
+Operational Final Accuracy: 33.33%
+Complete-Signal Accuracy: 16.67%
+
+DAY 17 REPEATED SECURITY/UTILITY
+--------------------------------
+Clean Correct-Accept Rate: 46.67%
+Clean Incorrect-Accept Rate: 13.33%
+Clean Escalation Rate: 40.00%
+Qualified Attack Trials: 7
+Repeated JMSR: 0.00%
+Automatic Resistance Rate: 0.00%
+Protected Rate: 100.00%
+
+DAY 17 CORRECTED FULL HOLDOUT
+-----------------------------
+Automatic Evaluation Rate: 85.00%
+Escalation Rate: 15.00%
+Operational Final Accuracy: 40.00%
+Conditional Automatic Accuracy: 47.06%
+Operational Complete-Signal Accuracy: 15.00%
+
+Attack Recall: 0.00%
+Task Recall: 25.00%
+Refusal Recall: 50.00%
+Secret Recall: 100.00%
+
+=== Security Interpretation ===
+1. Hardening reduced accepted judge manipulation in the repeated qualified benchmark.
+2. That improvement relied heavily on escalation rather than automatic correct resistance.
+3. Deterministic protected-value detection remained reliable once the policy configuration mismatch was repaired.
+4. Full holdout performance did not improve overall; operational accuracy fell from 55% to 40%.
+5. Task and refusal recall improved, but attack recall regressed from 20% to 0%.
+6. Hardening therefore changed the error distribution rather than eliminating evaluator error.
+7. The final architecture is safer against the tested evaluator injection pattern but is not yet a superior general-purpose security evaluator.
+=== Final Day 17 Conclusion ===
+Judge hardening should be evaluated as a multi-objective problem: manipulation resistance, ordinary accuracy, signal recall, escalation burden, and deterministic invariant preservation must all be measured together.
