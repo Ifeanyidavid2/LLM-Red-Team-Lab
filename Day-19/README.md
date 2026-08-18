@@ -1,8 +1,8 @@
-\# Day 19 — RAG Security \& Retrieval Poisoning
+# Day 19 — RAG Security \& Retrieval Poisoning
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -18,125 +18,125 @@ The core principle is:
 
 
 
-\## Security Areas Tested
+## Security Areas Tested
 
 
 
-\- Retrieval poisoning
+- Retrieval poisoning
 
-\- Indirect prompt injection through retrieved documents
+- Indirect prompt injection through retrieved documents
 
-\- Retrieval authorization
+- Retrieval authorization
 
-\- Restricted-document exposure
+- Restricted-document exposure
 
-\- Protected information leakage
+- Protected information leakage
 
-\- Source trust and provenance
+- Source trust and provenance
 
-\- Minimum relevance thresholds
+- Minimum relevance thresholds
 
-\- Context isolation
+- Context isolation
 
-\- Suspicious instruction filtering
+- Suspicious instruction filtering
 
-\- Semantic outcome validation
+- Semantic outcome validation
 
-\- Trusted-source conflict resolution
+- Trusted-source conflict resolution
 
-\- Security vs utility trade-offs
+- Security vs utility trade-offs
 
 
 
-\## Key Results
+## Key Results
 
 
 
-\### Relevance-Only Retrieval
+### Relevance-Only Retrieval
 
 
 
-\- Poisoned Context Exposure Rate: 100.00%
+- Poisoned Context Exposure Rate: 100.00%
 
-\- Rank-1 Poison Rate: 40.00%
+- Rank-1 Poison Rate: 40.00%
 
-\- Expected Trusted Retrieval Rate: 100.00%
+- Expected Trusted Retrieval Rate: 100.00%
 
 
 
-\### Indirect RAG Prompt Injection
+### Indirect RAG Prompt Injection
 
 
 
-\- Semantic Attack Outcome Rate: 50.00%
+- Semantic Attack Outcome Rate: 50.00%
 
-\- Trusted-Policy Answer Rate: 50.00%
+- Trusted-Policy Answer Rate: 50.00%
 
 
 
-\### Retrieval Authorization
+### Retrieval Authorization
 
 
 
-\- Raw Unauthorized Retrieval Exposure Rate: 100.00%
+- Raw Unauthorized Retrieval Exposure Rate: 100.00%
 
-\- Post-Authorization Exposure Rate: 0.00%
+- Post-Authorization Exposure Rate: 0.00%
 
-\- Retrieval Authorization Block Rate: 100.00%
+- Retrieval Authorization Block Rate: 100.00%
 
-\- Legitimate Retrieval Success Rate: 100.00%
+- Legitimate Retrieval Success Rate: 100.00%
 
 
 
-\### Protected Information Leakage
+### Protected Information Leakage
 
 
 
-\- Unsafe Unauthorized Leakage Rate: 100.00%
+- Unsafe Unauthorized Leakage Rate: 100.00%
 
-\- Secure Unauthorized Leakage Rate: 0.00%
+- Secure Unauthorized Leakage Rate: 0.00%
 
 
 
-\### Trust / Provenance-Aware Retrieval
+### Trust / Provenance-Aware Retrieval
 
 
 
-\- Poisoned Context Exposure Rate: 40.00%
+- Poisoned Context Exposure Rate: 40.00%
 
-\- Rank-1 Poison Rate: 0.00%
+- Rank-1 Poison Rate: 0.00%
 
-\- Expected Trusted Retrieval Rate: 100.00%
+- Expected Trusted Retrieval Rate: 100.00%
 
-\- Exposure Reduction: 60 percentage points
+- Exposure Reduction: 60 percentage points
 
 
 
-\### Context Isolation
+### Context Isolation
 
 
 
-\- Suspicious-Instruction Precision: 100.00%
+- Suspicious-Instruction Precision: 100.00%
 
-\- Suspicious-Instruction Recall: 100.00%
+- Suspicious-Instruction Recall: 100.00%
 
-\- False Positive Rate: 0.00%
+- False Positive Rate: 0.00%
 
-\- Factual Content Preservation Rate: 100.00%
+- Factual Content Preservation Rate: 100.00%
 
 
 
-\### Trusted-Source Conflict Resolution
+### Trusted-Source Conflict Resolution
 
 
 
-\- Trusted-Policy Answer Rate: 100.00%
+- Trusted-Policy Answer Rate: 100.00%
 
-\- Semantic Attack-Outcome Rate: 0.00%
+- Semantic Attack-Outcome Rate: 0.00%
 
 
 
-\## Key Finding
+## Key Finding
 
 
 
@@ -152,7 +152,7 @@ This reduced the tested semantic attack outcome from 50% to 0%.
 
 
 
-\## Recommended Architecture
+## Recommended Architecture
 
 
 
