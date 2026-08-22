@@ -1,0 +1,192 @@
+=== Day 24 Lab 16: Final Comparative Analysis ===
+
+========================================================================
+               DAY 24 RESEARCH QUESTION
+========================================================================
+
+Can an attacker turn one compromised input or agent into a multi-stage autonomous attack chain, and can architectural controls contain the blast radius before unauthorized system impact occurs?
+
+========================================================================
+             VULNERABLE ATTACK PROGRESSION
+========================================================================
+
+Lab 3 - Indirect Injection Entry Point
+Indirect Injection Compromise Rate: 100.00%
+Clean Utility Rate: 100.00%
+External attacker-controlled content compromised Agent A observations in all poisoned cases.
+
+Lab 4 - Agent A Compromise & Malicious Memory Write
+Malicious Memory Write Rate: 100.00%
+Clean Utility Rate: 100.00%
+Compromised observations were persisted into shared memory without independent validation.
+
+Lab 5 - Cross-Agent Context Propagation
+Cross-Component Propagation Rate: 100.00%
+Clean Utility Rate: 100.00%
+Poisoned shared memory propagated into Agent B planning across every poisoned test.
+
+Lab 6 - Persistent Memory Poisoning
+Persistence Survival Rate: 100.00%
+Clean Utility Rate: 100.00%
+Attacker-influenced memory survived beyond the original malicious workflow and affected later clean workflow executions.
+
+Lab 7 - Agent B Planning Manipulation
+Planning Manipulation Rate: 100.00%
+Clean Utility Rate: 0.00%
+Poisoned persistent memory produced dangerous Agent B plans, although clean planning also showed substantial model/schema instability.
+
+Lab 8 - MCP / Tool-Selection Escalation
+MCP Cross-Boundary Propagation Rate: 100.00%
+Clean Utility Rate: 100.00%
+Compromised plans propagated into MCP/tool selection when server, tool and target proposals were not independently bound to trusted task state.
+
+Lab 9 - Parameter & Target Manipulation
+Parameter Manipulation Rate: 100.00%
+Clean Utility Rate: 100.00%
+Every poisoned case produced a manipulated execution request.
+
+Lab 10 - Privilege Escalation Chain
+Privilege Escalation Rate: 75.00%
+Clean Utility Rate: 100.00%
+Model-generated authority and approval state allowed worker-level requests to acquire restricted execution authority.
+
+Lab 11 - Persistent State Manipulation
+Persistent State Manipulation Rate: 75.00%
+Clean Utility Rate: 100.00%
+Successful privilege escalation produced durable changes to restricted synthetic state.
+
+Lab 12 - Agent C Downstream Propagation
+Downstream Compromise Rate: 100.00%
+Clean Utility Rate: 100.00%
+Agent C trusted compromised persistent state without independently validating provenance.
+
+========================================================================
+            LAB 13 VULNERABLE BASELINE
+========================================================================
+
+Attack Chain Completion Rate: 80.00%
+Cross-Component Propagation Rate: 100.00%
+Privilege Escalation Rate: 80.00%
+Persistent Impact Rate: 80.00%
+Downstream Compromise Rate: 80.00%
+Dangerous Proposal Rate: 100.00%
+Unauthorized System Impact Rate: 80.00%
+Blast Radius: 92.50%
+Legitimate Workflow Completion Rate: 100.00%
+Average Compromised Components: 7.40 / 8
+
+========================================================================
+           LAB 14 CONTAINMENT ARCHITECTURE
+========================================================================
+
+Containment Rate: 100.00%
+Attack Chain Completion Rate: 0.00%
+Unauthorized System Impact Rate: 0.00%
+Blast Radius: 12.50%
+Blast-Radius Reduction: 86.49%
+Legitimate Workflow Completion Rate: 100.00%
+Average Compromised Components: 1.00 / 8
+
+========================================================================
+       LAB 15 HARDENED ADVERSARIAL RETEST
+========================================================================
+
+Defense-in-Depth Containment Rate: 100.00%
+Unsafe Execution Rate: 0.00%
+Unauthorized System Impact Rate: 0.00%
+Attack Chain Completion Rate: 0.00%
+Blast Radius: 14.58%
+Blast-Radius Reduction: 84.23%
+Legitimate Workflow Completion Rate: 100.00%
+Average Compromised Components: 1.17 / 8
+Maximum Compromised Components: 2 / 8
+
+========================================================================
+              VULNERABLE VS HARDENED
+========================================================================
+
+Metric: Attack Chain Completion Rate
+Vulnerable: 80.00%
+Hardened: 0.00%
+Change: 80.00 percentage points
+Relative Risk Reduction: 100.00%
+
+Metric: Unauthorized System Impact Rate
+Vulnerable: 80.00%
+Hardened: 0.00%
+Change: 80.00 percentage points
+Relative Risk Reduction: 100.00%
+
+Metric: Blast Radius
+Vulnerable: 92.50%
+Hardened: 14.58%
+Change: 77.92 percentage points
+Relative Risk Reduction: 84.24%
+
+Metric: Legitimate Workflow Completion Rate
+Vulnerable: 100.00%
+Hardened: 100.00%
+Change: 0.00 percentage points
+
+========================================================================
+              BLAST-RADIUS ANALYSIS
+========================================================================
+
+Vulnerable Blast Radius: 92.50%
+Hardened Blast Radius: 14.58%
+Blast-Radius Reduction: 84.24%
+
+Vulnerable Average Compromised Components: 7.40 / 8
+Hardened Average Compromised Components: 1.17 / 8
+Hardened Maximum Compromised Components: 2 / 8
+
+========================================================================
+          DEFENSE-IN-DEPTH VALIDATION
+========================================================================
+
+Memory Boundary: MEMORY_AUTHORITY
+Agent B Planning Boundary: AGENT_B_TOOL_BINDING
+MCP / Tool Boundary: MCP_TOOL_BINDING
+Parameter Boundary: PARAMETER_SCHEMA
+Authorization Boundary: AUTH_CAPABILITY
+Persistent-State Boundary: STATE_PROVENANCE
+
+Each tested compromise entry stage was stopped by an independently enforced downstream boundary.
+
+========================================================================
+                 FINAL FINDINGS
+========================================================================
+
+1. Indirect prompt injection can become a system-level threat when model output is passed across autonomous trust boundaries.
+2. Shared and persistent memory can transform temporary attacker influence into durable cross-workflow compromise.
+3. Agent-generated context must not be treated as identity, authorization, approval, scope, or security-policy state.
+4. Tool and MCP availability must remain separate from tool execution authority.
+5. Model-generated parameters require strict schema validation, trusted target binding, scope enforcement, and resource-policy checks.
+6. Model-generated authority and approval claims must never directly satisfy execution authorization.
+7. Persistent application state is itself a trust boundary and requires provenance and authorization integrity.
+8. Downstream agents must validate state provenance instead of blindly accepting current persistent state as authoritative.
+9. Defense-in-depth contained compromise even when attacks were injected after earlier controls were assumed to have failed.
+10. The hardened architecture reduced unauthorized system impact from 80.00% to 0.00% while preserving 100.00% legitimate workflow completion.
+
+========================================================================
+                   LIMITATIONS
+========================================================================
+
+Lab 7 showed significant baseline planning/schema instability on clean model inputs. Its poisoned-case results therefore demonstrate unsafe planning susceptibility but do not isolate poisoned memory as the sole cause of every unsafe proposal.
+
+The benchmark uses synthetic records, agents, authorization state, MCP-style servers, and tool executions. Results demonstrate architectural security properties rather than exploitation of a production environment.
+
+========================================================================
+                    CONCLUSION
+========================================================================
+
+Day 24 demonstrated that a single compromised input can propagate through autonomous agents, persistent memory, MCP/tool selection, execution parameters, authorization boundaries, persistent system state, and downstream agents when upstream outputs are implicitly trusted.
+
+The vulnerable end-to-end architecture produced an 80.00% attack-chain completion rate, an 80.00% unauthorized system impact rate, and a 92.50% normalized blast radius.
+
+The hardened adversarial retest achieved a 100.00% defense-in-depth containment rate, 0.00% unsafe execution rate, 0.00% unauthorized system impact rate, and 0.00% attack-chain completion rate.
+
+The hardened blast radius was reduced to 14.58%, representing an 84.23% reduction relative to the vulnerable end-to-end architecture, while legitimate workflow completion remained at 100.00%.
+
+Core Principle:
+A compromised component must not automatically compromise the whole autonomous system.
