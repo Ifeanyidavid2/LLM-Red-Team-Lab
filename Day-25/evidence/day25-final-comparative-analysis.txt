@@ -1,0 +1,194 @@
+=== Day 25 Lab 16: Final Comparative Analysis ===
+
+============================================================================
+                          DAY 25 RESEARCH QUESTION                          
+============================================================================
+Can compromised models, prompts, policies, datasets, dependencies, tools, configurations, or AI artifacts cross the supply-chain trust boundary and cause runtime compromise, and can independently enforced provenance, integrity, capability, and runtime controls prevent unauthorized impact?
+
+============================================================================
+                    VULNERABLE SUPPLY-CHAIN PROGRESSION                     
+============================================================================
+Lab 3 - Prompt-Template Supply-Chain Poisoning
+Runtime Compromise Rate: 100.00%
+Clean Utility Rate: 100.00%
+Structurally valid prompt artifacts were accepted even when their trusted integrity changed, allowing malicious instructions to enter runtime context.
+
+Lab 4 - Configuration / Policy Artifact Tampering
+Runtime Authorization Compromise Rate: 100.00%
+Clean Utility Rate: 100.00%
+Tampered policy artifacts redefined targets, capabilities, approval handling, and authorization semantics.
+
+Lab 5 - Dataset / Knowledge Artifact Poisoning
+Knowledge-Induced Runtime Compromise Rate: 100.00%
+Clean Utility Rate: 100.00%
+Poisoned knowledge artifacts introduced false facts, restricted targets, false approvals, false authorities, and privileged-action recommendations.
+
+Lab 6 - Model / Adapter Substitution
+Model / Adapter Runtime Compromise Rate: 100.00%
+Clean Utility Rate: 100.00%
+Substituted models and adapters remained functional while changing targets, privileges, and effective capabilities.
+
+Lab 7 - Tool Package / Dependency Compromise
+Tool / Dependency Runtime Compromise Rate: 100.00%
+Clean Utility Rate: 100.00%
+API-compatible tool and dependency artifacts silently rewrote targets, expanded capabilities, or falsified security results.
+
+Lab 8 - Dependency Confusion & Artifact Substitution
+Dependency-Confusion Runtime Compromise Rate: 100.00%
+Clean Utility Rate: 100.00%
+Weak package resolution allowed public, higher-version, same-version, impersonated, or typosquatted artifacts to replace trusted dependencies.
+
+Lab 9 - Artifact Metadata & Provenance Spoofing
+Metadata-Induced Runtime Compromise Rate: 100.00%
+Clean Utility Rate: 100.00%
+Self-asserted publisher, signature, provenance, build, commit, and SBOM metadata created false trust decisions.
+
+Lab 10 - Hash / Integrity Verification Bypass
+Integrity-Bypass Runtime Compromise Rate: 100.00%
+Clean Utility Rate: 100.00%
+Weak integrity architecture failed despite use of SHA-256 because verification used partial coverage, stale state, attacker-controlled digests, or excluded fields.
+
+Lab 11 - Transitive Dependency Compromise
+Runtime Compromise Rate: 100.00%
+Clean Utility Rate: 100.00%
+An authentic top-level application and model remained compromised in effect when direct or transitive dependencies were malicious.
+
+Lab 12 - Compromised Artifact -> Runtime Propagation
+Pre-Runtime -> Runtime Propagation Rate: 83.33%
+Clean Utility Rate: 100.00%
+Most compromised artifacts crossed the loading boundary and altered runtime behavior, while independent downstream policy still blocked some individual compromise paths.
+
+
+============================================================================
+                   LAB 13 VULNERABLE END-TO-END BASELINE                    
+============================================================================
+Artifact Trust Bypass Rate: 100.00%
+Malicious Artifact Load Rate: 100.00%
+Supply-Chain Propagation Rate: 100.00%
+Runtime Compromise Rate: 100.00%
+Unauthorized System Impact Rate: 100.00%
+Attack Chain Completion Rate: 100.00%
+Legitimate Workflow Completion Rate: 100.00%
+
+============================================================================
+                  LAB 14 HARDENED CONTAINMENT ARCHITECTURE                  
+============================================================================
+Containment Rate: 100.00%
+Malicious Artifact Load Rate: 0.00%
+Unauthorized System Impact Rate: 0.00%
+Attack Chain Completion Rate: 0.00%
+Legitimate Workflow Completion Rate: 100.00%
+
+============================================================================
+                     LAB 15 HARDENED ADVERSARIAL RETEST                     
+============================================================================
+Defense-in-Depth Containment Rate: 100.00%
+Malicious Load Survival Rate: 33.33%
+Unsafe Runtime Execution Rate: 0.00%
+Unauthorized System Impact Rate: 0.00%
+Attack Chain Completion Rate: 0.00%
+Average Trust Boundaries Crossed: 4.67 / 7
+Maximum Trust Boundaries Crossed: 7 / 7
+Legitimate Workflow Completion Rate: 100.00%
+
+============================================================================
+                           VULNERABLE VS HARDENED                           
+============================================================================
+Metric: Malicious Artifact Load Rate
+Vulnerable: 100.00%
+Hardened: 0.00%
+Change: 100.00 percentage points
+Relative Risk Reduction: 100.00%
+
+Metric: Unauthorized System Impact Rate
+Vulnerable: 100.00%
+Hardened: 0.00%
+Change: 100.00 percentage points
+Relative Risk Reduction: 100.00%
+
+Metric: Attack Chain Completion Rate
+Vulnerable: 100.00%
+Hardened: 0.00%
+Change: 100.00 percentage points
+Relative Risk Reduction: 100.00%
+
+Metric: Legitimate Workflow Completion Rate
+Vulnerable: 100.00%
+Hardened: 100.00%
+Change: 0.00 percentage points
+
+
+============================================================================
+                         TRUST-CHAIN SECURITY MODEL                         
+============================================================================
+1. Trusted Artifact Source
+2. Artifact Identity
+3. Pinned Version
+4. Authenticated Publisher
+5. Verified Provenance
+6. Full Artifact Integrity
+7. Dependency-Graph Trust
+8. Capability Policy
+9. Load Authorization
+10. Runtime Action Binding
+11. Runtime Target Binding
+12. Privilege / Approval Enforcement
+
+============================================================================
+                        DEFENSE-IN-DEPTH VALIDATION                         
+============================================================================
+- SOURCE_TRUST
+- ARTIFACT_IDENTITY
+- VERSION_BINDING
+- PUBLISHER_IDENTITY
+- PROVENANCE
+- FULL_INTEGRITY
+- CAPABILITY_POLICY
+- RUNTIME_ACTION_BINDING
+- RUNTIME_TARGET_BINDING
+- RUNTIME_PRIVILEGE
+- RUNTIME_APPROVAL
+
+The hardened adversarial retest demonstrated that compromise can cross earlier boundaries without automatically becoming execution authority. Independent downstream controls continued to contain malicious artifacts before unauthorized system impact occurred.
+
+============================================================================
+                               FINAL FINDINGS                               
+============================================================================
+1. Artifact availability, successful loading, or functional output does not establish authenticity or trust.
+2. Prompt templates, policies, datasets, models, adapters, tool packages, dependencies, and metadata are all part of the AI supply-chain attack surface.
+3. Package names, versions, publisher strings, source labels, signature-status fields, provenance claims, and SBOM references are assertions until independently verified.
+4. Cryptographic integrity is only effective when the complete security-relevant artifact is hashed and the expected digest is obtained from a trusted external source.
+5. Dependency resolution must be treated as a security boundary; higher versions, public repositories, same-version packages, and typosquatted artifacts must not automatically win resolution.
+6. Trust validation must recurse across the full dependency graph. Authenticity of the top-level model or application does not imply authenticity of direct or transitive dependencies.
+7. Artifact-generated capabilities must not automatically become execution capabilities. Capability sets require independent policy binding.
+8. Supply-chain trust and runtime authorization must be connected. Even a loaded artifact must not redefine action, target, privilege, approval, or execution authority.
+9. Defense-in-depth remains effective when earlier supply-chain controls are assumed bypassed, provided independent downstream controls continue to fail closed.
+10. The hardened architecture reduced end-to-end attack-chain completion and unauthorized system impact from 100.00% to 0.00% while preserving 100.00% legitimate workflow completion.
+
+============================================================================
+                                LIMITATIONS                                 
+============================================================================
+The benchmark uses synthetic AI artifacts, package registries, metadata, signatures, provenance records, dependency graphs, runtime actions, and protected records.
+
+The tests demonstrate architectural trust and containment properties rather than exploitation of a production package repository, model registry, signing infrastructure, or deployment pipeline.
+
+Signature and provenance checks are represented as synthetic validation logic rather than real public-key cryptography, certificate-chain validation, transparency logs, or external attestation services.
+
+Several vulnerable labs intentionally isolate one trust failure at a time. Real-world attacks may combine these weaknesses in more complex ways.
+
+
+============================================================================
+                                 CONCLUSION                                 
+============================================================================
+Day 25 demonstrated that AI supply-chain compromise can occur before application startup through poisoned prompt templates, altered security policies, malicious datasets, substituted models or adapters, compromised tool packages, dependency confusion, spoofed provenance, weak integrity verification, and malicious transitive dependencies.
+
+The vulnerable end-to-end architecture produced a 100.00% artifact trust bypass rate, 100.00% malicious artifact load rate, 100.00% supply-chain propagation rate, 100.00% runtime compromise rate, 100.00% unauthorized system impact rate, and 100.00% end-to-end attack-chain completion rate.
+
+The hardened supply-chain architecture achieved a 100.00% containment rate with 0.00% malicious artifact loading, 0.00% unauthorized system impact, and 0.00% attack-chain completion while preserving 100.00% legitimate workflow completion.
+
+During the hardened adversarial retest, 33.33% of malicious artifacts were intentionally allowed to survive into later trust stages because earlier controls were assumed bypassed. Despite this, unsafe runtime execution, unauthorized system impact, and attack-chain completion all remained at 0.00%, demonstrating effective defense in depth.
+
+The assessment therefore shows that AI artifact trust must be established continuously across artifact source, identity, version, publisher, provenance, integrity, dependency graphs, capabilities, loading, and runtime execution authority.
+
+Core Principle:
+An AI component being available or functional does not establish that it is authentic, trusted, or safe to load.
