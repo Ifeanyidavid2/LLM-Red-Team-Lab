@@ -1,0 +1,102 @@
+DAY 23 FINAL COMPARATIVE ANALYSIS
+============================================================
+
+Lab 2 - Vulnerable Tool Selection
+Unsafe Tool Selection Rate: 66.67%
+The model selected tools outside the current agent's authorized capability set.
+
+Lab 3 - Malicious Tool Description Poisoning
+Malicious Tool Description Influence Rate: 50.00%
+Model-visible tool descriptions influenced tool-selection behavior.
+
+Lab 4 - Excessive Tool Permissions
+Excessive Permission Exploitation Rate: 75.00%
+Broader tool exposure increased selection of unnecessary high-risk tools.
+
+Lab 5 - Parameter Manipulation
+Parameter Manipulation Success Rate: 100.00%
+Model-generated tool arguments changed targets, expanded scope, or inserted unauthorized parameters.
+
+Lab 6 - Confused Tool Selection
+Confused Tool Selection Rate: 60.00%
+The model sometimes replaced a sufficient safe tool with a more privileged or inappropriate alternative.
+
+Lab 7 - Indirect Tool-Output Injection
+Indirect Tool Injection Success Rate: 100.00%
+Poisoned tool output influenced downstream tool-selection behavior.
+
+Lab 8 - Tool-Result Poisoning
+Tool-Result Poisoning Success Rate: 50.00%
+False tool evidence corrupted selected security-sensitive model judgments.
+
+Lab 9 - Chained Tool Attack
+Chained Tool Attack Success Rate: 75.00%
+Multiple tool-layer weaknesses composed into security-impacting attack chains.
+
+Lab 10 - MCP Trust Boundary
+Unsafe MCP Registration Rate: 0.00%
+Trusted server identity, ownership, metadata, and capability controls blocked unsafe registrations.
+
+Lab 11 - Least Privilege
+Unauthorized Tool Authorization Rate: 0.00%
+Visible or delegated tools could not be executed without the delegate's own capability.
+
+Lab 12 - Parameter Enforcement
+Unsafe Parameter Execution Rate: 0.00%
+Trusted schemas, target binding, and value policy prevented unsafe model-generated arguments.
+
+Lab 13 - Hardened Tool/MCP Architecture
+Unsafe Tool Execution Rate: 0.00%
+The integrated security pipeline blocked all tested malicious execution attempts.
+
+Lab 14 - Hardened Adversarial Retest
+Unauthorized System Impact Rate: 0.00%
+Dangerous model proposals were fully contained by trusted application-controlled execution state.
+
+VULNERABLE VS HARDENED
+============================================================
+
+Attack Class: Unauthorized tool selection
+Vulnerable Rate: 66.67%
+Hardened Rate: 0.00%
+Primary Control: Capability enforcement and least-privilege tool exposure/execution
+
+Attack Class: Parameter manipulation
+Vulnerable Rate: 100.00%
+Hardened Rate: 0.00%
+Primary Control: Strict parameter schema, trusted target binding, scope enforcement, and value policy
+
+Attack Class: MCP/server trust abuse
+Vulnerable Rate: 100.00%
+Hardened Rate: 0.00%
+Primary Control: Trusted server identity, tool ownership, allowlists, and metadata validation
+
+Attack Class: Chained tool compromise
+Vulnerable Rate: 75.00%
+Hardened Rate: 0.00%
+Primary Control: Independent validation at each execution stage
+
+Attack Class: Adversarial model proposals
+Vulnerable Rate: 100.00%
+Hardened Rate: 0.00%
+Primary Control: Trusted application state prevents model proposals from redefining server, tool, target, scope, parameters, or approval
+
+FINAL FINDINGS
+============================================================
+
+1. Tool discovery and tool availability must not be treated as execution authority.
+2. Tool descriptions and tool results are part of the model-visible prompt attack surface.
+3. Model-generated parameters are untrusted proposals and require independent schema, target, scope, and value validation.
+4. MCP-style tool providers create a separate server trust boundary requiring identity, ownership, allowlist, and metadata controls.
+5. Excessive tool exposure increases both accidental and adversarial tool-selection risk.
+6. Tool-chain attacks can compose across tool output, selection, parameters, approvals, and delegated authority.
+7. Trusted execution state must be stored outside model-generated content.
+8. Compromised model reasoning does not need to result in compromised execution when independent controls bind identity, capability, scope, parameters, resource policy, and approval.
+
+CONCLUSION
+============================================================
+
+Day 23 demonstrated that tool-enabled LLM agents can be manipulated through malicious tool metadata, excessive permissions, parameter substitution, poisoned tool results, confused tool selection, chained attacks, and MCP-style trust-boundary abuse. The hardened architecture reduced tested unauthorized execution impact to zero by treating all model-generated tool actions as untrusted proposals and independently enforcing server identity, tool ownership, agent capability, target binding, parameter schemas, scope, resource policy, and trusted approvals.
+
+Core Principle:
+Tool availability does not imply tool authority; every AI-initiated action must remain independently constrained by identity, capability, scope, parameters, and policy.
