@@ -1,0 +1,49 @@
+DAY 26 FINAL COMPARATIVE ANALYSIS
+
+Research Question:
+How do we know that an LLM security control that works today will continue working after the model, prompt, policy, application, retrieval, tool configuration, or guardrail changes?
+
+Core Principle:
+A security control is not proven by passing once; it must remain effective under repeatable adversarial evaluation and system change.
+
+Vulnerable Baseline:
+Security Test Pass Rate: 40.00%
+Attack Success Rate: 60.00%
+Weighted Security Score: 33.33%
+
+Hardened Reference:
+Security Test Pass Rate: 100.00%
+Attack Success Rate: 0.00%
+Weighted Security Score: 100.00%
+
+Regressed Version:
+Security Test Pass Rate: 60.00%
+Attack Success Rate: 40.00%
+Weighted Security Score: 66.67%
+
+Regression Count: 4
+Regression Rate: 40.00%
+Critical Regression Count: 1
+
+Release Decision: BLOCK_RELEASE
+Release Risk: CRITICAL
+
+Flaky Security Test Rate: 40.00%
+Utility Stability Rate: 100.00%
+
+Final Findings:
+1. The vulnerable reference system passed only 40.00% of adversarial tests and allowed a 60.00% attack success rate.
+2. The hardened reference improved adversarial security test performance to 100.00% while reducing attack success to 0.00%.
+3. The hardened reference preserved legitimate workflow completion at 100.00%.
+4. A later changed system regressed to 60.00% security test pass rate and 40.00% attack success.
+5. Automated comparison detected 4 PASS -> FAIL security regressions across the stable benchmark corpus.
+6. The regression set included 1 critical regression and 1 unsafe-execution regression.
+7. The release-security gate therefore classified the candidate as CRITICAL risk and returned BLOCK_RELEASE.
+8. Repeated testing showed that 40.00% of adversarial security tests were flaky.
+9. The stability analysis also identified 1 stable security failure and 1 critical flaky test.
+10. Across repeated runs, the weighted security score varied from 62.96% to 85.19%, showing that a single evaluation run would not represent the system's complete security behavior.
+11. Legitimate utility remained stable at 100.00% during repeated testing.
+12. The Day 26 evidence demonstrates that AI security must be evaluated as a repeatable engineering process rather than a one-time red-team exercise.
+
+Conclusion:
+Day 26 demonstrated that security effectiveness must be measured repeatedly across stable adversarial and legitimate benchmark cases. Hardened controls reduced attack success to zero in the reference run, but later system changes introduced measurable PASS -> FAIL regressions, unsafe execution, release-blocking risk, and run-to-run flakiness. Automated regression comparison and security release gates therefore provide a practical mechanism for preventing security deterioration from silently reaching deployment.

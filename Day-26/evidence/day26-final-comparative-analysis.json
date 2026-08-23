@@ -1,0 +1,175 @@
+{
+  "benchmark": "Day 26 Final Comparative Analysis",
+  "research_question": "How do we know that an LLM security control that works today will continue working after the model, prompt, policy, application, retrieval, tool configuration, or guardrail changes?",
+  "core_principle": "A security control is not proven by passing once; it must remain effective under repeatable adversarial evaluation and system change.",
+  "systems": {
+    "vulnerable": {
+      "name": "synthetic-llm-application",
+      "version": "v1.0.0-vulnerable",
+      "model_version": "model-v1",
+      "prompt_version": "prompt-v1",
+      "policy_version": "policy-v1",
+      "guardrail_version": "guardrail-v1",
+      "retrieval_version": "retrieval-v1",
+      "tool_policy_version": "tool-policy-v1"
+    },
+    "hardened": {
+      "name": "synthetic-llm-application",
+      "version": "v1.1.0-hardened",
+      "model_version": "model-v1",
+      "prompt_version": "prompt-v2",
+      "policy_version": "policy-v2",
+      "guardrail_version": "guardrail-v2",
+      "retrieval_version": "retrieval-v2",
+      "tool_policy_version": "tool-policy-v2"
+    },
+    "regressed": {
+      "name": "synthetic-llm-application",
+      "version": "v1.2.0-changed",
+      "model_version": "model-v1",
+      "prompt_version": "prompt-v3",
+      "policy_version": "policy-v2",
+      "guardrail_version": "guardrail-v3",
+      "retrieval_version": "retrieval-v3",
+      "tool_policy_version": "tool-policy-v2",
+      "change_summary": [
+        "Prompt template simplified.",
+        "Guardrail matching rules relaxed.",
+        "Retrieval trust filter modified."
+      ]
+    }
+  },
+  "metric_comparison": {
+    "security_test_pass_rate": {
+      "vulnerable": 40.0,
+      "hardened": 100.0,
+      "regressed": 60.0,
+      "vulnerable_to_hardened_pp": 60.0,
+      "hardened_to_regressed_pp": -40.0
+    },
+    "attack_success_rate": {
+      "vulnerable": 60.0,
+      "hardened": 0.0,
+      "regressed": 40.0,
+      "vulnerable_to_hardened_pp": -60.0,
+      "hardened_to_regressed_pp": 40.0
+    },
+    "control_effectiveness_rate": {
+      "vulnerable": 40.0,
+      "hardened": 100.0,
+      "regressed": 60.0,
+      "vulnerable_to_hardened_pp": 60.0,
+      "hardened_to_regressed_pp": -40.0
+    },
+    "sensitive_disclosure_rate": {
+      "vulnerable": 10.0,
+      "hardened": 0.0,
+      "regressed": 0.0,
+      "vulnerable_to_hardened_pp": -10.0,
+      "hardened_to_regressed_pp": 0.0
+    },
+    "unsafe_execution_rate": {
+      "vulnerable": 20.0,
+      "hardened": 0.0,
+      "regressed": 10.0,
+      "vulnerable_to_hardened_pp": -20.0,
+      "hardened_to_regressed_pp": 10.0
+    },
+    "unauthorized_impact_rate": {
+      "vulnerable": 20.0,
+      "hardened": 0.0,
+      "regressed": 10.0,
+      "vulnerable_to_hardened_pp": -20.0,
+      "hardened_to_regressed_pp": 10.0
+    },
+    "weighted_security_score": {
+      "vulnerable": 33.33333333333333,
+      "hardened": 100.0,
+      "regressed": 66.66666666666666,
+      "vulnerable_to_hardened_pp": 66.66666666666667,
+      "hardened_to_regressed_pp": -33.33333333333334
+    },
+    "legitimate_workflow_completion_rate": {
+      "vulnerable": 100.0,
+      "hardened": 100.0,
+      "regressed": 100.0,
+      "vulnerable_to_hardened_pp": 0.0,
+      "hardened_to_regressed_pp": 0.0
+    },
+    "false_block_rate": {
+      "vulnerable": 0.0,
+      "hardened": 0.0,
+      "regressed": 0.0,
+      "vulnerable_to_hardened_pp": 0.0,
+      "hardened_to_regressed_pp": 0.0
+    }
+  },
+  "vulnerable_to_hardened_attack_risk_reduction": 100.0,
+  "regression_metrics": {
+    "comparable_adversarial_tests": 10,
+    "regression_count": 4,
+    "regression_rate": 40.0,
+    "improvement_count": 0,
+    "stable_pass_count": 6,
+    "stable_fail_count": 0,
+    "critical_regression_count": 1,
+    "critical_regression_rate": 10.0,
+    "high_or_critical_regression_count": 3,
+    "unsafe_execution_regression_count": 1,
+    "unauthorized_impact_regression_count": 1,
+    "new_test_count": 0,
+    "missing_test_count": 0
+  },
+  "release_gate": {
+    "decision": "BLOCK_RELEASE",
+    "risk": "CRITICAL",
+    "failed_gate_ids": [
+      "GATE-CRITICAL-REGRESSION",
+      "GATE-UNAUTHORIZED-IMPACT",
+      "GATE-UNSAFE-EXECUTION",
+      "GATE-REGRESSION-RATE",
+      "GATE-WEIGHTED-SECURITY-SCORE",
+      "GATE-SECURITY-PASS-RATE"
+    ]
+  },
+  "stability_metrics": {
+    "adversarial_tests": 10,
+    "flaky_security_tests": 4,
+    "flaky_security_test_rate": 40.0,
+    "stable_security_passes": 5,
+    "stable_pass_rate": 50.0,
+    "stable_security_failures": 1,
+    "stable_fail_rate": 10.0,
+    "critical_flaky_tests": 1,
+    "critical_flakiness_rate": 10.0,
+    "intermittent_attack_tests": 4,
+    "utility_tests": 2,
+    "stable_utility_tests": 2,
+    "utility_stability_rate": 100.0
+  },
+  "variance_metrics": {
+    "minimum_security_score": 62.96296296296296,
+    "maximum_security_score": 85.18518518518519,
+    "average_security_score": 74.81481481481482,
+    "security_score_stddev": 6.583847716530071,
+    "minimum_attack_success_rate": 10.0,
+    "maximum_attack_success_rate": 30.0,
+    "average_attack_success_rate": 22.0,
+    "attack_success_stddev": 6.0
+  },
+  "final_findings": [
+    "The vulnerable reference system passed only 40.00% of adversarial tests and allowed a 60.00% attack success rate.",
+    "The hardened reference improved adversarial security test performance to 100.00% while reducing attack success to 0.00%.",
+    "The hardened reference preserved legitimate workflow completion at 100.00%.",
+    "A later changed system regressed to 60.00% security test pass rate and 40.00% attack success.",
+    "Automated comparison detected 4 PASS -> FAIL security regressions across the stable benchmark corpus.",
+    "The regression set included 1 critical regression and 1 unsafe-execution regression.",
+    "The release-security gate therefore classified the candidate as CRITICAL risk and returned BLOCK_RELEASE.",
+    "Repeated testing showed that 40.00% of adversarial security tests were flaky.",
+    "The stability analysis also identified 1 stable security failure and 1 critical flaky test.",
+    "Across repeated runs, the weighted security score varied from 62.96% to 85.19%, showing that a single evaluation run would not represent the system's complete security behavior.",
+    "Legitimate utility remained stable at 100.00% during repeated testing.",
+    "The Day 26 evidence demonstrates that AI security must be evaluated as a repeatable engineering process rather than a one-time red-team exercise."
+  ],
+  "final_conclusion": "Day 26 demonstrated that security effectiveness must be measured repeatedly across stable adversarial and legitimate benchmark cases. Hardened controls reduced attack success to zero in the reference run, but later system changes introduced measurable PASS -> FAIL regressions, unsafe execution, release-blocking risk, and run-to-run flakiness. Automated regression comparison and security release gates therefore provide a practical mechanism for preventing security deterioration from silently reaching deployment."
+}
