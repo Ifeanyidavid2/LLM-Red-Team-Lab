@@ -1,0 +1,205 @@
+{
+  "lab": "Day 27 Lab 13",
+  "incident_id": "INC-2713",
+  "trace_id": "TRACE-2713",
+  "containment_actions": [
+    {
+      "action_id": "ACT-0001",
+      "asset": "SESSION-2701",
+      "action": "terminate_session",
+      "result": "SUCCESS",
+      "reason": "Compromised session removed from active execution."
+    },
+    {
+      "action_id": "ACT-0002",
+      "asset": "SESSION-2702",
+      "action": "terminate_session",
+      "result": "SUCCESS",
+      "reason": "Compromised session removed from active execution."
+    },
+    {
+      "action_id": "ACT-0003",
+      "asset": "SESSION-2703",
+      "action": "temporarily_restrict_session",
+      "result": "SUCCESS",
+      "reason": "Potentially exposed session restricted pending validation."
+    },
+    {
+      "action_id": "ACT-0004",
+      "asset": "AGENT-2701",
+      "action": "disable_agent",
+      "result": "SUCCESS",
+      "reason": "Compromised agent prevented from generating new actions."
+    },
+    {
+      "action_id": "ACT-0005",
+      "asset": "AGENT-2702",
+      "action": "disable_agent",
+      "result": "SUCCESS",
+      "reason": "Compromised agent prevented from generating new actions."
+    },
+    {
+      "action_id": "ACT-0006",
+      "asset": "MEMORY-2701",
+      "action": "quarantine_memory_store",
+      "result": "SUCCESS",
+      "reason": "Compromised persistent memory removed from runtime access."
+    },
+    {
+      "action_id": "ACT-0007",
+      "asset": "MEMORY-2701",
+      "action": "eradicate_malicious_memory",
+      "result": "SUCCESS",
+      "reason": "Persistent malicious instruction removed after evidence preservation."
+    },
+    {
+      "action_id": "ACT-0008",
+      "asset": "MEMORY-2702",
+      "action": "restrict_adjacent_memory",
+      "result": "SUCCESS",
+      "reason": "Potentially exposed memory isolated pending integrity review."
+    },
+    {
+      "action_id": "ACT-0009",
+      "asset": "DOC-2791",
+      "action": "quarantine_rag_document",
+      "result": "SUCCESS",
+      "reason": "Known poisoned retrieval document removed from retrieval availability."
+    },
+    {
+      "action_id": "ACT-0010",
+      "asset": "RAG-2701",
+      "action": "disable_rag_store",
+      "result": "SUCCESS",
+      "reason": "Affected retrieval source isolated pending validation."
+    },
+    {
+      "action_id": "ACT-0011",
+      "asset": "delete_record",
+      "action": "revoke_privileged_tool",
+      "result": "SUCCESS",
+      "reason": "Privileged execution capability revoked during containment."
+    },
+    {
+      "action_id": "ACT-0012",
+      "asset": "R-2799",
+      "action": "block_target_access",
+      "result": "SUCCESS",
+      "reason": "Restricted target protected from additional incident-related operations."
+    },
+    {
+      "action_id": "ACT-0013",
+      "asset": "AUTHZ-2701",
+      "action": "reset_authorization_boundary",
+      "result": "SUCCESS",
+      "reason": "Compromised authorization state invalidated and restored to fail-closed behavior."
+    },
+    {
+      "action_id": "ACT-0014",
+      "asset": "USER-2701",
+      "action": "temporarily_suspend_identity",
+      "result": "SUCCESS",
+      "reason": "Potentially exposed identity suspended pending incident review."
+    },
+    {
+      "action_id": "ACT-0015",
+      "asset": "RECORD-SERVICE-2701",
+      "action": "restrict_downstream_service",
+      "result": "SUCCESS",
+      "reason": "Affected downstream service restricted pending integrity validation."
+    }
+  ],
+  "attack_retests": [
+    {
+      "test_id": "RETEST-001",
+      "attack_stage": "reuse_compromised_session",
+      "blocked": true,
+      "blocked_by": "SESSION_TERMINATION"
+    },
+    {
+      "test_id": "RETEST-002",
+      "attack_stage": "reuse_compromised_agent",
+      "blocked": true,
+      "blocked_by": "AGENT_DISABLEMENT"
+    },
+    {
+      "test_id": "RETEST-003",
+      "attack_stage": "retrieve_poisoned_document",
+      "blocked": true,
+      "blocked_by": "RAG_QUARANTINE"
+    },
+    {
+      "test_id": "RETEST-004",
+      "attack_stage": "consume_persistent_malicious_memory",
+      "blocked": true,
+      "blocked_by": "MEMORY_QUARANTINE_AND_ERADICATION"
+    },
+    {
+      "test_id": "RETEST-005",
+      "attack_stage": "invoke_privileged_delete_tool",
+      "blocked": true,
+      "blocked_by": "PRIVILEGED_TOOL_REVOCATION"
+    },
+    {
+      "test_id": "RETEST-006",
+      "attack_stage": "access_restricted_target",
+      "blocked": true,
+      "blocked_by": "TARGET_ACCESS_BLOCK"
+    },
+    {
+      "test_id": "RETEST-007",
+      "attack_stage": "repeat_authorization_bypass",
+      "blocked": true,
+      "blocked_by": "AUTHORIZATION_RESET"
+    },
+    {
+      "test_id": "RETEST-008",
+      "attack_stage": "reuse_suspect_identity",
+      "blocked": true,
+      "blocked_by": "IDENTITY_SUSPENSION"
+    },
+    {
+      "test_id": "RETEST-009",
+      "attack_stage": "repeat_downstream_execution",
+      "blocked": true,
+      "blocked_by": "DOWNSTREAM_SERVICE_RESTRICTION"
+    }
+  ],
+  "forensic_preservation": {
+    "prompt_evidence_preserved": true,
+    "rag_evidence_preserved": true,
+    "memory_snapshot_preserved": true,
+    "agent_plan_preserved": true,
+    "authorization_logs_preserved": true,
+    "tool_execution_logs_preserved": true,
+    "impact_evidence_preserved": true,
+    "chain_of_custody_preserved": true
+  },
+  "legitimate_utility": {
+    "tool": "read_record",
+    "enabled": true,
+    "privileged": false,
+    "safe_utility_preserved": true
+  },
+  "metrics": {
+    "containment_actions": 15,
+    "successful_actions": 15,
+    "containment_action_success_rate": 100.0,
+    "attack_retests": 9,
+    "blocked_attack_retests": 9,
+    "attack_retest_block_rate": 100.0,
+    "forensic_preservation_rate": 100.0
+  },
+  "security_checks": {
+    "compromised_sessions_terminated": true,
+    "compromised_agents_disabled": true,
+    "malicious_memory_eradicated": true,
+    "poisoned_rag_quarantined": true,
+    "privileged_tool_revoked": true,
+    "restricted_target_protected": true,
+    "authorization_boundary_restored": true,
+    "forensic_evidence_preserved": true,
+    "attack_chain_blocked": true,
+    "legitimate_utility_preserved": true
+  }
+}

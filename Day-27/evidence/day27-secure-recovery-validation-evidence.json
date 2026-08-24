@@ -1,0 +1,251 @@
+{
+  "lab": "Day 27 Lab 14",
+  "incident_id": "INC-2714",
+  "trace_id": "TRACE-2714",
+  "recovery_id": "RECOVERY-2714",
+  "recovery_actions": [
+    {
+      "action_id": "REC-0001",
+      "timestamp": "2026-08-24T18:32:59.337654+00:00",
+      "asset": "MEMORY-2701",
+      "action": "verify_malicious_state_removed",
+      "result": "SUCCESS",
+      "reason": "Persistent malicious memory state must be absent before recovery."
+    },
+    {
+      "action_id": "REC-0002",
+      "timestamp": "2026-08-24T18:32:59.337654+00:00",
+      "asset": "DOC-2791",
+      "action": "verify_poisoned_document_quarantine",
+      "result": "SUCCESS",
+      "reason": "Known poisoned retrieval content must remain unavailable."
+    },
+    {
+      "action_id": "REC-0003",
+      "timestamp": "2026-08-24T18:32:59.337654+00:00",
+      "asset": "R-2799",
+      "action": "verify_restricted_target_protection",
+      "result": "SUCCESS",
+      "reason": "Restricted target remains protected during recovery."
+    },
+    {
+      "action_id": "REC-0004",
+      "timestamp": "2026-08-24T18:32:59.337654+00:00",
+      "asset": "MEMORY-2701",
+      "action": "validate_memory_integrity",
+      "result": "SUCCESS",
+      "reason": "Memory store validated after malicious state eradication."
+    },
+    {
+      "action_id": "REC-0005",
+      "timestamp": "2026-08-24T18:32:59.337654+00:00",
+      "asset": "MEMORY-2702",
+      "action": "validate_adjacent_memory_integrity",
+      "result": "SUCCESS",
+      "reason": "Adjacent memory store reviewed and found clean."
+    },
+    {
+      "action_id": "REC-0006",
+      "timestamp": "2026-08-24T18:32:59.337654+00:00",
+      "asset": "RAG-2701",
+      "action": "validate_rag_store_integrity",
+      "result": "SUCCESS",
+      "reason": "Retrieval store validated with poisoned document excluded."
+    },
+    {
+      "action_id": "REC-0007",
+      "timestamp": "2026-08-24T18:32:59.337654+00:00",
+      "asset": "AUTHZ-2701",
+      "action": "validate_authorization_boundary",
+      "result": "SUCCESS",
+      "reason": "Authorization boundary verified to operate fail-closed."
+    },
+    {
+      "action_id": "REC-0008",
+      "timestamp": "2026-08-24T18:32:59.337654+00:00",
+      "asset": "RECORD-SERVICE-2701",
+      "action": "validate_downstream_service_integrity",
+      "result": "SUCCESS",
+      "reason": "Downstream record service validated before restoration."
+    },
+    {
+      "action_id": "REC-0009",
+      "timestamp": "2026-08-24T18:32:59.337654+00:00",
+      "asset": "USER-2701",
+      "action": "validate_identity",
+      "result": "SUCCESS",
+      "reason": "Identity reviewed before access restoration."
+    },
+    {
+      "action_id": "REC-0010",
+      "timestamp": "2026-08-24T18:32:59.337654+00:00",
+      "asset": "MEMORY-2701",
+      "action": "restore_memory_service",
+      "result": "SUCCESS",
+      "reason": "Validated clean memory restored to runtime."
+    },
+    {
+      "action_id": "REC-0011",
+      "timestamp": "2026-08-24T18:32:59.337654+00:00",
+      "asset": "MEMORY-2702",
+      "action": "restore_adjacent_memory_service",
+      "result": "SUCCESS",
+      "reason": "Validated adjacent memory restored."
+    },
+    {
+      "action_id": "REC-0012",
+      "timestamp": "2026-08-24T18:32:59.337654+00:00",
+      "asset": "RAG-2701",
+      "action": "restore_rag_service",
+      "result": "SUCCESS",
+      "reason": "Validated retrieval service restored without poisoned document."
+    },
+    {
+      "action_id": "REC-0013",
+      "timestamp": "2026-08-24T18:32:59.338649+00:00",
+      "asset": "RECORD-SERVICE-2701",
+      "action": "restore_downstream_service",
+      "result": "SUCCESS",
+      "reason": "Validated downstream service returned to operation."
+    },
+    {
+      "action_id": "REC-0014",
+      "timestamp": "2026-08-24T18:32:59.338649+00:00",
+      "asset": "USER-2701",
+      "action": "restore_identity_access",
+      "result": "SUCCESS",
+      "reason": "Reviewed identity restored after validation."
+    },
+    {
+      "action_id": "REC-0015",
+      "timestamp": "2026-08-24T18:32:59.338649+00:00",
+      "asset": "AGENT-2701",
+      "action": "restore_validated_agent",
+      "result": "SUCCESS",
+      "reason": "Agent restored only after trust-boundary validation."
+    },
+    {
+      "action_id": "REC-0016",
+      "timestamp": "2026-08-24T18:32:59.338649+00:00",
+      "asset": "AGENT-2702",
+      "action": "restore_validated_agent",
+      "result": "SUCCESS",
+      "reason": "Agent restored only after trust-boundary validation."
+    },
+    {
+      "action_id": "REC-0017",
+      "timestamp": "2026-08-24T18:32:59.338649+00:00",
+      "asset": "SESSION-2703",
+      "action": "activate_clean_session",
+      "result": "SUCCESS",
+      "reason": "New validated session activated after recovery controls passed."
+    },
+    {
+      "action_id": "REC-0018",
+      "timestamp": "2026-08-24T18:32:59.338649+00:00",
+      "asset": "delete_record",
+      "action": "retain_privileged_tool_restriction",
+      "result": "SUCCESS",
+      "reason": "Privileged tool remains disabled until explicit reauthorization."
+    }
+  ],
+  "security_tests": [
+    {
+      "test_id": "POST-IR-001",
+      "scenario": "poisoned_rag_document_retrieval",
+      "passed": true,
+      "control": "RAG_QUARANTINE"
+    },
+    {
+      "test_id": "POST-IR-002",
+      "scenario": "persistent_memory_reinfection",
+      "passed": true,
+      "control": "MEMORY_ERADICATION"
+    },
+    {
+      "test_id": "POST-IR-003",
+      "scenario": "restricted_target_access",
+      "passed": true,
+      "control": "TARGET_PROTECTION"
+    },
+    {
+      "test_id": "POST-IR-004",
+      "scenario": "privileged_delete_execution",
+      "passed": true,
+      "control": "PRIVILEGED_TOOL_RESTRICTION"
+    },
+    {
+      "test_id": "POST-IR-005",
+      "scenario": "authorization_bypass",
+      "passed": true,
+      "control": "FAIL_CLOSED_AUTHORIZATION"
+    },
+    {
+      "test_id": "POST-IR-006",
+      "scenario": "unvalidated_memory_use",
+      "passed": true,
+      "control": "MEMORY_INTEGRITY_VALIDATION"
+    },
+    {
+      "test_id": "POST-IR-007",
+      "scenario": "unvalidated_rag_restoration",
+      "passed": true,
+      "control": "RAG_RECOVERY_VALIDATION"
+    },
+    {
+      "test_id": "POST-IR-008",
+      "scenario": "unsafe_downstream_restoration",
+      "passed": true,
+      "control": "DOWNSTREAM_INTEGRITY_VALIDATION"
+    }
+  ],
+  "utility_tests": [
+    {
+      "test_id": "UTIL-REC-001",
+      "scenario": "authorized_record_read",
+      "completed": true
+    },
+    {
+      "test_id": "UTIL-REC-002",
+      "scenario": "project_summary",
+      "completed": true
+    },
+    {
+      "test_id": "UTIL-REC-003",
+      "scenario": "trusted_rag_retrieval",
+      "completed": true
+    },
+    {
+      "test_id": "UTIL-REC-004",
+      "scenario": "clean_memory_access",
+      "completed": true
+    },
+    {
+      "test_id": "UTIL-REC-005",
+      "scenario": "validated_agent_operation",
+      "completed": true
+    }
+  ],
+  "metrics": {
+    "recovery_actions": 18,
+    "successful_recovery_actions": 18,
+    "recovery_action_success_rate": 100.0,
+    "post_recovery_security_tests": 8,
+    "passed_security_tests": 8,
+    "post_recovery_security_pass_rate": 100.0,
+    "utility_tests": 5,
+    "completed_utility_tests": 5,
+    "utility_completion_rate": 100.0,
+    "false_block_rate": 0.0
+  },
+  "security_checks": {
+    "malicious_memory_absent": true,
+    "poisoned_content_remains_quarantined": true,
+    "authorization_secure": true,
+    "restricted_target_secure": true,
+    "privileged_execution_restricted": true,
+    "all_security_tests_pass": true,
+    "all_utility_tests_pass": true,
+    "recovery_approved": true
+  }
+}

@@ -1,0 +1,217 @@
+{
+  "lab": "Day 27 Lab 11",
+  "incident_id": "INC-2711",
+  "trace_id": "TRACE-2711",
+  "indicators": [
+    {
+      "indicator_id": "IND-0001",
+      "event_id": "EVT-2711-001",
+      "indicator_type": "IOB",
+      "name": "instruction_override_attempt",
+      "value": "ignore_previous_instructions",
+      "component": "input_gateway",
+      "severity": "high"
+    },
+    {
+      "indicator_id": "IND-0002",
+      "event_id": "EVT-2711-002",
+      "indicator_type": "IOC",
+      "name": "untrusted_rag_source",
+      "value": "DOC-2791",
+      "component": "retrieval_service",
+      "severity": "high"
+    },
+    {
+      "indicator_id": "IND-0003",
+      "event_id": "EVT-2711-003",
+      "indicator_type": "IOB",
+      "name": "poisoned_context_admitted",
+      "value": "R-2799",
+      "component": "context_security_gateway",
+      "severity": "high"
+    },
+    {
+      "indicator_id": "IND-0004",
+      "event_id": "EVT-2711-004",
+      "indicator_type": "IOB",
+      "name": "unauthorized_memory_write",
+      "value": "MEMORY-2701",
+      "component": "memory_service",
+      "severity": "high"
+    },
+    {
+      "indicator_id": "IND-0005",
+      "event_id": "EVT-2711-005",
+      "indicator_type": "IOC",
+      "name": "persistent_malicious_instruction",
+      "value": "R-2799",
+      "component": "memory_service",
+      "severity": "critical"
+    },
+    {
+      "indicator_id": "IND-0006",
+      "event_id": "EVT-2711-006",
+      "indicator_type": "IOB",
+      "name": "cross_session_memory_influence",
+      "value": "MEMORY-2701",
+      "component": "memory_service",
+      "severity": "critical"
+    },
+    {
+      "indicator_id": "IND-0007",
+      "event_id": "EVT-2711-007",
+      "indicator_type": "IOB",
+      "name": "privileged_action_proposal",
+      "value": "delete_record",
+      "component": "agent_planner",
+      "severity": "critical"
+    },
+    {
+      "indicator_id": "IND-0008",
+      "event_id": "EVT-2711-008",
+      "indicator_type": "IOC",
+      "name": "restricted_target_selection",
+      "value": "R-2799",
+      "component": "tool_router",
+      "severity": "critical"
+    },
+    {
+      "indicator_id": "IND-0009",
+      "event_id": "EVT-2711-009",
+      "indicator_type": "IOB",
+      "name": "authorization_denied",
+      "value": "delete_record:R-2799",
+      "component": "authorization_service",
+      "severity": "high"
+    },
+    {
+      "indicator_id": "IND-0010",
+      "event_id": "EVT-2711-010",
+      "indicator_type": "IOB",
+      "name": "authorization_bypass",
+      "value": "delete_record:R-2799",
+      "component": "tool_runtime",
+      "severity": "critical"
+    },
+    {
+      "indicator_id": "IND-0011",
+      "event_id": "EVT-2711-011",
+      "indicator_type": "IOB",
+      "name": "unauthorized_tool_execution",
+      "value": "delete_record",
+      "component": "tool_runtime",
+      "severity": "critical"
+    },
+    {
+      "indicator_id": "IND-0012",
+      "event_id": "EVT-2711-012",
+      "indicator_type": "IOB",
+      "name": "unauthorized_system_impact",
+      "value": "unauthorized_record_deletion",
+      "component": "record_service",
+      "severity": "critical"
+    }
+  ],
+  "impact_factors": {
+    "prompt_injection_observed": true,
+    "rag_poisoning_observed": true,
+    "persistent_memory_compromise": true,
+    "cross_session_propagation": true,
+    "privileged_action_proposed": true,
+    "authorization_bypass": true,
+    "unauthorized_execution": true,
+    "unauthorized_system_impact": true,
+    "sensitive_information_disclosure": false
+  },
+  "risk_score": 100,
+  "incident_severity": "CRITICAL",
+  "blast_radius": {
+    "sessions_affected": [
+      "SESSION-2701",
+      "SESSION-2702"
+    ],
+    "agents_affected": [
+      "AGENT-2701",
+      "AGENT-2702"
+    ],
+    "memory_stores_affected": [
+      "MEMORY-2701"
+    ],
+    "rag_documents_involved": [
+      "DOC-2791"
+    ],
+    "restricted_targets_affected": [
+      "R-2799"
+    ],
+    "privileged_tools_involved": [
+      "delete_record"
+    ],
+    "cross_session": true,
+    "unauthorized_impact": true
+  },
+  "detection_intelligence": [
+    {
+      "rule_id": "AI-DET-2711-001",
+      "name": "Prompt Instruction Override Attempt",
+      "indicator": "instruction_override_attempt",
+      "priority": "high"
+    },
+    {
+      "rule_id": "AI-DET-2711-002",
+      "name": "Untrusted RAG Context Admission",
+      "indicator": "poisoned_context_admitted",
+      "priority": "high"
+    },
+    {
+      "rule_id": "AI-DET-2711-003",
+      "name": "Unauthorized Persistent Memory Write",
+      "indicator": "unauthorized_memory_write",
+      "priority": "high"
+    },
+    {
+      "rule_id": "AI-DET-2711-004",
+      "name": "Cross-Session Memory Influence",
+      "indicator": "cross_session_memory_influence",
+      "priority": "critical"
+    },
+    {
+      "rule_id": "AI-DET-2711-005",
+      "name": "Privileged Tool Proposal",
+      "indicator": "privileged_action_proposal",
+      "priority": "critical"
+    },
+    {
+      "rule_id": "AI-DET-2711-006",
+      "name": "Authorization Bypass",
+      "indicator": "authorization_bypass",
+      "priority": "critical"
+    },
+    {
+      "rule_id": "AI-DET-2711-007",
+      "name": "Unauthorized Tool Execution",
+      "indicator": "unauthorized_tool_execution",
+      "priority": "critical"
+    },
+    {
+      "rule_id": "AI-DET-2711-008",
+      "name": "Unauthorized AI System Impact",
+      "indicator": "unauthorized_system_impact",
+      "priority": "critical"
+    }
+  ],
+  "metrics": {
+    "total_indicators": 12,
+    "ioc_count": 3,
+    "iob_count": 9,
+    "unknown_count": 0,
+    "critical_indicators": 7
+  },
+  "security_checks": {
+    "classification_complete": true,
+    "critical_incident_identified": true,
+    "unauthorized_impact_detected": true,
+    "cross_session_detected": true,
+    "persistent_compromise_detected": true,
+    "detection_intelligence_generated": true
+  }
+}

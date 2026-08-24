@@ -1,0 +1,340 @@
+{
+  "lab": "Day 27 Lab 15",
+  "post_incident_review_id": "PIR-2715",
+  "incident_summary": {
+    "incident_id": "INC-2715",
+    "severity": "CRITICAL",
+    "initial_vector": "prompt_injection",
+    "attack_chain": [
+      "prompt_injection",
+      "poisoned_rag_retrieval",
+      "poisoned_context_admission",
+      "unauthorized_memory_write",
+      "persistent_memory_compromise",
+      "cross_session_memory_retrieval",
+      "agent_plan_manipulation",
+      "restricted_target_selection",
+      "privileged_tool_selection",
+      "authorization_bypass",
+      "unauthorized_tool_execution",
+      "unauthorized_system_impact"
+    ],
+    "impact": "unauthorized_record_deletion",
+    "time_to_detection_seconds": 192,
+    "time_to_incident_declaration_seconds": 195
+  },
+  "root_causes": [
+    {
+      "cause_id": "RC-001",
+      "type": "PRIMARY",
+      "cause": "Untrusted prompt and retrieved content were able to influence trusted execution state.",
+      "security_domain": "instruction_trust_boundary"
+    },
+    {
+      "cause_id": "RC-002",
+      "type": "CONTRIBUTING",
+      "cause": "Poisoned RAG content was admitted into runtime context.",
+      "security_domain": "rag_security"
+    },
+    {
+      "cause_id": "RC-003",
+      "type": "CONTRIBUTING",
+      "cause": "Untrusted runtime content was allowed to persist into long-lived memory.",
+      "security_domain": "memory_security"
+    },
+    {
+      "cause_id": "RC-004",
+      "type": "CONTRIBUTING",
+      "cause": "Persistent memory influence crossed session and agent boundaries.",
+      "security_domain": "persistent_state_security"
+    },
+    {
+      "cause_id": "RC-005",
+      "type": "CONTRIBUTING",
+      "cause": "Privileged tool selection was influenced by model-generated state.",
+      "security_domain": "tool_security"
+    },
+    {
+      "cause_id": "RC-006",
+      "type": "PRIMARY",
+      "cause": "Authorization failure did not reliably prevent downstream privileged execution.",
+      "security_domain": "authorization"
+    }
+  ],
+  "control_gaps": [
+    {
+      "gap_id": "GAP-001",
+      "control": "Prompt Trust Boundary",
+      "status": "INSUFFICIENT",
+      "finding": "Untrusted prompt instructions reached downstream processing."
+    },
+    {
+      "gap_id": "GAP-002",
+      "control": "RAG Source Validation",
+      "status": "INSUFFICIENT",
+      "finding": "Untrusted retrieved content was admitted into context."
+    },
+    {
+      "gap_id": "GAP-003",
+      "control": "Memory Write Authorization",
+      "status": "FAILED",
+      "finding": "Untrusted content was written into persistent memory."
+    },
+    {
+      "gap_id": "GAP-004",
+      "control": "Cross-Session Memory Trust",
+      "status": "FAILED",
+      "finding": "Persistent malicious state influenced a later session."
+    },
+    {
+      "gap_id": "GAP-005",
+      "control": "Privileged Tool Policy",
+      "status": "INSUFFICIENT",
+      "finding": "A compromised agent could propose a privileged tool."
+    },
+    {
+      "gap_id": "GAP-006",
+      "control": "Execution Authorization",
+      "status": "FAILED",
+      "finding": "Execution continued after authorization denial."
+    },
+    {
+      "gap_id": "GAP-007",
+      "control": "Early Multi-Stage Detection",
+      "status": "INSUFFICIENT",
+      "finding": "The incident was detected only after substantial propagation."
+    }
+  ],
+  "corrective_actions": [
+    {
+      "action_id": "CA-001",
+      "category": "PREVENTIVE",
+      "priority": "CRITICAL",
+      "owner": "AI_SECURITY_ENGINEERING",
+      "control_gap": "GAP-001",
+      "action": "Enforce instruction hierarchy and classify external content as untrusted data.",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "action_id": "CA-002",
+      "category": "PREVENTIVE",
+      "priority": "CRITICAL",
+      "owner": "RAG_PLATFORM_TEAM",
+      "control_gap": "GAP-002",
+      "action": "Require source trust, provenance validation, and security scanning before RAG context admission.",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "action_id": "CA-003",
+      "category": "CORRECTIVE",
+      "priority": "CRITICAL",
+      "owner": "AI_PLATFORM_TEAM",
+      "control_gap": "GAP-003",
+      "action": "Require explicit authorization and provenance for persistent memory writes.",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "action_id": "CA-004",
+      "category": "PREVENTIVE",
+      "priority": "HIGH",
+      "owner": "AI_PLATFORM_TEAM",
+      "control_gap": "GAP-004",
+      "action": "Bind persistent memory to trust level, source, session, expiry, and integrity metadata.",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "action_id": "CA-005",
+      "category": "PREVENTIVE",
+      "priority": "CRITICAL",
+      "owner": "AGENT_SECURITY_TEAM",
+      "control_gap": "GAP-005",
+      "action": "Require independent authorization for privileged tool selection and execution.",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "action_id": "CA-006",
+      "category": "CORRECTIVE",
+      "priority": "CRITICAL",
+      "owner": "IDENTITY_SECURITY_TEAM",
+      "control_gap": "GAP-006",
+      "action": "Enforce fail-closed authorization so denied operations cannot continue into execution.",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "action_id": "CA-007",
+      "category": "DETECTIVE",
+      "priority": "HIGH",
+      "owner": "AI_SOC",
+      "control_gap": "GAP-007",
+      "action": "Correlate prompt injection, poisoned retrieval, memory writes, privileged tool proposals, and authorization anomalies.",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "action_id": "CA-008",
+      "category": "DETECTIVE",
+      "priority": "HIGH",
+      "owner": "AI_SOC",
+      "control_gap": "GAP-007",
+      "action": "Generate high-severity alerts when malicious state crosses session or agent boundaries.",
+      "status": "IMPLEMENTED"
+    }
+  ],
+  "detection_engineering": [
+    {
+      "rule_id": "AI-PIR-DET-001",
+      "name": "Prompt Override + RAG Poison Correlation",
+      "logic": [
+        "prompt_injection_detected",
+        "untrusted_rag_document_retrieved"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "rule_id": "AI-PIR-DET-002",
+      "name": "Poisoned Context + Memory Write",
+      "logic": [
+        "poisoned_context_admitted",
+        "unauthorized_memory_write"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "rule_id": "AI-PIR-DET-003",
+      "name": "Cross-Session Poisoned Memory Activation",
+      "logic": [
+        "malicious_memory_persisted",
+        "later_session_memory_read",
+        "behavior_influenced"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "rule_id": "AI-PIR-DET-004",
+      "name": "Restricted Target + Privileged Tool",
+      "logic": [
+        "restricted_target_selected",
+        "privileged_tool_selected"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "rule_id": "AI-PIR-DET-005",
+      "name": "Authorization Denial Followed by Execution",
+      "logic": [
+        "authorization_denied",
+        "tool_execution_observed"
+      ],
+      "severity": "CRITICAL"
+    },
+    {
+      "rule_id": "AI-PIR-DET-006",
+      "name": "Unauthorized Execution Impact",
+      "logic": [
+        "authorization_bypass",
+        "unauthorized_tool_execution",
+        "unauthorized_system_impact"
+      ],
+      "severity": "CRITICAL"
+    }
+  ],
+  "baseline_timing": {
+    "time_to_detection_seconds": 192,
+    "time_to_incident_seconds": 195
+  },
+  "hardened_timing": {
+    "time_to_detection_seconds": 8,
+    "time_to_incident_seconds": 12
+  },
+  "validation_tests": [
+    {
+      "test_id": "PIR-VAL-001",
+      "name": "Prompt injection blocked",
+      "passed": true
+    },
+    {
+      "test_id": "PIR-VAL-002",
+      "name": "Poisoned RAG content rejected",
+      "passed": true
+    },
+    {
+      "test_id": "PIR-VAL-003",
+      "name": "Unauthorized memory write blocked",
+      "passed": true
+    },
+    {
+      "test_id": "PIR-VAL-004",
+      "name": "Cross-session malicious memory blocked",
+      "passed": true
+    },
+    {
+      "test_id": "PIR-VAL-005",
+      "name": "Privileged tool requires independent authorization",
+      "passed": true
+    },
+    {
+      "test_id": "PIR-VAL-006",
+      "name": "Authorization denial blocks execution",
+      "passed": true
+    },
+    {
+      "test_id": "PIR-VAL-007",
+      "name": "Multi-stage attack correlation alert generated",
+      "passed": true
+    },
+    {
+      "test_id": "PIR-VAL-008",
+      "name": "Legitimate authorized workflow preserved",
+      "passed": true
+    }
+  ],
+  "lessons_learned": [
+    {
+      "lesson_id": "LESSON-001",
+      "lesson": "Prompt security cannot be evaluated independently from retrieval, memory, and tool execution."
+    },
+    {
+      "lesson_id": "LESSON-002",
+      "lesson": "Persistent AI memory creates a cross-session attack surface."
+    },
+    {
+      "lesson_id": "LESSON-003",
+      "lesson": "Model-generated approval or authority must never substitute for external authorization."
+    },
+    {
+      "lesson_id": "LESSON-004",
+      "lesson": "Authorization denial must terminate the execution path."
+    },
+    {
+      "lesson_id": "LESSON-005",
+      "lesson": "Detection engineering must correlate behavior across multiple AI components."
+    },
+    {
+      "lesson_id": "LESSON-006",
+      "lesson": "Evidence preservation must occur before destructive containment or eradication."
+    },
+    {
+      "lesson_id": "LESSON-007",
+      "lesson": "Recovery should restore validated functionality rather than automatically restoring all pre-incident privilege."
+    }
+  ],
+  "metrics": {
+    "root_causes": 6,
+    "control_gaps": 7,
+    "corrective_actions": 8,
+    "corrective_action_completion_rate": 100.0,
+    "detection_rules_added": 6,
+    "validation_pass_rate": 100.0,
+    "detection_time_reduction_seconds": 184,
+    "detection_time_improvement_rate": 95.83333333333334
+  },
+  "security_checks": {
+    "root_causes_documented": true,
+    "control_gaps_documented": true,
+    "all_control_gaps_addressed": true,
+    "all_actions_implemented": true,
+    "detection_improved": true,
+    "all_validation_tests_pass": true,
+    "lessons_documented": true,
+    "post_incident_review_complete": true
+  }
+}

@@ -1,0 +1,367 @@
+{
+  "lab": "Day 27 Lab 9",
+  "title": "Incident Timeline Reconstruction & Attack-Chain Correlation",
+  "incident_id": "INC-2709",
+  "trace_id": "TRACE-2709",
+  "expected_attack_stages": [
+    "INITIAL_PROMPT_INJECTION",
+    "POISONED_RAG_RETRIEVAL",
+    "POISONED_CONTEXT_ADMISSION",
+    "UNAUTHORIZED_MEMORY_WRITE",
+    "MEMORY_PERSISTENCE",
+    "CROSS_SESSION_MEMORY_RETRIEVAL",
+    "AGENT_PLAN_MANIPULATION",
+    "RESTRICTED_TARGET_SELECTION",
+    "PRIVILEGED_TOOL_SELECTION",
+    "AUTHORIZATION_FAILURE",
+    "AUTHORIZATION_BYPASS",
+    "UNAUTHORIZED_TOOL_EXECUTION",
+    "UNAUTHORIZED_SYSTEM_IMPACT",
+    "SECURITY_ALERT",
+    "INCIDENT_DECLARATION"
+  ],
+  "timeline": [
+    {
+      "sequence": 1,
+      "timestamp": "2026-08-24T17:50:00+00:00",
+      "session_id": "SESSION-2701",
+      "agent_id": "AGENT-2701",
+      "component": "input_gateway",
+      "event_type": "prompt_received",
+      "attack_stage": "INITIAL_PROMPT_INJECTION",
+      "details": {
+        "prompt_classification": "suspicious",
+        "indicator": "instruction_override"
+      },
+      "incident_id": "INC-2709",
+      "trace_id": "TRACE-2709",
+      "previous_event_hash": "GENESIS",
+      "event_hash": "105cc9c704f2a1c5bdf8609771a55b17ea0714139e4d101985203c47fd511132"
+    },
+    {
+      "sequence": 2,
+      "timestamp": "2026-08-24T17:50:02+00:00",
+      "session_id": "SESSION-2701",
+      "agent_id": "AGENT-2701",
+      "component": "retrieval_service",
+      "event_type": "rag_retrieval",
+      "attack_stage": "POISONED_RAG_RETRIEVAL",
+      "details": {
+        "document_id": "DOC-2791",
+        "source": "external_untrusted_upload",
+        "poison_detected": true
+      },
+      "incident_id": "INC-2709",
+      "trace_id": "TRACE-2709",
+      "previous_event_hash": "105cc9c704f2a1c5bdf8609771a55b17ea0714139e4d101985203c47fd511132",
+      "event_hash": "10afcd1d4f6ba147d4334f530fdcfeda2dee8b24881e2781f7a1707086a399e3"
+    },
+    {
+      "sequence": 3,
+      "timestamp": "2026-08-24T17:50:04+00:00",
+      "session_id": "SESSION-2701",
+      "agent_id": "AGENT-2701",
+      "component": "context_security_gateway",
+      "event_type": "context_admission",
+      "attack_stage": "POISONED_CONTEXT_ADMISSION",
+      "details": {
+        "document_id": "DOC-2791",
+        "admitted": true,
+        "trusted": false
+      },
+      "incident_id": "INC-2709",
+      "trace_id": "TRACE-2709",
+      "previous_event_hash": "10afcd1d4f6ba147d4334f530fdcfeda2dee8b24881e2781f7a1707086a399e3",
+      "event_hash": "ae66f76f6f0ae6a9ca8bd3d9b236757fcd53ee79f1e2a07cf4cd7a52c7f755a9"
+    },
+    {
+      "sequence": 4,
+      "timestamp": "2026-08-24T17:50:07+00:00",
+      "session_id": "SESSION-2701",
+      "agent_id": "AGENT-2701",
+      "component": "memory_service",
+      "event_type": "memory_write",
+      "attack_stage": "UNAUTHORIZED_MEMORY_WRITE",
+      "details": {
+        "memory_store": "MEMORY-2701",
+        "authorized": false,
+        "source": "poisoned_rag_context"
+      },
+      "incident_id": "INC-2709",
+      "trace_id": "TRACE-2709",
+      "previous_event_hash": "ae66f76f6f0ae6a9ca8bd3d9b236757fcd53ee79f1e2a07cf4cd7a52c7f755a9",
+      "event_hash": "a0abb31d6c932c3d5a537bc9d0b5323a925b60edd155a8d3d665c7bd73dfd0d2"
+    },
+    {
+      "sequence": 5,
+      "timestamp": "2026-08-24T17:50:08+00:00",
+      "session_id": "SESSION-2701",
+      "agent_id": "AGENT-2701",
+      "component": "memory_service",
+      "event_type": "memory_persistence",
+      "attack_stage": "MEMORY_PERSISTENCE",
+      "details": {
+        "memory_store": "MEMORY-2701",
+        "persistent": true
+      },
+      "incident_id": "INC-2709",
+      "trace_id": "TRACE-2709",
+      "previous_event_hash": "a0abb31d6c932c3d5a537bc9d0b5323a925b60edd155a8d3d665c7bd73dfd0d2",
+      "event_hash": "cfd78d0517ffca05cb5ddd971d3afb347ee1f52c1475a7c4830d65d4684a6bde"
+    },
+    {
+      "sequence": 6,
+      "timestamp": "2026-08-24T17:53:00+00:00",
+      "session_id": "SESSION-2702",
+      "agent_id": "AGENT-2702",
+      "component": "memory_service",
+      "event_type": "memory_read",
+      "attack_stage": "CROSS_SESSION_MEMORY_RETRIEVAL",
+      "details": {
+        "memory_store": "MEMORY-2701",
+        "source_session": "SESSION-2701",
+        "retrieved": true
+      },
+      "incident_id": "INC-2709",
+      "trace_id": "TRACE-2709",
+      "previous_event_hash": "cfd78d0517ffca05cb5ddd971d3afb347ee1f52c1475a7c4830d65d4684a6bde",
+      "event_hash": "e76c680770203455fc5d7c9a347d7d1dc8ce3594271900622388b7d62e79e194"
+    },
+    {
+      "sequence": 7,
+      "timestamp": "2026-08-24T17:53:02+00:00",
+      "session_id": "SESSION-2702",
+      "agent_id": "AGENT-2702",
+      "component": "agent_planner",
+      "event_type": "agent_plan",
+      "attack_stage": "AGENT_PLAN_MANIPULATION",
+      "details": {
+        "plan_influenced_by_memory": true,
+        "proposed_target": "R-2799",
+        "proposed_tool": "delete_record"
+      },
+      "incident_id": "INC-2709",
+      "trace_id": "TRACE-2709",
+      "previous_event_hash": "e76c680770203455fc5d7c9a347d7d1dc8ce3594271900622388b7d62e79e194",
+      "event_hash": "bfef47af259abd60d0e63aa8def86a2287552bb6a6bbaa5878e1df7356086e67"
+    },
+    {
+      "sequence": 8,
+      "timestamp": "2026-08-24T17:53:04+00:00",
+      "session_id": "SESSION-2702",
+      "agent_id": "AGENT-2702",
+      "component": "tool_router",
+      "event_type": "target_selection",
+      "attack_stage": "RESTRICTED_TARGET_SELECTION",
+      "details": {
+        "trusted_target": "R-2702",
+        "selected_target": "R-2799",
+        "restricted": true
+      },
+      "incident_id": "INC-2709",
+      "trace_id": "TRACE-2709",
+      "previous_event_hash": "bfef47af259abd60d0e63aa8def86a2287552bb6a6bbaa5878e1df7356086e67",
+      "event_hash": "35e5cc4e1480eaee55e7def2200d095bf21c0d0d52bced2ca981ad1ec7ada076"
+    },
+    {
+      "sequence": 9,
+      "timestamp": "2026-08-24T17:53:05+00:00",
+      "session_id": "SESSION-2702",
+      "agent_id": "AGENT-2702",
+      "component": "tool_router",
+      "event_type": "tool_selected",
+      "attack_stage": "PRIVILEGED_TOOL_SELECTION",
+      "details": {
+        "tool": "delete_record",
+        "privileged": true
+      },
+      "incident_id": "INC-2709",
+      "trace_id": "TRACE-2709",
+      "previous_event_hash": "35e5cc4e1480eaee55e7def2200d095bf21c0d0d52bced2ca981ad1ec7ada076",
+      "event_hash": "4d060292f5bdbe016c602362e816685d730802e6f2df6d1a99841ace59d837ec"
+    },
+    {
+      "sequence": 10,
+      "timestamp": "2026-08-24T17:53:07+00:00",
+      "session_id": "SESSION-2702",
+      "agent_id": "AGENT-2702",
+      "component": "authorization_service",
+      "event_type": "authorization_check",
+      "attack_stage": "AUTHORIZATION_FAILURE",
+      "details": {
+        "authorized": false,
+        "tool": "delete_record",
+        "target": "R-2799"
+      },
+      "incident_id": "INC-2709",
+      "trace_id": "TRACE-2709",
+      "previous_event_hash": "4d060292f5bdbe016c602362e816685d730802e6f2df6d1a99841ace59d837ec",
+      "event_hash": "ef3bb38f8a3f62c092fa839f0ddb1a06c21c9ed80e4f883db3b3513f20c6e0bf"
+    },
+    {
+      "sequence": 11,
+      "timestamp": "2026-08-24T17:53:08+00:00",
+      "session_id": "SESSION-2702",
+      "agent_id": "AGENT-2702",
+      "component": "tool_runtime",
+      "event_type": "authorization_bypass",
+      "attack_stage": "AUTHORIZATION_BYPASS",
+      "details": {
+        "authorization_required": true,
+        "authorization_result": false,
+        "execution_continued": true
+      },
+      "incident_id": "INC-2709",
+      "trace_id": "TRACE-2709",
+      "previous_event_hash": "ef3bb38f8a3f62c092fa839f0ddb1a06c21c9ed80e4f883db3b3513f20c6e0bf",
+      "event_hash": "b9844939bd956fa3496cce10ed5e2e1fc2bdf222fc6bd8e4419ed1cbbda9706a"
+    },
+    {
+      "sequence": 12,
+      "timestamp": "2026-08-24T17:53:09+00:00",
+      "session_id": "SESSION-2702",
+      "agent_id": "AGENT-2702",
+      "component": "tool_runtime",
+      "event_type": "tool_execution",
+      "attack_stage": "UNAUTHORIZED_TOOL_EXECUTION",
+      "details": {
+        "tool": "delete_record",
+        "target": "R-2799",
+        "executed": true,
+        "authorized": false
+      },
+      "incident_id": "INC-2709",
+      "trace_id": "TRACE-2709",
+      "previous_event_hash": "b9844939bd956fa3496cce10ed5e2e1fc2bdf222fc6bd8e4419ed1cbbda9706a",
+      "event_hash": "4d0ddeec4e45566a56544f32479a6aa37c027e3b968acb4bb6f6e8f62d215aa7"
+    },
+    {
+      "sequence": 13,
+      "timestamp": "2026-08-24T17:53:10+00:00",
+      "session_id": "SESSION-2702",
+      "agent_id": "AGENT-2702",
+      "component": "record_service",
+      "event_type": "security_impact",
+      "attack_stage": "UNAUTHORIZED_SYSTEM_IMPACT",
+      "details": {
+        "target": "R-2799",
+        "impact_type": "unauthorized_record_deletion",
+        "impact": true
+      },
+      "incident_id": "INC-2709",
+      "trace_id": "TRACE-2709",
+      "previous_event_hash": "4d0ddeec4e45566a56544f32479a6aa37c027e3b968acb4bb6f6e8f62d215aa7",
+      "event_hash": "f15bfb71c8933ea35dc89f5aa9cfd63e6ead06c3d1882f87c01434f8757092e2"
+    },
+    {
+      "sequence": 14,
+      "timestamp": "2026-08-24T17:53:12+00:00",
+      "session_id": "SESSION-2702",
+      "agent_id": "AGENT-2702",
+      "component": "detection_engine",
+      "event_type": "security_alert",
+      "attack_stage": "SECURITY_ALERT",
+      "details": {
+        "alert_id": "ALERT-2709",
+        "severity": "critical"
+      },
+      "incident_id": "INC-2709",
+      "trace_id": "TRACE-2709",
+      "previous_event_hash": "f15bfb71c8933ea35dc89f5aa9cfd63e6ead06c3d1882f87c01434f8757092e2",
+      "event_hash": "ce30f8801b87aea5ca78e3014d5cbb10b50d5aacc40c0b00e6047f968520fe7d"
+    },
+    {
+      "sequence": 15,
+      "timestamp": "2026-08-24T17:53:15+00:00",
+      "session_id": "SESSION-2702",
+      "agent_id": "AGENT-2702",
+      "component": "incident_response_service",
+      "event_type": "incident_created",
+      "attack_stage": "INCIDENT_DECLARATION",
+      "details": {
+        "incident_id": "INC-2709",
+        "severity": "critical",
+        "status": "open"
+      },
+      "incident_id": "INC-2709",
+      "trace_id": "TRACE-2709",
+      "previous_event_hash": "ce30f8801b87aea5ca78e3014d5cbb10b50d5aacc40c0b00e6047f968520fe7d",
+      "event_hash": "f115b444de621e7fadda08121e40e042d72bb12aea0407406d9cdc3298d8a2b5"
+    }
+  ],
+  "correlation": {
+    "total_events": 15,
+    "correlated_events": 15,
+    "event_correlation_rate": 100.0,
+    "attack_stage_reconstruction_rate": 100.0,
+    "missing_attack_stages": []
+  },
+  "root_cause": {
+    "event_id": 1,
+    "stage": "INITIAL_PROMPT_INJECTION",
+    "component": "input_gateway",
+    "reason": "Initial prompt injection introduced untrusted instructions that led to poisoned RAG context and persistent memory compromise."
+  },
+  "blast_radius": {
+    "affected_sessions": [
+      "SESSION-2701",
+      "SESSION-2702"
+    ],
+    "affected_session_count": 2,
+    "affected_agents": [
+      "AGENT-2701",
+      "AGENT-2702"
+    ],
+    "affected_agent_count": 2,
+    "affected_components": [
+      "agent_planner",
+      "authorization_service",
+      "context_security_gateway",
+      "detection_engine",
+      "incident_response_service",
+      "input_gateway",
+      "memory_service",
+      "record_service",
+      "retrieval_service",
+      "tool_router",
+      "tool_runtime"
+    ],
+    "affected_component_count": 11,
+    "affected_memory_stores": [
+      "MEMORY-2701"
+    ],
+    "affected_targets": [
+      "R-2799"
+    ],
+    "privileged_tools": [
+      "delete_record"
+    ],
+    "unauthorized_impact": true,
+    "impact_type": "unauthorized_record_deletion"
+  },
+  "timing": {
+    "initial_attack_time": "2026-08-24T17:50:00+00:00",
+    "alert_time": "2026-08-24T17:53:12+00:00",
+    "incident_time": "2026-08-24T17:53:15+00:00",
+    "time_to_detection_seconds": 192.0,
+    "time_to_incident_seconds": 195.0
+  },
+  "evidence_quality": {
+    "evidence_integrity_rate": 100.0,
+    "hash_chain_valid": true,
+    "timeline_complete": true,
+    "single_incident_correlation": true,
+    "single_trace_correlation": true
+  },
+  "security_checks": {
+    "all_events_correlated": true,
+    "all_stages_reconstructed": true,
+    "evidence_integrity_verified": true,
+    "hash_chain_valid": true,
+    "timeline_complete": true,
+    "root_cause_identified": true,
+    "cross_session_impact_identified": true,
+    "cross_agent_impact_identified": true,
+    "forensic_baseline_valid": true
+  }
+}

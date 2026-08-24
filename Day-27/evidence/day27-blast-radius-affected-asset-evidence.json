@@ -1,0 +1,247 @@
+{
+  "lab": "Day 27 Lab 12",
+  "incident_id": "INC-2712",
+  "trace_id": "TRACE-2712",
+  "scoped_assets": [
+    {
+      "asset_id": "SESSION-2701",
+      "asset_type": "session",
+      "criticality": "medium",
+      "scope_status": "CONFIRMED_COMPROMISED",
+      "scope_reason": "Direct evidence links this asset to the reconstructed attack chain."
+    },
+    {
+      "asset_id": "SESSION-2702",
+      "asset_type": "session",
+      "criticality": "high",
+      "scope_status": "CONFIRMED_COMPROMISED",
+      "scope_reason": "Direct evidence links this asset to the reconstructed attack chain."
+    },
+    {
+      "asset_id": "SESSION-2703",
+      "asset_type": "session",
+      "criticality": "medium",
+      "scope_status": "POTENTIALLY_EXPOSED",
+      "scope_reason": "Potential future session could consume persistent compromised memory."
+    },
+    {
+      "asset_id": "AGENT-2701",
+      "asset_type": "agent",
+      "criticality": "high",
+      "scope_status": "CONFIRMED_COMPROMISED",
+      "scope_reason": "Direct evidence links this asset to the reconstructed attack chain."
+    },
+    {
+      "asset_id": "AGENT-2702",
+      "asset_type": "agent",
+      "criticality": "critical",
+      "scope_status": "CONFIRMED_COMPROMISED",
+      "scope_reason": "Direct evidence links this asset to the reconstructed attack chain."
+    },
+    {
+      "asset_id": "MEMORY-2701",
+      "asset_type": "memory_store",
+      "criticality": "critical",
+      "scope_status": "CONFIRMED_COMPROMISED",
+      "scope_reason": "Direct evidence links this asset to the reconstructed attack chain."
+    },
+    {
+      "asset_id": "MEMORY-2702",
+      "asset_type": "memory_store",
+      "criticality": "high",
+      "scope_status": "POTENTIALLY_EXPOSED",
+      "scope_reason": "Adjacent memory store requires review for propagation or shared-write exposure."
+    },
+    {
+      "asset_id": "DOC-2791",
+      "asset_type": "rag_document",
+      "criticality": "high",
+      "scope_status": "CONFIRMED_COMPROMISED",
+      "scope_reason": "Direct evidence links this asset to the reconstructed attack chain."
+    },
+    {
+      "asset_id": "RAG-2701",
+      "asset_type": "rag_store",
+      "criticality": "high",
+      "scope_status": "POTENTIALLY_EXPOSED",
+      "scope_reason": "RAG store contained or delivered the poisoned document."
+    },
+    {
+      "asset_id": "CONTEXT-2701",
+      "asset_type": "runtime_context",
+      "criticality": "high",
+      "scope_status": "CONFIRMED_COMPROMISED",
+      "scope_reason": "Direct evidence links this asset to the reconstructed attack chain."
+    },
+    {
+      "asset_id": "R-2799",
+      "asset_type": "restricted_target",
+      "criticality": "critical",
+      "scope_status": "CONFIRMED_COMPROMISED",
+      "scope_reason": "Direct evidence links this asset to the reconstructed attack chain."
+    },
+    {
+      "asset_id": "delete_record",
+      "asset_type": "privileged_tool",
+      "criticality": "critical",
+      "scope_status": "CONFIRMED_COMPROMISED",
+      "scope_reason": "Direct evidence links this asset to the reconstructed attack chain."
+    },
+    {
+      "asset_id": "AUTHZ-2701",
+      "asset_type": "authorization_boundary",
+      "criticality": "critical",
+      "scope_status": "CONFIRMED_COMPROMISED",
+      "scope_reason": "Direct evidence links this asset to the reconstructed attack chain."
+    },
+    {
+      "asset_id": "USER-2701",
+      "asset_type": "identity",
+      "criticality": "high",
+      "scope_status": "POTENTIALLY_EXPOSED",
+      "scope_reason": "Identity activity must be reviewed to distinguish attacker-controlled behavior from compromised workflow."
+    },
+    {
+      "asset_id": "RECORD-SERVICE-2701",
+      "asset_type": "downstream_service",
+      "criticality": "critical",
+      "scope_status": "POTENTIALLY_EXPOSED",
+      "scope_reason": "Downstream record service processed the unauthorized privileged operation."
+    }
+  ],
+  "affected_sessions": [
+    "SESSION-2701",
+    "SESSION-2702"
+  ],
+  "affected_agents": [
+    "AGENT-2701",
+    "AGENT-2702"
+  ],
+  "affected_components": [
+    "agent_planner",
+    "authorization_service",
+    "context_security_gateway",
+    "input_gateway",
+    "memory_service",
+    "record_service",
+    "retrieval_service",
+    "tool_router"
+  ],
+  "containment_actions": [
+    {
+      "asset_id": "SESSION-2701",
+      "asset_type": "session",
+      "priority": "HIGH",
+      "action": "isolate_preserve_and_validate"
+    },
+    {
+      "asset_id": "SESSION-2702",
+      "asset_type": "session",
+      "priority": "HIGH",
+      "action": "isolate_preserve_and_validate"
+    },
+    {
+      "asset_id": "SESSION-2703",
+      "asset_type": "session",
+      "priority": "REVIEW",
+      "action": "investigate_and_restrict_if_required"
+    },
+    {
+      "asset_id": "AGENT-2701",
+      "asset_type": "agent",
+      "priority": "HIGH",
+      "action": "isolate_preserve_and_validate"
+    },
+    {
+      "asset_id": "AGENT-2702",
+      "asset_type": "agent",
+      "priority": "IMMEDIATE",
+      "action": "isolate_preserve_and_validate"
+    },
+    {
+      "asset_id": "MEMORY-2701",
+      "asset_type": "memory_store",
+      "priority": "IMMEDIATE",
+      "action": "isolate_preserve_and_validate"
+    },
+    {
+      "asset_id": "MEMORY-2702",
+      "asset_type": "memory_store",
+      "priority": "REVIEW",
+      "action": "investigate_and_restrict_if_required"
+    },
+    {
+      "asset_id": "DOC-2791",
+      "asset_type": "rag_document",
+      "priority": "HIGH",
+      "action": "isolate_preserve_and_validate"
+    },
+    {
+      "asset_id": "RAG-2701",
+      "asset_type": "rag_store",
+      "priority": "REVIEW",
+      "action": "investigate_and_restrict_if_required"
+    },
+    {
+      "asset_id": "CONTEXT-2701",
+      "asset_type": "runtime_context",
+      "priority": "HIGH",
+      "action": "isolate_preserve_and_validate"
+    },
+    {
+      "asset_id": "R-2799",
+      "asset_type": "restricted_target",
+      "priority": "IMMEDIATE",
+      "action": "isolate_preserve_and_validate"
+    },
+    {
+      "asset_id": "delete_record",
+      "asset_type": "privileged_tool",
+      "priority": "IMMEDIATE",
+      "action": "isolate_preserve_and_validate"
+    },
+    {
+      "asset_id": "AUTHZ-2701",
+      "asset_type": "authorization_boundary",
+      "priority": "IMMEDIATE",
+      "action": "isolate_preserve_and_validate"
+    },
+    {
+      "asset_id": "USER-2701",
+      "asset_type": "identity",
+      "priority": "REVIEW",
+      "action": "investigate_and_restrict_if_required"
+    },
+    {
+      "asset_id": "RECORD-SERVICE-2701",
+      "asset_type": "downstream_service",
+      "priority": "REVIEW",
+      "action": "investigate_and_restrict_if_required"
+    }
+  ],
+  "metrics": {
+    "total_assets": 15,
+    "confirmed_compromised_assets": 10,
+    "potentially_exposed_assets": 5,
+    "no_current_evidence_assets": 0,
+    "assets_requiring_action": 15,
+    "confirmed_compromise_rate": 66.66666666666666,
+    "blast_radius_scope_rate": 100.0,
+    "scoping_completeness_rate": 100.0
+  },
+  "propagation": {
+    "cross_session_spread": true,
+    "cross_agent_spread": true,
+    "persistent_memory_compromise": true,
+    "privileged_execution_scope": true,
+    "restricted_target_impact": true,
+    "authorization_boundary_affected": true
+  },
+  "security_checks": {
+    "confirmed_compromise_identified": true,
+    "potential_exposure_identified": true,
+    "all_scope_categories_covered": true,
+    "containment_scope_generated": true,
+    "blast_radius_reconstructed": true
+  }
+}
