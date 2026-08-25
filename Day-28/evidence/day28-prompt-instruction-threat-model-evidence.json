@@ -1,0 +1,503 @@
+{
+  "lab": "Day 28 Lab 5",
+  "title": "Prompt & Instruction Threat Modeling",
+  "trust_levels": {
+    "SYSTEM": 5,
+    "DEVELOPER": 4,
+    "APPLICATION_POLICY": 4,
+    "AUTHORIZED_USER_TASK": 3,
+    "RAG_CONTEXT": 1,
+    "PERSISTENT_MEMORY": 1,
+    "EXTERNAL_CONTENT": 0,
+    "UNTRUSTED_USER_INPUT": 0
+  },
+  "instruction_sources": [
+    {
+      "source_id": "SRC-2801",
+      "name": "System Prompt",
+      "type": "SYSTEM",
+      "trusted": true,
+      "persistent": true,
+      "user_controlled": false
+    },
+    {
+      "source_id": "SRC-2802",
+      "name": "Application Security Policy",
+      "type": "APPLICATION_POLICY",
+      "trusted": true,
+      "persistent": true,
+      "user_controlled": false
+    },
+    {
+      "source_id": "SRC-2803",
+      "name": "Authorized User Task",
+      "type": "AUTHORIZED_USER_TASK",
+      "trusted": true,
+      "persistent": false,
+      "user_controlled": true
+    },
+    {
+      "source_id": "SRC-2804",
+      "name": "Untrusted User Prompt Content",
+      "type": "UNTRUSTED_USER_INPUT",
+      "trusted": false,
+      "persistent": false,
+      "user_controlled": true
+    },
+    {
+      "source_id": "SRC-2805",
+      "name": "Retrieved RAG Context",
+      "type": "RAG_CONTEXT",
+      "trusted": false,
+      "persistent": false,
+      "user_controlled": false
+    },
+    {
+      "source_id": "SRC-2806",
+      "name": "Persistent AI Memory",
+      "type": "PERSISTENT_MEMORY",
+      "trusted": false,
+      "persistent": true,
+      "user_controlled": false
+    },
+    {
+      "source_id": "SRC-2807",
+      "name": "External Tool / Web Content",
+      "type": "EXTERNAL_CONTENT",
+      "trusted": false,
+      "persistent": false,
+      "user_controlled": false
+    }
+  ],
+  "threats": [
+    {
+      "threat_id": "PTH-2801",
+      "name": "Direct Prompt Injection",
+      "category": "PROMPT_INJECTION",
+      "source": "SRC-2804",
+      "target": "System Prompt",
+      "technique": "User input explicitly attempts to override trusted instructions.",
+      "impact": "Trusted task or security policy may be replaced by attacker intent.",
+      "likelihood": 5,
+      "impact_score": 4,
+      "risk_score": 20,
+      "priority": "CRITICAL"
+    },
+    {
+      "threat_id": "PTH-2802",
+      "name": "Indirect Prompt Injection",
+      "category": "PROMPT_INJECTION",
+      "source": "SRC-2805",
+      "target": "LLM Runtime",
+      "technique": "Retrieved content embeds instructions that are interpreted as executable guidance.",
+      "impact": "Untrusted RAG content may steer model behavior.",
+      "likelihood": 4,
+      "impact_score": 5,
+      "risk_score": 20,
+      "priority": "CRITICAL"
+    },
+    {
+      "threat_id": "PTH-2803",
+      "name": "External Content Instruction Injection",
+      "category": "PROMPT_INJECTION",
+      "source": "SRC-2807",
+      "target": "LLM Runtime",
+      "technique": "Tool, webpage, document, or external content contains hidden or explicit instructions.",
+      "impact": "External data may gain instruction authority.",
+      "likelihood": 4,
+      "impact_score": 5,
+      "risk_score": 20,
+      "priority": "CRITICAL"
+    },
+    {
+      "threat_id": "PTH-2804",
+      "name": "Instruction Hierarchy Confusion",
+      "category": "TRUST_CONFUSION",
+      "source": "SRC-2804",
+      "target": "Instruction Resolver",
+      "technique": "Lower-trust instructions are interpreted as having equal or greater priority than trusted instructions.",
+      "impact": "Security boundaries encoded in higher-priority instructions may fail.",
+      "likelihood": 4,
+      "impact_score": 5,
+      "risk_score": 20,
+      "priority": "CRITICAL"
+    },
+    {
+      "threat_id": "PTH-2805",
+      "name": "Fake Administrator Authority",
+      "category": "AUTHORITY_SPOOFING",
+      "source": "SRC-2804",
+      "target": "Application Policy",
+      "technique": "Prompt claims that an administrator, security team, or trusted authority approved an exception.",
+      "impact": "Untrusted language may be mistaken for authorization.",
+      "likelihood": 4,
+      "impact_score": 5,
+      "risk_score": 20,
+      "priority": "CRITICAL"
+    },
+    {
+      "threat_id": "PTH-2806",
+      "name": "Retrieved Authority Spoofing",
+      "category": "AUTHORITY_SPOOFING",
+      "source": "SRC-2805",
+      "target": "Agent Planner",
+      "technique": "RAG document claims approval, policy authority, or trusted identity.",
+      "impact": "Retrieved text may influence privileged agent behavior.",
+      "likelihood": 4,
+      "impact_score": 5,
+      "risk_score": 20,
+      "priority": "CRITICAL"
+    },
+    {
+      "threat_id": "PTH-2807",
+      "name": "System Prompt Extraction",
+      "category": "PROMPT_DISCLOSURE",
+      "source": "SRC-2804",
+      "target": "System Prompt",
+      "technique": "Attacker requests hidden system instructions or uses transformation techniques to reveal them.",
+      "impact": "Confidential security instructions and implementation details may be disclosed.",
+      "likelihood": 4,
+      "impact_score": 3,
+      "risk_score": 12,
+      "priority": "MEDIUM"
+    },
+    {
+      "threat_id": "PTH-2808",
+      "name": "Policy Extraction",
+      "category": "PROMPT_DISCLOSURE",
+      "source": "SRC-2804",
+      "target": "Application Security Policy",
+      "technique": "Attacker attempts to reconstruct hidden policy or guardrail logic.",
+      "impact": "Defensive logic may become easier to target.",
+      "likelihood": 3,
+      "impact_score": 3,
+      "risk_score": 9,
+      "priority": "MEDIUM"
+    },
+    {
+      "threat_id": "PTH-2809",
+      "name": "Role-Play Policy Evasion",
+      "category": "JAILBREAK",
+      "source": "SRC-2804",
+      "target": "LLM Runtime",
+      "technique": "Attacker reframes restricted behavior as role-play, simulation, fiction, or alternate persona.",
+      "impact": "Policy restrictions may be weakened or bypassed.",
+      "likelihood": 4,
+      "impact_score": 4,
+      "risk_score": 16,
+      "priority": "HIGH"
+    },
+    {
+      "threat_id": "PTH-2810",
+      "name": "Instruction Encoding / Obfuscation",
+      "category": "JAILBREAK",
+      "source": "SRC-2804",
+      "target": "Security Classifier",
+      "technique": "Malicious instructions are encoded, fragmented, translated, or obfuscated to evade detection.",
+      "impact": "Prompt security controls may fail to identify adversarial intent.",
+      "likelihood": 4,
+      "impact_score": 4,
+      "risk_score": 16,
+      "priority": "HIGH"
+    },
+    {
+      "threat_id": "PTH-2811",
+      "name": "Persistent Instruction Poisoning",
+      "category": "MEMORY_INSTRUCTION",
+      "source": "SRC-2806",
+      "target": "Future Session",
+      "technique": "Malicious instructions stored in memory are retrieved during later interactions.",
+      "impact": "Prompt compromise may persist beyond the originating session.",
+      "likelihood": 4,
+      "impact_score": 5,
+      "risk_score": 20,
+      "priority": "CRITICAL"
+    },
+    {
+      "threat_id": "PTH-2812",
+      "name": "Cross-Session Instruction Propagation",
+      "category": "MEMORY_INSTRUCTION",
+      "source": "SRC-2806",
+      "target": "Different Agent / Session",
+      "technique": "Stored state from one trust context influences another session or agent.",
+      "impact": "Compromise may propagate across users, tasks, sessions, or agents.",
+      "likelihood": 3,
+      "impact_score": 5,
+      "risk_score": 15,
+      "priority": "HIGH"
+    },
+    {
+      "threat_id": "PTH-2813",
+      "name": "Prompt-to-Tool Target Substitution",
+      "category": "EXECUTION_STEERING",
+      "source": "SRC-2804",
+      "target": "Tool Router",
+      "technique": "Prompt manipulates the target or parameters of a legitimate tool action.",
+      "impact": "Authorized functionality may be redirected toward restricted resources.",
+      "likelihood": 4,
+      "impact_score": 5,
+      "risk_score": 20,
+      "priority": "CRITICAL"
+    },
+    {
+      "threat_id": "PTH-2814",
+      "name": "Prompt-to-Privileged-Tool Escalation",
+      "category": "EXECUTION_STEERING",
+      "source": "SRC-2804",
+      "target": "Privileged Tool",
+      "technique": "Prompt influences the model or agent to request a tool with greater privilege than the trusted task requires.",
+      "impact": "Natural-language manipulation may approach privileged execution.",
+      "likelihood": 4,
+      "impact_score": 5,
+      "risk_score": 20,
+      "priority": "CRITICAL"
+    },
+    {
+      "threat_id": "PTH-2815",
+      "name": "Prompt-Generated Approval",
+      "category": "AUTHORIZATION_CONFUSION",
+      "source": "SRC-2804",
+      "target": "Authorization Service",
+      "technique": "Model output fabricates an approval token, approval statement, or authorization state.",
+      "impact": "Generated text may be incorrectly accepted as authorization evidence.",
+      "likelihood": 3,
+      "impact_score": 5,
+      "risk_score": 15,
+      "priority": "HIGH"
+    },
+    {
+      "threat_id": "PTH-2816",
+      "name": "Context-Generated Authorization",
+      "category": "AUTHORIZATION_CONFUSION",
+      "source": "SRC-2805",
+      "target": "Authorization Service",
+      "technique": "Retrieved context claims that a requested action is approved.",
+      "impact": "External data may be incorrectly converted into execution authority.",
+      "likelihood": 3,
+      "impact_score": 5,
+      "risk_score": 15,
+      "priority": "HIGH"
+    },
+    {
+      "threat_id": "PTH-2817",
+      "name": "Prompt-Induced Secret Retrieval",
+      "category": "SENSITIVE_INFORMATION",
+      "source": "SRC-2804",
+      "target": "Secret Store",
+      "technique": "Prompt attempts to cause the application or agent to retrieve credentials unnecessarily.",
+      "impact": "Secrets may enter model context or logs.",
+      "likelihood": 3,
+      "impact_score": 5,
+      "risk_score": 15,
+      "priority": "HIGH"
+    },
+    {
+      "threat_id": "PTH-2818",
+      "name": "Prompt-Induced Sensitive Record Access",
+      "category": "SENSITIVE_INFORMATION",
+      "source": "SRC-2804",
+      "target": "Restricted Record",
+      "technique": "Prompt manipulates retrieval or tool selection toward unauthorized business data.",
+      "impact": "Confidential or restricted data may be exposed.",
+      "likelihood": 4,
+      "impact_score": 5,
+      "risk_score": 20,
+      "priority": "CRITICAL"
+    },
+    {
+      "threat_id": "PTH-2819",
+      "name": "Prompt-Driven Resource Exhaustion",
+      "category": "AVAILABILITY",
+      "source": "SRC-2804",
+      "target": "LLM Runtime",
+      "technique": "Adversarial prompts generate excessive tokens, loops, tool calls, or retrieval cycles.",
+      "impact": "Cost, availability, latency, or capacity may be affected.",
+      "likelihood": 4,
+      "impact_score": 3,
+      "risk_score": 12,
+      "priority": "MEDIUM"
+    },
+    {
+      "threat_id": "PTH-2820",
+      "name": "Prompt-Based Logging Evasion",
+      "category": "OBSERVABILITY",
+      "source": "SRC-2804",
+      "target": "Security Telemetry",
+      "technique": "Prompt attempts to suppress, fragment, or obscure security-relevant actions.",
+      "impact": "Detection and forensic reconstruction may be degraded.",
+      "likelihood": 3,
+      "impact_score": 4,
+      "risk_score": 12,
+      "priority": "MEDIUM"
+    }
+  ],
+  "controls": [
+    {
+      "control_id": "PROMPT-CTRL-01",
+      "name": "Explicit Instruction Hierarchy",
+      "addresses": [
+        "PTH-2801",
+        "PTH-2804",
+        "PTH-2809"
+      ]
+    },
+    {
+      "control_id": "PROMPT-CTRL-02",
+      "name": "External Content Treated as Data",
+      "addresses": [
+        "PTH-2802",
+        "PTH-2803",
+        "PTH-2806"
+      ]
+    },
+    {
+      "control_id": "PROMPT-CTRL-03",
+      "name": "Authority Claims Require Independent Verification",
+      "addresses": [
+        "PTH-2805",
+        "PTH-2806",
+        "PTH-2815",
+        "PTH-2816"
+      ]
+    },
+    {
+      "control_id": "PROMPT-CTRL-04",
+      "name": "Protected Prompt / Policy Isolation",
+      "addresses": [
+        "PTH-2807",
+        "PTH-2808"
+      ]
+    },
+    {
+      "control_id": "PROMPT-CTRL-05",
+      "name": "Prompt Injection Detection",
+      "addresses": [
+        "PTH-2801",
+        "PTH-2802",
+        "PTH-2803",
+        "PTH-2810"
+      ]
+    },
+    {
+      "control_id": "PROMPT-CTRL-06",
+      "name": "Authorized Memory Persistence",
+      "addresses": [
+        "PTH-2811",
+        "PTH-2812"
+      ]
+    },
+    {
+      "control_id": "PROMPT-CTRL-07",
+      "name": "Tool / Target Task Binding",
+      "addresses": [
+        "PTH-2813",
+        "PTH-2814"
+      ]
+    },
+    {
+      "control_id": "PROMPT-CTRL-08",
+      "name": "Independent Fail-Closed Authorization",
+      "addresses": [
+        "PTH-2814",
+        "PTH-2815",
+        "PTH-2816"
+      ]
+    },
+    {
+      "control_id": "PROMPT-CTRL-09",
+      "name": "Secret & Data Least Privilege",
+      "addresses": [
+        "PTH-2817",
+        "PTH-2818"
+      ]
+    },
+    {
+      "control_id": "PROMPT-CTRL-10",
+      "name": "Resource & Tool Budgeting",
+      "addresses": [
+        "PTH-2819"
+      ]
+    },
+    {
+      "control_id": "PROMPT-CTRL-11",
+      "name": "Tamper-Evident Security Telemetry",
+      "addresses": [
+        "PTH-2820"
+      ]
+    }
+  ],
+  "abuse_chains": [
+    {
+      "chain_id": "PROMPT-CHAIN-01",
+      "name": "Direct Prompt Injection to Privileged Execution",
+      "steps": [
+        "PTH-2801",
+        "PTH-2804",
+        "PTH-2814",
+        "PTH-2815"
+      ],
+      "impact": "Untrusted prompt influences privileged execution."
+    },
+    {
+      "chain_id": "PROMPT-CHAIN-02",
+      "name": "Indirect RAG Injection to Persistent Memory",
+      "steps": [
+        "PTH-2802",
+        "PTH-2806",
+        "PTH-2811",
+        "PTH-2812"
+      ],
+      "impact": "Retrieved malicious instructions persist across sessions."
+    },
+    {
+      "chain_id": "PROMPT-CHAIN-03",
+      "name": "Prompt Injection to Restricted Data",
+      "steps": [
+        "PTH-2801",
+        "PTH-2813",
+        "PTH-2818"
+      ],
+      "impact": "Prompt manipulation redirects authorized functionality toward restricted data."
+    },
+    {
+      "chain_id": "PROMPT-CHAIN-04",
+      "name": "Prompt to Secret to Privileged Tool",
+      "steps": [
+        "PTH-2817",
+        "PTH-2814",
+        "PTH-2815"
+      ],
+      "impact": "Prompt manipulation obtains secret-bearing capability and approaches privileged execution."
+    }
+  ],
+  "metrics": {
+    "instruction_sources": 7,
+    "threat_scenarios": 20,
+    "threat_categories": 11,
+    "high_critical_threats": 16,
+    "prompt_injection_threats": 3,
+    "authority_authorization_threats": 4,
+    "execution_steering_threats": 2,
+    "security_controls": 11,
+    "threats_with_control_coverage": 20,
+    "abuse_chains": 4
+  },
+  "security_checks": {
+    "Unique Threat IDs": true,
+    "All Threat Sources Valid": true,
+    "Direct Prompt Injection Identified": true,
+    "Indirect Prompt Injection Identified": true,
+    "Instruction Hierarchy Threat Identified": true,
+    "System Prompt Disclosure Identified": true,
+    "Jailbreak Threats Identified": true,
+    "Persistent Instruction Threats Identified": true,
+    "Authority Spoofing Identified": true,
+    "Prompt-to-Tool Threats Identified": true,
+    "Sensitive Information Threats Identified": true,
+    "Availability Threat Identified": true,
+    "Observability Threat Identified": true,
+    "All Threats Have Control Coverage": true,
+    "Multi-Stage Abuse Chains Identified": true
+  },
+  "prompt_threat_model_valid": true
+}

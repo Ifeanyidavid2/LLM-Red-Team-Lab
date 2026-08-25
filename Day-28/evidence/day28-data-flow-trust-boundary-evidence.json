@@ -1,0 +1,631 @@
+{
+  "lab": "Day 28 Lab 2",
+  "title": "LLM Data-Flow Diagram & Trust-Boundary Mapping",
+  "system": {
+    "system_id": "AI-SYSTEM-2801",
+    "name": "synthetic-enterprise-ai-assistant",
+    "environment": "day28-threat-model-lab",
+    "version": "v1.0.0"
+  },
+  "trust_zones": {
+    "ZONE-01": {
+      "name": "External / Untrusted",
+      "trust_level": 0,
+      "description": "User-controlled or externally supplied input."
+    },
+    "ZONE-02": {
+      "name": "Application Edge",
+      "trust_level": 1,
+      "description": "Input validation, API gateway and session boundary."
+    },
+    "ZONE-03": {
+      "name": "AI Runtime",
+      "trust_level": 2,
+      "description": "LLM, context construction and agent planning."
+    },
+    "ZONE-04": {
+      "name": "Data & Memory",
+      "trust_level": 3,
+      "description": "RAG stores, retrieved context and persistent memory."
+    },
+    "ZONE-05": {
+      "name": "Security Control Plane",
+      "trust_level": 4,
+      "description": "Identity, authorization, secret and policy controls."
+    },
+    "ZONE-06": {
+      "name": "Privileged Execution",
+      "trust_level": 5,
+      "description": "Privileged tools and downstream business operations."
+    },
+    "ZONE-07": {
+      "name": "Security Monitoring",
+      "trust_level": 4,
+      "description": "Detection, logging and security telemetry."
+    }
+  },
+  "components": [
+    {
+      "component_id": "COMP-2801",
+      "name": "User",
+      "type": "external_entity",
+      "zone": "ZONE-01"
+    },
+    {
+      "component_id": "COMP-2802",
+      "name": "Input Gateway",
+      "type": "process",
+      "zone": "ZONE-02"
+    },
+    {
+      "component_id": "COMP-2803",
+      "name": "Identity Service",
+      "type": "security_service",
+      "zone": "ZONE-05"
+    },
+    {
+      "component_id": "COMP-2804",
+      "name": "LLM Runtime",
+      "type": "ai_process",
+      "zone": "ZONE-03"
+    },
+    {
+      "component_id": "COMP-2805",
+      "name": "RAG Knowledge Store",
+      "type": "data_store",
+      "zone": "ZONE-04"
+    },
+    {
+      "component_id": "COMP-2806",
+      "name": "Retrieval Service",
+      "type": "process",
+      "zone": "ZONE-04"
+    },
+    {
+      "component_id": "COMP-2807",
+      "name": "Persistent Memory",
+      "type": "data_store",
+      "zone": "ZONE-04"
+    },
+    {
+      "component_id": "COMP-2808",
+      "name": "Agent Planner",
+      "type": "ai_process",
+      "zone": "ZONE-03"
+    },
+    {
+      "component_id": "COMP-2809",
+      "name": "Authorization Service",
+      "type": "security_service",
+      "zone": "ZONE-05"
+    },
+    {
+      "component_id": "COMP-2810",
+      "name": "Secret Store",
+      "type": "security_data_store",
+      "zone": "ZONE-05"
+    },
+    {
+      "component_id": "COMP-2811",
+      "name": "Tool Router",
+      "type": "process",
+      "zone": "ZONE-03"
+    },
+    {
+      "component_id": "COMP-2812",
+      "name": "Read Record Tool",
+      "type": "tool",
+      "zone": "ZONE-06"
+    },
+    {
+      "component_id": "COMP-2813",
+      "name": "Delete Record Tool",
+      "type": "privileged_tool",
+      "zone": "ZONE-06"
+    },
+    {
+      "component_id": "COMP-2814",
+      "name": "Record Service",
+      "type": "downstream_service",
+      "zone": "ZONE-06"
+    },
+    {
+      "component_id": "COMP-2815",
+      "name": "Detection Engine",
+      "type": "security_monitor",
+      "zone": "ZONE-07"
+    }
+  ],
+  "data_flows": [
+    {
+      "flow_id": "FLOW-2801",
+      "name": "User Prompt Submission",
+      "source": "COMP-2801",
+      "destination": "COMP-2802",
+      "data": "user_prompt",
+      "classification": "untrusted",
+      "authenticated": true,
+      "authorized": false,
+      "encrypted": true,
+      "source_name": "User",
+      "destination_name": "Input Gateway",
+      "source_zone": "ZONE-01",
+      "destination_zone": "ZONE-02",
+      "source_trust_level": 0,
+      "destination_trust_level": 1,
+      "trust_delta": 1,
+      "crosses_trust_boundary": true,
+      "security_flags": [
+        "TRUST_BOUNDARY_CROSSING",
+        "TRUST_ELEVATION",
+        "UNTRUSTED_DATA_ENTERING_HIGHER_TRUST",
+        "AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "flow_id": "FLOW-2802",
+      "name": "Identity Validation",
+      "source": "COMP-2802",
+      "destination": "COMP-2803",
+      "data": "identity_claims",
+      "classification": "sensitive",
+      "authenticated": true,
+      "authorized": true,
+      "encrypted": true,
+      "source_name": "Input Gateway",
+      "destination_name": "Identity Service",
+      "source_zone": "ZONE-02",
+      "destination_zone": "ZONE-05",
+      "source_trust_level": 1,
+      "destination_trust_level": 4,
+      "trust_delta": 3,
+      "crosses_trust_boundary": true,
+      "security_flags": [
+        "TRUST_BOUNDARY_CROSSING",
+        "TRUST_ELEVATION"
+      ]
+    },
+    {
+      "flow_id": "FLOW-2803",
+      "name": "Prompt to LLM",
+      "source": "COMP-2802",
+      "destination": "COMP-2804",
+      "data": "validated_prompt",
+      "classification": "mixed_trust",
+      "authenticated": true,
+      "authorized": true,
+      "encrypted": true,
+      "source_name": "Input Gateway",
+      "destination_name": "LLM Runtime",
+      "source_zone": "ZONE-02",
+      "destination_zone": "ZONE-03",
+      "source_trust_level": 1,
+      "destination_trust_level": 2,
+      "trust_delta": 1,
+      "crosses_trust_boundary": true,
+      "security_flags": [
+        "TRUST_BOUNDARY_CROSSING",
+        "TRUST_ELEVATION",
+        "UNTRUSTED_DATA_ENTERING_HIGHER_TRUST"
+      ]
+    },
+    {
+      "flow_id": "FLOW-2804",
+      "name": "Retrieval Query",
+      "source": "COMP-2804",
+      "destination": "COMP-2806",
+      "data": "retrieval_query",
+      "classification": "internal",
+      "authenticated": true,
+      "authorized": true,
+      "encrypted": true,
+      "source_name": "LLM Runtime",
+      "destination_name": "Retrieval Service",
+      "source_zone": "ZONE-03",
+      "destination_zone": "ZONE-04",
+      "source_trust_level": 2,
+      "destination_trust_level": 3,
+      "trust_delta": 1,
+      "crosses_trust_boundary": true,
+      "security_flags": [
+        "TRUST_BOUNDARY_CROSSING",
+        "TRUST_ELEVATION"
+      ]
+    },
+    {
+      "flow_id": "FLOW-2805",
+      "name": "Knowledge Store Lookup",
+      "source": "COMP-2806",
+      "destination": "COMP-2805",
+      "data": "document_query",
+      "classification": "internal",
+      "authenticated": true,
+      "authorized": true,
+      "encrypted": true,
+      "source_name": "Retrieval Service",
+      "destination_name": "RAG Knowledge Store",
+      "source_zone": "ZONE-04",
+      "destination_zone": "ZONE-04",
+      "source_trust_level": 3,
+      "destination_trust_level": 3,
+      "trust_delta": 0,
+      "crosses_trust_boundary": false,
+      "security_flags": []
+    },
+    {
+      "flow_id": "FLOW-2806",
+      "name": "Retrieved Documents",
+      "source": "COMP-2805",
+      "destination": "COMP-2806",
+      "data": "retrieved_documents",
+      "classification": "mixed_trust",
+      "authenticated": true,
+      "authorized": true,
+      "encrypted": true,
+      "source_name": "RAG Knowledge Store",
+      "destination_name": "Retrieval Service",
+      "source_zone": "ZONE-04",
+      "destination_zone": "ZONE-04",
+      "source_trust_level": 3,
+      "destination_trust_level": 3,
+      "trust_delta": 0,
+      "crosses_trust_boundary": false,
+      "security_flags": []
+    },
+    {
+      "flow_id": "FLOW-2807",
+      "name": "Retrieved Context to LLM",
+      "source": "COMP-2806",
+      "destination": "COMP-2804",
+      "data": "retrieved_context",
+      "classification": "mixed_trust",
+      "authenticated": true,
+      "authorized": true,
+      "encrypted": true,
+      "source_name": "Retrieval Service",
+      "destination_name": "LLM Runtime",
+      "source_zone": "ZONE-04",
+      "destination_zone": "ZONE-03",
+      "source_trust_level": 3,
+      "destination_trust_level": 2,
+      "trust_delta": -1,
+      "crosses_trust_boundary": true,
+      "security_flags": [
+        "TRUST_BOUNDARY_CROSSING"
+      ]
+    },
+    {
+      "flow_id": "FLOW-2808",
+      "name": "Memory Read",
+      "source": "COMP-2807",
+      "destination": "COMP-2804",
+      "data": "persistent_memory",
+      "classification": "sensitive",
+      "authenticated": true,
+      "authorized": true,
+      "encrypted": true,
+      "source_name": "Persistent Memory",
+      "destination_name": "LLM Runtime",
+      "source_zone": "ZONE-04",
+      "destination_zone": "ZONE-03",
+      "source_trust_level": 3,
+      "destination_trust_level": 2,
+      "trust_delta": -1,
+      "crosses_trust_boundary": true,
+      "security_flags": [
+        "TRUST_BOUNDARY_CROSSING"
+      ]
+    },
+    {
+      "flow_id": "FLOW-2809",
+      "name": "Memory Write",
+      "source": "COMP-2804",
+      "destination": "COMP-2807",
+      "data": "new_memory_state",
+      "classification": "sensitive",
+      "authenticated": true,
+      "authorized": false,
+      "encrypted": true,
+      "source_name": "LLM Runtime",
+      "destination_name": "Persistent Memory",
+      "source_zone": "ZONE-03",
+      "destination_zone": "ZONE-04",
+      "source_trust_level": 2,
+      "destination_trust_level": 3,
+      "trust_delta": 1,
+      "crosses_trust_boundary": true,
+      "security_flags": [
+        "TRUST_BOUNDARY_CROSSING",
+        "TRUST_ELEVATION",
+        "AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "flow_id": "FLOW-2810",
+      "name": "LLM to Agent Planner",
+      "source": "COMP-2804",
+      "destination": "COMP-2808",
+      "data": "model_plan_context",
+      "classification": "internal",
+      "authenticated": true,
+      "authorized": true,
+      "encrypted": true,
+      "source_name": "LLM Runtime",
+      "destination_name": "Agent Planner",
+      "source_zone": "ZONE-03",
+      "destination_zone": "ZONE-03",
+      "source_trust_level": 2,
+      "destination_trust_level": 2,
+      "trust_delta": 0,
+      "crosses_trust_boundary": false,
+      "security_flags": []
+    },
+    {
+      "flow_id": "FLOW-2811",
+      "name": "Agent Tool Proposal",
+      "source": "COMP-2808",
+      "destination": "COMP-2811",
+      "data": "tool_and_target_proposal",
+      "classification": "internal",
+      "authenticated": true,
+      "authorized": false,
+      "encrypted": true,
+      "source_name": "Agent Planner",
+      "destination_name": "Tool Router",
+      "source_zone": "ZONE-03",
+      "destination_zone": "ZONE-03",
+      "source_trust_level": 2,
+      "destination_trust_level": 2,
+      "trust_delta": 0,
+      "crosses_trust_boundary": false,
+      "security_flags": [
+        "AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "flow_id": "FLOW-2812",
+      "name": "Authorization Request",
+      "source": "COMP-2811",
+      "destination": "COMP-2809",
+      "data": "execution_request",
+      "classification": "sensitive",
+      "authenticated": true,
+      "authorized": false,
+      "encrypted": true,
+      "source_name": "Tool Router",
+      "destination_name": "Authorization Service",
+      "source_zone": "ZONE-03",
+      "destination_zone": "ZONE-05",
+      "source_trust_level": 2,
+      "destination_trust_level": 4,
+      "trust_delta": 2,
+      "crosses_trust_boundary": true,
+      "security_flags": [
+        "TRUST_BOUNDARY_CROSSING",
+        "TRUST_ELEVATION",
+        "AUTHORIZATION_REQUIRED"
+      ]
+    },
+    {
+      "flow_id": "FLOW-2813",
+      "name": "Authorization Decision",
+      "source": "COMP-2809",
+      "destination": "COMP-2811",
+      "data": "authorization_decision",
+      "classification": "restricted",
+      "authenticated": true,
+      "authorized": true,
+      "encrypted": true,
+      "source_name": "Authorization Service",
+      "destination_name": "Tool Router",
+      "source_zone": "ZONE-05",
+      "destination_zone": "ZONE-03",
+      "source_trust_level": 4,
+      "destination_trust_level": 2,
+      "trust_delta": -2,
+      "crosses_trust_boundary": true,
+      "security_flags": [
+        "TRUST_BOUNDARY_CROSSING"
+      ]
+    },
+    {
+      "flow_id": "FLOW-2814",
+      "name": "Credential Retrieval",
+      "source": "COMP-2810",
+      "destination": "COMP-2811",
+      "data": "api_credential",
+      "classification": "restricted",
+      "authenticated": true,
+      "authorized": true,
+      "encrypted": true,
+      "source_name": "Secret Store",
+      "destination_name": "Tool Router",
+      "source_zone": "ZONE-05",
+      "destination_zone": "ZONE-03",
+      "source_trust_level": 4,
+      "destination_trust_level": 2,
+      "trust_delta": -2,
+      "crosses_trust_boundary": true,
+      "security_flags": [
+        "TRUST_BOUNDARY_CROSSING",
+        "SECRET_FLOW"
+      ]
+    },
+    {
+      "flow_id": "FLOW-2815",
+      "name": "Normal Tool Invocation",
+      "source": "COMP-2811",
+      "destination": "COMP-2812",
+      "data": "read_record_request",
+      "classification": "internal",
+      "authenticated": true,
+      "authorized": true,
+      "encrypted": true,
+      "source_name": "Tool Router",
+      "destination_name": "Read Record Tool",
+      "source_zone": "ZONE-03",
+      "destination_zone": "ZONE-06",
+      "source_trust_level": 2,
+      "destination_trust_level": 5,
+      "trust_delta": 3,
+      "crosses_trust_boundary": true,
+      "security_flags": [
+        "TRUST_BOUNDARY_CROSSING",
+        "TRUST_ELEVATION"
+      ]
+    },
+    {
+      "flow_id": "FLOW-2816",
+      "name": "Privileged Tool Invocation",
+      "source": "COMP-2811",
+      "destination": "COMP-2813",
+      "data": "delete_record_request",
+      "classification": "restricted",
+      "authenticated": true,
+      "authorized": true,
+      "encrypted": true,
+      "source_name": "Tool Router",
+      "destination_name": "Delete Record Tool",
+      "source_zone": "ZONE-03",
+      "destination_zone": "ZONE-06",
+      "source_trust_level": 2,
+      "destination_trust_level": 5,
+      "trust_delta": 3,
+      "crosses_trust_boundary": true,
+      "security_flags": [
+        "TRUST_BOUNDARY_CROSSING",
+        "TRUST_ELEVATION",
+        "PRIVILEGED_EXECUTION_PATH"
+      ]
+    },
+    {
+      "flow_id": "FLOW-2817",
+      "name": "Privileged Business Operation",
+      "source": "COMP-2813",
+      "destination": "COMP-2814",
+      "data": "delete_operation",
+      "classification": "restricted",
+      "authenticated": true,
+      "authorized": true,
+      "encrypted": true,
+      "source_name": "Delete Record Tool",
+      "destination_name": "Record Service",
+      "source_zone": "ZONE-06",
+      "destination_zone": "ZONE-06",
+      "source_trust_level": 5,
+      "destination_trust_level": 5,
+      "trust_delta": 0,
+      "crosses_trust_boundary": false,
+      "security_flags": [
+        "PRIVILEGED_EXECUTION_PATH"
+      ]
+    },
+    {
+      "flow_id": "FLOW-2818",
+      "name": "Security Telemetry",
+      "source": "COMP-2804",
+      "destination": "COMP-2815",
+      "data": "ai_security_events",
+      "classification": "sensitive",
+      "authenticated": true,
+      "authorized": true,
+      "encrypted": true,
+      "source_name": "LLM Runtime",
+      "destination_name": "Detection Engine",
+      "source_zone": "ZONE-03",
+      "destination_zone": "ZONE-07",
+      "source_trust_level": 2,
+      "destination_trust_level": 4,
+      "trust_delta": 2,
+      "crosses_trust_boundary": true,
+      "security_flags": [
+        "TRUST_BOUNDARY_CROSSING",
+        "TRUST_ELEVATION"
+      ]
+    }
+  ],
+  "attack_surface_candidates": [
+    {
+      "surface_id": "SURFACE-2801",
+      "name": "Prompt Entry Boundary",
+      "related_flow": "FLOW-2801",
+      "risk": "Untrusted user instructions enter application processing."
+    },
+    {
+      "surface_id": "SURFACE-2802",
+      "name": "Prompt-to-LLM Trust Transition",
+      "related_flow": "FLOW-2803",
+      "risk": "Mixed-trust instructions enter the AI runtime."
+    },
+    {
+      "surface_id": "SURFACE-2803",
+      "name": "RAG Context Admission",
+      "related_flow": "FLOW-2807",
+      "risk": "Retrieved content may influence model behavior."
+    },
+    {
+      "surface_id": "SURFACE-2804",
+      "name": "Persistent Memory Write",
+      "related_flow": "FLOW-2809",
+      "risk": "Model-generated or untrusted state may become persistent."
+    },
+    {
+      "surface_id": "SURFACE-2805",
+      "name": "Agent Tool Proposal",
+      "related_flow": "FLOW-2811",
+      "risk": "Model-generated planning state may propose privileged action."
+    },
+    {
+      "surface_id": "SURFACE-2806",
+      "name": "Authorization Boundary",
+      "related_flow": "FLOW-2812",
+      "risk": "Tool execution must not inherit authority from the model."
+    },
+    {
+      "surface_id": "SURFACE-2807",
+      "name": "Secret Retrieval",
+      "related_flow": "FLOW-2814",
+      "risk": "Credential exposure may expand downstream capability."
+    },
+    {
+      "surface_id": "SURFACE-2808",
+      "name": "Privileged Tool Invocation",
+      "related_flow": "FLOW-2816",
+      "risk": "Privileged execution can produce high business impact."
+    },
+    {
+      "surface_id": "SURFACE-2809",
+      "name": "Downstream Business Operation",
+      "related_flow": "FLOW-2817",
+      "risk": "Unsafe execution can affect restricted business data."
+    }
+  ],
+  "metrics": {
+    "trust_zones": 7,
+    "components": 15,
+    "data_flows": 18,
+    "boundary_crossings": 13,
+    "trust_elevations": 9,
+    "untrusted_elevations": 2,
+    "authorization_sensitive_flows": 4,
+    "privileged_execution_flows": 2,
+    "attack_surface_candidates": 9
+  },
+  "security_checks": {
+    "Unique Component IDs": true,
+    "Unique Flow IDs": true,
+    "All Flow Components Valid": true,
+    "External Trust Boundary Present": true,
+    "AI Runtime Boundary Present": true,
+    "Data / Memory Boundary Present": true,
+    "Security Control Boundary Present": true,
+    "Privileged Execution Boundary Present": true,
+    "Trust Boundary Crossings Identified": true,
+    "Trust Elevation Identified": true,
+    "Untrusted Elevation Identified": true,
+    "Authorization-Sensitive Flows Identified": true,
+    "Privileged Execution Flows Identified": true,
+    "Attack Surfaces Identified": true
+  },
+  "data_flow_model_valid": true
+}

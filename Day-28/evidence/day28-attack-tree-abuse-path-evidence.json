@@ -1,0 +1,501 @@
+{
+  "lab": "Day 28 Lab 9",
+  "title": "Attack Trees & Multi-Stage Abuse-Path Analysis",
+  "objectives": [
+    {
+      "objective_id": "OBJ-2801",
+      "name": "Obtain Unauthorized Privileged Execution",
+      "business_impact": "critical"
+    },
+    {
+      "objective_id": "OBJ-2802",
+      "name": "Compromise Persistent AI State",
+      "business_impact": "high"
+    },
+    {
+      "objective_id": "OBJ-2803",
+      "name": "Access Restricted Business Data",
+      "business_impact": "critical"
+    },
+    {
+      "objective_id": "OBJ-2804",
+      "name": "Cause Destructive Business Impact",
+      "business_impact": "critical"
+    },
+    {
+      "objective_id": "OBJ-2805",
+      "name": "Reduce Detection / Forensic Visibility",
+      "business_impact": "high"
+    }
+  ],
+  "nodes": [
+    {
+      "node_id": "NODE-2801",
+      "name": "Direct Prompt Injection",
+      "domain": "PROMPT",
+      "likelihood": 5,
+      "impact": 4
+    },
+    {
+      "node_id": "NODE-2802",
+      "name": "Indirect RAG Prompt Injection",
+      "domain": "RAG",
+      "likelihood": 5,
+      "impact": 5
+    },
+    {
+      "node_id": "NODE-2803",
+      "name": "RAG Source Poisoning",
+      "domain": "RAG",
+      "likelihood": 4,
+      "impact": 5
+    },
+    {
+      "node_id": "NODE-2804",
+      "name": "Unsafe Context Admission",
+      "domain": "RAG",
+      "likelihood": 4,
+      "impact": 5
+    },
+    {
+      "node_id": "NODE-2805",
+      "name": "Unauthorized Memory Write",
+      "domain": "MEMORY",
+      "likelihood": 4,
+      "impact": 5
+    },
+    {
+      "node_id": "NODE-2806",
+      "name": "Persistent Memory Poisoning",
+      "domain": "MEMORY",
+      "likelihood": 5,
+      "impact": 5
+    },
+    {
+      "node_id": "NODE-2807",
+      "name": "Cross-Session Poison Activation",
+      "domain": "MEMORY",
+      "likelihood": 4,
+      "impact": 5
+    },
+    {
+      "node_id": "NODE-2808",
+      "name": "Agent Goal Hijacking",
+      "domain": "AGENT",
+      "likelihood": 4,
+      "impact": 5
+    },
+    {
+      "node_id": "NODE-2809",
+      "name": "Task Binding Bypass",
+      "domain": "AGENT",
+      "likelihood": 4,
+      "impact": 5
+    },
+    {
+      "node_id": "NODE-2810",
+      "name": "Trusted Target Substitution",
+      "domain": "TOOL",
+      "likelihood": 4,
+      "impact": 5
+    },
+    {
+      "node_id": "NODE-2811",
+      "name": "Unsafe Privileged Tool Selection",
+      "domain": "TOOL",
+      "likelihood": 4,
+      "impact": 5
+    },
+    {
+      "node_id": "NODE-2812",
+      "name": "Tool Parameter Manipulation",
+      "domain": "TOOL",
+      "likelihood": 4,
+      "impact": 5
+    },
+    {
+      "node_id": "NODE-2813",
+      "name": "Model-Generated Approval",
+      "domain": "AUTHORIZATION",
+      "likelihood": 4,
+      "impact": 5
+    },
+    {
+      "node_id": "NODE-2814",
+      "name": "Authorization Decision Tampering",
+      "domain": "AUTHORIZATION",
+      "likelihood": 3,
+      "impact": 5
+    },
+    {
+      "node_id": "NODE-2815",
+      "name": "Fail-Open Authorization",
+      "domain": "AUTHORIZATION",
+      "likelihood": 3,
+      "impact": 5
+    },
+    {
+      "node_id": "NODE-2816",
+      "name": "Credential Exposure",
+      "domain": "SECRET",
+      "likelihood": 3,
+      "impact": 5
+    },
+    {
+      "node_id": "NODE-2817",
+      "name": "Credential Scope Abuse",
+      "domain": "SECRET",
+      "likelihood": 4,
+      "impact": 5
+    },
+    {
+      "node_id": "NODE-2818",
+      "name": "Restricted Record Access",
+      "domain": "BUSINESS",
+      "likelihood": 4,
+      "impact": 5
+    },
+    {
+      "node_id": "NODE-2819",
+      "name": "Restricted Record Destruction",
+      "domain": "BUSINESS",
+      "likelihood": 3,
+      "impact": 5
+    },
+    {
+      "node_id": "NODE-2820",
+      "name": "Security Telemetry Suppression",
+      "domain": "OBSERVABILITY",
+      "likelihood": 3,
+      "impact": 4
+    }
+  ],
+  "attack_paths": [
+    {
+      "path_id": "PATH-2801",
+      "objective_id": "OBJ-2801",
+      "name": "Prompt Injection to Privileged Execution",
+      "steps": [
+        "NODE-2801",
+        "NODE-2808",
+        "NODE-2809",
+        "NODE-2811",
+        "NODE-2813",
+        "NODE-2815"
+      ],
+      "likelihood_total": 24,
+      "impact_total": 29,
+      "domains_crossed": 4,
+      "risk_score": 73,
+      "priority": "HIGH"
+    },
+    {
+      "path_id": "PATH-2802",
+      "objective_id": "OBJ-2802",
+      "name": "RAG Poisoning to Persistent AI Compromise",
+      "steps": [
+        "NODE-2803",
+        "NODE-2802",
+        "NODE-2804",
+        "NODE-2805",
+        "NODE-2806",
+        "NODE-2807"
+      ],
+      "likelihood_total": 26,
+      "impact_total": 30,
+      "domains_crossed": 2,
+      "risk_score": 66,
+      "priority": "HIGH"
+    },
+    {
+      "path_id": "PATH-2803",
+      "objective_id": "OBJ-2803",
+      "name": "Prompt Injection to Restricted Data Access",
+      "steps": [
+        "NODE-2801",
+        "NODE-2808",
+        "NODE-2810",
+        "NODE-2812",
+        "NODE-2818"
+      ],
+      "likelihood_total": 21,
+      "impact_total": 24,
+      "domains_crossed": 4,
+      "risk_score": 65,
+      "priority": "HIGH"
+    },
+    {
+      "path_id": "PATH-2804",
+      "objective_id": "OBJ-2804",
+      "name": "Persistent Memory to Destructive Execution",
+      "steps": [
+        "NODE-2806",
+        "NODE-2807",
+        "NODE-2808",
+        "NODE-2811",
+        "NODE-2815",
+        "NODE-2819"
+      ],
+      "likelihood_total": 23,
+      "impact_total": 30,
+      "domains_crossed": 5,
+      "risk_score": 78,
+      "priority": "HIGH"
+    },
+    {
+      "path_id": "PATH-2805",
+      "objective_id": "OBJ-2804",
+      "name": "Credential Abuse to Destructive Business Impact",
+      "steps": [
+        "NODE-2816",
+        "NODE-2817",
+        "NODE-2811",
+        "NODE-2819"
+      ],
+      "likelihood_total": 14,
+      "impact_total": 20,
+      "domains_crossed": 3,
+      "risk_score": 49,
+      "priority": "MEDIUM"
+    },
+    {
+      "path_id": "PATH-2806",
+      "objective_id": "OBJ-2804",
+      "name": "Target Substitution to Restricted Record Destruction",
+      "steps": [
+        "NODE-2808",
+        "NODE-2810",
+        "NODE-2812",
+        "NODE-2811",
+        "NODE-2819"
+      ],
+      "likelihood_total": 19,
+      "impact_total": 25,
+      "domains_crossed": 3,
+      "risk_score": 59,
+      "priority": "MEDIUM"
+    },
+    {
+      "path_id": "PATH-2807",
+      "objective_id": "OBJ-2801",
+      "name": "Fake Approval to Authorization Bypass",
+      "steps": [
+        "NODE-2813",
+        "NODE-2814",
+        "NODE-2815",
+        "NODE-2811"
+      ],
+      "likelihood_total": 14,
+      "impact_total": 20,
+      "domains_crossed": 2,
+      "risk_score": 44,
+      "priority": "MEDIUM"
+    },
+    {
+      "path_id": "PATH-2808",
+      "objective_id": "OBJ-2805",
+      "name": "Telemetry Evasion During Privileged Abuse",
+      "steps": [
+        "NODE-2820",
+        "NODE-2815",
+        "NODE-2811",
+        "NODE-2819"
+      ],
+      "likelihood_total": 13,
+      "impact_total": 19,
+      "domains_crossed": 4,
+      "risk_score": 52,
+      "priority": "MEDIUM"
+    }
+  ],
+  "attack_trees": [
+    {
+      "tree_id": "TREE-2801",
+      "root_objective": "Obtain Unauthorized Privileged Execution",
+      "logic": "OR",
+      "branches": [
+        "PATH-2801",
+        "PATH-2807",
+        "PATH-2805"
+      ]
+    },
+    {
+      "tree_id": "TREE-2802",
+      "root_objective": "Compromise Persistent AI State",
+      "logic": "OR",
+      "branches": [
+        "PATH-2802",
+        "PATH-2804"
+      ]
+    },
+    {
+      "tree_id": "TREE-2803",
+      "root_objective": "Cause Restricted Business Impact",
+      "logic": "OR",
+      "branches": [
+        "PATH-2804",
+        "PATH-2805",
+        "PATH-2806",
+        "PATH-2808"
+      ]
+    }
+  ],
+  "choke_points": [
+    {
+      "node_id": "NODE-2811",
+      "name": "Unsafe Privileged Tool Selection",
+      "path_count": 6
+    },
+    {
+      "node_id": "NODE-2808",
+      "name": "Agent Goal Hijacking",
+      "path_count": 4
+    },
+    {
+      "node_id": "NODE-2815",
+      "name": "Fail-Open Authorization",
+      "path_count": 4
+    },
+    {
+      "node_id": "NODE-2819",
+      "name": "Restricted Record Destruction",
+      "path_count": 4
+    },
+    {
+      "node_id": "NODE-2801",
+      "name": "Direct Prompt Injection",
+      "path_count": 2
+    },
+    {
+      "node_id": "NODE-2806",
+      "name": "Persistent Memory Poisoning",
+      "path_count": 2
+    },
+    {
+      "node_id": "NODE-2807",
+      "name": "Cross-Session Poison Activation",
+      "path_count": 2
+    },
+    {
+      "node_id": "NODE-2810",
+      "name": "Trusted Target Substitution",
+      "path_count": 2
+    },
+    {
+      "node_id": "NODE-2812",
+      "name": "Tool Parameter Manipulation",
+      "path_count": 2
+    },
+    {
+      "node_id": "NODE-2813",
+      "name": "Model-Generated Approval",
+      "path_count": 2
+    }
+  ],
+  "controls": [
+    {
+      "control_id": "TREE-CTRL-01",
+      "name": "Instruction Trust Separation",
+      "blocks": [
+        "NODE-2801",
+        "NODE-2802"
+      ]
+    },
+    {
+      "control_id": "TREE-CTRL-02",
+      "name": "RAG Provenance & Context Admission",
+      "blocks": [
+        "NODE-2803",
+        "NODE-2804"
+      ]
+    },
+    {
+      "control_id": "TREE-CTRL-03",
+      "name": "Authorized Memory Persistence",
+      "blocks": [
+        "NODE-2805",
+        "NODE-2806",
+        "NODE-2807"
+      ]
+    },
+    {
+      "control_id": "TREE-CTRL-04",
+      "name": "Agent Goal / Task Binding",
+      "blocks": [
+        "NODE-2808",
+        "NODE-2809"
+      ]
+    },
+    {
+      "control_id": "TREE-CTRL-05",
+      "name": "Trusted Tool / Target Binding",
+      "blocks": [
+        "NODE-2810",
+        "NODE-2811",
+        "NODE-2812"
+      ]
+    },
+    {
+      "control_id": "TREE-CTRL-06",
+      "name": "Fail-Closed Independent Authorization",
+      "blocks": [
+        "NODE-2813",
+        "NODE-2814",
+        "NODE-2815"
+      ]
+    },
+    {
+      "control_id": "TREE-CTRL-07",
+      "name": "Secret Isolation & Least Privilege",
+      "blocks": [
+        "NODE-2816",
+        "NODE-2817"
+      ]
+    },
+    {
+      "control_id": "TREE-CTRL-08",
+      "name": "Business Resource Authorization",
+      "blocks": [
+        "NODE-2818",
+        "NODE-2819"
+      ]
+    },
+    {
+      "control_id": "TREE-CTRL-09",
+      "name": "Tamper-Evident AI Telemetry",
+      "blocks": [
+        "NODE-2820"
+      ]
+    }
+  ],
+  "metrics": {
+    "attack_objectives": 5,
+    "attack_nodes": 20,
+    "attack_paths": 8,
+    "attack_trees": 3,
+    "high_critical_paths": 4,
+    "attack_domains": 9,
+    "choke_points": 10,
+    "security_controls": 9,
+    "nodes_with_control_coverage": 20
+  },
+  "security_checks": {
+    "Unique Attack Node IDs": true,
+    "All Path Nodes Valid": true,
+    "All Objectives Valid": true,
+    "All Attack Tree Branches Valid": true,
+    "Prompt Attack Path Identified": true,
+    "RAG Attack Path Identified": true,
+    "Memory Attack Path Identified": true,
+    "Agent Attack Path Identified": true,
+    "Authorization Attack Path Identified": true,
+    "Tool Attack Path Identified": true,
+    "Secret Attack Path Identified": true,
+    "Business Impact Path Identified": true,
+    "Observability Path Identified": true,
+    "Multi-Path Choke Points Identified": true,
+    "All Attack Nodes Have Control Coverage": true,
+    "Attack Trees Created": true
+  },
+  "attack_tree_model_valid": true
+}

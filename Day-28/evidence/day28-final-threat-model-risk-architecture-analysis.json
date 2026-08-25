@@ -1,0 +1,317 @@
+{
+  "day": 28,
+  "title": "LLM Threat Modeling, Risk Assessment & Security Architecture",
+  "research_question": "Can we systematically identify LLM assets, trust boundaries, attack surfaces, threats, abuse paths and business impacts before deployment, then translate those risks into security architecture and prioritized controls?",
+  "research_answer": "Yes. Day 28 demonstrates a repeatable method for identifying AI assets, data flows, trust boundaries, attack surfaces, threats, multi-stage abuse paths and business impacts before deployment. Those findings were converted into risk scores, a formal risk register, prioritized controls, residual-risk targets, architectural trust zones, enforcement points and deployment security gates.",
+  "labs": [
+    {
+      "lab": "Lab 1",
+      "name": "AI System & Security Asset Inventory",
+      "primary_metric": "14 assets",
+      "valid": true
+    },
+    {
+      "lab": "Lab 2",
+      "name": "Data Flow & Trust Boundary Mapping",
+      "primary_metric": "Trust boundaries mapped",
+      "valid": true
+    },
+    {
+      "lab": "Lab 3",
+      "name": "AI Attack Surface Mapping",
+      "primary_metric": "17 attack surfaces",
+      "valid": true
+    },
+    {
+      "lab": "Lab 4",
+      "name": "STRIDE-Style LLM Threat Modeling",
+      "primary_metric": "32 threat scenarios",
+      "valid": true
+    },
+    {
+      "lab": "Lab 5",
+      "name": "Prompt & Instruction Threat Modeling",
+      "primary_metric": "20 prompt threats",
+      "valid": true
+    },
+    {
+      "lab": "Lab 6",
+      "name": "RAG & Knowledge-System Threat Modeling",
+      "primary_metric": "23 RAG threats",
+      "valid": true
+    },
+    {
+      "lab": "Lab 7",
+      "name": "Memory & Persistent-State Threat Modeling",
+      "primary_metric": "26 memory threats",
+      "valid": true
+    },
+    {
+      "lab": "Lab 8",
+      "name": "Agent & Tool-Execution Threat Modeling",
+      "primary_metric": "32 agent/tool threats",
+      "valid": true
+    },
+    {
+      "lab": "Lab 9",
+      "name": "Attack Trees & Multi-Stage Abuse Paths",
+      "primary_metric": "8 attack paths",
+      "valid": true
+    },
+    {
+      "lab": "Lab 10",
+      "name": "OWASP-Aligned AI Risk Mapping",
+      "primary_metric": "14 risk areas",
+      "valid": true
+    },
+    {
+      "lab": "Lab 11",
+      "name": "MITRE ATLAS-Aligned Adversary Mapping",
+      "primary_metric": "22 techniques",
+      "valid": true
+    },
+    {
+      "lab": "Lab 12",
+      "name": "Likelihood x Impact Risk Prioritization",
+      "primary_metric": "21 prioritized risks",
+      "valid": true
+    },
+    {
+      "lab": "Lab 13",
+      "name": "Formal AI Security Risk Register",
+      "primary_metric": "21 risk records",
+      "valid": true
+    },
+    {
+      "lab": "Lab 14",
+      "name": "Security Control & Residual Risk Analysis",
+      "primary_metric": "83.31% overall risk reduction",
+      "valid": true
+    },
+    {
+      "lab": "Lab 15",
+      "name": "Hardened Reference AI Security Architecture",
+      "primary_metric": "11 zones / 10 trust boundaries",
+      "valid": true
+    }
+  ],
+  "asset_summary": {
+    "total_assets": 14,
+    "critical_assets": 8,
+    "trust_sensitive_assets": 7,
+    "security_objectives": [
+      "confidentiality",
+      "integrity",
+      "availability"
+    ]
+  },
+  "attack_surface_summary": {
+    "attack_surfaces": 17,
+    "entry_points": 2,
+    "persistent_surfaces": 5,
+    "privileged_surfaces": 6,
+    "business_impact_surfaces": 7,
+    "high_critical_surfaces": 6
+  },
+  "threat_summary": {
+    "stride_threats": 32,
+    "prompt_instruction_threats": 20,
+    "rag_threats": 23,
+    "memory_threats": 26,
+    "agent_tool_threats": 32,
+    "total_specialized_threat_scenarios": 101
+  },
+  "attack_tree_summary": {
+    "attack_objectives": 5,
+    "attack_nodes": 20,
+    "attack_paths": 8,
+    "attack_trees": 3,
+    "high_critical_paths": 4,
+    "attack_domains": 9,
+    "multi_path_choke_points": 10
+  },
+  "framework_summary": {
+    "owasp_aligned_risk_areas": 14,
+    "owasp_mapped_threats": 26,
+    "owasp_attack_paths": 8,
+    "atlas_aligned_tactics": 9,
+    "atlas_aligned_techniques": 22,
+    "atlas_mapped_threats": 26,
+    "atlas_attack_paths": 8,
+    "atlas_detection_opportunities": 9
+  },
+  "risk_summary": {
+    "risk_scenarios": 21,
+    "risk_domains": 10,
+    "top_residual_risks": [
+      {
+        "risk_id": "RISK-2805",
+        "name": "Persistent Memory Poisoning",
+        "residual_score": 36
+      },
+      {
+        "risk_id": "RISK-2807",
+        "name": "Cross-Agent Memory Propagation",
+        "residual_score": 32
+      },
+      {
+        "risk_id": "RISK-2802",
+        "name": "Indirect RAG Prompt Injection",
+        "residual_score": 31
+      },
+      {
+        "risk_id": "RISK-2806",
+        "name": "Cross-Session Memory Activation",
+        "residual_score": 31
+      },
+      {
+        "risk_id": "RISK-2816",
+        "name": "Credential Scope Abuse",
+        "residual_score": 31
+      }
+    ],
+    "high_persistence_risks": 4,
+    "high_privilege_risks": 10,
+    "wide_blast_radius_risks": 12
+  },
+  "risk_register_summary": {
+    "risk_records": 21,
+    "risk_owners": 12,
+    "non_acceptable_by_default": 10,
+    "target_low_risks": 14,
+    "target_medium_risks": 7,
+    "target_high_risks": 0,
+    "target_critical_risks": 0,
+    "target_architecture_deployment_ready": true
+  },
+  "control_summary": {
+    "security_controls": 21,
+    "total_inherent_risk": 683,
+    "total_target_residual_risk": 114,
+    "total_risk_reduction": 569,
+    "overall_risk_reduction_percent": 83.31,
+    "high_value_controls": 15,
+    "architectural_choke_points": 9,
+    "highest_value_controls": [
+      {
+        "control_id": "CTRL-2819",
+        "name": "Tamper-Evident AI Security Telemetry",
+        "risks_addressed": 20,
+        "addressable_reduction": 555
+      },
+      {
+        "control_id": "CTRL-2812",
+        "name": "Fail-Closed Independent Authorization",
+        "risks_addressed": 7,
+        "addressable_reduction": 196
+      },
+      {
+        "control_id": "CTRL-2811",
+        "name": "Trusted Target Binding",
+        "risks_addressed": 4,
+        "addressable_reduction": 107
+      },
+      {
+        "control_id": "CTRL-2805",
+        "name": "Authorized Memory Writes",
+        "risks_addressed": 3,
+        "addressable_reduction": 102
+      },
+      {
+        "control_id": "CTRL-2806",
+        "name": "Memory Provenance & Integrity",
+        "risks_addressed": 3,
+        "addressable_reduction": 102
+      }
+    ]
+  },
+  "architecture_summary": {
+    "security_zones": 11,
+    "trust_boundaries": 10,
+    "architectural_controls": 18,
+    "security_data_flows": 12,
+    "deployment_gates": 9,
+    "preventive_controls": 16,
+    "detective_controls": 1,
+    "corrective_controls": 1,
+    "required_gates_passed": 9,
+    "required_gates_total": 9,
+    "deployment_approved": true
+  },
+  "before_after": [
+    {
+      "area": "Prompt / Instruction Trust",
+      "before": "Untrusted natural-language content may influence trusted instructions.",
+      "after": "Instruction trust is explicitly separated and mediated."
+    },
+    {
+      "area": "RAG Security",
+      "before": "Retrieved content may enter runtime without provenance or trust validation.",
+      "after": "RAG provenance, document authorization and fail-closed context admission are enforced."
+    },
+    {
+      "area": "Persistent Memory",
+      "before": "Untrusted model or retrieved state may persist across sessions and agents.",
+      "after": "Memory writes require authorization, provenance, isolation, expiry and integrity validation."
+    },
+    {
+      "area": "Agent Planning",
+      "before": "Model-generated plans may drift or select privileged capabilities.",
+      "after": "Agent goals and actions are bound to trusted task state."
+    },
+    {
+      "area": "Tool Execution",
+      "before": "Tool choice, target and parameters may be influenced by model-generated state.",
+      "after": "Tool allowlisting, target binding and strict parameter validation are enforced."
+    },
+    {
+      "area": "Authorization",
+      "before": "Model-generated approval or fail-open behavior may enable privileged execution.",
+      "after": "Authorization is independent, non-model, and fail-closed."
+    },
+    {
+      "area": "Secrets",
+      "before": "Credentials may enter model context or be reused beyond intended scope.",
+      "after": "Secrets are isolated and credentials are short-lived and task-bound."
+    },
+    {
+      "area": "Business Data",
+      "before": "Privileged AI actions may reach restricted business resources.",
+      "after": "Resource-level authorization and destructive-action controls protect business data."
+    },
+    {
+      "area": "Observability",
+      "before": "Security activity may be incomplete or difficult to reconstruct.",
+      "after": "Independent tamper-evident AI security telemetry is required."
+    }
+  ],
+  "final_findings": [
+    "The threat model identified the AI system as a collection of interacting trust domains rather than treating the LLM as the only security-relevant component.",
+    "Prompt injection risk becomes materially more dangerous when combined with RAG, persistent memory, agents, tools and authorization.",
+    "Persistent memory creates unique AI persistence and cross-session attack paths that require explicit authorization and provenance.",
+    "Agentic AI increases risk because model-generated plans can approach privileged business execution.",
+    "Authorization must remain independent from model-generated language, context, memory and approval claims.",
+    "Attack trees revealed repeated architectural choke points, particularly privileged tool selection, authorization, memory, target binding and telemetry.",
+    "Likelihood x impact scoring alone was insufficient; persistence, privilege, blast radius and detection difficulty materially changed AI risk priority.",
+    "The formal risk register converted technical threats into accountable business risk ownership and treatment decisions.",
+    "The target control architecture reduced modeled aggregate risk from 683 to 114, representing an 83.31% reduction.",
+    "The hardened architecture uses explicit trust zones, enforcement points and deployment gates rather than relying on a single LLM guardrail.",
+    "All nine required deployment security gates passed in the synthetic target architecture.",
+    "The Day 28 evidence demonstrates that threat modeling can drive AI security architecture before deployment rather than only documenting vulnerabilities after implementation."
+  ],
+  "security_checks": {
+    "All Day 28 Labs Valid": true,
+    "Assets Identified": true,
+    "Attack Surfaces Identified": true,
+    "Threats Enumerated": true,
+    "Attack Trees Created": true,
+    "Framework Mapping Completed": true,
+    "Risk Register Created": true,
+    "Residual Risk Reduced": true,
+    "No Target Critical Risks": true,
+    "Hardened Architecture Defined": true,
+    "Deployment Gates Enforced": true,
+    "Target Architecture Deployment Approved": true
+  },
+  "assessment_valid": true
+}

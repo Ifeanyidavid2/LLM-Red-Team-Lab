@@ -1,0 +1,580 @@
+{
+  "lab": "Day 28 Lab 10",
+  "title": "OWASP LLM / GenAI Risk Mapping",
+  "risk_areas": [
+    {
+      "risk_id": "OWASP-AI-01",
+      "name": "Prompt Injection",
+      "description": "Untrusted instructions influence model behavior or downstream execution."
+    },
+    {
+      "risk_id": "OWASP-AI-02",
+      "name": "Sensitive Information Disclosure",
+      "description": "Sensitive prompts, secrets, memory, retrieved data or business information may be exposed."
+    },
+    {
+      "risk_id": "OWASP-AI-03",
+      "name": "Supply Chain / External Dependency Risk",
+      "description": "Models, datasets, retrieval sources, plugins or dependencies introduce untrusted behavior."
+    },
+    {
+      "risk_id": "OWASP-AI-04",
+      "name": "Data and Model Poisoning",
+      "description": "Untrusted or manipulated information corrupts model-visible context or persistent AI state."
+    },
+    {
+      "risk_id": "OWASP-AI-05",
+      "name": "Improper Output Handling",
+      "description": "Model-generated content is trusted as executable, authorized or security-relevant state."
+    },
+    {
+      "risk_id": "OWASP-AI-06",
+      "name": "Excessive Agency",
+      "description": "AI agents receive excessive capability, autonomy, scope or privilege."
+    },
+    {
+      "risk_id": "OWASP-AI-07",
+      "name": "System Prompt / Instruction Exposure",
+      "description": "Trusted instructions or security policy become exposed or attacker-influenced."
+    },
+    {
+      "risk_id": "OWASP-AI-08",
+      "name": "Vector / Embedding / Retrieval Weakness",
+      "description": "Retrieval integrity, provenance or authorization failures introduce unsafe context."
+    },
+    {
+      "risk_id": "OWASP-AI-09",
+      "name": "Misinformation / Trust Failure",
+      "description": "Model-generated assertions are treated as trusted facts, approvals or authority."
+    },
+    {
+      "risk_id": "OWASP-AI-10",
+      "name": "Unbounded Consumption",
+      "description": "AI or tool execution consumes excessive resources or enters uncontrolled execution loops."
+    },
+    {
+      "risk_id": "OWASP-AI-11",
+      "name": "Persistent Memory Security",
+      "description": "Long-lived AI memory creates persistence and cross-session influence risks."
+    },
+    {
+      "risk_id": "OWASP-AI-12",
+      "name": "Tool and Privileged Execution Security",
+      "description": "Model-driven tool calls reach sensitive or privileged business operations."
+    },
+    {
+      "risk_id": "OWASP-AI-13",
+      "name": "Authorization and Identity Boundary Failure",
+      "description": "AI-generated state improperly influences identity or authorization decisions."
+    },
+    {
+      "risk_id": "OWASP-AI-14",
+      "name": "AI Observability and Forensic Weakness",
+      "description": "Security-relevant AI activity cannot be reliably detected, correlated or reconstructed."
+    }
+  ],
+  "threats": [
+    {
+      "threat_id": "THR-2801",
+      "name": "Direct Prompt Injection",
+      "severity": "HIGH",
+      "risk_score": 20,
+      "mappings": [
+        "OWASP-AI-01"
+      ],
+      "mapping_valid": true
+    },
+    {
+      "threat_id": "THR-2802",
+      "name": "Indirect RAG Prompt Injection",
+      "severity": "CRITICAL",
+      "risk_score": 25,
+      "mappings": [
+        "OWASP-AI-01",
+        "OWASP-AI-08"
+      ],
+      "mapping_valid": true
+    },
+    {
+      "threat_id": "THR-2803",
+      "name": "RAG Source Poisoning",
+      "severity": "CRITICAL",
+      "risk_score": 20,
+      "mappings": [
+        "OWASP-AI-03",
+        "OWASP-AI-04",
+        "OWASP-AI-08"
+      ],
+      "mapping_valid": true
+    },
+    {
+      "threat_id": "THR-2804",
+      "name": "Unsafe Retrieved Context Admission",
+      "severity": "CRITICAL",
+      "risk_score": 20,
+      "mappings": [
+        "OWASP-AI-04",
+        "OWASP-AI-08"
+      ],
+      "mapping_valid": true
+    },
+    {
+      "threat_id": "THR-2805",
+      "name": "Sensitive RAG Data Disclosure",
+      "severity": "HIGH",
+      "risk_score": 16,
+      "mappings": [
+        "OWASP-AI-02",
+        "OWASP-AI-08"
+      ],
+      "mapping_valid": true
+    },
+    {
+      "threat_id": "THR-2806",
+      "name": "Unauthorized Persistent Memory Write",
+      "severity": "CRITICAL",
+      "risk_score": 20,
+      "mappings": [
+        "OWASP-AI-04",
+        "OWASP-AI-11"
+      ],
+      "mapping_valid": true
+    },
+    {
+      "threat_id": "THR-2807",
+      "name": "Cross-Session Memory Poisoning",
+      "severity": "CRITICAL",
+      "risk_score": 25,
+      "mappings": [
+        "OWASP-AI-04",
+        "OWASP-AI-11"
+      ],
+      "mapping_valid": true
+    },
+    {
+      "threat_id": "THR-2808",
+      "name": "Memory-Based Sensitive Data Exposure",
+      "severity": "HIGH",
+      "risk_score": 16,
+      "mappings": [
+        "OWASP-AI-02",
+        "OWASP-AI-11"
+      ],
+      "mapping_valid": true
+    },
+    {
+      "threat_id": "THR-2809",
+      "name": "Agent Goal Hijacking",
+      "severity": "CRITICAL",
+      "risk_score": 20,
+      "mappings": [
+        "OWASP-AI-01",
+        "OWASP-AI-06"
+      ],
+      "mapping_valid": true
+    },
+    {
+      "threat_id": "THR-2810",
+      "name": "Agent Task Drift",
+      "severity": "HIGH",
+      "risk_score": 16,
+      "mappings": [
+        "OWASP-AI-06"
+      ],
+      "mapping_valid": true
+    },
+    {
+      "threat_id": "THR-2811",
+      "name": "Unsafe Privileged Tool Selection",
+      "severity": "CRITICAL",
+      "risk_score": 20,
+      "mappings": [
+        "OWASP-AI-06",
+        "OWASP-AI-12"
+      ],
+      "mapping_valid": true
+    },
+    {
+      "threat_id": "THR-2812",
+      "name": "Tool Parameter Injection",
+      "severity": "CRITICAL",
+      "risk_score": 20,
+      "mappings": [
+        "OWASP-AI-05",
+        "OWASP-AI-12"
+      ],
+      "mapping_valid": true
+    },
+    {
+      "threat_id": "THR-2813",
+      "name": "Trusted Target Substitution",
+      "severity": "CRITICAL",
+      "risk_score": 20,
+      "mappings": [
+        "OWASP-AI-06",
+        "OWASP-AI-12"
+      ],
+      "mapping_valid": true
+    },
+    {
+      "threat_id": "THR-2814",
+      "name": "Model-Generated Approval",
+      "severity": "CRITICAL",
+      "risk_score": 20,
+      "mappings": [
+        "OWASP-AI-05",
+        "OWASP-AI-09",
+        "OWASP-AI-13"
+      ],
+      "mapping_valid": true
+    },
+    {
+      "threat_id": "THR-2815",
+      "name": "Fail-Open Authorization",
+      "severity": "CRITICAL",
+      "risk_score": 20,
+      "mappings": [
+        "OWASP-AI-12",
+        "OWASP-AI-13"
+      ],
+      "mapping_valid": true
+    },
+    {
+      "threat_id": "THR-2816",
+      "name": "Identity Confusion",
+      "severity": "HIGH",
+      "risk_score": 15,
+      "mappings": [
+        "OWASP-AI-13"
+      ],
+      "mapping_valid": true
+    },
+    {
+      "threat_id": "THR-2817",
+      "name": "Credential Exposure to Model Context",
+      "severity": "HIGH",
+      "risk_score": 15,
+      "mappings": [
+        "OWASP-AI-02",
+        "OWASP-AI-12"
+      ],
+      "mapping_valid": true
+    },
+    {
+      "threat_id": "THR-2818",
+      "name": "Credential Scope Abuse",
+      "severity": "CRITICAL",
+      "risk_score": 20,
+      "mappings": [
+        "OWASP-AI-06",
+        "OWASP-AI-12",
+        "OWASP-AI-13"
+      ],
+      "mapping_valid": true
+    },
+    {
+      "threat_id": "THR-2819",
+      "name": "Restricted Business Record Disclosure",
+      "severity": "CRITICAL",
+      "risk_score": 20,
+      "mappings": [
+        "OWASP-AI-02",
+        "OWASP-AI-12",
+        "OWASP-AI-13"
+      ],
+      "mapping_valid": true
+    },
+    {
+      "threat_id": "THR-2820",
+      "name": "Restricted Business Record Destruction",
+      "severity": "CRITICAL",
+      "risk_score": 20,
+      "mappings": [
+        "OWASP-AI-06",
+        "OWASP-AI-12",
+        "OWASP-AI-13"
+      ],
+      "mapping_valid": true
+    },
+    {
+      "threat_id": "THR-2821",
+      "name": "Downstream Service Trust Abuse",
+      "severity": "CRITICAL",
+      "risk_score": 20,
+      "mappings": [
+        "OWASP-AI-05",
+        "OWASP-AI-12"
+      ],
+      "mapping_valid": true
+    },
+    {
+      "threat_id": "THR-2822",
+      "name": "Agent Execution Loop",
+      "severity": "MEDIUM",
+      "risk_score": 12,
+      "mappings": [
+        "OWASP-AI-06",
+        "OWASP-AI-10"
+      ],
+      "mapping_valid": true
+    },
+    {
+      "threat_id": "THR-2823",
+      "name": "Tool Invocation Flood",
+      "severity": "MEDIUM",
+      "risk_score": 12,
+      "mappings": [
+        "OWASP-AI-10",
+        "OWASP-AI-12"
+      ],
+      "mapping_valid": true
+    },
+    {
+      "threat_id": "THR-2824",
+      "name": "System Prompt Disclosure",
+      "severity": "HIGH",
+      "risk_score": 16,
+      "mappings": [
+        "OWASP-AI-02",
+        "OWASP-AI-07"
+      ],
+      "mapping_valid": true
+    },
+    {
+      "threat_id": "THR-2825",
+      "name": "Security Telemetry Suppression",
+      "severity": "HIGH",
+      "risk_score": 15,
+      "mappings": [
+        "OWASP-AI-14"
+      ],
+      "mapping_valid": true
+    },
+    {
+      "threat_id": "THR-2826",
+      "name": "Authorization Evidence Tampering",
+      "severity": "HIGH",
+      "risk_score": 15,
+      "mappings": [
+        "OWASP-AI-13",
+        "OWASP-AI-14"
+      ],
+      "mapping_valid": true
+    }
+  ],
+  "attack_paths": [
+    {
+      "path_id": "PATH-2801",
+      "name": "Prompt Injection to Privileged Execution",
+      "owasp_risks": [
+        "OWASP-AI-01",
+        "OWASP-AI-06",
+        "OWASP-AI-12",
+        "OWASP-AI-13"
+      ]
+    },
+    {
+      "path_id": "PATH-2802",
+      "name": "RAG Poisoning to Persistent AI Compromise",
+      "owasp_risks": [
+        "OWASP-AI-01",
+        "OWASP-AI-04",
+        "OWASP-AI-08",
+        "OWASP-AI-11"
+      ]
+    },
+    {
+      "path_id": "PATH-2803",
+      "name": "Prompt Injection to Restricted Data Access",
+      "owasp_risks": [
+        "OWASP-AI-01",
+        "OWASP-AI-02",
+        "OWASP-AI-06",
+        "OWASP-AI-12",
+        "OWASP-AI-13"
+      ]
+    },
+    {
+      "path_id": "PATH-2804",
+      "name": "Persistent Memory to Destructive Execution",
+      "owasp_risks": [
+        "OWASP-AI-06",
+        "OWASP-AI-11",
+        "OWASP-AI-12",
+        "OWASP-AI-13"
+      ]
+    },
+    {
+      "path_id": "PATH-2805",
+      "name": "Credential Abuse to Destructive Business Impact",
+      "owasp_risks": [
+        "OWASP-AI-02",
+        "OWASP-AI-06",
+        "OWASP-AI-12",
+        "OWASP-AI-13"
+      ]
+    },
+    {
+      "path_id": "PATH-2806",
+      "name": "Target Substitution to Restricted Record Destruction",
+      "owasp_risks": [
+        "OWASP-AI-06",
+        "OWASP-AI-12",
+        "OWASP-AI-13"
+      ]
+    },
+    {
+      "path_id": "PATH-2807",
+      "name": "Fake Approval to Authorization Bypass",
+      "owasp_risks": [
+        "OWASP-AI-05",
+        "OWASP-AI-09",
+        "OWASP-AI-12",
+        "OWASP-AI-13"
+      ]
+    },
+    {
+      "path_id": "PATH-2808",
+      "name": "Telemetry Evasion During Privileged Abuse",
+      "owasp_risks": [
+        "OWASP-AI-12",
+        "OWASP-AI-13",
+        "OWASP-AI-14"
+      ]
+    }
+  ],
+  "controls": [
+    {
+      "control_id": "OWASP-CTRL-01",
+      "name": "Instruction Trust Separation",
+      "risks": [
+        "OWASP-AI-01",
+        "OWASP-AI-07"
+      ]
+    },
+    {
+      "control_id": "OWASP-CTRL-02",
+      "name": "Sensitive Data Minimization & DLP",
+      "risks": [
+        "OWASP-AI-02"
+      ]
+    },
+    {
+      "control_id": "OWASP-CTRL-03",
+      "name": "AI Supply-Chain Validation",
+      "risks": [
+        "OWASP-AI-03"
+      ]
+    },
+    {
+      "control_id": "OWASP-CTRL-04",
+      "name": "RAG Provenance & Poisoning Controls",
+      "risks": [
+        "OWASP-AI-04",
+        "OWASP-AI-08"
+      ]
+    },
+    {
+      "control_id": "OWASP-CTRL-05",
+      "name": "Output Isolation & Validation",
+      "risks": [
+        "OWASP-AI-05",
+        "OWASP-AI-09"
+      ]
+    },
+    {
+      "control_id": "OWASP-CTRL-06",
+      "name": "Least-Privilege Agent Architecture",
+      "risks": [
+        "OWASP-AI-06"
+      ]
+    },
+    {
+      "control_id": "OWASP-CTRL-07",
+      "name": "Execution Budgets & Rate Limits",
+      "risks": [
+        "OWASP-AI-10"
+      ]
+    },
+    {
+      "control_id": "OWASP-CTRL-08",
+      "name": "Authorized Persistent Memory",
+      "risks": [
+        "OWASP-AI-11"
+      ]
+    },
+    {
+      "control_id": "OWASP-CTRL-09",
+      "name": "Tool Allowlisting & Parameter Validation",
+      "risks": [
+        "OWASP-AI-12"
+      ]
+    },
+    {
+      "control_id": "OWASP-CTRL-10",
+      "name": "Fail-Closed Independent Authorization",
+      "risks": [
+        "OWASP-AI-13"
+      ]
+    },
+    {
+      "control_id": "OWASP-CTRL-11",
+      "name": "Tamper-Evident AI Security Telemetry",
+      "risks": [
+        "OWASP-AI-14"
+      ]
+    }
+  ],
+  "risk_distribution": {
+    "OWASP-AI-01": 3,
+    "OWASP-AI-08": 4,
+    "OWASP-AI-03": 1,
+    "OWASP-AI-04": 4,
+    "OWASP-AI-02": 5,
+    "OWASP-AI-11": 3,
+    "OWASP-AI-06": 7,
+    "OWASP-AI-12": 10,
+    "OWASP-AI-05": 3,
+    "OWASP-AI-09": 1,
+    "OWASP-AI-13": 7,
+    "OWASP-AI-10": 2,
+    "OWASP-AI-07": 1,
+    "OWASP-AI-14": 2
+  },
+  "severity_distribution": {
+    "HIGH": 9,
+    "CRITICAL": 15,
+    "MEDIUM": 2
+  },
+  "metrics": {
+    "risk_areas": 14,
+    "threat_scenarios": 26,
+    "mapped_threats": 26,
+    "high_critical_threats": 24,
+    "risk_categories_represented": 14,
+    "attack_paths_mapped": 8,
+    "security_controls": 11,
+    "risk_categories_with_control_coverage": 14
+  },
+  "security_checks": {
+    "All Threat Mappings Valid": true,
+    "All Threats Mapped": true,
+    "Prompt Injection Risk Represented": true,
+    "Sensitive Disclosure Risk Represented": true,
+    "Supply Chain Risk Represented": true,
+    "Poisoning Risk Represented": true,
+    "Output Handling Risk Represented": true,
+    "Excessive Agency Risk Represented": true,
+    "System Prompt Risk Represented": true,
+    "Retrieval Risk Represented": true,
+    "Trust Failure Risk Represented": true,
+    "Resource Consumption Risk Represented": true,
+    "Persistent Memory Risk Represented": true,
+    "Tool Execution Risk Represented": true,
+    "Authorization Risk Represented": true,
+    "Observability Risk Represented": true,
+    "All Risk Areas Have Control Coverage": true,
+    "Attack Paths Mapped": true
+  },
+  "mapping_valid": true
+}

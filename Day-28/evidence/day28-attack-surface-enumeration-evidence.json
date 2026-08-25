@@ -1,0 +1,417 @@
+{
+  "lab": "Day 28 Lab 3",
+  "title": "LLM Attack-Surface Enumeration",
+  "system": {
+    "system_id": "AI-SYSTEM-2801",
+    "name": "synthetic-enterprise-ai-assistant",
+    "environment": "day28-threat-model-lab",
+    "version": "v1.0.0"
+  },
+  "categories": {
+    "INPUT": "Externally or user-controlled input surfaces",
+    "INSTRUCTION": "Instruction hierarchy and prompt-control surfaces",
+    "RAG": "Retrieval, document and context-admission surfaces",
+    "MEMORY": "Persistent AI state and memory surfaces",
+    "MODEL": "Model runtime and model-control surfaces",
+    "AGENT": "Agent reasoning, planning and delegation surfaces",
+    "TOOL": "Tool selection, parameters and execution surfaces",
+    "AUTHORIZATION": "Identity, privilege and execution authorization surfaces",
+    "SECRET": "Credential, token and secret-access surfaces",
+    "DOWNSTREAM": "Business-impact and downstream-service surfaces",
+    "OBSERVABILITY": "Logging, telemetry and security-monitoring surfaces"
+  },
+  "attack_surfaces": [
+    {
+      "surface_id": "AS-2801",
+      "name": "User Prompt Entry",
+      "category": "INPUT",
+      "component": "input_gateway",
+      "trust_boundary": "External -> Application Edge",
+      "entry_point": true,
+      "privileged": false,
+      "persistent": false,
+      "business_impact": false,
+      "attack_vectors": [
+        "direct_prompt_injection",
+        "instruction_override",
+        "malicious_payload_framing"
+      ],
+      "risk_score": 6,
+      "priority": "LOW"
+    },
+    {
+      "surface_id": "AS-2802",
+      "name": "System Prompt / Instruction Hierarchy",
+      "category": "INSTRUCTION",
+      "component": "llm_runtime",
+      "trust_boundary": "Application Edge -> AI Runtime",
+      "entry_point": false,
+      "privileged": false,
+      "persistent": false,
+      "business_impact": false,
+      "attack_vectors": [
+        "system_prompt_extraction",
+        "instruction_confusion",
+        "policy_override_attempt"
+      ],
+      "risk_score": 4,
+      "priority": "LOW"
+    },
+    {
+      "surface_id": "AS-2803",
+      "name": "RAG Query Generation",
+      "category": "RAG",
+      "component": "retrieval_service",
+      "trust_boundary": "AI Runtime -> Data & Memory",
+      "entry_point": false,
+      "privileged": false,
+      "persistent": false,
+      "business_impact": false,
+      "attack_vectors": [
+        "query_manipulation",
+        "retrieval_scope_expansion",
+        "sensitive_document_targeting"
+      ],
+      "risk_score": 4,
+      "priority": "LOW"
+    },
+    {
+      "surface_id": "AS-2804",
+      "name": "RAG Knowledge Store",
+      "category": "RAG",
+      "component": "rag_store",
+      "trust_boundary": "Data & Memory",
+      "entry_point": true,
+      "privileged": false,
+      "persistent": true,
+      "business_impact": false,
+      "attack_vectors": [
+        "document_poisoning",
+        "malicious_content_injection",
+        "source_impersonation",
+        "provenance_spoofing"
+      ],
+      "risk_score": 10,
+      "priority": "MEDIUM"
+    },
+    {
+      "surface_id": "AS-2805",
+      "name": "Retrieved Context Admission",
+      "category": "RAG",
+      "component": "context_security_gateway",
+      "trust_boundary": "Data & Memory -> AI Runtime",
+      "entry_point": false,
+      "privileged": false,
+      "persistent": false,
+      "business_impact": false,
+      "attack_vectors": [
+        "indirect_prompt_injection",
+        "false_authority_in_context",
+        "target_substitution"
+      ],
+      "risk_score": 4,
+      "priority": "LOW"
+    },
+    {
+      "surface_id": "AS-2806",
+      "name": "Persistent Memory Write",
+      "category": "MEMORY",
+      "component": "memory_service",
+      "trust_boundary": "AI Runtime -> Data & Memory",
+      "entry_point": false,
+      "privileged": false,
+      "persistent": true,
+      "business_impact": false,
+      "attack_vectors": [
+        "unauthorized_memory_write",
+        "memory_poisoning",
+        "persistent_instruction_injection"
+      ],
+      "risk_score": 8,
+      "priority": "MEDIUM"
+    },
+    {
+      "surface_id": "AS-2807",
+      "name": "Persistent Memory Read",
+      "category": "MEMORY",
+      "component": "memory_service",
+      "trust_boundary": "Data & Memory -> AI Runtime",
+      "entry_point": false,
+      "privileged": false,
+      "persistent": true,
+      "business_impact": false,
+      "attack_vectors": [
+        "cross_session_poison_activation",
+        "stale_trust_reuse",
+        "malicious_memory_retrieval"
+      ],
+      "risk_score": 8,
+      "priority": "MEDIUM"
+    },
+    {
+      "surface_id": "AS-2808",
+      "name": "LLM Runtime",
+      "category": "MODEL",
+      "component": "llm_runtime",
+      "trust_boundary": "AI Runtime",
+      "entry_point": false,
+      "privileged": false,
+      "persistent": false,
+      "business_impact": false,
+      "attack_vectors": [
+        "jailbreak",
+        "policy_evasion",
+        "unsafe_reasoning_influence",
+        "sensitive_context_exposure"
+      ],
+      "risk_score": 5,
+      "priority": "LOW"
+    },
+    {
+      "surface_id": "AS-2809",
+      "name": "Agent Planning",
+      "category": "AGENT",
+      "component": "agent_planner",
+      "trust_boundary": "AI Runtime",
+      "entry_point": false,
+      "privileged": false,
+      "persistent": false,
+      "business_impact": false,
+      "attack_vectors": [
+        "goal_hijacking",
+        "tool_proposal_manipulation",
+        "target_substitution",
+        "privilege_escalation_proposal"
+      ],
+      "risk_score": 6,
+      "priority": "LOW"
+    },
+    {
+      "surface_id": "AS-2810",
+      "name": "Tool Router",
+      "category": "TOOL",
+      "component": "tool_router",
+      "trust_boundary": "AI Runtime -> Privileged Execution",
+      "entry_point": false,
+      "privileged": true,
+      "persistent": false,
+      "business_impact": true,
+      "attack_vectors": [
+        "unsafe_tool_selection",
+        "parameter_injection",
+        "tool_confusion",
+        "target_substitution"
+      ],
+      "risk_score": 14,
+      "priority": "HIGH"
+    },
+    {
+      "surface_id": "AS-2811",
+      "name": "Authorization Request",
+      "category": "AUTHORIZATION",
+      "component": "authorization_service",
+      "trust_boundary": "AI Runtime -> Security Control Plane",
+      "entry_point": false,
+      "privileged": true,
+      "persistent": false,
+      "business_impact": true,
+      "attack_vectors": [
+        "model_generated_authority",
+        "approval_spoofing",
+        "identity_confusion"
+      ],
+      "risk_score": 14,
+      "priority": "HIGH"
+    },
+    {
+      "surface_id": "AS-2812",
+      "name": "Authorization Decision",
+      "category": "AUTHORIZATION",
+      "component": "authorization_service",
+      "trust_boundary": "Security Control Plane -> AI Runtime",
+      "entry_point": false,
+      "privileged": true,
+      "persistent": false,
+      "business_impact": true,
+      "attack_vectors": [
+        "authorization_bypass",
+        "fail_open_behavior",
+        "decision_tampering"
+      ],
+      "risk_score": 14,
+      "priority": "HIGH"
+    },
+    {
+      "surface_id": "AS-2813",
+      "name": "Secret Retrieval",
+      "category": "SECRET",
+      "component": "secret_store",
+      "trust_boundary": "Security Control Plane -> AI Runtime",
+      "entry_point": false,
+      "privileged": true,
+      "persistent": false,
+      "business_impact": true,
+      "attack_vectors": [
+        "credential_exposure",
+        "credential_misuse",
+        "secret_scope_expansion"
+      ],
+      "risk_score": 14,
+      "priority": "HIGH"
+    },
+    {
+      "surface_id": "AS-2814",
+      "name": "Read Record Tool",
+      "category": "TOOL",
+      "component": "tool_runtime",
+      "trust_boundary": "AI Runtime -> Privileged Execution",
+      "entry_point": false,
+      "privileged": false,
+      "persistent": false,
+      "business_impact": true,
+      "attack_vectors": [
+        "unauthorized_record_access",
+        "scope_expansion",
+        "parameter_manipulation"
+      ],
+      "risk_score": 9,
+      "priority": "MEDIUM"
+    },
+    {
+      "surface_id": "AS-2815",
+      "name": "Delete Record Tool",
+      "category": "TOOL",
+      "component": "tool_runtime",
+      "trust_boundary": "AI Runtime -> Privileged Execution",
+      "entry_point": false,
+      "privileged": true,
+      "persistent": false,
+      "business_impact": true,
+      "attack_vectors": [
+        "unauthorized_deletion",
+        "privilege_escalation",
+        "restricted_target_attack"
+      ],
+      "risk_score": 13,
+      "priority": "HIGH"
+    },
+    {
+      "surface_id": "AS-2816",
+      "name": "Restricted Record",
+      "category": "DOWNSTREAM",
+      "component": "record_service",
+      "trust_boundary": "Privileged Execution",
+      "entry_point": false,
+      "privileged": true,
+      "persistent": true,
+      "business_impact": true,
+      "attack_vectors": [
+        "unauthorized_read",
+        "unauthorized_update",
+        "unauthorized_delete"
+      ],
+      "risk_score": 17,
+      "priority": "CRITICAL"
+    },
+    {
+      "surface_id": "AS-2817",
+      "name": "Security Telemetry",
+      "category": "OBSERVABILITY",
+      "component": "detection_engine",
+      "trust_boundary": "AI Runtime -> Security Monitoring",
+      "entry_point": false,
+      "privileged": false,
+      "persistent": true,
+      "business_impact": false,
+      "attack_vectors": [
+        "log_suppression",
+        "telemetry_tampering",
+        "event_evasion",
+        "forensic_blind_spot"
+      ],
+      "risk_score": 8,
+      "priority": "MEDIUM"
+    }
+  ],
+  "abuse_paths": [
+    {
+      "path_id": "PATH-2801",
+      "name": "Prompt Injection to Privileged Execution",
+      "stages": [
+        "AS-2801",
+        "AS-2802",
+        "AS-2809",
+        "AS-2810",
+        "AS-2811",
+        "AS-2812",
+        "AS-2815",
+        "AS-2816"
+      ],
+      "impact": "Unauthorized privileged business operation"
+    },
+    {
+      "path_id": "PATH-2802",
+      "name": "RAG Poisoning to Persistent Compromise",
+      "stages": [
+        "AS-2804",
+        "AS-2805",
+        "AS-2806",
+        "AS-2807",
+        "AS-2809"
+      ],
+      "impact": "Persistent cross-session manipulation"
+    },
+    {
+      "path_id": "PATH-2803",
+      "name": "Secret Exposure to Tool Abuse",
+      "stages": [
+        "AS-2813",
+        "AS-2810",
+        "AS-2815",
+        "AS-2816"
+      ],
+      "impact": "Unauthorized downstream access or destructive action"
+    },
+    {
+      "path_id": "PATH-2804",
+      "name": "Telemetry Evasion During AI Attack",
+      "stages": [
+        "AS-2817",
+        "AS-2812",
+        "AS-2815",
+        "AS-2816"
+      ],
+      "impact": "Reduced detection and forensic visibility during impact"
+    }
+  ],
+  "metrics": {
+    "total_attack_surfaces": 17,
+    "attack_categories": 11,
+    "entry_points": 2,
+    "persistent_surfaces": 5,
+    "privileged_surfaces": 6,
+    "business_impact_surfaces": 7,
+    "high_critical_surfaces": 6,
+    "unique_attack_vectors": 54,
+    "preliminary_abuse_paths": 4
+  },
+  "security_checks": {
+    "Unique Surface IDs": true,
+    "Prompt Surface Identified": true,
+    "Instruction Surface Identified": true,
+    "RAG Surfaces Identified": true,
+    "Memory Surfaces Identified": true,
+    "Model Surface Identified": true,
+    "Agent Surface Identified": true,
+    "Tool Surfaces Identified": true,
+    "Authorization Surfaces Identified": true,
+    "Secret Surface Identified": true,
+    "Downstream Business Surface Identified": true,
+    "Observability Surface Identified": true,
+    "Persistent Surfaces Identified": true,
+    "Privileged Surfaces Identified": true,
+    "Business Impact Surfaces Identified": true,
+    "Multi-Stage Abuse Paths Identified": true
+  },
+  "attack_surface_model_valid": true
+}

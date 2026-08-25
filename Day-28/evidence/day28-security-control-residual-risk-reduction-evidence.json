@@ -1,0 +1,1334 @@
+{
+  "lab": "Day 28 Lab 14",
+  "title": "Security Control Mapping & Residual-Risk Reduction",
+  "risks": [
+    {
+      "risk_id": "RISK-2801",
+      "name": "Direct Prompt Injection",
+      "domain": "PROMPT",
+      "inherent_score": 27,
+      "target_residual_score": 8,
+      "risk_reduction": 19,
+      "risk_reduction_percent": 70.37
+    },
+    {
+      "risk_id": "RISK-2802",
+      "name": "Indirect RAG Prompt Injection",
+      "domain": "RAG",
+      "inherent_score": 37,
+      "target_residual_score": 8,
+      "risk_reduction": 29,
+      "risk_reduction_percent": 78.38
+    },
+    {
+      "risk_id": "RISK-2803",
+      "name": "RAG Source Poisoning",
+      "domain": "RAG",
+      "inherent_score": 33,
+      "target_residual_score": 8,
+      "risk_reduction": 25,
+      "risk_reduction_percent": 75.76
+    },
+    {
+      "risk_id": "RISK-2804",
+      "name": "Unsafe Context Admission",
+      "domain": "RAG",
+      "inherent_score": 32,
+      "target_residual_score": 7,
+      "risk_reduction": 25,
+      "risk_reduction_percent": 78.12
+    },
+    {
+      "risk_id": "RISK-2805",
+      "name": "Persistent Memory Poisoning",
+      "domain": "MEMORY",
+      "inherent_score": 42,
+      "target_residual_score": 5,
+      "risk_reduction": 37,
+      "risk_reduction_percent": 88.1
+    },
+    {
+      "risk_id": "RISK-2806",
+      "name": "Cross-Session Memory Activation",
+      "domain": "MEMORY",
+      "inherent_score": 37,
+      "target_residual_score": 5,
+      "risk_reduction": 32,
+      "risk_reduction_percent": 86.49
+    },
+    {
+      "risk_id": "RISK-2807",
+      "name": "Cross-Agent Memory Propagation",
+      "domain": "MEMORY",
+      "inherent_score": 38,
+      "target_residual_score": 5,
+      "risk_reduction": 33,
+      "risk_reduction_percent": 86.84
+    },
+    {
+      "risk_id": "RISK-2808",
+      "name": "Agent Goal Hijacking",
+      "domain": "AGENT",
+      "inherent_score": 33,
+      "target_residual_score": 7,
+      "risk_reduction": 26,
+      "risk_reduction_percent": 78.79
+    },
+    {
+      "risk_id": "RISK-2809",
+      "name": "Task Binding Bypass",
+      "domain": "AGENT",
+      "inherent_score": 33,
+      "target_residual_score": 6,
+      "risk_reduction": 27,
+      "risk_reduction_percent": 81.82
+    },
+    {
+      "risk_id": "RISK-2810",
+      "name": "Unsafe Privileged Tool Selection",
+      "domain": "TOOL",
+      "inherent_score": 34,
+      "target_residual_score": 5,
+      "risk_reduction": 29,
+      "risk_reduction_percent": 85.29
+    },
+    {
+      "risk_id": "RISK-2811",
+      "name": "Target Substitution",
+      "domain": "TOOL",
+      "inherent_score": 34,
+      "target_residual_score": 5,
+      "risk_reduction": 29,
+      "risk_reduction_percent": 85.29
+    },
+    {
+      "risk_id": "RISK-2812",
+      "name": "Tool Parameter Manipulation",
+      "domain": "TOOL",
+      "inherent_score": 34,
+      "target_residual_score": 5,
+      "risk_reduction": 29,
+      "risk_reduction_percent": 85.29
+    },
+    {
+      "risk_id": "RISK-2813",
+      "name": "Model-Generated Approval",
+      "domain": "AUTHORIZATION",
+      "inherent_score": 35,
+      "target_residual_score": 4,
+      "risk_reduction": 31,
+      "risk_reduction_percent": 88.57
+    },
+    {
+      "risk_id": "RISK-2814",
+      "name": "Fail-Open Authorization",
+      "domain": "AUTHORIZATION",
+      "inherent_score": 30,
+      "target_residual_score": 3,
+      "risk_reduction": 27,
+      "risk_reduction_percent": 90.0
+    },
+    {
+      "risk_id": "RISK-2815",
+      "name": "Credential Exposure",
+      "domain": "SECRET",
+      "inherent_score": 32,
+      "target_residual_score": 5,
+      "risk_reduction": 27,
+      "risk_reduction_percent": 84.38
+    },
+    {
+      "risk_id": "RISK-2816",
+      "name": "Credential Scope Abuse",
+      "domain": "SECRET",
+      "inherent_score": 37,
+      "target_residual_score": 5,
+      "risk_reduction": 32,
+      "risk_reduction_percent": 86.49
+    },
+    {
+      "risk_id": "RISK-2817",
+      "name": "Restricted Data Disclosure",
+      "domain": "BUSINESS",
+      "inherent_score": 32,
+      "target_residual_score": 5,
+      "risk_reduction": 27,
+      "risk_reduction_percent": 84.38
+    },
+    {
+      "risk_id": "RISK-2818",
+      "name": "Restricted Data Modification",
+      "domain": "BUSINESS",
+      "inherent_score": 29,
+      "target_residual_score": 4,
+      "risk_reduction": 25,
+      "risk_reduction_percent": 86.21
+    },
+    {
+      "risk_id": "RISK-2819",
+      "name": "Restricted Data Destruction",
+      "domain": "BUSINESS",
+      "inherent_score": 29,
+      "target_residual_score": 3,
+      "risk_reduction": 26,
+      "risk_reduction_percent": 89.66
+    },
+    {
+      "risk_id": "RISK-2820",
+      "name": "Security Telemetry Suppression",
+      "domain": "OBSERVABILITY",
+      "inherent_score": 26,
+      "target_residual_score": 6,
+      "risk_reduction": 20,
+      "risk_reduction_percent": 76.92
+    },
+    {
+      "risk_id": "RISK-2821",
+      "name": "Resource Exhaustion",
+      "domain": "AVAILABILITY",
+      "inherent_score": 19,
+      "target_residual_score": 5,
+      "risk_reduction": 14,
+      "risk_reduction_percent": 73.68
+    }
+  ],
+  "controls": [
+    {
+      "control_id": "CTRL-2801",
+      "name": "Instruction Trust Separation",
+      "category": "PREVENTIVE",
+      "owner": "AI Security Engineering",
+      "implementation_priority": "HIGH",
+      "risks": [
+        "RISK-2801",
+        "RISK-2802"
+      ],
+      "risk_count": 2,
+      "inherent_exposure": 64,
+      "target_exposure": 16,
+      "addressable_risk_reduction": 48
+    },
+    {
+      "control_id": "CTRL-2802",
+      "name": "Prompt Injection Detection",
+      "category": "DETECTIVE",
+      "owner": "AI SOC",
+      "implementation_priority": "HIGH",
+      "risks": [
+        "RISK-2801",
+        "RISK-2802"
+      ],
+      "risk_count": 2,
+      "inherent_exposure": 64,
+      "target_exposure": 16,
+      "addressable_risk_reduction": 48
+    },
+    {
+      "control_id": "CTRL-2803",
+      "name": "RAG Provenance Validation",
+      "category": "PREVENTIVE",
+      "owner": "RAG Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2802",
+        "RISK-2803",
+        "RISK-2804"
+      ],
+      "risk_count": 3,
+      "inherent_exposure": 102,
+      "target_exposure": 23,
+      "addressable_risk_reduction": 79
+    },
+    {
+      "control_id": "CTRL-2804",
+      "name": "Fail-Closed Context Admission",
+      "category": "PREVENTIVE",
+      "owner": "AI Security Engineering",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2802",
+        "RISK-2804"
+      ],
+      "risk_count": 2,
+      "inherent_exposure": 69,
+      "target_exposure": 15,
+      "addressable_risk_reduction": 54
+    },
+    {
+      "control_id": "CTRL-2805",
+      "name": "Authorized Memory Writes",
+      "category": "PREVENTIVE",
+      "owner": "AI Platform Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2805",
+        "RISK-2806",
+        "RISK-2807"
+      ],
+      "risk_count": 3,
+      "inherent_exposure": 117,
+      "target_exposure": 15,
+      "addressable_risk_reduction": 102
+    },
+    {
+      "control_id": "CTRL-2806",
+      "name": "Memory Provenance & Integrity",
+      "category": "PREVENTIVE",
+      "owner": "AI Platform Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2805",
+        "RISK-2806",
+        "RISK-2807"
+      ],
+      "risk_count": 3,
+      "inherent_exposure": 117,
+      "target_exposure": 15,
+      "addressable_risk_reduction": 102
+    },
+    {
+      "control_id": "CTRL-2807",
+      "name": "Session / Agent Memory Isolation",
+      "category": "PREVENTIVE",
+      "owner": "Agent Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2806",
+        "RISK-2807"
+      ],
+      "risk_count": 2,
+      "inherent_exposure": 75,
+      "target_exposure": 10,
+      "addressable_risk_reduction": 65
+    },
+    {
+      "control_id": "CTRL-2808",
+      "name": "Agent Goal / Task Binding",
+      "category": "PREVENTIVE",
+      "owner": "Agent Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2808",
+        "RISK-2809",
+        "RISK-2810"
+      ],
+      "risk_count": 3,
+      "inherent_exposure": 100,
+      "target_exposure": 18,
+      "addressable_risk_reduction": 82
+    },
+    {
+      "control_id": "CTRL-2809",
+      "name": "Tool Allowlisting",
+      "category": "PREVENTIVE",
+      "owner": "Tool Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2810",
+        "RISK-2811",
+        "RISK-2812"
+      ],
+      "risk_count": 3,
+      "inherent_exposure": 102,
+      "target_exposure": 15,
+      "addressable_risk_reduction": 87
+    },
+    {
+      "control_id": "CTRL-2810",
+      "name": "Strict Tool Parameter Validation",
+      "category": "PREVENTIVE",
+      "owner": "Tool Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2811",
+        "RISK-2812"
+      ],
+      "risk_count": 2,
+      "inherent_exposure": 68,
+      "target_exposure": 10,
+      "addressable_risk_reduction": 58
+    },
+    {
+      "control_id": "CTRL-2811",
+      "name": "Trusted Target Binding",
+      "category": "PREVENTIVE",
+      "owner": "Tool Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2811",
+        "RISK-2817",
+        "RISK-2818",
+        "RISK-2819"
+      ],
+      "risk_count": 4,
+      "inherent_exposure": 124,
+      "target_exposure": 17,
+      "addressable_risk_reduction": 107
+    },
+    {
+      "control_id": "CTRL-2812",
+      "name": "Fail-Closed Independent Authorization",
+      "category": "PREVENTIVE",
+      "owner": "Identity Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2810",
+        "RISK-2811",
+        "RISK-2812",
+        "RISK-2813",
+        "RISK-2814",
+        "RISK-2818",
+        "RISK-2819"
+      ],
+      "risk_count": 7,
+      "inherent_exposure": 225,
+      "target_exposure": 29,
+      "addressable_risk_reduction": 196
+    },
+    {
+      "control_id": "CTRL-2813",
+      "name": "External Approval Verification",
+      "category": "PREVENTIVE",
+      "owner": "Identity Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2813",
+        "RISK-2814"
+      ],
+      "risk_count": 2,
+      "inherent_exposure": 65,
+      "target_exposure": 7,
+      "addressable_risk_reduction": 58
+    },
+    {
+      "control_id": "CTRL-2814",
+      "name": "Secret Isolation",
+      "category": "PREVENTIVE",
+      "owner": "Platform Security",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2815",
+        "RISK-2816"
+      ],
+      "risk_count": 2,
+      "inherent_exposure": 69,
+      "target_exposure": 10,
+      "addressable_risk_reduction": 59
+    },
+    {
+      "control_id": "CTRL-2815",
+      "name": "Short-Lived Task-Bound Credentials",
+      "category": "PREVENTIVE",
+      "owner": "Platform Security",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2815",
+        "RISK-2816"
+      ],
+      "risk_count": 2,
+      "inherent_exposure": 69,
+      "target_exposure": 10,
+      "addressable_risk_reduction": 59
+    },
+    {
+      "control_id": "CTRL-2816",
+      "name": "Resource-Level Data Authorization",
+      "category": "PREVENTIVE",
+      "owner": "Data Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2817",
+        "RISK-2818",
+        "RISK-2819"
+      ],
+      "risk_count": 3,
+      "inherent_exposure": 90,
+      "target_exposure": 12,
+      "addressable_risk_reduction": 78
+    },
+    {
+      "control_id": "CTRL-2817",
+      "name": "DLP & Sensitive Output Controls",
+      "category": "PREVENTIVE",
+      "owner": "Data Security Team",
+      "implementation_priority": "HIGH",
+      "risks": [
+        "RISK-2817"
+      ],
+      "risk_count": 1,
+      "inherent_exposure": 32,
+      "target_exposure": 5,
+      "addressable_risk_reduction": 27
+    },
+    {
+      "control_id": "CTRL-2818",
+      "name": "Soft Delete & Recovery",
+      "category": "CORRECTIVE",
+      "owner": "Business Platform Team",
+      "implementation_priority": "HIGH",
+      "risks": [
+        "RISK-2819"
+      ],
+      "risk_count": 1,
+      "inherent_exposure": 29,
+      "target_exposure": 3,
+      "addressable_risk_reduction": 26
+    },
+    {
+      "control_id": "CTRL-2819",
+      "name": "Tamper-Evident AI Security Telemetry",
+      "category": "DETECTIVE",
+      "owner": "AI SOC",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2801",
+        "RISK-2802",
+        "RISK-2803",
+        "RISK-2804",
+        "RISK-2805",
+        "RISK-2806",
+        "RISK-2807",
+        "RISK-2808",
+        "RISK-2809",
+        "RISK-2810",
+        "RISK-2811",
+        "RISK-2812",
+        "RISK-2813",
+        "RISK-2814",
+        "RISK-2815",
+        "RISK-2816",
+        "RISK-2817",
+        "RISK-2818",
+        "RISK-2819",
+        "RISK-2820"
+      ],
+      "risk_count": 20,
+      "inherent_exposure": 664,
+      "target_exposure": 109,
+      "addressable_risk_reduction": 555
+    },
+    {
+      "control_id": "CTRL-2820",
+      "name": "Independent Telemetry Pipeline",
+      "category": "DETECTIVE",
+      "owner": "AI SOC",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2820"
+      ],
+      "risk_count": 1,
+      "inherent_exposure": 26,
+      "target_exposure": 6,
+      "addressable_risk_reduction": 20
+    },
+    {
+      "control_id": "CTRL-2821",
+      "name": "Execution Budgets & Rate Limits",
+      "category": "PREVENTIVE",
+      "owner": "AI Platform Team",
+      "implementation_priority": "HIGH",
+      "risks": [
+        "RISK-2821"
+      ],
+      "risk_count": 1,
+      "inherent_exposure": 19,
+      "target_exposure": 5,
+      "addressable_risk_reduction": 14
+    }
+  ],
+  "prioritized_controls": [
+    {
+      "control_id": "CTRL-2819",
+      "name": "Tamper-Evident AI Security Telemetry",
+      "category": "DETECTIVE",
+      "owner": "AI SOC",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2801",
+        "RISK-2802",
+        "RISK-2803",
+        "RISK-2804",
+        "RISK-2805",
+        "RISK-2806",
+        "RISK-2807",
+        "RISK-2808",
+        "RISK-2809",
+        "RISK-2810",
+        "RISK-2811",
+        "RISK-2812",
+        "RISK-2813",
+        "RISK-2814",
+        "RISK-2815",
+        "RISK-2816",
+        "RISK-2817",
+        "RISK-2818",
+        "RISK-2819",
+        "RISK-2820"
+      ],
+      "risk_count": 20,
+      "inherent_exposure": 664,
+      "target_exposure": 109,
+      "addressable_risk_reduction": 555
+    },
+    {
+      "control_id": "CTRL-2812",
+      "name": "Fail-Closed Independent Authorization",
+      "category": "PREVENTIVE",
+      "owner": "Identity Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2810",
+        "RISK-2811",
+        "RISK-2812",
+        "RISK-2813",
+        "RISK-2814",
+        "RISK-2818",
+        "RISK-2819"
+      ],
+      "risk_count": 7,
+      "inherent_exposure": 225,
+      "target_exposure": 29,
+      "addressable_risk_reduction": 196
+    },
+    {
+      "control_id": "CTRL-2811",
+      "name": "Trusted Target Binding",
+      "category": "PREVENTIVE",
+      "owner": "Tool Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2811",
+        "RISK-2817",
+        "RISK-2818",
+        "RISK-2819"
+      ],
+      "risk_count": 4,
+      "inherent_exposure": 124,
+      "target_exposure": 17,
+      "addressable_risk_reduction": 107
+    },
+    {
+      "control_id": "CTRL-2805",
+      "name": "Authorized Memory Writes",
+      "category": "PREVENTIVE",
+      "owner": "AI Platform Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2805",
+        "RISK-2806",
+        "RISK-2807"
+      ],
+      "risk_count": 3,
+      "inherent_exposure": 117,
+      "target_exposure": 15,
+      "addressable_risk_reduction": 102
+    },
+    {
+      "control_id": "CTRL-2806",
+      "name": "Memory Provenance & Integrity",
+      "category": "PREVENTIVE",
+      "owner": "AI Platform Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2805",
+        "RISK-2806",
+        "RISK-2807"
+      ],
+      "risk_count": 3,
+      "inherent_exposure": 117,
+      "target_exposure": 15,
+      "addressable_risk_reduction": 102
+    },
+    {
+      "control_id": "CTRL-2809",
+      "name": "Tool Allowlisting",
+      "category": "PREVENTIVE",
+      "owner": "Tool Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2810",
+        "RISK-2811",
+        "RISK-2812"
+      ],
+      "risk_count": 3,
+      "inherent_exposure": 102,
+      "target_exposure": 15,
+      "addressable_risk_reduction": 87
+    },
+    {
+      "control_id": "CTRL-2808",
+      "name": "Agent Goal / Task Binding",
+      "category": "PREVENTIVE",
+      "owner": "Agent Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2808",
+        "RISK-2809",
+        "RISK-2810"
+      ],
+      "risk_count": 3,
+      "inherent_exposure": 100,
+      "target_exposure": 18,
+      "addressable_risk_reduction": 82
+    },
+    {
+      "control_id": "CTRL-2803",
+      "name": "RAG Provenance Validation",
+      "category": "PREVENTIVE",
+      "owner": "RAG Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2802",
+        "RISK-2803",
+        "RISK-2804"
+      ],
+      "risk_count": 3,
+      "inherent_exposure": 102,
+      "target_exposure": 23,
+      "addressable_risk_reduction": 79
+    },
+    {
+      "control_id": "CTRL-2816",
+      "name": "Resource-Level Data Authorization",
+      "category": "PREVENTIVE",
+      "owner": "Data Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2817",
+        "RISK-2818",
+        "RISK-2819"
+      ],
+      "risk_count": 3,
+      "inherent_exposure": 90,
+      "target_exposure": 12,
+      "addressable_risk_reduction": 78
+    },
+    {
+      "control_id": "CTRL-2807",
+      "name": "Session / Agent Memory Isolation",
+      "category": "PREVENTIVE",
+      "owner": "Agent Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2806",
+        "RISK-2807"
+      ],
+      "risk_count": 2,
+      "inherent_exposure": 75,
+      "target_exposure": 10,
+      "addressable_risk_reduction": 65
+    },
+    {
+      "control_id": "CTRL-2814",
+      "name": "Secret Isolation",
+      "category": "PREVENTIVE",
+      "owner": "Platform Security",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2815",
+        "RISK-2816"
+      ],
+      "risk_count": 2,
+      "inherent_exposure": 69,
+      "target_exposure": 10,
+      "addressable_risk_reduction": 59
+    },
+    {
+      "control_id": "CTRL-2815",
+      "name": "Short-Lived Task-Bound Credentials",
+      "category": "PREVENTIVE",
+      "owner": "Platform Security",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2815",
+        "RISK-2816"
+      ],
+      "risk_count": 2,
+      "inherent_exposure": 69,
+      "target_exposure": 10,
+      "addressable_risk_reduction": 59
+    },
+    {
+      "control_id": "CTRL-2810",
+      "name": "Strict Tool Parameter Validation",
+      "category": "PREVENTIVE",
+      "owner": "Tool Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2811",
+        "RISK-2812"
+      ],
+      "risk_count": 2,
+      "inherent_exposure": 68,
+      "target_exposure": 10,
+      "addressable_risk_reduction": 58
+    },
+    {
+      "control_id": "CTRL-2813",
+      "name": "External Approval Verification",
+      "category": "PREVENTIVE",
+      "owner": "Identity Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2813",
+        "RISK-2814"
+      ],
+      "risk_count": 2,
+      "inherent_exposure": 65,
+      "target_exposure": 7,
+      "addressable_risk_reduction": 58
+    },
+    {
+      "control_id": "CTRL-2804",
+      "name": "Fail-Closed Context Admission",
+      "category": "PREVENTIVE",
+      "owner": "AI Security Engineering",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2802",
+        "RISK-2804"
+      ],
+      "risk_count": 2,
+      "inherent_exposure": 69,
+      "target_exposure": 15,
+      "addressable_risk_reduction": 54
+    },
+    {
+      "control_id": "CTRL-2801",
+      "name": "Instruction Trust Separation",
+      "category": "PREVENTIVE",
+      "owner": "AI Security Engineering",
+      "implementation_priority": "HIGH",
+      "risks": [
+        "RISK-2801",
+        "RISK-2802"
+      ],
+      "risk_count": 2,
+      "inherent_exposure": 64,
+      "target_exposure": 16,
+      "addressable_risk_reduction": 48
+    },
+    {
+      "control_id": "CTRL-2802",
+      "name": "Prompt Injection Detection",
+      "category": "DETECTIVE",
+      "owner": "AI SOC",
+      "implementation_priority": "HIGH",
+      "risks": [
+        "RISK-2801",
+        "RISK-2802"
+      ],
+      "risk_count": 2,
+      "inherent_exposure": 64,
+      "target_exposure": 16,
+      "addressable_risk_reduction": 48
+    },
+    {
+      "control_id": "CTRL-2817",
+      "name": "DLP & Sensitive Output Controls",
+      "category": "PREVENTIVE",
+      "owner": "Data Security Team",
+      "implementation_priority": "HIGH",
+      "risks": [
+        "RISK-2817"
+      ],
+      "risk_count": 1,
+      "inherent_exposure": 32,
+      "target_exposure": 5,
+      "addressable_risk_reduction": 27
+    },
+    {
+      "control_id": "CTRL-2818",
+      "name": "Soft Delete & Recovery",
+      "category": "CORRECTIVE",
+      "owner": "Business Platform Team",
+      "implementation_priority": "HIGH",
+      "risks": [
+        "RISK-2819"
+      ],
+      "risk_count": 1,
+      "inherent_exposure": 29,
+      "target_exposure": 3,
+      "addressable_risk_reduction": 26
+    },
+    {
+      "control_id": "CTRL-2820",
+      "name": "Independent Telemetry Pipeline",
+      "category": "DETECTIVE",
+      "owner": "AI SOC",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2820"
+      ],
+      "risk_count": 1,
+      "inherent_exposure": 26,
+      "target_exposure": 6,
+      "addressable_risk_reduction": 20
+    },
+    {
+      "control_id": "CTRL-2821",
+      "name": "Execution Budgets & Rate Limits",
+      "category": "PREVENTIVE",
+      "owner": "AI Platform Team",
+      "implementation_priority": "HIGH",
+      "risks": [
+        "RISK-2821"
+      ],
+      "risk_count": 1,
+      "inherent_exposure": 19,
+      "target_exposure": 5,
+      "addressable_risk_reduction": 14
+    }
+  ],
+  "high_value_controls": [
+    {
+      "control_id": "CTRL-2819",
+      "name": "Tamper-Evident AI Security Telemetry",
+      "category": "DETECTIVE",
+      "owner": "AI SOC",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2801",
+        "RISK-2802",
+        "RISK-2803",
+        "RISK-2804",
+        "RISK-2805",
+        "RISK-2806",
+        "RISK-2807",
+        "RISK-2808",
+        "RISK-2809",
+        "RISK-2810",
+        "RISK-2811",
+        "RISK-2812",
+        "RISK-2813",
+        "RISK-2814",
+        "RISK-2815",
+        "RISK-2816",
+        "RISK-2817",
+        "RISK-2818",
+        "RISK-2819",
+        "RISK-2820"
+      ],
+      "risk_count": 20,
+      "inherent_exposure": 664,
+      "target_exposure": 109,
+      "addressable_risk_reduction": 555
+    },
+    {
+      "control_id": "CTRL-2812",
+      "name": "Fail-Closed Independent Authorization",
+      "category": "PREVENTIVE",
+      "owner": "Identity Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2810",
+        "RISK-2811",
+        "RISK-2812",
+        "RISK-2813",
+        "RISK-2814",
+        "RISK-2818",
+        "RISK-2819"
+      ],
+      "risk_count": 7,
+      "inherent_exposure": 225,
+      "target_exposure": 29,
+      "addressable_risk_reduction": 196
+    },
+    {
+      "control_id": "CTRL-2811",
+      "name": "Trusted Target Binding",
+      "category": "PREVENTIVE",
+      "owner": "Tool Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2811",
+        "RISK-2817",
+        "RISK-2818",
+        "RISK-2819"
+      ],
+      "risk_count": 4,
+      "inherent_exposure": 124,
+      "target_exposure": 17,
+      "addressable_risk_reduction": 107
+    },
+    {
+      "control_id": "CTRL-2805",
+      "name": "Authorized Memory Writes",
+      "category": "PREVENTIVE",
+      "owner": "AI Platform Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2805",
+        "RISK-2806",
+        "RISK-2807"
+      ],
+      "risk_count": 3,
+      "inherent_exposure": 117,
+      "target_exposure": 15,
+      "addressable_risk_reduction": 102
+    },
+    {
+      "control_id": "CTRL-2806",
+      "name": "Memory Provenance & Integrity",
+      "category": "PREVENTIVE",
+      "owner": "AI Platform Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2805",
+        "RISK-2806",
+        "RISK-2807"
+      ],
+      "risk_count": 3,
+      "inherent_exposure": 117,
+      "target_exposure": 15,
+      "addressable_risk_reduction": 102
+    },
+    {
+      "control_id": "CTRL-2809",
+      "name": "Tool Allowlisting",
+      "category": "PREVENTIVE",
+      "owner": "Tool Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2810",
+        "RISK-2811",
+        "RISK-2812"
+      ],
+      "risk_count": 3,
+      "inherent_exposure": 102,
+      "target_exposure": 15,
+      "addressable_risk_reduction": 87
+    },
+    {
+      "control_id": "CTRL-2808",
+      "name": "Agent Goal / Task Binding",
+      "category": "PREVENTIVE",
+      "owner": "Agent Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2808",
+        "RISK-2809",
+        "RISK-2810"
+      ],
+      "risk_count": 3,
+      "inherent_exposure": 100,
+      "target_exposure": 18,
+      "addressable_risk_reduction": 82
+    },
+    {
+      "control_id": "CTRL-2803",
+      "name": "RAG Provenance Validation",
+      "category": "PREVENTIVE",
+      "owner": "RAG Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2802",
+        "RISK-2803",
+        "RISK-2804"
+      ],
+      "risk_count": 3,
+      "inherent_exposure": 102,
+      "target_exposure": 23,
+      "addressable_risk_reduction": 79
+    },
+    {
+      "control_id": "CTRL-2816",
+      "name": "Resource-Level Data Authorization",
+      "category": "PREVENTIVE",
+      "owner": "Data Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2817",
+        "RISK-2818",
+        "RISK-2819"
+      ],
+      "risk_count": 3,
+      "inherent_exposure": 90,
+      "target_exposure": 12,
+      "addressable_risk_reduction": 78
+    },
+    {
+      "control_id": "CTRL-2807",
+      "name": "Session / Agent Memory Isolation",
+      "category": "PREVENTIVE",
+      "owner": "Agent Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2806",
+        "RISK-2807"
+      ],
+      "risk_count": 2,
+      "inherent_exposure": 75,
+      "target_exposure": 10,
+      "addressable_risk_reduction": 65
+    },
+    {
+      "control_id": "CTRL-2814",
+      "name": "Secret Isolation",
+      "category": "PREVENTIVE",
+      "owner": "Platform Security",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2815",
+        "RISK-2816"
+      ],
+      "risk_count": 2,
+      "inherent_exposure": 69,
+      "target_exposure": 10,
+      "addressable_risk_reduction": 59
+    },
+    {
+      "control_id": "CTRL-2815",
+      "name": "Short-Lived Task-Bound Credentials",
+      "category": "PREVENTIVE",
+      "owner": "Platform Security",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2815",
+        "RISK-2816"
+      ],
+      "risk_count": 2,
+      "inherent_exposure": 69,
+      "target_exposure": 10,
+      "addressable_risk_reduction": 59
+    },
+    {
+      "control_id": "CTRL-2810",
+      "name": "Strict Tool Parameter Validation",
+      "category": "PREVENTIVE",
+      "owner": "Tool Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2811",
+        "RISK-2812"
+      ],
+      "risk_count": 2,
+      "inherent_exposure": 68,
+      "target_exposure": 10,
+      "addressable_risk_reduction": 58
+    },
+    {
+      "control_id": "CTRL-2813",
+      "name": "External Approval Verification",
+      "category": "PREVENTIVE",
+      "owner": "Identity Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2813",
+        "RISK-2814"
+      ],
+      "risk_count": 2,
+      "inherent_exposure": 65,
+      "target_exposure": 7,
+      "addressable_risk_reduction": 58
+    },
+    {
+      "control_id": "CTRL-2804",
+      "name": "Fail-Closed Context Admission",
+      "category": "PREVENTIVE",
+      "owner": "AI Security Engineering",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2802",
+        "RISK-2804"
+      ],
+      "risk_count": 2,
+      "inherent_exposure": 69,
+      "target_exposure": 15,
+      "addressable_risk_reduction": 54
+    }
+  ],
+  "architectural_choke_points": [
+    {
+      "control_id": "CTRL-2819",
+      "name": "Tamper-Evident AI Security Telemetry",
+      "category": "DETECTIVE",
+      "owner": "AI SOC",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2801",
+        "RISK-2802",
+        "RISK-2803",
+        "RISK-2804",
+        "RISK-2805",
+        "RISK-2806",
+        "RISK-2807",
+        "RISK-2808",
+        "RISK-2809",
+        "RISK-2810",
+        "RISK-2811",
+        "RISK-2812",
+        "RISK-2813",
+        "RISK-2814",
+        "RISK-2815",
+        "RISK-2816",
+        "RISK-2817",
+        "RISK-2818",
+        "RISK-2819",
+        "RISK-2820"
+      ],
+      "risk_count": 20,
+      "inherent_exposure": 664,
+      "target_exposure": 109,
+      "addressable_risk_reduction": 555
+    },
+    {
+      "control_id": "CTRL-2812",
+      "name": "Fail-Closed Independent Authorization",
+      "category": "PREVENTIVE",
+      "owner": "Identity Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2810",
+        "RISK-2811",
+        "RISK-2812",
+        "RISK-2813",
+        "RISK-2814",
+        "RISK-2818",
+        "RISK-2819"
+      ],
+      "risk_count": 7,
+      "inherent_exposure": 225,
+      "target_exposure": 29,
+      "addressable_risk_reduction": 196
+    },
+    {
+      "control_id": "CTRL-2811",
+      "name": "Trusted Target Binding",
+      "category": "PREVENTIVE",
+      "owner": "Tool Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2811",
+        "RISK-2817",
+        "RISK-2818",
+        "RISK-2819"
+      ],
+      "risk_count": 4,
+      "inherent_exposure": 124,
+      "target_exposure": 17,
+      "addressable_risk_reduction": 107
+    },
+    {
+      "control_id": "CTRL-2805",
+      "name": "Authorized Memory Writes",
+      "category": "PREVENTIVE",
+      "owner": "AI Platform Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2805",
+        "RISK-2806",
+        "RISK-2807"
+      ],
+      "risk_count": 3,
+      "inherent_exposure": 117,
+      "target_exposure": 15,
+      "addressable_risk_reduction": 102
+    },
+    {
+      "control_id": "CTRL-2806",
+      "name": "Memory Provenance & Integrity",
+      "category": "PREVENTIVE",
+      "owner": "AI Platform Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2805",
+        "RISK-2806",
+        "RISK-2807"
+      ],
+      "risk_count": 3,
+      "inherent_exposure": 117,
+      "target_exposure": 15,
+      "addressable_risk_reduction": 102
+    },
+    {
+      "control_id": "CTRL-2809",
+      "name": "Tool Allowlisting",
+      "category": "PREVENTIVE",
+      "owner": "Tool Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2810",
+        "RISK-2811",
+        "RISK-2812"
+      ],
+      "risk_count": 3,
+      "inherent_exposure": 102,
+      "target_exposure": 15,
+      "addressable_risk_reduction": 87
+    },
+    {
+      "control_id": "CTRL-2808",
+      "name": "Agent Goal / Task Binding",
+      "category": "PREVENTIVE",
+      "owner": "Agent Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2808",
+        "RISK-2809",
+        "RISK-2810"
+      ],
+      "risk_count": 3,
+      "inherent_exposure": 100,
+      "target_exposure": 18,
+      "addressable_risk_reduction": 82
+    },
+    {
+      "control_id": "CTRL-2803",
+      "name": "RAG Provenance Validation",
+      "category": "PREVENTIVE",
+      "owner": "RAG Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2802",
+        "RISK-2803",
+        "RISK-2804"
+      ],
+      "risk_count": 3,
+      "inherent_exposure": 102,
+      "target_exposure": 23,
+      "addressable_risk_reduction": 79
+    },
+    {
+      "control_id": "CTRL-2816",
+      "name": "Resource-Level Data Authorization",
+      "category": "PREVENTIVE",
+      "owner": "Data Security Team",
+      "implementation_priority": "CRITICAL",
+      "risks": [
+        "RISK-2817",
+        "RISK-2818",
+        "RISK-2819"
+      ],
+      "risk_count": 3,
+      "inherent_exposure": 90,
+      "target_exposure": 12,
+      "addressable_risk_reduction": 78
+    }
+  ],
+  "metrics": {
+    "risk_scenarios": 21,
+    "security_controls": 21,
+    "total_inherent_risk": 683,
+    "total_target_residual_risk": 114,
+    "total_risk_reduction": 569,
+    "overall_risk_reduction_percent": 83.31,
+    "high_value_controls": 15,
+    "architectural_choke_points": 9,
+    "control_owners": 10
+  },
+  "security_checks": {
+    "Unique Control IDs": true,
+    "All Control Risk References Valid": true,
+    "Every Risk Has Control Coverage": true,
+    "All Risks Reduced": true,
+    "Overall Risk Reduced": true,
+    "Critical Controls Identified": true,
+    "Preventive Controls Identified": true,
+    "Detective Controls Identified": true,
+    "Corrective Controls Identified": true,
+    "High-Value Controls Identified": true,
+    "Architectural Choke Points Identified": true
+  },
+  "control_mapping_valid": true
+}

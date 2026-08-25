@@ -1,0 +1,594 @@
+{
+  "lab": "Day 28 Lab 4",
+  "title": "STRIDE-Style LLM Threat Modeling",
+  "stride": {
+    "S": {
+      "name": "Spoofing",
+      "description": "Impersonation of a user, authority, source, tool, document, model identity, or trusted execution context."
+    },
+    "T": {
+      "name": "Tampering",
+      "description": "Unauthorized modification of prompts, retrieved context, memory, policies, parameters, authorization decisions, telemetry, or business data."
+    },
+    "R": {
+      "name": "Repudiation",
+      "description": "Inability to reliably attribute, prove, or reconstruct AI actions, model-generated decisions, tool calls, or security-impacting events."
+    },
+    "I": {
+      "name": "Information Disclosure",
+      "description": "Exposure of system prompts, retrieved sensitive data, persistent memory, credentials, business records, or security telemetry."
+    },
+    "D": {
+      "name": "Denial of Service",
+      "description": "Degradation or exhaustion of model, retrieval, memory, agent, tool, authorization, or downstream resources."
+    },
+    "E": {
+      "name": "Elevation of Privilege",
+      "description": "Obtaining execution authority, tool capability, identity privilege, or access beyond the trusted task boundary."
+    }
+  },
+  "surfaces": [
+    {
+      "surface_id": "AS-2801",
+      "name": "User Prompt Entry",
+      "category": "INPUT",
+      "criticality": "high"
+    },
+    {
+      "surface_id": "AS-2802",
+      "name": "System Prompt / Instruction Hierarchy",
+      "category": "INSTRUCTION",
+      "criticality": "critical"
+    },
+    {
+      "surface_id": "AS-2804",
+      "name": "RAG Knowledge Store",
+      "category": "RAG",
+      "criticality": "high"
+    },
+    {
+      "surface_id": "AS-2805",
+      "name": "Retrieved Context Admission",
+      "category": "RAG",
+      "criticality": "high"
+    },
+    {
+      "surface_id": "AS-2806",
+      "name": "Persistent Memory Write",
+      "category": "MEMORY",
+      "criticality": "critical"
+    },
+    {
+      "surface_id": "AS-2807",
+      "name": "Persistent Memory Read",
+      "category": "MEMORY",
+      "criticality": "critical"
+    },
+    {
+      "surface_id": "AS-2808",
+      "name": "LLM Runtime",
+      "category": "MODEL",
+      "criticality": "critical"
+    },
+    {
+      "surface_id": "AS-2809",
+      "name": "Agent Planning",
+      "category": "AGENT",
+      "criticality": "critical"
+    },
+    {
+      "surface_id": "AS-2810",
+      "name": "Tool Router",
+      "category": "TOOL",
+      "criticality": "critical"
+    },
+    {
+      "surface_id": "AS-2811",
+      "name": "Authorization Request",
+      "category": "AUTHORIZATION",
+      "criticality": "critical"
+    },
+    {
+      "surface_id": "AS-2812",
+      "name": "Authorization Decision",
+      "category": "AUTHORIZATION",
+      "criticality": "critical"
+    },
+    {
+      "surface_id": "AS-2813",
+      "name": "Secret Retrieval",
+      "category": "SECRET",
+      "criticality": "critical"
+    },
+    {
+      "surface_id": "AS-2815",
+      "name": "Delete Record Tool",
+      "category": "TOOL",
+      "criticality": "critical"
+    },
+    {
+      "surface_id": "AS-2816",
+      "name": "Restricted Record",
+      "category": "DOWNSTREAM",
+      "criticality": "critical"
+    },
+    {
+      "surface_id": "AS-2817",
+      "name": "Security Telemetry",
+      "category": "OBSERVABILITY",
+      "criticality": "high"
+    }
+  ],
+  "threats": [
+    {
+      "threat_id": "THR-2801",
+      "stride": "S",
+      "surface_id": "AS-2801",
+      "name": "User Identity / Authority Spoofing",
+      "scenario": "An attacker submits instructions while claiming to act for a trusted user, administrator, or security authority.",
+      "impact": "Untrusted instructions may be treated as authorized.",
+      "score": 5,
+      "priority": "LOW",
+      "stride_name": "Spoofing"
+    },
+    {
+      "threat_id": "THR-2802",
+      "stride": "T",
+      "surface_id": "AS-2801",
+      "name": "Prompt Instruction Tampering",
+      "scenario": "User-controlled instructions attempt to modify or override the intended system task.",
+      "impact": "Trusted instruction hierarchy may be subverted.",
+      "score": 7,
+      "priority": "MEDIUM",
+      "stride_name": "Tampering"
+    },
+    {
+      "threat_id": "THR-2803",
+      "stride": "I",
+      "surface_id": "AS-2802",
+      "name": "System Prompt Disclosure",
+      "scenario": "An attacker attempts to extract confidential system instructions or hidden policy context.",
+      "impact": "Security policy and implementation details may be exposed.",
+      "score": 8,
+      "priority": "HIGH",
+      "stride_name": "Information Disclosure"
+    },
+    {
+      "threat_id": "THR-2804",
+      "stride": "T",
+      "surface_id": "AS-2802",
+      "name": "Instruction Hierarchy Manipulation",
+      "scenario": "Untrusted content is interpreted as higher-priority instruction authority.",
+      "impact": "Model behavior may deviate from intended policy.",
+      "score": 9,
+      "priority": "HIGH",
+      "stride_name": "Tampering"
+    },
+    {
+      "threat_id": "THR-2805",
+      "stride": "S",
+      "surface_id": "AS-2804",
+      "name": "RAG Source Impersonation",
+      "scenario": "A malicious document falsely claims to originate from a trusted source.",
+      "impact": "Poisoned retrieval data may inherit false trust.",
+      "score": 5,
+      "priority": "LOW",
+      "stride_name": "Spoofing"
+    },
+    {
+      "threat_id": "THR-2806",
+      "stride": "T",
+      "surface_id": "AS-2804",
+      "name": "RAG Document Poisoning",
+      "scenario": "Knowledge-store content is modified or replaced with malicious instructions or false business information.",
+      "impact": "Retrieved context may manipulate model behavior.",
+      "score": 7,
+      "priority": "MEDIUM",
+      "stride_name": "Tampering"
+    },
+    {
+      "threat_id": "THR-2807",
+      "stride": "I",
+      "surface_id": "AS-2804",
+      "name": "Sensitive Retrieval Disclosure",
+      "scenario": "Retrieval queries return documents outside the authorized information scope.",
+      "impact": "Sensitive knowledge may be exposed.",
+      "score": 6,
+      "priority": "MEDIUM",
+      "stride_name": "Information Disclosure"
+    },
+    {
+      "threat_id": "THR-2808",
+      "stride": "T",
+      "surface_id": "AS-2805",
+      "name": "Retrieved Context Manipulation",
+      "scenario": "Retrieved content injects instructions, false authority, or target substitutions into runtime context.",
+      "impact": "Untrusted context can influence model decisions.",
+      "score": 7,
+      "priority": "MEDIUM",
+      "stride_name": "Tampering"
+    },
+    {
+      "threat_id": "THR-2809",
+      "stride": "E",
+      "surface_id": "AS-2805",
+      "name": "Context-to-Authority Escalation",
+      "scenario": "Retrieved text claims approval, identity, or authorization and the system treats the claim as execution authority.",
+      "impact": "Untrusted text may acquire privilege.",
+      "score": 9,
+      "priority": "HIGH",
+      "stride_name": "Elevation of Privilege"
+    },
+    {
+      "threat_id": "THR-2810",
+      "stride": "T",
+      "surface_id": "AS-2806",
+      "name": "Persistent Memory Poisoning",
+      "scenario": "Malicious or manipulated state is written into long-lived AI memory.",
+      "impact": "Compromise may persist beyond the original session.",
+      "score": 9,
+      "priority": "HIGH",
+      "stride_name": "Tampering"
+    },
+    {
+      "threat_id": "THR-2811",
+      "stride": "E",
+      "surface_id": "AS-2806",
+      "name": "Unauthorized Memory Persistence",
+      "scenario": "The model writes persistent state without independent authorization.",
+      "impact": "Untrusted model output gains durable influence.",
+      "score": 11,
+      "priority": "CRITICAL",
+      "stride_name": "Elevation of Privilege"
+    },
+    {
+      "threat_id": "THR-2812",
+      "stride": "I",
+      "surface_id": "AS-2807",
+      "name": "Cross-Session Memory Disclosure",
+      "scenario": "A later session retrieves sensitive memory belonging to another user, task, or trust context.",
+      "impact": "Confidential cross-session information may be exposed.",
+      "score": 8,
+      "priority": "HIGH",
+      "stride_name": "Information Disclosure"
+    },
+    {
+      "threat_id": "THR-2813",
+      "stride": "T",
+      "surface_id": "AS-2807",
+      "name": "Cross-Session Poison Activation",
+      "scenario": "Malicious stored instructions are retrieved during a future session.",
+      "impact": "Persistent compromise may propagate across sessions.",
+      "score": 9,
+      "priority": "HIGH",
+      "stride_name": "Tampering"
+    },
+    {
+      "threat_id": "THR-2814",
+      "stride": "I",
+      "surface_id": "AS-2808",
+      "name": "Sensitive Context Exposure",
+      "scenario": "The LLM reveals protected prompt, retrieved context, memory, or secret-bearing information.",
+      "impact": "Confidential information may leave trusted boundaries.",
+      "score": 8,
+      "priority": "HIGH",
+      "stride_name": "Information Disclosure"
+    },
+    {
+      "threat_id": "THR-2815",
+      "stride": "D",
+      "surface_id": "AS-2808",
+      "name": "Model Resource Exhaustion",
+      "scenario": "Adversarial requests consume excessive model context, tokens, compute, or concurrency.",
+      "impact": "Availability and cost controls may be affected.",
+      "score": 7,
+      "priority": "MEDIUM",
+      "stride_name": "Denial of Service"
+    },
+    {
+      "threat_id": "THR-2816",
+      "stride": "T",
+      "surface_id": "AS-2809",
+      "name": "Agent Goal Hijacking",
+      "scenario": "Untrusted input modifies the agent's intended objective or planning state.",
+      "impact": "Agent actions may diverge from the authorized task.",
+      "score": 9,
+      "priority": "HIGH",
+      "stride_name": "Tampering"
+    },
+    {
+      "threat_id": "THR-2817",
+      "stride": "E",
+      "surface_id": "AS-2809",
+      "name": "Privileged Action Proposal",
+      "scenario": "The agent proposes a higher-privilege tool or target than the trusted task requires.",
+      "impact": "Model planning can approach privileged execution.",
+      "score": 11,
+      "priority": "CRITICAL",
+      "stride_name": "Elevation of Privilege"
+    },
+    {
+      "threat_id": "THR-2818",
+      "stride": "T",
+      "surface_id": "AS-2810",
+      "name": "Tool Parameter Manipulation",
+      "scenario": "Tool names, targets, or parameters are altered before execution.",
+      "impact": "A safe task may become unsafe at execution time.",
+      "score": 9,
+      "priority": "HIGH",
+      "stride_name": "Tampering"
+    },
+    {
+      "threat_id": "THR-2819",
+      "stride": "E",
+      "surface_id": "AS-2810",
+      "name": "Unsafe Tool Selection",
+      "scenario": "The router selects a privileged tool based on model output without independent task binding.",
+      "impact": "The model may obtain execution authority indirectly.",
+      "score": 11,
+      "priority": "CRITICAL",
+      "stride_name": "Elevation of Privilege"
+    },
+    {
+      "threat_id": "THR-2820",
+      "stride": "S",
+      "surface_id": "AS-2811",
+      "name": "Approval / Authority Spoofing",
+      "scenario": "Model-generated text claims that authorization has already been granted.",
+      "impact": "Fake approval may influence security controls.",
+      "score": 7,
+      "priority": "MEDIUM",
+      "stride_name": "Spoofing"
+    },
+    {
+      "threat_id": "THR-2821",
+      "stride": "E",
+      "surface_id": "AS-2811",
+      "name": "Model-Generated Authorization Escalation",
+      "scenario": "Authorization requests inherit model-created role, approval, or privilege state.",
+      "impact": "Untrusted model output may elevate execution privilege.",
+      "score": 11,
+      "priority": "CRITICAL",
+      "stride_name": "Elevation of Privilege"
+    },
+    {
+      "threat_id": "THR-2822",
+      "stride": "T",
+      "surface_id": "AS-2812",
+      "name": "Authorization Decision Tampering",
+      "scenario": "A denial is changed, ignored, or replaced with an approval.",
+      "impact": "Unauthorized execution may proceed.",
+      "score": 9,
+      "priority": "HIGH",
+      "stride_name": "Tampering"
+    },
+    {
+      "threat_id": "THR-2823",
+      "stride": "E",
+      "surface_id": "AS-2812",
+      "name": "Fail-Open Authorization",
+      "scenario": "Execution continues when authorization is missing, invalid, or denied.",
+      "impact": "Privileged operations may execute without approval.",
+      "score": 11,
+      "priority": "CRITICAL",
+      "stride_name": "Elevation of Privilege"
+    },
+    {
+      "threat_id": "THR-2824",
+      "stride": "I",
+      "surface_id": "AS-2813",
+      "name": "Credential Disclosure",
+      "scenario": "API credentials or tokens are exposed to the model, prompt, logs, or unauthorized components.",
+      "impact": "Secrets may enable downstream compromise.",
+      "score": 8,
+      "priority": "HIGH",
+      "stride_name": "Information Disclosure"
+    },
+    {
+      "threat_id": "THR-2825",
+      "stride": "E",
+      "surface_id": "AS-2813",
+      "name": "Credential Scope Abuse",
+      "scenario": "A credential is used for actions beyond the trusted task.",
+      "impact": "Secret-bearing capability may expand attacker privilege.",
+      "score": 11,
+      "priority": "CRITICAL",
+      "stride_name": "Elevation of Privilege"
+    },
+    {
+      "threat_id": "THR-2826",
+      "stride": "T",
+      "surface_id": "AS-2815",
+      "name": "Privileged Tool Target Tampering",
+      "scenario": "A delete request substitutes a restricted target for the authorized target.",
+      "impact": "Critical business data may be modified or destroyed.",
+      "score": 9,
+      "priority": "HIGH",
+      "stride_name": "Tampering"
+    },
+    {
+      "threat_id": "THR-2827",
+      "stride": "E",
+      "surface_id": "AS-2815",
+      "name": "Unauthorized Privileged Execution",
+      "scenario": "The delete tool executes without valid independent authorization.",
+      "impact": "High-impact destructive action may occur.",
+      "score": 11,
+      "priority": "CRITICAL",
+      "stride_name": "Elevation of Privilege"
+    },
+    {
+      "threat_id": "THR-2828",
+      "stride": "T",
+      "surface_id": "AS-2816",
+      "name": "Restricted Record Modification",
+      "scenario": "Restricted business data is altered or deleted.",
+      "impact": "Business integrity and availability may be affected.",
+      "score": 9,
+      "priority": "HIGH",
+      "stride_name": "Tampering"
+    },
+    {
+      "threat_id": "THR-2829",
+      "stride": "I",
+      "surface_id": "AS-2816",
+      "name": "Restricted Record Disclosure",
+      "scenario": "Restricted business information is read by an unauthorized user or agent.",
+      "impact": "Business confidentiality may be compromised.",
+      "score": 8,
+      "priority": "HIGH",
+      "stride_name": "Information Disclosure"
+    },
+    {
+      "threat_id": "THR-2830",
+      "stride": "R",
+      "surface_id": "AS-2817",
+      "name": "Insufficient AI Auditability",
+      "scenario": "Prompt, retrieval, memory, agent, authorization, or execution events cannot be reliably attributed.",
+      "impact": "Incident reconstruction and accountability may fail.",
+      "score": 5,
+      "priority": "LOW",
+      "stride_name": "Repudiation"
+    },
+    {
+      "threat_id": "THR-2831",
+      "stride": "T",
+      "surface_id": "AS-2817",
+      "name": "Security Telemetry Tampering",
+      "scenario": "AI security events are removed, altered, or suppressed.",
+      "impact": "Detection and forensic reconstruction may be impaired.",
+      "score": 7,
+      "priority": "MEDIUM",
+      "stride_name": "Tampering"
+    },
+    {
+      "threat_id": "THR-2832",
+      "stride": "D",
+      "surface_id": "AS-2817",
+      "name": "Detection Pipeline Exhaustion",
+      "scenario": "Excessive events overwhelm logging or alert-processing capacity.",
+      "impact": "Important attack signals may be delayed or dropped.",
+      "score": 5,
+      "priority": "LOW",
+      "stride_name": "Denial of Service"
+    }
+  ],
+  "control_themes": [
+    {
+      "control_id": "CTRL-2801",
+      "name": "Instruction Trust Separation",
+      "addresses": [
+        "THR-2802",
+        "THR-2804",
+        "THR-2808"
+      ]
+    },
+    {
+      "control_id": "CTRL-2802",
+      "name": "RAG Source & Provenance Validation",
+      "addresses": [
+        "THR-2805",
+        "THR-2806",
+        "THR-2807"
+      ]
+    },
+    {
+      "control_id": "CTRL-2803",
+      "name": "Authorized Persistent Memory Writes",
+      "addresses": [
+        "THR-2810",
+        "THR-2811",
+        "THR-2813"
+      ]
+    },
+    {
+      "control_id": "CTRL-2804",
+      "name": "Context / Memory Data Isolation",
+      "addresses": [
+        "THR-2812",
+        "THR-2814"
+      ]
+    },
+    {
+      "control_id": "CTRL-2805",
+      "name": "Agent Task Binding",
+      "addresses": [
+        "THR-2816",
+        "THR-2817"
+      ]
+    },
+    {
+      "control_id": "CTRL-2806",
+      "name": "Tool Parameter Validation",
+      "addresses": [
+        "THR-2818",
+        "THR-2819",
+        "THR-2826"
+      ]
+    },
+    {
+      "control_id": "CTRL-2807",
+      "name": "Independent Fail-Closed Authorization",
+      "addresses": [
+        "THR-2820",
+        "THR-2821",
+        "THR-2822",
+        "THR-2823",
+        "THR-2827"
+      ]
+    },
+    {
+      "control_id": "CTRL-2808",
+      "name": "Secret Isolation & Least Privilege",
+      "addresses": [
+        "THR-2824",
+        "THR-2825"
+      ]
+    },
+    {
+      "control_id": "CTRL-2809",
+      "name": "Business Data Authorization",
+      "addresses": [
+        "THR-2828",
+        "THR-2829"
+      ]
+    },
+    {
+      "control_id": "CTRL-2810",
+      "name": "Tamper-Evident AI Security Telemetry",
+      "addresses": [
+        "THR-2830",
+        "THR-2831",
+        "THR-2832"
+      ]
+    }
+  ],
+  "metrics": {
+    "attack_surfaces_modeled": 15,
+    "threat_scenarios": 32,
+    "stride_categories_represented": 6,
+    "high_critical_threats": 21,
+    "elevation_of_privilege_threats": 8,
+    "tampering_threats": 12,
+    "preliminary_controls": 10,
+    "threats_with_control_coverage": 28
+  },
+  "security_checks": {
+    "Unique Threat IDs": true,
+    "All Threat Surfaces Valid": true,
+    "Spoofing Threats Identified": true,
+    "Tampering Threats Identified": true,
+    "Repudiation Threats Identified": true,
+    "Information Disclosure Threats Identified": true,
+    "Denial of Service Threats Identified": true,
+    "Elevation of Privilege Threats Identified": true,
+    "Persistent-Memory Threats Identified": true,
+    "RAG Threats Identified": true,
+    "Agent Threats Identified": true,
+    "Authorization Threats Identified": true,
+    "Privileged Tool Threats Identified": true,
+    "Observability Threats Identified": true,
+    "Control Coverage Present": true
+  },
+  "stride_model_valid": true
+}
