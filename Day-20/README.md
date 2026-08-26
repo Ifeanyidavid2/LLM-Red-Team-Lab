@@ -1,8 +1,8 @@
-\# Day 20 — Multi-Turn LLM Attack Chains \& Persistent Manipulation
+# Day 20 — Multi-Turn LLM Attack Chains \& Persistent Manipulation
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -26,7 +26,7 @@ The core security principle is:
 
 
 
-\## Security Areas Tested
+## Security Areas Tested
 
 
 
@@ -58,11 +58,11 @@ The core security principle is:
 
 
 
-\## Key Results
+## Key Results
 
 
 
-\### Clean Multi-Turn Baseline
+### Clean Multi-Turn Baseline
 
 
 
@@ -74,7 +74,7 @@ The core security principle is:
 
 
 
-\### Persistent Context Poisoning
+### Persistent Context Poisoning
 
 
 
@@ -86,7 +86,7 @@ The core security principle is:
 
 
 
-\### Instruction Accumulation
+### Instruction Accumulation
 
 
 
@@ -98,7 +98,7 @@ The core security principle is:
 
 
 
-\### Delayed Trigger
+### Delayed Trigger
 
 
 
@@ -110,7 +110,7 @@ The core security principle is:
 
 
 
-\### Cross-Turn Privilege Assumption
+### Cross-Turn Privilege Assumption
 
 
 
@@ -122,7 +122,7 @@ The core security principle is:
 
 
 
-\### Approval Reuse
+### Approval Reuse
 
 
 
@@ -132,7 +132,7 @@ The core security principle is:
 
 
 
-\### Security-State Drift
+### Security-State Drift
 
 
 
@@ -144,7 +144,7 @@ The core security principle is:
 
 
 
-\### Session Boundary Enforcement
+### Session Boundary Enforcement
 
 
 
@@ -160,7 +160,7 @@ The core security principle is:
 
 
 
-\### Hardened Multi-Turn Architecture
+### Hardened Multi-Turn Architecture
 
 
 
@@ -170,7 +170,7 @@ The core security principle is:
 
 
 
-\### Final Adversarial Retest
+### Final Adversarial Retest
 
 
 
@@ -184,7 +184,7 @@ The core security principle is:
 
 
 
-\## Strongest Finding
+## Strongest Finding
 
 
 
@@ -204,7 +204,7 @@ This demonstrates:
 
 
 
-\## Recommended Architecture
+## Recommended Architecture
 
 
 

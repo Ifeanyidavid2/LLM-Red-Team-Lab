@@ -1,8 +1,8 @@
-\# Day 15 — LLM Security Evaluator Engineering
+# Day 15 — LLM Security Evaluator Engineering
 
 
 
-\## Executive Summary
+## Executive Summary
 
 
 
@@ -108,7 +108,7 @@ language.
 
 
 
-\## 1. Assessment Objective
+## 1. Assessment Objective
 
 
 
@@ -156,7 +156,7 @@ previously unseen language.
 
 
 
-\## 2. Evaluation Model
+## 2. Evaluation Model
 
 
 
@@ -226,7 +226,7 @@ indicator such as the presence of an attacker-controlled marker.
 
 
 
-\## 3. Labelled Development Corpus
+## 3. Labelled Development Corpus
 
 
 
@@ -298,7 +298,7 @@ development.
 
 
 
-\## 4. Multi-Signal Evaluator v1
+## 4. Multi-Signal Evaluator v1
 
 
 
@@ -362,11 +362,11 @@ for reliable security classification.
 
 
 
-\## 5. Per-Signal v1 Performance
+## 5. Per-Signal v1 Performance
 
 
 
-\### Attack Execution Detector
+### Attack Execution Detector
 
 
 
@@ -396,7 +396,7 @@ confused attack discussion with actual attack execution.
 
 
 
-\### Task Completion Detector
+### Task Completion Detector
 
 
 
@@ -414,7 +414,7 @@ confused attack discussion with actual attack execution.
 
 
 
-\### Refusal Detector
+### Refusal Detector
 
 
 
@@ -432,7 +432,7 @@ confused attack discussion with actual attack execution.
 
 
 
-\### Secret Disclosure Detector
+### Secret Disclosure Detector
 
 
 
@@ -456,7 +456,7 @@ component.
 
 
 
-\## 6. Multi-Signal Evaluator v2
+## 6. Multi-Signal Evaluator v2
 
 
 
@@ -510,7 +510,7 @@ attacker-controlled instruction while safely refusing to execute it.
 
 
 
-\## 7. Multi-Signal Evaluator v3
+## 7. Multi-Signal Evaluator v3
 
 
 
@@ -554,7 +554,7 @@ The evaluator was frozen before the next experiment.
 
 
 
-\## 8. Development Improvement
+## 8. Development Improvement
 
 
 
@@ -596,7 +596,7 @@ They did not, however, establish generalization.
 
 
 
-\## 9. Frozen Holdout Evaluation
+## 9. Frozen Holdout Evaluation
 
 
 
@@ -638,7 +638,7 @@ No rules were modified during the holdout evaluation.
 
 
 
-\## 10. Holdout Results
+## 10. Holdout Results
 
 
 
@@ -662,7 +662,7 @@ This represented a major reduction from development performance.
 
 
 
-\## 11. Generalization Gap
+## 11. Generalization Gap
 
 
 
@@ -700,11 +700,11 @@ unseen model responses.
 
 
 
-\## 12. Holdout Per-Signal Performance
+## 12. Holdout Per-Signal Performance
 
 
 
-\### Attack Execution
+### Attack Execution
 
 
 
@@ -752,7 +752,7 @@ previously unseen semantic expressions of attack execution.
 
 
 
-\### Task Completion
+### Task Completion
 
 
 
@@ -796,7 +796,7 @@ successful task completion.
 
 
 
-\### Refusal
+### Refusal
 
 
 
@@ -842,7 +842,7 @@ The detector failed to generalize to new refusal expressions such as
 
 
 
-\### Secret Disclosure
+### Secret Disclosure
 
 
 
@@ -888,7 +888,7 @@ deterministic representation.
 
 
 
-\## 13. Holdout Error Analysis
+## 13. Holdout Error Analysis
 
 
 
@@ -926,7 +926,7 @@ expressions rather than deterministic secret matching.
 
 
 
-\## 14. Important Measurement Finding
+## 14. Important Measurement Finding
 
 
 
@@ -960,7 +960,7 @@ measurement system.
 
 
 
-\## 15. Overfitting Risk
+## 15. Overfitting Risk
 
 
 
@@ -1006,7 +1006,7 @@ untouched test corpus should be created.
 
 
 
-\## 16. Security Engineering Findings
+## 16. Security Engineering Findings
 
 
 
@@ -1076,7 +1076,7 @@ The assessment produced the following findings:
 
 
 
-\## 17. Limitations
+## 17. Limitations
 
 
 
@@ -1120,7 +1120,7 @@ to the datasets used in this controlled lab.
 
 
 
-\## 18. Recommendations
+## 18. Recommendations
 
 
 
@@ -1162,7 +1162,7 @@ forms of evaluator bias or prompt-injection vulnerability.
 
 
 
-\## 19. Conclusion
+## 19. Conclusion
 
 
 

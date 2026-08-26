@@ -1,8 +1,8 @@
-\# Day 15 — LLM Security Evaluator Engineering
+# Day 15 — LLM Security Evaluator Engineering
 
 
 
-\## Overview
+## Overview
 
 
 
@@ -34,7 +34,7 @@ Building on the evaluator problems discovered during Day 14, this lab develops a
 
 
 
-\## Lab Objectives
+## Lab Objectives
 
 
 
@@ -60,7 +60,7 @@ The objectives were to:
 
 
 
-\## Evaluator Architecture
+## Evaluator Architecture
 
 
 

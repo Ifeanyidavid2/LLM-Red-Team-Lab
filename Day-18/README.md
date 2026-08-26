@@ -1,8 +1,8 @@
-\# Day 18 — LLM Tool Use \& Excessive Agency Security
+# Day 18 — LLM Tool Use \& Excessive Agency Security
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -18,7 +18,7 @@ The lab focuses on the principle:
 
 
 
-\## Security Areas Tested
+## Security Areas Tested
 
 
 
@@ -46,11 +46,11 @@ The lab focuses on the principle:
 
 
 
-\## Key Results
+## Key Results
 
 
 
-\### Policy-Enforced Agent
+### Policy-Enforced Agent
 
 
 
@@ -62,7 +62,7 @@ The lab focuses on the principle:
 
 
 
-\### Indirect Prompt Injection
+### Indirect Prompt Injection
 
 
 
@@ -74,7 +74,7 @@ The lab focuses on the principle:
 
 
 
-\### Hardened Agent
+### Hardened Agent
 
 
 
@@ -86,7 +86,7 @@ The lab focuses on the principle:
 
 
 
-\## Key Finding
+## Key Finding
 
 
 
@@ -102,7 +102,7 @@ This demonstrates the distinction between model compromise and system compromise
 
 
 
-\## Architecture
+## Architecture
 
 
 

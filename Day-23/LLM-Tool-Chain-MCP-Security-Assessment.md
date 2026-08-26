@@ -1,8 +1,8 @@
-\# Day 23 — LLM Tool-Chain \& MCP Security Assessment
+# Day 23 — LLM Tool-Chain \& MCP Security Assessment
 
 
 
-\## Portfolio Artifact
+## Portfolio Artifact
 
 
 
@@ -20,7 +20,7 @@
 
 
 
-\# Core Security Principle
+# Core Security Principle
 
 
 
@@ -32,7 +32,7 @@
 
 
 
-\# 1. Executive Summary
+# 1. Executive Summary
 
 
 
@@ -148,7 +148,7 @@ The overall Day 23 conclusion is therefore:
 
 
 
-\# 2. Assessment Objectives
+# 2. Assessment Objectives
 
 
 
@@ -192,7 +192,7 @@ The Day 23 assessment was designed to answer the following questions:
 
 
 
-\# 3. Threat Model
+# 3. Threat Model
 
 
 
@@ -250,7 +250,7 @@ The design goal was:
 
 
 
-\# 4. Synthetic Environment
+# 4. Synthetic Environment
 
 
 
@@ -258,11 +258,11 @@ The Day 23 environment used synthetic resources so that high-risk behaviors coul
 
 
 
-\## 4.1 Synthetic Agents
+## 4.1 Synthetic Agents
 
 
 
-\### `planner\_agent`
+### `planner\_agent`
 
 
 
@@ -298,7 +298,7 @@ The planner intentionally did not possess direct record-reading or security-dele
 
 
 
-\### `worker\_agent`
+### `worker\_agent`
 
 
 
@@ -332,7 +332,7 @@ The worker could perform ordinary internal operations but was prevented from inh
 
 
 
-\### `security\_agent`
+### `security\_agent`
 
 
 
@@ -366,7 +366,7 @@ Typical capabilities:
 
 
 
-\# 5. Synthetic Resources
+# 5. Synthetic Resources
 
 
 
@@ -374,7 +374,7 @@ The primary records used during testing included:
 
 
 
-\## `R-2302`
+## `R-2302`
 
 
 
@@ -398,7 +398,7 @@ Purpose:
 
 
 
-\## `R-2399`
+## `R-2399`
 
 
 
@@ -422,7 +422,7 @@ Purpose:
 
 
 
-\# 6. MCP-Style Tool Servers
+# 6. MCP-Style Tool Servers
 
 
 
@@ -430,7 +430,7 @@ Three synthetic MCP-style providers were modeled.
 
 
 
-\## 6.1 `internal\_ops`
+## 6.1 `internal\_ops`
 
 
 
@@ -458,7 +458,7 @@ Responsible for:
 
 
 
-\## 6.2 `analytics`
+## 6.2 `analytics`
 
 
 
@@ -482,7 +482,7 @@ Responsible for:
 
 
 
-\## 6.3 `external\_helper`
+## 6.3 `external\_helper`
 
 
 
@@ -518,7 +518,7 @@ A server claiming to provide a tool did not automatically become the trusted own
 
 
 
-\# 7. Security Properties Under Test
+# 7. Security Properties Under Test
 
 
 
@@ -562,11 +562,11 @@ The Day 23 experiments focused on the following security properties:
 
 
 
-\# 8. Lab 1 — Synthetic Tool / MCP Environment
+# 8. Lab 1 — Synthetic Tool / MCP Environment
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -592,7 +592,7 @@ Create a controlled tool-enabled environment with:
 
 
 
-\## Key Tests
+## Key Tests
 
 
 
@@ -616,7 +616,7 @@ The lab confirmed:
 
 
 
-\## Security Properties
+## Security Properties
 
 
 
@@ -640,7 +640,7 @@ The environment demonstrated that:
 
 
 
-\## Core Finding
+## Core Finding
 
 
 
@@ -652,11 +652,11 @@ The environment demonstrated that:
 
 
 
-\# 9. Lab 2 — Vulnerable Tool-Selection Baseline
+# 9. Lab 2 — Vulnerable Tool-Selection Baseline
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -664,7 +664,7 @@ Measure whether an LLM would select semantically appropriate tools even when the
 
 
 
-\## Observed Results
+## Observed Results
 
 
 
@@ -676,7 +676,7 @@ Measure whether an LLM would select semantically appropriate tools even when the
 
 
 
-\## Example Risk
+## Example Risk
 
 
 
@@ -696,7 +696,7 @@ The model understood the semantic relationship between task and tool but did not
 
 
 
-\## Security Finding
+## Security Finding
 
 
 
@@ -712,11 +712,11 @@ Applications must independently check whether the current principal possesses th
 
 
 
-\# 10. Lab 3 — Malicious Tool Description Poisoning
+# 10. Lab 3 — Malicious Tool Description Poisoning
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -724,7 +724,7 @@ Determine whether model-visible tool descriptions could influence tool selection
 
 
 
-\## Attack Technique
+## Attack Technique
 
 
 
@@ -742,7 +742,7 @@ Poisoned descriptions attempted to:
 
 
 
-\## Observed Results
+## Observed Results
 
 
 
@@ -760,7 +760,7 @@ Poisoned descriptions attempted to:
 
 
 
-\## Security Finding
+## Security Finding
 
 
 
@@ -798,11 +798,11 @@ Descriptions must not be trusted to establish:
 
 
 
-\# 11. Lab 4 — Excessive Tool Permissions
+# 11. Lab 4 — Excessive Tool Permissions
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -816,7 +816,7 @@ Measure the difference between:
 
 
 
-\## Attack Cases
+## Attack Cases
 
 
 
@@ -834,7 +834,7 @@ Tests included requests for:
 
 
 
-\## Observed Results
+## Observed Results
 
 
 
@@ -850,7 +850,7 @@ Tests included requests for:
 
 
 
-\## Interpretation
+## Interpretation
 
 
 
@@ -858,7 +858,7 @@ Expanding the available tool set increased the probability that the model select
 
 
 
-\## Security Finding
+## Security Finding
 
 
 
@@ -880,11 +880,11 @@ Least privilege should be enforced at both:
 
 
 
-\# 12. Lab 5 — Parameter Manipulation \& Target Substitution
+# 12. Lab 5 — Parameter Manipulation \& Target Substitution
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -892,7 +892,7 @@ Test whether a correctly selected tool could still become dangerous through mode
 
 
 
-\## Attack Techniques
+## Attack Techniques
 
 
 
@@ -914,7 +914,7 @@ The model was exposed to:
 
 
 
-\## Observed Results
+## Observed Results
 
 
 
@@ -928,7 +928,7 @@ The model was exposed to:
 
 
 
-\## Example
+## Example
 
 
 
@@ -964,7 +964,7 @@ Another inserted an unauthorized argument such as:
 
 
 
-\## Security Finding
+## Security Finding
 
 
 
@@ -980,11 +980,11 @@ Even an authorized tool must not execute model-generated arguments without indep
 
 
 
-\# 13. Lab 6 — Confused Tool Selection
+# 13. Lab 6 — Confused Tool Selection
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -992,7 +992,7 @@ Determine whether an LLM would replace a sufficient low-risk tool with a more po
 
 
 
-\## Attack Techniques
+## Attack Techniques
 
 
 
@@ -1010,7 +1010,7 @@ Examples included:
 
 
 
-\## Observed Results
+## Observed Results
 
 
 
@@ -1024,7 +1024,7 @@ Examples included:
 
 
 
-\## Security Finding
+## Security Finding
 
 
 
@@ -1044,11 +1044,11 @@ Therefore:
 
 
 
-\# 14. Lab 7 — Indirect Prompt Injection Through Tool Output
+# 14. Lab 7 — Indirect Prompt Injection Through Tool Output
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -1056,7 +1056,7 @@ Test whether tool output could inject instructions into the model's next decisio
 
 
 
-\## Attack Payloads
+## Attack Payloads
 
 
 
@@ -1076,7 +1076,7 @@ Tool output attempted to:
 
 
 
-\## Observed Results
+## Observed Results
 
 
 
@@ -1090,7 +1090,7 @@ Tool output attempted to:
 
 
 
-\## Security Finding
+## Security Finding
 
 
 
@@ -1132,11 +1132,11 @@ Therefore:
 
 
 
-\# 15. Lab 8 — Tool-Result Poisoning \& False Evidence
+# 15. Lab 8 — Tool-Result Poisoning \& False Evidence
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -1148,7 +1148,7 @@ Instead of embedding obvious instructions, the tool result returned false securi
 
 
 
-\## Forged Evidence Included
+## Forged Evidence Included
 
 
 
@@ -1164,7 +1164,7 @@ Instead of embedding obvious instructions, the tool result returned false securi
 
 
 
-\## Final Observed Results
+## Final Observed Results
 
 
 
@@ -1184,7 +1184,7 @@ Instead of embedding obvious instructions, the tool result returned false securi
 
 
 
-\## Security Finding
+## Security Finding
 
 
 
@@ -1208,11 +1208,11 @@ Therefore:
 
 
 
-\# 16. Lab 9 — Chained Tool Attack
+# 16. Lab 9 — Chained Tool Attack
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -1220,7 +1220,7 @@ Determine whether individual tool weaknesses could compose across multiple stage
 
 
 
-\## Example Chain
+## Example Chain
 
 
 
@@ -1242,7 +1242,7 @@ A malicious tool result could:
 
 
 
-\## Observed Results
+## Observed Results
 
 
 
@@ -1260,7 +1260,7 @@ A malicious tool result could:
 
 
 
-\## Interpretation
+## Interpretation
 
 
 
@@ -1268,7 +1268,7 @@ Every successful poisoned case deviated from its trusted follow-up path, while 7
 
 
 
-\## Security Finding
+## Security Finding
 
 
 
@@ -1284,11 +1284,11 @@ Authorization must therefore be evaluated at every step rather than only at the 
 
 
 
-\# 17. Lab 10 — MCP-Style Server Trust Boundaries
+# 17. Lab 10 — MCP-Style Server Trust Boundaries
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -1304,7 +1304,7 @@ The research question was:
 
 
 
-\## Controls
+## Controls
 
 
 
@@ -1330,7 +1330,7 @@ The hardened registration policy validated:
 
 
 
-\## Observed Results
+## Observed Results
 
 
 
@@ -1346,7 +1346,7 @@ The hardened registration policy validated:
 
 
 
-\## Successfully Blocked
+## Successfully Blocked
 
 
 
@@ -1362,7 +1362,7 @@ The hardened registration policy validated:
 
 
 
-\## Security Finding
+## Security Finding
 
 
 
@@ -1378,11 +1378,11 @@ Tool names and descriptions do not authenticate the provider.
 
 
 
-\# 18. Lab 11 — Least-Privilege Tool Capability Enforcement
+# 18. Lab 11 — Least-Privilege Tool Capability Enforcement
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -1398,7 +1398,7 @@ Execution authority remained separate.
 
 
 
-\## Observed Results
+## Observed Results
 
 
 
@@ -1416,7 +1416,7 @@ Execution authority remained separate.
 
 
 
-\## Control Blocks
+## Control Blocks
 
 
 
@@ -1430,7 +1430,7 @@ Execution authority remained separate.
 
 
 
-\## Example
+## Example
 
 
 
@@ -1458,7 +1458,7 @@ but could not execute it.
 
 
 
-\## Security Finding
+## Security Finding
 
 
 
@@ -1478,11 +1478,11 @@ And:
 
 
 
-\# 19. Lab 12 — Parameter Policy \& Execution Validation
+# 19. Lab 12 — Parameter Policy \& Execution Validation
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -1490,7 +1490,7 @@ Directly harden the vulnerabilities discovered in Lab 5.
 
 
 
-\## Controls
+## Controls
 
 
 
@@ -1522,7 +1522,7 @@ The application independently validated:
 
 
 
-\## Observed Results
+## Observed Results
 
 
 
@@ -1540,7 +1540,7 @@ The application independently validated:
 
 
 
-\## Block Stages
+## Block Stages
 
 
 
@@ -1556,11 +1556,11 @@ The application independently validated:
 
 
 
-\## Direct Comparison
+## Direct Comparison
 
 
 
-\### Vulnerable Lab 5
+### Vulnerable Lab 5
 
 
 
@@ -1572,7 +1572,7 @@ The application independently validated:
 
 
 
-\### Hardened Lab 12
+### Hardened Lab 12
 
 
 
@@ -1582,7 +1582,7 @@ The application independently validated:
 
 
 
-\## Security Finding
+## Security Finding
 
 
 
@@ -1594,11 +1594,11 @@ The application independently validated:
 
 
 
-\# 20. Lab 13 — Hardened Tool / MCP Security Architecture
+# 20. Lab 13 — Hardened Tool / MCP Security Architecture
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -1606,7 +1606,7 @@ Combine the independent controls into one integrated tool-execution boundary.
 
 
 
-\## Hardened Pipeline
+## Hardened Pipeline
 
 
 
@@ -1646,7 +1646,7 @@ The system independently checked:
 
 
 
-\## Observed Results
+## Observed Results
 
 
 
@@ -1664,7 +1664,7 @@ The system independently checked:
 
 
 
-\## Block Stages
+## Block Stages
 
 
 
@@ -1690,7 +1690,7 @@ The system independently checked:
 
 
 
-\## Security Finding
+## Security Finding
 
 
 
@@ -1706,11 +1706,11 @@ The security model was implemented as an application-layer execution pipeline ra
 
 
 
-\# 21. Lab 14 — Hardened Tool / MCP Adversarial Retest
+# 21. Lab 14 — Hardened Tool / MCP Adversarial Retest
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -1740,7 +1740,7 @@ The application maintained independent trusted task state.
 
 
 
-\## Trusted Execution State Included
+## Trusted Execution State Included
 
 
 
@@ -1760,7 +1760,7 @@ The application maintained independent trusted task state.
 
 
 
-\## Final Observed Results
+## Final Observed Results
 
 
 
@@ -1778,7 +1778,7 @@ The application maintained independent trusted task state.
 
 
 
-\### Final Rates
+### Final Rates
 
 
 
@@ -1794,7 +1794,7 @@ The application maintained independent trusted task state.
 
 
 
-\## Important Interpretation
+## Important Interpretation
 
 
 
@@ -1828,7 +1828,7 @@ The security improvement came from ensuring that model-generated proposals could
 
 
 
-\## Key Principle Proven
+## Key Principle Proven
 
 
 
@@ -1840,11 +1840,11 @@ The security improvement came from ensuring that model-generated proposals could
 
 
 
-\# 22. Lab 15 — Final Comparative Analysis
+# 22. Lab 15 — Final Comparative Analysis
 
 
 
-\## Purpose
+## Purpose
 
 
 
@@ -1852,7 +1852,7 @@ Lab 15 consolidated the major vulnerable and hardened findings into one evidence
 
 
 
-\## Comparative Summary
+## Comparative Summary
 
 
 
@@ -1888,15 +1888,15 @@ Lab 15 consolidated the major vulnerable and hardened findings into one evidence
 
 
 
-\# 23. Vulnerable vs Hardened Comparison
+# 23. Vulnerable vs Hardened Comparison
 
 
 
-\## Unauthorized Tool Selection
+## Unauthorized Tool Selection
 
 
 
-\### Vulnerable
+### Vulnerable
 
 
 
@@ -1904,7 +1904,7 @@ Lab 15 consolidated the major vulnerable and hardened findings into one evidence
 
 
 
-\### Hardened
+### Hardened
 
 
 
@@ -1912,7 +1912,7 @@ Lab 15 consolidated the major vulnerable and hardened findings into one evidence
 
 
 
-\### Primary Controls
+### Primary Controls
 
 
 
@@ -1928,11 +1928,11 @@ Lab 15 consolidated the major vulnerable and hardened findings into one evidence
 
 
 
-\## Parameter Manipulation
+## Parameter Manipulation
 
 
 
-\### Vulnerable
+### Vulnerable
 
 
 
@@ -1940,7 +1940,7 @@ Lab 15 consolidated the major vulnerable and hardened findings into one evidence
 
 
 
-\### Hardened
+### Hardened
 
 
 
@@ -1948,7 +1948,7 @@ Lab 15 consolidated the major vulnerable and hardened findings into one evidence
 
 
 
-\### Primary Controls
+### Primary Controls
 
 
 
@@ -1968,11 +1968,11 @@ Lab 15 consolidated the major vulnerable and hardened findings into one evidence
 
 
 
-\## Chained Tool Compromise
+## Chained Tool Compromise
 
 
 
-\### Vulnerable
+### Vulnerable
 
 
 
@@ -1980,7 +1980,7 @@ Lab 15 consolidated the major vulnerable and hardened findings into one evidence
 
 
 
-\### Hardened
+### Hardened
 
 
 
@@ -1988,7 +1988,7 @@ Lab 15 consolidated the major vulnerable and hardened findings into one evidence
 
 
 
-\### Primary Controls
+### Primary Controls
 
 
 
@@ -2008,11 +2008,11 @@ Lab 15 consolidated the major vulnerable and hardened findings into one evidence
 
 
 
-\## MCP / Tool Provider Trust
+## MCP / Tool Provider Trust
 
 
 
-\### Hardened Result
+### Hardened Result
 
 
 
@@ -2024,7 +2024,7 @@ No separate vulnerable MCP-registration baseline was executed, so a direct vulne
 
 
 
-\### Primary Controls
+### Primary Controls
 
 
 
@@ -2044,7 +2044,7 @@ No separate vulnerable MCP-registration baseline was executed, so a direct vulne
 
 
 
-\# 24. Core Attack Classes Demonstrated
+# 24. Core Attack Classes Demonstrated
 
 
 
@@ -2102,11 +2102,11 @@ The Day 23 research demonstrated the following tool-layer attack classes:
 
 
 
-\# 25. Major Security Findings
+# 25. Major Security Findings
 
 
 
-\## Finding 1 — Tool Availability Is Not Authorization
+## Finding 1 — Tool Availability Is Not Authorization
 
 
 
@@ -2118,7 +2118,7 @@ A visible or registered tool must not automatically become executable.
 
 
 
-\## Finding 2 — Tool Descriptions Are Untrusted
+## Finding 2 — Tool Descriptions Are Untrusted
 
 
 
@@ -2130,7 +2130,7 @@ Tool metadata is model-visible and therefore potentially attacker-controlled.
 
 
 
-\## Finding 3 — Tool Output Is Untrusted
+## Finding 3 — Tool Output Is Untrusted
 
 
 
@@ -2142,7 +2142,7 @@ Tool output can contain indirect prompt injection or misleading security informa
 
 
 
-\## Finding 4 — Parameters Require Separate Authorization
+## Finding 4 — Parameters Require Separate Authorization
 
 
 
@@ -2158,7 +2158,7 @@ Arguments, targets, values, and scope require independent validation.
 
 
 
-\## Finding 5 — Least Privilege Must Apply Before Execution
+## Finding 5 — Least Privilege Must Apply Before Execution
 
 
 
@@ -2170,7 +2170,7 @@ Unnecessary tool exposure increases attack surface.
 
 
 
-\## Finding 6 — MCP Servers Are Security Principals
+## Finding 6 — MCP Servers Are Security Principals
 
 
 
@@ -2182,7 +2182,7 @@ Server identity must be independently authenticated and bound to specific tools.
 
 
 
-\## Finding 7 — Tool Names Do Not Prove Tool Ownership
+## Finding 7 — Tool Names Do Not Prove Tool Ownership
 
 
 
@@ -2194,7 +2194,7 @@ An attacker-controlled provider must not be able to register a trusted tool mere
 
 
 
-\## Finding 8 — Tool Results Must Not Define Security State
+## Finding 8 — Tool Results Must Not Define Security State
 
 
 
@@ -2206,7 +2206,7 @@ Role, MFA, approval, resource classification, and authorization should come from
 
 
 
-\## Finding 9 — Tool Chains Require Reauthorization
+## Finding 9 — Tool Chains Require Reauthorization
 
 
 
@@ -2218,7 +2218,7 @@ Authority should be revalidated at every tool transition.
 
 
 
-\## Finding 10 — Delegation Must Not Transfer Capabilities Automatically
+## Finding 10 — Delegation Must Not Transfer Capabilities Automatically
 
 
 
@@ -2230,7 +2230,7 @@ A requester cannot grant permissions it does not possess.
 
 
 
-\## Finding 11 — High-Risk Actions Require Independent Approval
+## Finding 11 — High-Risk Actions Require Independent Approval
 
 
 
@@ -2242,7 +2242,7 @@ Model-generated approval claims cannot substitute for trusted approval records.
 
 
 
-\## Finding 12 — Trusted Targets Must Be Immutable From Model Content
+## Finding 12 — Trusted Targets Must Be Immutable From Model Content
 
 
 
@@ -2254,7 +2254,7 @@ The model may suggest a different target, but the execution layer must enforce t
 
 
 
-\## Finding 13 — Model Reasoning Is Not a Security Boundary
+## Finding 13 — Model Reasoning Is Not a Security Boundary
 
 
 
@@ -2278,7 +2278,7 @@ The application must assume that the model may:
 
 
 
-\## Finding 14 — Unsafe Reasoning Can Be Contained
+## Finding 14 — Unsafe Reasoning Can Be Contained
 
 
 
@@ -2306,7 +2306,7 @@ Therefore:
 
 
 
-\# 26. Recommended Hardened Architecture
+# 26. Recommended Hardened Architecture
 
 
 

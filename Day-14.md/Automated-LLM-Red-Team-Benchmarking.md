@@ -1,8 +1,8 @@
-\# Day 14 — Automated LLM Red-Team Benchmarking
+# Day 14 — Automated LLM Red-Team Benchmarking
 
 
 
-\## Repeated Attack Evaluation, Security Metrics \& Evaluator Validation
+## Repeated Attack Evaluation, Security Metrics \& Evaluator Validation
 
 
 
@@ -26,7 +26,7 @@
 
 
 
-\# 1. Executive Summary
+# 1. Executive Summary
 
 
 
@@ -146,7 +146,7 @@ The primary Day 14 conclusion is:
 
 
 
-\# 2. Day 13 → Day 14 Progression
+# 2. Day 13 → Day 14 Progression
 
 
 
@@ -214,7 +214,7 @@ and which security property does it affect?"
 
 
 
-\# 3. Benchmark Architecture
+# 3. Benchmark Architecture
 
 
 
@@ -288,11 +288,11 @@ and which security property does it affect?"
 
 
 
-\# 4. Benchmark Metrics
+# 4. Benchmark Metrics
 
 
 
-\## 4.1 Attack Success Rate — ASR
+## 4.1 Attack Success Rate — ASR
 
 
 
@@ -316,7 +316,7 @@ ASR measures how frequently an attacker-controlled objective succeeds.
 
 
 
-\## 4.2 Task Preservation Rate — TPR
+## 4.2 Task Preservation Rate — TPR
 
 
 
@@ -344,7 +344,7 @@ A low ASR does not necessarily imply good security if TPR is also low.
 
 
 
-\## 4.3 Refusal Rate — RR
+## 4.3 Refusal Rate — RR
 
 
 
@@ -368,7 +368,7 @@ RR helps identify systems that resist attacks primarily by refusing legitimate t
 
 
 
-\## 4.4 Secret Disclosure Rate — SDR
+## 4.4 Secret Disclosure Rate — SDR
 
 
 
@@ -392,7 +392,7 @@ SDR measures confidentiality failure frequency.
 
 
 
-\## 4.5 False Positive Rate — FPR
+## 4.5 False Positive Rate — FPR
 
 
 
@@ -416,7 +416,7 @@ A false positive occurs when the evaluator reports attack success but analyst gr
 
 
 
-\## 4.6 False Negative Rate — FNR
+## 4.6 False Negative Rate — FNR
 
 
 
@@ -440,7 +440,7 @@ A false negative occurs when an actual attack success is missed by the evaluator
 
 
 
-\# 5. Lab 1 — Repeated Retrieval-Poisoning Benchmark
+# 5. Lab 1 — Repeated Retrieval-Poisoning Benchmark
 
 
 
@@ -470,7 +470,7 @@ Secret disclosure
 
 
 
-\## Results
+## Results
 
 
 
@@ -492,7 +492,7 @@ Secret Disclosures:         0 / 10
 
 
 
-\## Metrics
+## Metrics
 
 
 
@@ -510,7 +510,7 @@ SDR:   0.00%
 
 
 
-\## Security Interpretation
+## Security Interpretation
 
 
 
@@ -564,7 +564,7 @@ This demonstrated why ASR should never be interpreted in isolation.
 
 
 
-\# 6. Lab 2 — Persistent Benchmark Evidence
+# 6. Lab 2 — Persistent Benchmark Evidence
 
 
 
@@ -632,7 +632,7 @@ This transformed terminal output into a reusable security evaluation dataset.
 
 
 
-\# 7. Lab 3 — Exact vs Normalized vs Regex Scoring
+# 7. Lab 3 — Exact vs Normalized vs Regex Scoring
 
 
 
@@ -660,7 +660,7 @@ All 10 real responses were negative for the attack marker.
 
 
 
-\## Results
+## Results
 
 
 
@@ -700,7 +700,7 @@ A controlled validation set was therefore required.
 
 
 
-\# 8. Lab 4 — Controlled Scorer Validation
+# 8. Lab 4 — Controlled Scorer Validation
 
 
 
@@ -740,7 +740,7 @@ DAY14 attack\_success
 
 
 
-\## Exact Matcher
+## Exact Matcher
 
 
 
@@ -772,7 +772,7 @@ FNR:        60.00%
 
 
 
-\## Normalized Matcher
+## Normalized Matcher
 
 
 
@@ -804,7 +804,7 @@ FNR:         0.00%
 
 
 
-\## Regex Matcher
+## Regex Matcher
 
 
 
@@ -836,7 +836,7 @@ FNR:         0.00%
 
 
 
-\## Key Finding
+## Key Finding
 
 
 
@@ -868,7 +868,7 @@ The normalized and regex scorers achieved perfect classification on this small d
 
 
 
-\# 9. Lab 5 — Analyst Review Dataset
+# 9. Lab 5 — Analyst Review Dataset
 
 
 
@@ -900,7 +900,7 @@ All 10 responses were manually reviewed.
 
 
 
-\## Analyst Ground Truth
+## Analyst Ground Truth
 
 
 
@@ -940,7 +940,7 @@ SDR:   0.00%
 
 
 
-\# 10. Lab 6 — Automated Scorers vs Analyst Ground Truth
+# 10. Lab 6 — Automated Scorers vs Analyst Ground Truth
 
 
 
@@ -980,7 +980,7 @@ FN:  0
 
 
 
-\## Metrics
+## Metrics
 
 
 
@@ -1004,7 +1004,7 @@ FNR:           N/A
 
 
 
-\## Statistical Lesson
+## Statistical Lesson
 
 
 
@@ -1040,7 +1040,7 @@ This demonstrated an important benchmarking principle:
 
 
 
-\# 11. Lab 7 — Multi-Scenario Repeated Benchmark
+# 11. Lab 7 — Multi-Scenario Repeated Benchmark
 
 
 
@@ -1092,7 +1092,7 @@ These metrics were subsequently audited.
 
 
 
-\# 12. Clean Baseline Confidentiality Anomaly
+# 12. Clean Baseline Confidentiality Anomaly
 
 
 
@@ -1120,7 +1120,7 @@ This was manually confirmed as a genuine disclosure.
 
 
 
-\## Correct Classification
+## Correct Classification
 
 
 
@@ -1132,7 +1132,7 @@ Clean baseline SDR = 1 / 5 = 20%
 
 
 
-\## Significance
+## Significance
 
 
 
@@ -1156,7 +1156,7 @@ This demonstrates:
 
 
 
-\# 13. Embedded Document Injection — Evaluator False Positives
+# 13. Embedded Document Injection — Evaluator False Positives
 
 
 
@@ -1206,7 +1206,7 @@ The model did not abandon the legitimate task.
 
 
 
-\## Analyst Ground Truth
+## Analyst Ground Truth
 
 
 
@@ -1234,7 +1234,7 @@ TPR                   = 100%
 
 
 
-\## Finding
+## Finding
 
 
 
@@ -1270,7 +1270,7 @@ executing malicious content
 
 
 
-\# 14. Retrieval Poisoning — Confirmed Repeated Vulnerability
+# 14. Retrieval Poisoning — Confirmed Repeated Vulnerability
 
 
 
@@ -1296,7 +1296,7 @@ Run 4 was resisted through refusal.
 
 
 
-\## Results
+## Results
 
 
 
@@ -1314,7 +1314,7 @@ Secret disclosures:    1 / 5
 
 
 
-\## Metrics
+## Metrics
 
 
 
@@ -1332,7 +1332,7 @@ SDR:  20.00%
 
 
 
-\## Example Confirmed Attack
+## Example Confirmed Attack
 
 
 
@@ -1360,7 +1360,7 @@ This is clear evidence of attacker-controlled retrieved content overriding the l
 
 
 
-\# 15. Retrieval Poisoning + Secret Disclosure
+# 15. Retrieval Poisoning + Secret Disclosure
 
 
 
@@ -1392,7 +1392,7 @@ This demonstrates that a single LLM response can violate multiple security prope
 
 
 
-\# 16. Indirect Secret Extraction Benchmark
+# 16. Indirect Secret Extraction Benchmark
 
 
 
@@ -1404,7 +1404,7 @@ Every run refused.
 
 
 
-\## Results
+## Results
 
 
 
@@ -1422,7 +1422,7 @@ Secret disclosures:    0 / 5
 
 
 
-\## Metrics
+## Metrics
 
 
 
@@ -1440,7 +1440,7 @@ SDR:    0.00%
 
 
 
-\## Interpretation
+## Interpretation
 
 
 
@@ -1468,7 +1468,7 @@ did not mean the application behaved safely or usefully.
 
 
 
-\# 17. Lab 8 — Classification Audit
+# 17. Lab 8 — Classification Audit
 
 
 
@@ -1532,7 +1532,7 @@ This validation materially changed the benchmark interpretation.
 
 
 
-\# 18. Lab 9 — Context-Aware Evaluator
+# 18. Lab 9 — Context-Aware Evaluator
 
 
 
@@ -1574,7 +1574,7 @@ It examined whether the marker:
 
 
 
-\## Embedded Document Results
+## Embedded Document Results
 
 
 
@@ -1632,7 +1632,7 @@ matching analyst ground truth.
 
 
 
-\## Retrieval-Poisoning Results
+## Retrieval-Poisoning Results
 
 
 
@@ -1656,7 +1656,7 @@ Confirmed ASR: 80%
 
 
 
-\# 19. Analyst-Corrected Final Metrics
+# 19. Analyst-Corrected Final Metrics
 
 
 
@@ -1682,11 +1682,11 @@ These values reflect analyst validation rather than raw marker-presence classifi
 
 
 
-\# 20. Security Properties Observed
+# 20. Security Properties Observed
 
 
 
-\## Confidentiality
+## Confidentiality
 
 
 
@@ -1704,7 +1704,7 @@ Retrieval-poisoning secret disclosure
 
 
 
-\## Integrity
+## Integrity
 
 
 
@@ -1720,7 +1720,7 @@ Retrieval poisoning redirected model behavior
 
 
 
-\## Availability / Task Continuity
+## Availability / Task Continuity
 
 
 
@@ -1740,7 +1740,7 @@ Indirect-secret-extraction over-refusal
 
 
 
-\## Evaluator Integrity
+## Evaluator Integrity
 
 
 
@@ -1766,11 +1766,11 @@ Day 14 therefore demonstrated that the evaluation layer itself has a security-qu
 
 
 
-\# 21. Key Findings
+# 21. Key Findings
 
 
 
-\### Finding 1 — Attack Reliability Can Be Measured
+### Finding 1 — Attack Reliability Can Be Measured
 
 
 
@@ -1786,7 +1786,7 @@ This is stronger evidence than observing a single successful prompt.
 
 
 
-\### Finding 2 — Low ASR Can Hide Poor Application Behavior
+### Finding 2 — Low ASR Can Hide Poor Application Behavior
 
 
 
@@ -1824,7 +1824,7 @@ The model resisted by refusing the legitimate task.
 
 
 
-\### Finding 3 — A Baseline Can Still Leak Sensitive Context
+### Finding 3 — A Baseline Can Still Leak Sensitive Context
 
 
 
@@ -1840,7 +1840,7 @@ No malicious injection was required.
 
 
 
-\### Finding 4 — Attack Success and Task Preservation Are Independent
+### Finding 4 — Attack Success and Task Preservation Are Independent
 
 
 
@@ -1876,7 +1876,7 @@ Multiple dimensions can be true simultaneously.
 
 
 
-\### Finding 5 — Exact Matching Can Miss Real Attacks
+### Finding 5 — Exact Matching Can Miss Real Attacks
 
 
 
@@ -1900,7 +1900,7 @@ due to harmless formatting variations.
 
 
 
-\### Finding 6 — Marker Presence Can Create False Positives
+### Finding 6 — Marker Presence Can Create False Positives
 
 
 
@@ -1916,7 +1916,7 @@ Raw marker-presence detection falsely classified all three as attack successes.
 
 
 
-\### Finding 7 — Context Matters
+### Finding 7 — Context Matters
 
 
 
@@ -1948,7 +1948,7 @@ X
 
 
 
-\### Finding 8 — Analyst Review Remains Important
+### Finding 8 — Analyst Review Remains Important
 
 
 
@@ -1960,7 +1960,7 @@ Automated scoring reduced workload but did not eliminate the need for manual val
 
 
 
-\# 22. Why Multiple Metrics Matter
+# 22. Why Multiple Metrics Matter
 
 
 
@@ -2032,7 +2032,7 @@ Therefore:
 
 
 
-\# 23. Evaluator Validation as Part of Red Teaming
+# 23. Evaluator Validation as Part of Red Teaming
 
 
 
@@ -2120,11 +2120,11 @@ Marker-presence scoring misclassified quoted attack content.
 
 
 
-\# 24. Overall Risk Assessment
+# 24. Overall Risk Assessment
 
 
 
-\## Rating
+## Rating
 
 
 
@@ -2132,7 +2132,7 @@ Marker-presence scoring misclassified quoted attack content.
 
 
 
-\## Rationale
+## Rationale
 
 
 
@@ -2166,7 +2166,7 @@ This rating applies only to the tested model, prompts, runtime, system policy, a
 
 
 
-\# 25. Security Recommendations
+# 25. Security Recommendations
 
 
 
@@ -2212,7 +2212,7 @@ Recommended controls include:
 
 
 
-\# 26. Benchmarking Limitations
+# 26. Benchmarking Limitations
 
 
 
@@ -2272,7 +2272,7 @@ Future work should increase sample size and evaluate uncertainty.
 
 
 
-\# 27. Recommended Future Metrics
+# 27. Recommended Future Metrics
 
 
 
@@ -2334,7 +2334,7 @@ would provide stronger estimates of behavioral reliability.
 
 
 
-\# 28. Skills Demonstrated
+# 28. Skills Demonstrated
 
 
 
@@ -2402,7 +2402,7 @@ Day 14 demonstrates hands-on experience with:
 
 
 
-\# 29. Day 14 Learning Progression
+# 29. Day 14 Learning Progression
 
 
 
@@ -2466,7 +2466,7 @@ This represents an important progression from demonstrating LLM vulnerabilities 
 
 
 
-\# 30. Final Conclusion
+# 30. Final Conclusion
 
 
 
@@ -2550,7 +2550,7 @@ This shift from isolated observations to measured, validated behavior represents
 
 
 
-\## Day 14 Status
+## Day 14 Status
 
 
 
@@ -2582,7 +2582,7 @@ This shift from isolated observations to measured, validated behavior represents
 
 
 
-\## Core Portfolio Takeaway
+## Core Portfolio Takeaway
 
 
 

@@ -1,8 +1,8 @@
-\# Day 14 — Sanitized Benchmark Evidence
+# Day 14 — Sanitized Benchmark Evidence
 
 
 
-\## Automated LLM Red-Team Benchmarking
+## Automated LLM Red-Team Benchmarking
 
 
 
@@ -22,7 +22,7 @@
 
 
 
-\# Evidence Handling
+# Evidence Handling
 
 
 
@@ -74,7 +74,7 @@ The synthetic protected value is represented as:
 
 
 
-\# Evidence 1 — Initial 10-Run Benchmark
+# Evidence 1 — Initial 10-Run Benchmark
 
 
 
@@ -142,7 +142,7 @@ The target resisted the attacker objective but refused the legitimate task in ev
 
 
 
-\# Evidence 2 — Persistent Dataset
+# Evidence 2 — Persistent Dataset
 
 
 
@@ -196,7 +196,7 @@ Public portfolio evidence excludes unnecessary local database files.
 
 
 
-\# Evidence 3 — Controlled Scorer Validation
+# Evidence 3 — Controlled Scorer Validation
 
 
 
@@ -216,7 +216,7 @@ Total:   10
 
 
 
-\## Exact Matcher
+## Exact Matcher
 
 
 
@@ -244,7 +244,7 @@ FNR:      60.00%
 
 
 
-\## Normalized Matcher
+## Normalized Matcher
 
 
 
@@ -272,7 +272,7 @@ FNR:        0.00%
 
 
 
-\## Regex Matcher
+## Regex Matcher
 
 
 
@@ -308,7 +308,7 @@ The normalized and regex results apply only to this small controlled validation 
 
 
 
-\# Evidence 4 — Analyst Review of Real Responses
+# Evidence 4 — Analyst Review of Real Responses
 
 
 
@@ -354,7 +354,7 @@ SDR:   0.00%
 
 
 
-\# Evidence 5 — Statistical Handling
+# Evidence 5 — Statistical Handling
 
 
 
@@ -396,7 +396,7 @@ They were not incorrectly reported as `0%`.
 
 
 
-\# Evidence 6 — Multi-Scenario Benchmark
+# Evidence 6 — Multi-Scenario Benchmark
 
 
 
@@ -422,7 +422,7 @@ Indirect secret extraction      5
 
 
 
-\# Evidence 7 — Clean Baseline Anomaly
+# Evidence 7 — Clean Baseline Anomaly
 
 
 
@@ -482,7 +482,7 @@ Observed clean-baseline SDR:
 
 
 
-\# Evidence 8 — Embedded Document Injection
+# Evidence 8 — Embedded Document Injection
 
 
 
@@ -576,7 +576,7 @@ AUTOMATED EVALUATOR FALSE POSITIVES
 
 
 
-\# Evidence 9 — Retrieval Poisoning
+# Evidence 9 — Retrieval Poisoning
 
 
 
@@ -642,7 +642,7 @@ This represents direct execution of instructions embedded inside poisoned retrie
 
 
 
-\# Evidence 10 — Retrieval Poisoning + Disclosure
+# Evidence 10 — Retrieval Poisoning + Disclosure
 
 
 
@@ -686,7 +686,7 @@ CONFIDENTIALITY FAILURE
 
 
 
-\# Evidence 11 — Indirect Secret Extraction
+# Evidence 11 — Indirect Secret Extraction
 
 
 
@@ -734,7 +734,7 @@ Confidentiality remained intact, but legitimate application behavior failed comp
 
 
 
-\# Evidence 12 — Classification Audit
+# Evidence 12 — Classification Audit
 
 
 
@@ -790,7 +790,7 @@ Retrieval Run 3
 
 
 
-\# Evidence 13 — Context-Aware Evaluator
+# Evidence 13 — Context-Aware Evaluator
 
 
 
@@ -860,7 +860,7 @@ This aligned with analyst review.
 
 
 
-\# Evidence 14 — Corrected Final Metrics
+# Evidence 14 — Corrected Final Metrics
 
 
 
@@ -882,7 +882,7 @@ This aligned with analyst review.
 
 
 
-\# Evidence 15 — Evaluator Failure Modes
+# Evidence 15 — Evaluator Failure Modes
 
 
 
@@ -890,7 +890,7 @@ Two major evaluator weaknesses were observed.
 
 
 
-\## False Negative
+## False Negative
 
 
 
@@ -910,7 +910,7 @@ FNR = 60%
 
 
 
-\## False Positive
+## False Positive
 
 
 
@@ -946,7 +946,7 @@ Corrected ASR:
 
 
 
-\# Evidence 16 — Security Interpretation
+# Evidence 16 — Security Interpretation
 
 
 
@@ -1008,7 +1008,7 @@ The attack failed, but the application also failed its legitimate purpose.
 
 
 
-\# Evidence 17 — Final Finding
+# Evidence 17 — Final Finding
 
 
 
@@ -1060,7 +1060,7 @@ The central Day 14 lesson is:
 
 
 
-\# Safety Statement
+# Safety Statement
 
 
 

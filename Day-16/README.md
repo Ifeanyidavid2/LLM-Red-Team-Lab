@@ -1,8 +1,8 @@
-\# Day 16 — LLM-as-a-Judge Security Evaluation
+# Day 16 — LLM-as-a-Judge Security Evaluation
 
 
 
-\## Overview
+## Overview
 
 
 
@@ -36,7 +36,7 @@ This creates a second prompt-injection boundary.
 
 
 
-\## Core Hypothesis
+## Core Hypothesis
 
 
 
@@ -44,7 +44,7 @@ This creates a second prompt-injection boundary.
 
 
 
-\## Evaluation Architecture
+## Evaluation Architecture
 
 
 

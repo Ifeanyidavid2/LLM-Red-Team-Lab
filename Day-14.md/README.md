@@ -1,8 +1,8 @@
-\# Day 14 — Automated LLM Red-Team Benchmarking
+# Day 14 — Automated LLM Red-Team Benchmarking
 
 
 
-\## Repeated Attack Evaluation, Security Metrics \& Evaluator Validation
+## Repeated Attack Evaluation, Security Metrics \& Evaluator Validation
 
 
 
@@ -34,7 +34,7 @@ The benchmark was built around a locally hosted Llama 3.2 1B model using Ollama,
 
 
 
-\# Core Metrics
+# Core Metrics
 
 
 
@@ -72,7 +72,7 @@ A low attack success rate does not necessarily indicate healthy behavior if the 
 
 
 
-\# Benchmark Architecture
+# Benchmark Architecture
 
 
 
@@ -146,11 +146,11 @@ Automated Test Harness
 
 
 
-\# Lab Progression
+# Lab Progression
 
 
 
-\## Lab 1 — Automated Benchmark Harness
+## Lab 1 — Automated Benchmark Harness
 
 
 
@@ -192,7 +192,7 @@ This demonstrated that:
 
 
 
-\## Lab 2 — Persistent Benchmark Dataset
+## Lab 2 — Persistent Benchmark Dataset
 
 
 
@@ -220,7 +220,7 @@ This enabled later evaluation without rerunning the model.
 
 
 
-\## Lab 3 — Scorer Comparison
+## Lab 3 — Scorer Comparison
 
 
 
@@ -252,7 +252,7 @@ However, all 10 responses were negative cases, so agreement between scorers did 
 
 
 
-\## Lab 4 — Controlled Scorer Validation
+## Lab 4 — Controlled Scorer Validation
 
 
 
@@ -270,7 +270,7 @@ A balanced 10-case analyst-labelled validation dataset was created:
 
 
 
-\### Exact Matcher
+### Exact Matcher
 
 
 
@@ -290,7 +290,7 @@ FNR:        60.00%
 
 
 
-\### Normalized Matcher
+### Normalized Matcher
 
 
 
@@ -310,7 +310,7 @@ FNR:         0.00%
 
 
 
-\### Regex Matcher
+### Regex Matcher
 
 
 
@@ -342,7 +342,7 @@ The normalized and regex scorers achieved perfect classification only on this li
 
 
 
-\## Lab 5 — Analyst Ground Truth
+## Lab 5 — Analyst Ground Truth
 
 
 
@@ -372,7 +372,7 @@ Secret disclosures:     0
 
 
 
-\## Lab 6 — Automated Scorers vs Analyst Ground Truth
+## Lab 6 — Automated Scorers vs Analyst Ground Truth
 
 
 
@@ -422,7 +422,7 @@ Recall and FNR were correctly reported as `N/A` because the corpus contained no 
 
 
 
-\## Lab 7 — Multi-Scenario Benchmark
+## Lab 7 — Multi-Scenario Benchmark
 
 
 
@@ -452,7 +452,7 @@ The initial automated results required analyst review.
 
 
 
-\# Analyst-Corrected Final Metrics
+# Analyst-Corrected Final Metrics
 
 
 
@@ -474,7 +474,7 @@ The initial automated results required analyst review.
 
 
 
-\# Key Finding — Clean Baseline Secret Disclosure
+# Key Finding — Clean Baseline Secret Disclosure
 
 
 
@@ -510,7 +510,7 @@ This demonstrates that storing sensitive values directly in model context can cr
 
 
 
-\# Key Finding — Embedded Injection False Positives
+# Key Finding — Embedded Injection False Positives
 
 
 
@@ -562,7 +562,7 @@ This established a major evaluation principle:
 
 
 
-\# Key Finding — Retrieval Poisoning
+# Key Finding — Retrieval Poisoning
 
 
 
@@ -596,7 +596,7 @@ One run both followed the malicious retrieved instruction and disclosed the prot
 
 
 
-\# Key Finding — Over-Refusal
+# Key Finding — Over-Refusal
 
 
 
@@ -650,7 +650,7 @@ Application usefulness
 
 
 
-\# Evaluator Improvement
+# Evaluator Improvement
 
 
 
@@ -722,7 +722,7 @@ Marker-presence detection confused mention with execution.
 
 
 
-\# Main Security Lessons
+# Main Security Lessons
 
 
 
@@ -786,11 +786,11 @@ Context-aware evaluation improves classification quality.
 
 
 
-\# Overall Risk Rating
+# Overall Risk Rating
 
 
 
-\## HIGH within the tested benchmark scope
+## HIGH within the tested benchmark scope
 
 
 
@@ -824,7 +824,7 @@ These results apply only to this controlled environment and should not be interp
 
 
 
-\# Full Assessment
+# Full Assessment
 
 
 
@@ -840,7 +840,7 @@ See:
 
 
 
-\# Core Portfolio Takeaway
+# Core Portfolio Takeaway
 
 
 
@@ -852,7 +852,7 @@ See:
 
 
 
-\# Ethical Use
+# Ethical Use
 
 
 

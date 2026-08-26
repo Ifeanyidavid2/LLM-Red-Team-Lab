@@ -1,8 +1,8 @@
-\# Day 25 — AI Supply-Chain, Model \& Artifact Trust Security Assessment
+# Day 25 — AI Supply-Chain, Model \& Artifact Trust Security Assessment
 
 
 
-\## LLM Red Team Lab — AI Supply-Chain Security Research
+## LLM Red Team Lab — AI Supply-Chain Security Research
 
 
 
@@ -24,7 +24,7 @@
 
 
 
-\# Executive Summary
+# Executive Summary
 
 
 
@@ -228,7 +228,7 @@ The core security principle established by Day 25 is:
 
 
 
-\# 1. Introduction
+# 1. Introduction
 
 
 
@@ -338,7 +338,7 @@ while still being malicious.
 
 
 
-\# 2. Research Question
+# 2. Research Question
 
 
 
@@ -362,7 +362,7 @@ A secondary question is:
 
 
 
-\# 3. Core Security Principle
+# 3. Core Security Principle
 
 
 
@@ -410,7 +410,7 @@ A secure AI architecture must establish each property independently.
 
 
 
-\# 4. Assessment Objectives
+# 4. Assessment Objectives
 
 
 
@@ -464,11 +464,11 @@ The Day 25 assessment was designed to:
 
 
 
-\# 5. Threat Model
+# 5. Threat Model
 
 
 
-\## 5.1 Attacker Objective
+## 5.1 Attacker Objective
 
 
 
@@ -504,7 +504,7 @@ Examples include:
 
 
 
-\## 5.2 Potential Compromise Points
+## 5.2 Potential Compromise Points
 
 
 
@@ -620,7 +620,7 @@ Each transition represents a security boundary.
 
 
 
-\# 6. Trusted Artifact Model
+# 6. Trusted Artifact Model
 
 
 
@@ -688,7 +688,7 @@ sha256
 
 
 
-\# 7. Artifact Trust Requirements
+# 7. Artifact Trust Requirements
 
 
 
@@ -700,7 +700,7 @@ A trusted artifact must satisfy multiple independent conditions.
 
 
 
-\## 7.1 Identity
+## 7.1 Identity
 
 
 
@@ -708,7 +708,7 @@ The artifact must be the exact expected artifact.
 
 
 
-\## 7.2 Version
+## 7.2 Version
 
 
 
@@ -716,7 +716,7 @@ The artifact must match an explicitly authorized version.
 
 
 
-\## 7.3 Publisher
+## 7.3 Publisher
 
 
 
@@ -724,7 +724,7 @@ The publisher must be authenticated rather than merely named.
 
 
 
-\## 7.4 Type
+## 7.4 Type
 
 
 
@@ -732,7 +732,7 @@ The artifact must match the expected artifact class.
 
 
 
-\## 7.5 Purpose
+## 7.5 Purpose
 
 
 
@@ -740,7 +740,7 @@ The artifact's role must correspond to its authorized application purpose.
 
 
 
-\## 7.6 Capability
+## 7.6 Capability
 
 
 
@@ -748,7 +748,7 @@ The artifact must not introduce capabilities beyond its authorized scope.
 
 
 
-\## 7.7 Dependencies
+## 7.7 Dependencies
 
 
 
@@ -756,7 +756,7 @@ Dependencies must be explicitly declared and independently trusted.
 
 
 
-\## 7.8 Integrity
+## 7.8 Integrity
 
 
 
@@ -764,7 +764,7 @@ Security-relevant artifact content must match trusted integrity evidence.
 
 
 
-\## 7.9 Provenance
+## 7.9 Provenance
 
 
 
@@ -776,7 +776,7 @@ The artifact must have verifiable origin and build history.
 
 
 
-\# 8. Lab Methodology
+# 8. Lab Methodology
 
 
 
@@ -826,11 +826,11 @@ The assessment was divided into sixteen labs.
 
 
 
-\# 9. Lab 1 — Synthetic AI Supply-Chain Environment
+# 9. Lab 1 — Synthetic AI Supply-Chain Environment
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -838,7 +838,7 @@ Create a controlled AI artifact ecosystem for testing supply-chain trust.
 
 
 
-\## Trusted Components
+## Trusted Components
 
 
 
@@ -862,7 +862,7 @@ All artifacts were initially associated with trusted publishers and known SHA-25
 
 
 
-\## Baseline Result
+## Baseline Result
 
 
 
@@ -898,7 +898,7 @@ The baseline workflow performed:
 
 
 
-\## Security Lesson
+## Security Lesson
 
 
 
@@ -914,11 +914,11 @@ Without a known-good baseline, compromise cannot be measured reliably.
 
 
 
-\# 10. Lab 2 — Trusted Artifact \& Model Baseline
+# 10. Lab 2 — Trusted Artifact \& Model Baseline
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -950,7 +950,7 @@ Each artifact was evaluated for:
 
 
 
-\## Result
+## Result
 
 
 
@@ -972,7 +972,7 @@ Model Fully Trusted: True
 
 
 
-\## Security Finding
+## Security Finding
 
 
 
@@ -1002,11 +1002,11 @@ Model trust therefore requires dependency trust.
 
 
 
-\# 11. Lab 3 — Prompt-Template Supply-Chain Poisoning
+# 11. Lab 3 — Prompt-Template Supply-Chain Poisoning
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -1028,7 +1028,7 @@ Attack cases introduced instructions that attempted to:
 
 
 
-\## Results
+## Results
 
 
 
@@ -1056,7 +1056,7 @@ Clean Prompt Artifact Utility Rate: 100.00%
 
 
 
-\## Security Finding
+## Security Finding
 
 
 
@@ -1064,7 +1064,7 @@ The vulnerable loader accepted prompt-template artifacts because they were struc
 
 
 
-\## Security Impact
+## Security Impact
 
 
 
@@ -1080,11 +1080,11 @@ This demonstrates that prompt injection can also exist as a supply-chain problem
 
 
 
-\# 12. Lab 4 — Configuration / Policy Artifact Tampering
+# 12. Lab 4 — Configuration / Policy Artifact Tampering
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -1108,7 +1108,7 @@ Potential malicious changes include:
 
 
 
-\## Security Finding
+## Security Finding
 
 
 
@@ -1120,7 +1120,7 @@ A compromised policy artifact can make malicious runtime behavior appear authori
 
 
 
-\## Key Principle
+## Key Principle
 
 
 
@@ -1144,11 +1144,11 @@ Therefore policy artifacts require the same trust protections as executable code
 
 
 
-\# 13. Lab 5 — Dataset / Knowledge Artifact Poisoning
+# 13. Lab 5 — Dataset / Knowledge Artifact Poisoning
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -1172,7 +1172,7 @@ Poisoned knowledge may contain:
 
 
 
-\## Security Finding
+## Security Finding
 
 
 
@@ -1180,7 +1180,7 @@ A knowledge artifact may appear to contain factual information while actually ca
 
 
 
-\## Security Principle
+## Security Principle
 
 
 
@@ -1196,11 +1196,11 @@ Dataset authenticity and provenance therefore form part of the AI application's 
 
 
 
-\# 14. Lab 6 — Model / Adapter Substitution
+# 14. Lab 6 — Model / Adapter Substitution
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -1236,7 +1236,7 @@ while also:
 
 
 
-\## Security Finding
+## Security Finding
 
 
 
@@ -1264,11 +1264,11 @@ A model must therefore be bound to trusted identity and integrity information.
 
 
 
-\# 15. Lab 7 — Tool Package / Dependency Compromise
+# 15. Lab 7 — Tool Package / Dependency Compromise
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -1294,7 +1294,7 @@ A compromised dependency may:
 
 
 
-\## Security Finding
+## Security Finding
 
 
 
@@ -1310,11 +1310,11 @@ A malicious dependency may remain invisible to the application because its funct
 
 
 
-\# 16. Lab 8 — Dependency Confusion \& Artifact Substitution
+# 16. Lab 8 — Dependency Confusion \& Artifact Substitution
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -1338,7 +1338,7 @@ Attack scenarios included:
 
 
 
-\## Vulnerable Pattern
+## Vulnerable Pattern
 
 
 
@@ -1380,7 +1380,7 @@ Trusted Artifact
 
 
 
-\## Security Finding
+## Security Finding
 
 
 
@@ -1396,11 +1396,11 @@ A package manager or artifact loader must not treat version precedence as trust 
 
 
 
-\# 17. Lab 9 — Artifact Metadata \& Provenance Spoofing
+# 17. Lab 9 — Artifact Metadata \& Provenance Spoofing
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -1434,7 +1434,7 @@ Spoofed metadata included:
 
 
 
-\## Results
+## Results
 
 
 
@@ -1466,7 +1466,7 @@ Clean Provenance Utility Rate: 100.00%
 
 
 
-\## Security Finding
+## Security Finding
 
 
 
@@ -1474,7 +1474,7 @@ The malicious artifact could present metadata identical to the trusted artifact 
 
 
 
-\## Critical Principle
+## Critical Principle
 
 
 
@@ -1526,11 +1526,11 @@ does not authenticate the publisher.
 
 
 
-\# 18. Lab 10 — Hash / Integrity Verification Bypass
+# 18. Lab 10 — Hash / Integrity Verification Bypass
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -1558,7 +1558,7 @@ The lab evaluated:
 
 
 
-\## Results
+## Results
 
 
 
@@ -1584,7 +1584,7 @@ Clean Integrity Utility Rate: 100.00%
 
 
 
-\## Security Finding
+## Security Finding
 
 
 
@@ -1624,7 +1624,7 @@ Is stale verification state reused?
 
 
 
-\## Critical Principle
+## Critical Principle
 
 
 
@@ -1636,11 +1636,11 @@ Is stale verification state reused?
 
 
 
-\# 19. Lab 11 — Transitive Dependency Compromise
+# 19. Lab 11 — Transitive Dependency Compromise
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -1690,7 +1690,7 @@ while the runtime still becomes compromised because a transitive dependency is m
 
 
 
-\## Security Finding
+## Security Finding
 
 
 
@@ -1710,7 +1710,7 @@ Trusted Dependency Tree
 
 
 
-\## Defensive Requirement
+## Defensive Requirement
 
 
 
@@ -1738,11 +1738,11 @@ The application should validate:
 
 
 
-\# 20. Lab 12 — Compromised Artifact to Runtime Propagation
+# 20. Lab 12 — Compromised Artifact to Runtime Propagation
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -1798,7 +1798,7 @@ Protected Resource
 
 
 
-\## Result
+## Result
 
 
 
@@ -1824,7 +1824,7 @@ Some attack paths were prevented by independent runtime restrictions.
 
 
 
-\## Security Finding
+## Security Finding
 
 
 
@@ -1844,11 +1844,11 @@ This became a central design principle for the hardened architecture.
 
 
 
-\# 21. Lab 13 — Vulnerable End-to-End Supply-Chain Attack Chain
+# 21. Lab 13 — Vulnerable End-to-End Supply-Chain Attack Chain
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -1856,7 +1856,7 @@ Combine the individual supply-chain weaknesses into a complete vulnerable archit
 
 
 
-\## Attack Chain
+## Attack Chain
 
 
 
@@ -1928,7 +1928,7 @@ Unauthorized System Impact
 
 
 
-\## Vulnerable Results
+## Vulnerable Results
 
 
 
@@ -1952,7 +1952,7 @@ Unauthorized System Impact
 
 
 
-\## Critical Observation
+## Critical Observation
 
 
 
@@ -1980,11 +1980,11 @@ This reinforces the Day 25 core principle:
 
 
 
-\# 22. Lab 14 — AI Supply-Chain Trust \& Containment Controls
+# 22. Lab 14 — AI Supply-Chain Trust \& Containment Controls
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -1992,7 +1992,7 @@ Design a hardened architecture that assumes incoming AI artifacts are untrusted 
 
 
 
-\## Hardened Verification Pipeline
+## Hardened Verification Pipeline
 
 
 
@@ -2120,7 +2120,7 @@ Protected Resource
 
 
 
-\## Attack Cases
+## Attack Cases
 
 
 
@@ -2140,7 +2140,7 @@ The hardened architecture was tested against:
 
 
 
-\## Results
+## Results
 
 
 
@@ -2170,7 +2170,7 @@ Legitimate Workflow Completion Rate: 100.00%
 
 
 
-\## Observed Containment Stages
+## Observed Containment Stages
 
 
 
@@ -2186,7 +2186,7 @@ SOURCE\_TRUST: 2
 
 
 
-\## Security Finding
+## Security Finding
 
 
 
@@ -2202,11 +2202,11 @@ At the same time, legitimate workflows remained functional.
 
 
 
-\# 23. Lab 15 — Hardened AI Supply-Chain Adversarial Retest
+# 23. Lab 15 — Hardened AI Supply-Chain Adversarial Retest
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -2218,7 +2218,7 @@ This tests \*\*defense in depth\*\* rather than simple first-control prevention.
 
 
 
-\## Adversarial Strategy
+## Adversarial Strategy
 
 
 
@@ -2254,7 +2254,7 @@ The attacker was therefore injected progressively deeper into the trust chain.
 
 
 
-\## Case: Source Trust Assumed Bypassed
+## Case: Source Trust Assumed Bypassed
 
 
 
@@ -2278,7 +2278,7 @@ ARTIFACT\_IDENTITY
 
 
 
-\## Case: Identity Validation Assumed Bypassed
+## Case: Identity Validation Assumed Bypassed
 
 
 
@@ -2312,7 +2312,7 @@ VERSION\_BINDING
 
 
 
-\## Case: Provenance Controls Assumed Bypassed
+## Case: Provenance Controls Assumed Bypassed
 
 
 
@@ -2352,7 +2352,7 @@ FULL\_INTEGRITY
 
 
 
-\## Case: Integrity Assumed Bypassed
+## Case: Integrity Assumed Bypassed
 
 
 
@@ -2376,7 +2376,7 @@ CAPABILITY\_POLICY
 
 
 
-\## Case: Malicious Artifact Assumed Loaded
+## Case: Malicious Artifact Assumed Loaded
 
 
 
@@ -2408,7 +2408,7 @@ No unauthorized action executed.
 
 
 
-\# 24. Hardened Retest Results
+# 24. Hardened Retest Results
 
 
 
@@ -2468,7 +2468,7 @@ RUNTIME\_ACTION\_BINDING
 
 
 
-\# 25. Why the 33.33% Malicious Load Survival Rate Matters
+# 25. Why the 33.33% Malicious Load Survival Rate Matters
 
 
 
@@ -2520,7 +2520,7 @@ That separation significantly limits supply-chain blast radius.
 
 
 
-\# 26. Vulnerable vs Hardened Comparison
+# 26. Vulnerable vs Hardened Comparison
 
 
 
@@ -2538,7 +2538,7 @@ That separation significantly limits supply-chain blast radius.
 
 
 
-\## Change
+## Change
 
 
 
@@ -2570,7 +2570,7 @@ Legitimate Workflow Completion:
 
 
 
-\## Relative Risk Reduction
+## Relative Risk Reduction
 
 
 
@@ -2594,7 +2594,7 @@ The controls therefore reduced tested unauthorized impact without reducing legit
 
 
 
-\# 27. AI Artifact Trust-Chain Model
+# 27. AI Artifact Trust-Chain Model
 
 
 
@@ -2698,11 +2698,11 @@ No earlier component should automatically grant authority to a later component.
 
 
 
-\# 28. Major Security Findings
+# 28. Major Security Findings
 
 
 
-\## Finding 1 — Availability Does Not Establish Authenticity
+## Finding 1 — Availability Does Not Establish Authenticity
 
 
 
@@ -2714,7 +2714,7 @@ An artifact being present in a repository does not establish that it came from t
 
 
 
-\## Finding 2 — Successful Loading Does Not Establish Trust
+## Finding 2 — Successful Loading Does Not Establish Trust
 
 
 
@@ -2740,7 +2740,7 @@ while still violating security policy.
 
 
 
-\## Finding 3 — Functional Compatibility Can Hide Substitution
+## Finding 3 — Functional Compatibility Can Hide Substitution
 
 
 
@@ -2768,7 +2768,7 @@ Artifact Authenticity
 
 
 
-\## Finding 4 — Prompt Templates Are Supply-Chain Artifacts
+## Finding 4 — Prompt Templates Are Supply-Chain Artifacts
 
 
 
@@ -2792,7 +2792,7 @@ Prompt templates influence runtime behavior and should receive:
 
 
 
-\## Finding 5 — Security Policies Are Executable Trust State
+## Finding 5 — Security Policies Are Executable Trust State
 
 
 
@@ -2808,7 +2808,7 @@ Security policies therefore require strong supply-chain controls.
 
 
 
-\## Finding 6 — Datasets Can Carry Security-Sensitive Instructions
+## Finding 6 — Datasets Can Carry Security-Sensitive Instructions
 
 
 
@@ -2834,7 +2834,7 @@ Knowledge must not become authority merely because the model retrieved it.
 
 
 
-\## Finding 7 — Model Identity Must Be Verified
+## Finding 7 — Model Identity Must Be Verified
 
 
 
@@ -2864,7 +2864,7 @@ Trust should bind the model to:
 
 
 
-\## Finding 8 — Dependencies Can Compromise Trusted Models
+## Finding 8 — Dependencies Can Compromise Trusted Models
 
 
 
@@ -2880,7 +2880,7 @@ Its supporting dependency graph must also be validated.
 
 
 
-\## Finding 9 — Metadata Cannot Authenticate Itself
+## Finding 9 — Metadata Cannot Authenticate Itself
 
 
 
@@ -2916,7 +2916,7 @@ cannot serve as independent proof.
 
 
 
-\## Finding 10 — SHA-256 Alone Is Not a Trust Architecture
+## Finding 10 — SHA-256 Alone Is Not a Trust Architecture
 
 
 
@@ -2942,7 +2942,7 @@ Secure integrity verification depends on:
 
 
 
-\## Finding 11 — Dependency Resolution Is Security-Sensitive
+## Finding 11 — Dependency Resolution Is Security-Sensitive
 
 
 
@@ -2974,7 +2974,7 @@ Available == Authorized
 
 
 
-\## Finding 12 — Trust Must Be Transitive
+## Finding 12 — Trust Must Be Transitive
 
 
 
@@ -2986,7 +2986,7 @@ Every security-relevant dependency must be validated.
 
 
 
-\## Finding 13 — Capability Declaration Is Not Capability Authorization
+## Finding 13 — Capability Declaration Is Not Capability Authorization
 
 
 
@@ -3014,7 +3014,7 @@ Capabilities require independent authorization.
 
 
 
-\## Finding 14 — Artifact Loading Must Be Fail-Closed
+## Finding 14 — Artifact Loading Must Be Fail-Closed
 
 
 
@@ -3040,7 +3040,7 @@ It should reject the artifact.
 
 
 
-\## Finding 15 — Runtime Controls Remain Necessary
+## Finding 15 — Runtime Controls Remain Necessary
 
 
 
@@ -3056,11 +3056,11 @@ Runtime controls provide containment when malicious artifacts survive pre-runtim
 
 
 
-\# 29. Security Control Recommendations
+# 29. Security Control Recommendations
 
 
 
-\## 29.1 Trusted Source Enforcement
+## 29.1 Trusted Source Enforcement
 
 
 
@@ -3092,7 +3092,7 @@ Avoid automatic fallback to arbitrary public sources.
 
 
 
-\## 29.2 Artifact Identity Binding
+## 29.2 Artifact Identity Binding
 
 
 
@@ -3118,7 +3118,7 @@ Avoid trust decisions based only on:
 
 
 
-\## 29.3 Version Pinning
+## 29.3 Version Pinning
 
 
 
@@ -3158,7 +3158,7 @@ where security requirements demand deterministic artifact selection.
 
 
 
-\# 30. Publisher Authentication
+# 30. Publisher Authentication
 
 
 
@@ -3190,7 +3190,7 @@ must not independently establish publisher trust.
 
 
 
-\# 31. Provenance Verification
+# 31. Provenance Verification
 
 
 
@@ -3228,7 +3228,7 @@ Where appropriate, organizations can align this process with supply-chain framew
 
 
 
-\# 32. Full Artifact Integrity
+# 32. Full Artifact Integrity
 
 
 
@@ -3260,7 +3260,7 @@ Expected digests should originate from trusted infrastructure independent of the
 
 
 
-\# 33. Dependency Locking
+# 33. Dependency Locking
 
 
 
@@ -3290,7 +3290,7 @@ Controls may include:
 
 
 
-\# 34. Transitive Dependency Validation
+# 34. Transitive Dependency Validation
 
 
 
@@ -3334,7 +3334,7 @@ A compromise of `Dependency B` may still affect the application.
 
 
 
-\# 35. SBOM Controls
+# 35. SBOM Controls
 
 
 
@@ -3380,7 +3380,7 @@ The SBOM must be independently associated with the verified artifact.
 
 
 
-\# 36. Capability Allowlisting
+# 36. Capability Allowlisting
 
 
 
@@ -3442,7 +3442,7 @@ The application must independently enforce capability policy.
 
 
 
-\# 37. Runtime Action Binding
+# 37. Runtime Action Binding
 
 
 
@@ -3478,7 +3478,7 @@ The application must bind execution to trusted task state.
 
 
 
-\# 38. Runtime Target Binding
+# 38. Runtime Target Binding
 
 
 
@@ -3518,7 +3518,7 @@ without trusted authorization.
 
 
 
-\# 39. Least Privilege
+# 39. Least Privilege
 
 
 
@@ -3560,7 +3560,7 @@ This limits the consequence of supply-chain compromise.
 
 
 
-\# 40. Fail-Closed Loading
+# 40. Fail-Closed Loading
 
 
 
@@ -3626,7 +3626,7 @@ Security verification failures should not silently degrade into insecure fallbac
 
 
 
-\# 41. Defense-in-Depth Architecture
+# 41. Defense-in-Depth Architecture
 
 
 
@@ -3682,7 +3682,7 @@ This creates multiple containment opportunities.
 
 
 
-\# 42. Example Hardened Attack Path
+# 42. Example Hardened Attack Path
 
 
 
@@ -3790,7 +3790,7 @@ Even catastrophic failure of the entire pre-runtime verification chain does not 
 
 
 
-\# 43. Security Architecture Principle
+# 43. Security Architecture Principle
 
 
 
@@ -3818,7 +3818,7 @@ This avoids converting artifact identity into execution authority.
 
 
 
-\# 44. Detection \& Monitoring Recommendations
+# 44. Detection \& Monitoring Recommendations
 
 
 
@@ -3862,7 +3862,7 @@ Recommended events include:
 
 
 
-\# 45. Suggested Security Telemetry
+# 45. Suggested Security Telemetry
 
 
 
@@ -3922,7 +3922,7 @@ Example rejection event:
 
 
 
-\# 46. Secure AI Deployment Pipeline
+# 46. Secure AI Deployment Pipeline
 
 
 
@@ -4002,7 +4002,7 @@ Monitoring
 
 
 
-\# 47. Relationship to Traditional Software Supply-Chain Security
+# 47. Relationship to Traditional Software Supply-Chain Security
 
 
 
@@ -4056,7 +4056,7 @@ These components can alter application behavior without necessarily containing t
 
 
 
-\# 48. AI-Specific Trust Challenge
+# 48. AI-Specific Trust Challenge
 
 
 
@@ -4112,7 +4112,7 @@ And critically:
 
 
 
-\# 49. Risk Matrix
+# 49. Risk Matrix
 
 
 
@@ -4150,7 +4150,7 @@ And critically:
 
 
 
-\# 50. MITRE ATLAS / ATT\&CK-Relevant Security Concepts
+# 50. MITRE ATLAS / ATT\&CK-Relevant Security Concepts
 
 
 
@@ -4186,7 +4186,7 @@ Exact technique mapping should be validated against the current MITRE ATLAS and 
 
 
 
-\# 51. OWASP-Relevant Security Concepts
+# 51. OWASP-Relevant Security Concepts
 
 
 
@@ -4216,7 +4216,7 @@ Exact OWASP LLM / GenAI category numbering should be checked against the current
 
 
 
-\# 52. NIST-Relevant Security Concepts
+# 52. NIST-Relevant Security Concepts
 
 
 
@@ -4252,7 +4252,7 @@ The assessment is a technical learning project and should not be interpreted as 
 
 
 
-\# 53. Limitations
+# 53. Limitations
 
 
 
@@ -4292,7 +4292,7 @@ The project demonstrates architectural security properties rather than exploitat
 
 
 
-\# 54. Cryptographic Limitation
+# 54. Cryptographic Limitation
 
 
 
@@ -4326,7 +4326,7 @@ Therefore the project demonstrates \*\*trust-boundary logic\*\*, not production 
 
 
 
-\# 55. Model Security Limitation
+# 55. Model Security Limitation
 
 
 
@@ -4346,7 +4346,7 @@ The purpose is to evaluate architectural trust assumptions surrounding model loa
 
 
 
-\# 56. Dataset Security Limitation
+# 56. Dataset Security Limitation
 
 
 
@@ -4380,7 +4380,7 @@ Those areas could be evaluated separately in deeper research.
 
 
 
-\# 57. Key Defensive Lessons
+# 57. Key Defensive Lessons
 
 
 
@@ -4414,7 +4414,7 @@ The assessment produced ten major defensive lessons:
 
 
 
-\# 58. Portfolio Skills Demonstrated
+# 58. Portfolio Skills Demonstrated
 
 
 
@@ -4486,7 +4486,7 @@ Day 25 demonstrates practical capability in:
 
 
 
-\# 59. Portfolio Value
+# 59. Portfolio Value
 
 
 
@@ -4582,7 +4582,7 @@ Monitor
 
 
 
-\# 60. Final Findings
+# 60. Final Findings
 
 
 
@@ -4590,7 +4590,7 @@ The Day 25 assessment supports the following conclusions.
 
 
 
-\### 1. AI supply-chain compromise can begin before runtime.
+### 1. AI supply-chain compromise can begin before runtime.
 
 
 
@@ -4602,7 +4602,7 @@ The attacker does not necessarily need to attack the user prompt.
 
 
 
-\### 2. Prompt templates are security-sensitive artifacts.
+### 2. Prompt templates are security-sensitive artifacts.
 
 
 
@@ -4614,7 +4614,7 @@ A poisoned template can alter runtime behavior before user interaction begins.
 
 
 
-\### 3. Policy artifacts can redefine effective authorization.
+### 3. Policy artifacts can redefine effective authorization.
 
 
 
@@ -4626,7 +4626,7 @@ Security configuration must therefore receive integrity and provenance protectio
 
 
 
-\### 4. Datasets can become attack vectors.
+### 4. Datasets can become attack vectors.
 
 
 
@@ -4638,7 +4638,7 @@ Knowledge must remain separate from identity, approval, privilege, and policy st
 
 
 
-\### 5. Models can be functionally compatible while malicious.
+### 5. Models can be functionally compatible while malicious.
 
 
 
@@ -4650,7 +4650,7 @@ Successful inference is not evidence of model authenticity.
 
 
 
-\### 6. Tool packages can preserve APIs while changing behavior.
+### 6. Tool packages can preserve APIs while changing behavior.
 
 
 
@@ -4662,7 +4662,7 @@ Interface compatibility does not establish trust.
 
 
 
-\### 7. Dependency confusion can redirect applications toward attacker-controlled artifacts.
+### 7. Dependency confusion can redirect applications toward attacker-controlled artifacts.
 
 
 
@@ -4674,7 +4674,7 @@ Version precedence must not replace trust policy.
 
 
 
-\### 8. Metadata spoofing can create false trust.
+### 8. Metadata spoofing can create false trust.
 
 
 
@@ -4686,7 +4686,7 @@ Metadata must be cryptographically or independently bound to artifact identity a
 
 
 
-\### 9. Strong hashes can be used insecurely.
+### 9. Strong hashes can be used insecurely.
 
 
 
@@ -4698,7 +4698,7 @@ Integrity verification depends on architecture, not merely algorithm strength.
 
 
 
-\### 10. Trust must extend through transitive dependencies.
+### 10. Trust must extend through transitive dependencies.
 
 
 
@@ -4710,7 +4710,7 @@ A trusted top-level artifact may still rely on compromised lower-level component
 
 
 
-\### 11. Supply-chain compromise can propagate into runtime.
+### 11. Supply-chain compromise can propagate into runtime.
 
 
 
@@ -4722,7 +4722,7 @@ Pre-runtime trust failures can become runtime security failures.
 
 
 
-\### 12. Runtime authorization can contain supply-chain compromise.
+### 12. Runtime authorization can contain supply-chain compromise.
 
 
 
@@ -4734,7 +4734,7 @@ A loaded malicious artifact does not have to receive execution authority.
 
 
 
-\### 13. Defense in depth remains effective when individual controls fail.
+### 13. Defense in depth remains effective when individual controls fail.
 
 
 
@@ -4746,7 +4746,7 @@ Independent downstream controls prevented unauthorized execution during the adve
 
 
 
-\### 14. Security improvements did not reduce legitimate utility in the benchmark.
+### 14. Security improvements did not reduce legitimate utility in the benchmark.
 
 
 
@@ -4786,11 +4786,11 @@ Attack Chain Completion:
 
 
 
-\# 61. Final Comparative Result
+# 61. Final Comparative Result
 
 
 
-\## Vulnerable Architecture
+## Vulnerable Architecture
 
 
 
@@ -4814,7 +4814,7 @@ Legitimate Workflow Completion Rate:  100.00%
 
 
 
-\## Hardened Architecture
+## Hardened Architecture
 
 
 
@@ -4834,7 +4834,7 @@ Legitimate Workflow Completion Rate:  100.00%
 
 
 
-\## Hardened Adversarial Retest
+## Hardened Adversarial Retest
 
 
 
@@ -4864,7 +4864,7 @@ Legitimate Workflow Completion Rate: 100.00%
 
 
 
-\# 62. Conclusion
+# 62. Conclusion
 
 
 
@@ -5030,7 +5030,7 @@ The final architectural lesson is therefore:
 
 
 
-\# 63. Core Principle
+# 63. Core Principle
 
 
 
@@ -5042,7 +5042,7 @@ The final architectural lesson is therefore:
 
 
 
-\# 64. Portfolio Artifact
+# 64. Portfolio Artifact
 
 
 
@@ -5056,7 +5056,7 @@ The final architectural lesson is therefore:
 
 
 
-\### Supporting Evidence
+### Supporting Evidence
 
 
 

@@ -1,8 +1,8 @@
-\# Day 26 — LLM Security Evaluation, Benchmarking \& Regression Assessment
+# Day 26 — LLM Security Evaluation, Benchmarking \& Regression Assessment
 
 
 
-\## Portfolio Artifact
+## Portfolio Artifact
 
 
 
@@ -14,7 +14,7 @@
 
 
 
-\## Executive Summary
+## Executive Summary
 
 
 
@@ -90,7 +90,7 @@ The overall conclusion is that LLM security must be treated as a continuous, mea
 
 
 
-\# 1. Research Question
+# 1. Research Question
 
 
 
@@ -138,7 +138,7 @@ Security therefore requires repeatable evaluation rather than one-time validatio
 
 
 
-\# 2. Core Principle
+# 2. Core Principle
 
 
 
@@ -154,7 +154,7 @@ This principle guided the entire Day 26 assessment.
 
 
 
-\# 3. Scope
+# 3. Scope
 
 
 
@@ -208,7 +208,7 @@ The program additionally evaluated:
 
 
 
-\# 4. Synthetic Evaluation Architecture
+# 4. Synthetic Evaluation Architecture
 
 
 

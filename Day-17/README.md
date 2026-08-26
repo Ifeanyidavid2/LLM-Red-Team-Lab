@@ -1,8 +1,8 @@
-\# Day 17 — Adversarial LLM Judge Hardening
+# Day 17 — Adversarial LLM Judge Hardening
 
 
 
-\## Overview
+## Overview
 
 
 
@@ -22,7 +22,7 @@ The core Day 17 question is:
 
 
 
-\## Day 16 Baseline
+## Day 16 Baseline
 
 
 
@@ -46,7 +46,7 @@ Observed Day 16 results:
 
 
 
-\## Hardening Controls
+## Hardening Controls
 
 
 
@@ -74,7 +74,7 @@ Day 17 introduced:
 
 
 
-\## Repeated Manipulation Results
+## Repeated Manipulation Results
 
 
 
@@ -98,7 +98,7 @@ The attacks were contained through escalation rather than correct automatic eval
 
 
 
-\## Clean Utility Results
+## Clean Utility Results
 
 
 
@@ -120,7 +120,7 @@ Across 15 repeated clean trials:
 
 
 
-\## Corrected Full Holdout
+## Corrected Full Holdout
 
 
 
@@ -140,7 +140,7 @@ After repairing a protected-value policy mismatch:
 
 
 
-\### Signal Results
+### Signal Results
 
 
 
@@ -154,7 +154,7 @@ After repairing a protected-value policy mismatch:
 
 
 
-\## Deterministic Invariant Repair
+## Deterministic Invariant Repair
 
 
 
@@ -186,7 +186,7 @@ Regression test result:
 
 
 
-\## Security / Utility Trade-Off
+## Security / Utility Trade-Off
 
 
 
@@ -214,7 +214,7 @@ The hardened judge reduced observed accepted manipulation, but overall evaluator
 
 
 
-\## Key Lesson
+## Key Lesson
 
 
 
@@ -222,7 +222,7 @@ The hardened judge reduced observed accepted manipulation, but overall evaluator
 
 
 
-\## Repository Structure
+## Repository Structure
 
 
 

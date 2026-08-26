@@ -1,8 +1,8 @@
-\# Day 28 — LLM Threat Modeling, Risk Assessment \& Security Architecture
+# Day 28 — LLM Threat Modeling, Risk Assessment \& Security Architecture
 
 
 
-\## LLM Red Team Lab
+## LLM Red Team Lab
 
 
 
@@ -20,7 +20,7 @@
 
 
 
-\# 1. Executive Summary
+# 1. Executive Summary
 
 
 
@@ -140,7 +140,7 @@ All nine required deployment gates passed in the synthetic target architecture.
 
 
 
-\# 2. Core Security Principle
+# 2. Core Security Principle
 
 
 
@@ -152,7 +152,7 @@ All nine required deployment gates passed in the synthetic target architecture.
 
 
 
-\# 3. Assessment Objectives
+# 3. Assessment Objectives
 
 
 
@@ -210,7 +210,7 @@ The assessment objectives were to:
 
 
 
-\# 4. System Under Threat Model
+# 4. System Under Threat Model
 
 
 
@@ -244,7 +244,7 @@ The system combines an LLM with retrieval, memory, agent planning, tools, identi
 
 
 
-\# 5. AI Security Asset Inventory
+# 5. AI Security Asset Inventory
 
 
 
@@ -302,7 +302,7 @@ This demonstrated that the LLM itself represents only one part of the AI attack 
 
 
 
-\# 6. Security Objectives
+# 6. Security Objectives
 
 
 
@@ -310,7 +310,7 @@ Security objectives were mapped across the asset inventory.
 
 
 
-\### Confidentiality
+### Confidentiality
 
 
 
@@ -334,7 +334,7 @@ Confidentiality was particularly important for:
 
 
 
-\### Integrity
+### Integrity
 
 
 
@@ -346,7 +346,7 @@ This is particularly important in AI systems because manipulating instructions, 
 
 
 
-\### Availability
+### Availability
 
 
 
@@ -374,7 +374,7 @@ Availability requirements applied to:
 
 
 
-\# 7. High-Value Assets
+# 7. High-Value Assets
 
 
 
@@ -408,7 +408,7 @@ Persistent memory and restricted business data received particularly high exposu
 
 
 
-\# 8. AI Data-Flow Modeling
+# 8. AI Data-Flow Modeling
 
 
 
@@ -2356,7 +2356,7 @@ Those headline numbers and the final architecture status are directly supported 
 
 
 
-\### Save and verify it
+### Save and verify it
 
 
 

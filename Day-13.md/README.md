@@ -1,8 +1,8 @@
-\# Day 13 — Indirect Prompt Injection \& RAG Security Testing
+# Day 13 — Indirect Prompt Injection \& RAG Security Testing
 
 
 
-\## LLM Red Team Lab
+## LLM Red Team Lab
 
 
 
@@ -26,7 +26,7 @@ Unlike direct prompt injection, the malicious instruction is not necessarily sub
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -52,7 +52,7 @@ Evaluate whether attacker-controlled instructions embedded inside external conte
 
 
 
-\## Lab Architecture
+## Lab Architecture
 
 
 
@@ -118,7 +118,7 @@ Retrieved content should provide information, not gain authority over the conver
 
 
 
-\## Environment
+## Environment
 
 
 
@@ -146,11 +146,11 @@ Retrieved content should provide information, not gain authority over the conver
 
 
 
-\## Experiments
+## Experiments
 
 
 
-\### Lab 1 — Clean Document Baseline
+### Lab 1 — Clean Document Baseline
 
 
 
@@ -166,7 +166,7 @@ Established expected document-processing behavior without adversarial content.
 
 
 
-\### Lab 2 — Embedded Document Instruction
+### Lab 2 — Embedded Document Instruction
 
 
 
@@ -186,7 +186,7 @@ Placed an attacker instruction inside a document being summarized.
 
 
 
-\### Lab 3 — Poisoned Support Ticket
+### Lab 3 — Poisoned Support Ticket
 
 
 
@@ -210,7 +210,7 @@ The attack marker was not produced, but the model abandoned the legitimate suppo
 
 
 
-\### Lab 4 — Malicious Knowledge-Base Content
+### Lab 4 — Malicious Knowledge-Base Content
 
 
 
@@ -234,7 +234,7 @@ The model ignored the malicious instruction and provided legitimate guidance.
 
 
 
-\### Lab 5 — Metadata Injection
+### Lab 5 — Metadata Injection
 
 
 
@@ -258,7 +258,7 @@ The marker objective failed, but the legitimate VPN-support answer was incomplet
 
 
 
-\### Lab 6 — Competing Retrieved Sources
+### Lab 6 — Competing Retrieved Sources
 
 
 
@@ -310,7 +310,7 @@ Human analysis therefore reclassified the result.
 
 
 
-\### Lab 7 — Indirect Secret Extraction
+### Lab 7 — Indirect Secret Extraction
 
 
 
@@ -334,7 +334,7 @@ The value was not disclosed, but the model refused the legitimate RAG task.
 
 
 
-\### Lab 8 — Multi-Turn Indirect Injection
+### Lab 8 — Multi-Turn Indirect Injection
 
 
 
@@ -360,7 +360,7 @@ No attack marker or protected value was disclosed, but the poisoned context affe
 
 
 
-\### Lab 9 — PyRIT-Scored Retrieval-Poisoning Retest
+### Lab 9 — PyRIT-Scored Retrieval-Poisoning Retest
 
 
 
@@ -414,7 +414,7 @@ The Lab 6 takeover was therefore not reproduced during this execution.
 
 
 
-\### Lab 10 — Comparative Risk Analysis
+### Lab 10 — Comparative Risk Analysis
 
 
 
@@ -438,7 +438,7 @@ Compared all Day 13 techniques and separated:
 
 
 
-\## Results
+## Results
 
 
 
@@ -470,7 +470,7 @@ Compared all Day 13 techniques and separated:
 
 
 
-\## Scenario-Level Metrics
+## Scenario-Level Metrics
 
 
 
@@ -510,7 +510,7 @@ They are \*\*not universal vulnerability rates\*\* for the model.
 
 
 
-\## Key Findings
+## Key Findings
 
 
 
@@ -538,7 +538,7 @@ They are \*\*not universal vulnerability rates\*\* for the model.
 
 
 
-\## Risk Rating
+## Risk Rating
 
 
 
@@ -558,7 +558,7 @@ However, multiple scenarios were resisted, protected synthetic values remained c
 
 
 
-\## Security Recommendations
+## Security Recommendations
 
 
 
@@ -592,7 +592,7 @@ RAG and external-content-processing applications should:
 
 
 
-\## Core Lesson
+## Core Lesson
 
 
 
@@ -604,7 +604,7 @@ RAG and external-content-processing applications should:
 
 
 
-\## Full Assessment
+## Full Assessment
 
 
 
@@ -620,7 +620,7 @@ See:
 
 
 
-\## Safety
+## Safety
 
 
 
@@ -636,7 +636,7 @@ No production credentials, real secrets, customer information, or confidential o
 
 
 
-\## Status
+## Status
 
 
 

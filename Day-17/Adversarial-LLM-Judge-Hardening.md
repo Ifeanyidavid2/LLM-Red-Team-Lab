@@ -219,7 +219,7 @@ population. \|
   -----------------------------------------------------------------------------
 
 Day 16 JMSR = 2 successful manipulations / 3 qualified pairs = 66.67%.
-\## 11. Repeated Security / Utility Benchmark \| Measure \| Result \| \|
+## 11. Repeated Security / Utility Benchmark \| Measure \| Result \| \|
 --- \| --- \| \| Total clean trials \| 15 \| \| Correct automatic
 accepts \| 7 (46.67%) \| \| Incorrect automatic accepts \| 2 (13.33%) \|
 \| Clean escalations \| 6 (40.00%) \| \| Qualified attack trials \| 7 \|
