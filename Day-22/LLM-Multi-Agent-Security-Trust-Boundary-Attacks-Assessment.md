@@ -136,13 +136,13 @@ The final adversarial retest demonstrated:
 
 
 
-| Metric | Result |
+|Metric|Result|
 |---|---:|
-| Dangerous Model Proposal Rate | 75.00% |
-| Dangerous Proposal Block Rate | 100.00% |
-| Unauthorized System Impact Rate | 0.00% |
-| System Outcome Accuracy | 100.00% |
-| Legitimate Delegation Completion Rate | 100.00% |
+|Dangerous Model Proposal Rate|75.00%|
+|Dangerous Proposal Block Rate|100.00%|
+|Unauthorized System Impact Rate|0.00%|
+|System Outcome Accuracy|100.00%|
+|Legitimate Delegation Completion Rate|100.00%|
 
 
 
@@ -1926,22 +1926,22 @@ The final analysis compared vulnerable and hardened behavior.
 
 
 
-| Security Category | Vulnerable | Hardened |
+|Security Category|Vulnerable|Hardened|
 |---|---:|---:|
-| Unauthorized Delegation Rate | 100% | 0% |
-| Agent Impersonation Acceptance Rate | 75% | 0% |
-| Privilege Propagation Rate | 100% | 0% |
-| Out-of-Scope Execution Rate | 100% | 0% |
-| Confused-Deputy Success Rate | 50% | 0% |
-| Trust Transitivity Acceptance Rate | 80% | 0% |
-| Poisoned Inter-Agent Execution Rate | 75% | 0% |
-| Shared-Memory Poisoning Success Rate | 25% | 0% |
-| Unsafe Tool Execution Rate | N/A | 0% |
-| Compromised-Agent Containment Rate | N/A | 100% |
-| Dangerous Proposal Block Rate | N/A | 100% |
-| Unauthorized System Impact Rate | N/A | 0% |
-| System Outcome Accuracy | N/A | 100% |
-| Legitimate Delegation Completion Rate | 100% | 100% |
+|Unauthorized Delegation Rate|100%|0%|
+|Agent Impersonation Acceptance Rate|75%|0%|
+|Privilege Propagation Rate|100%|0%|
+|Out-of-Scope Execution Rate|100%|0%|
+|Confused-Deputy Success Rate|50%|0%|
+|Trust Transitivity Acceptance Rate|80%|0%|
+|Poisoned Inter-Agent Execution Rate|75%|0%|
+|Shared-Memory Poisoning Success Rate|25%|0%|
+|Unsafe Tool Execution Rate|N/A|0%|
+|Compromised-Agent Containment Rate|N/A|100%|
+|Dangerous Proposal Block Rate|N/A|100%|
+|Unauthorized System Impact Rate|N/A|0%|
+|System Outcome Accuracy|N/A|100%|
+|Legitimate Delegation Completion Rate|100%|100%|
 
 
 
@@ -2721,25 +2721,25 @@ Security-sensitive state should not become trusted merely because an LLM stored 
 
 
 
-| Control | Result |
+|Control|Result|
 |---|---|
-| Trusted transport identity | PASS |
-| Claimed-sender separation | PASS |
-| Explicit agent capabilities | PASS |
-| Trusted delegate binding | PASS |
-| Trusted action binding | PASS |
-| Trusted target binding | PASS |
-| Delegation scope enforcement | PASS |
-| Restricted-resource policy | PASS |
-| Independent requester authorization | PASS |
-| Trusted approval validation | PASS |
-| Approval replay protection | PASS |
-| Inter-agent message sanitization | PASS |
-| Shared-memory ownership enforcement | PASS |
-| Security-sensitive memory category blocking | PASS |
-| Shared-memory sanitization | PASS |
-| Compromised-agent containment | PASS |
-| Auditability | PASS |
+|Trusted transport identity|PASS|
+|Claimed-sender separation|PASS|
+|Explicit agent capabilities|PASS|
+|Trusted delegate binding|PASS|
+|Trusted action binding|PASS|
+|Trusted target binding|PASS|
+|Delegation scope enforcement|PASS|
+|Restricted-resource policy|PASS|
+|Independent requester authorization|PASS|
+|Trusted approval validation|PASS|
+|Approval replay protection|PASS|
+|Inter-agent message sanitization|PASS|
+|Shared-memory ownership enforcement|PASS|
+|Security-sensitive memory category blocking|PASS|
+|Shared-memory sanitization|PASS|
+|Compromised-agent containment|PASS|
+|Auditability|PASS|
 
 
 

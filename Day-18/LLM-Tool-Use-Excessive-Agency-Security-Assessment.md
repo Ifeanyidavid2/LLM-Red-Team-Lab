@@ -150,17 +150,17 @@ Tool output is also treated as **untrusted input** when it is returned to the mo
 
 The experiment was performed in a controlled local lab.
 
-| Component | Purpose |
+|Component|Purpose|
 |---|---|
-| Python | Implemented synthetic tools, policies, metrics, and audit logic |
-| Microsoft PyRIT | Provided the LLM interaction framework |
-| Ollama | Hosted the local model endpoint |
-| `llama3.2:1b` | Tool-routing and planning model used in LLM-driven labs |
-| Synthetic users | `alice`, `bob`, and `admin` |
-| Synthetic records | Local in-memory records with owner and classification metadata |
-| Synthetic tools | `read_record`, `update_record`, `delete_record` |
-| Audit log | Recorded proposed/authorized/executed actions and control decisions |
-| SQLite PyRIT DB | Local experiment state only; not intended for portfolio publication |
+|Python|Implemented synthetic tools, policies, metrics, and audit logic|
+|Microsoft PyRIT|Provided the LLM interaction framework|
+|Ollama|Hosted the local model endpoint|
+|`llama3.2:1b`|Tool-routing and planning model used in LLM-driven labs|
+|Synthetic users|`alice`, `bob`, and `admin`|
+|Synthetic records|Local in-memory records with owner and classification metadata|
+|Synthetic tools|`read_record`, `update_record`, `delete_record`|
+|Audit log|Recorded proposed/authorized/executed actions and control decisions|
+|SQLite PyRIT DB|Local experiment state only; not intended for portfolio publication|
 
 ### 5.1 Ethical and Safety Scope
 
@@ -659,14 +659,14 @@ No model decision directly controlled system authority.
 
 ### 15.2 Hardened Test Matrix
 
-| Case | Security condition | Control outcome |
+|Case|Security condition|Control outcome|
 |---|---|---|
-| Authorized scoped read | Valid + authorized + scoped | Executed |
-| Unauthorized restricted read | Authorization violation | Blocked |
-| Authorized but unrequested update | Scope violation | Blocked |
-| Malformed record ID | Validation violation | Blocked |
-| Admin delete without approval | Approval violation | Blocked |
-| Admin delete with trusted approval | All controls satisfied | Executed |
+|Authorized scoped read|Valid + authorized + scoped|Executed|
+|Unauthorized restricted read|Authorization violation|Blocked|
+|Authorized but unrequested update|Scope violation|Blocked|
+|Malformed record ID|Validation violation|Blocked|
+|Admin delete without approval|Approval violation|Blocked|
+|Admin delete with trusted approval|All controls satisfied|Executed|
 
 ### 15.3 Results
 
@@ -713,17 +713,17 @@ The final comparison consolidated Labs 2 through 10.
 
 ### 16.1 Security Progression
 
-| Lab | Security focus | Key result |
+|Lab|Security focus|Key result|
 |---|---|---|
-| Lab 2 | Vulnerable model-driven tool use | 0% legitimate completion; security not proven |
-| Lab 3 | Trusted authorization | 10/10 policy decisions correct |
-| Lab 4 | LLM + policy enforcement | UTAR 50%, UASR 0%, block rate 100% |
-| Lab 5 | High-impact approval | 6/6 correct; replay blocked |
-| Lab 6 | Argument validation | 10/10 correct; malformed inputs blocked |
-| Lab 7 | Indirect tool injection | model influenced; impact rate 0% |
-| Lab 8 | Excessive agency | EAR 0% on parsed plans; planner failures remained |
-| Lab 9 | User-intent scope | 7/7 correct; 3 out-of-scope actions blocked |
-| Lab 10 | Hardened end-to-end pipeline | 6/6 correct; zero unsafe executions |
+|Lab 2|Vulnerable model-driven tool use|0% legitimate completion; security not proven|
+|Lab 3|Trusted authorization|10/10 policy decisions correct|
+|Lab 4|LLM + policy enforcement|UTAR 50%, UASR 0%, block rate 100%|
+|Lab 5|High-impact approval|6/6 correct; replay blocked|
+|Lab 6|Argument validation|10/10 correct; malformed inputs blocked|
+|Lab 7|Indirect tool injection|model influenced; impact rate 0%|
+|Lab 8|Excessive agency|EAR 0% on parsed plans; planner failures remained|
+|Lab 9|User-intent scope|7/7 correct; 3 out-of-scope actions blocked|
+|Lab 10|Hardened end-to-end pipeline|6/6 correct; zero unsafe executions|
 
 ---
 
@@ -899,16 +899,16 @@ The full policy pipeline must be applied to **every** action, including follow-u
 
 ## 21. Control Trade-Off Analysis
 
-| Control | Security benefit | Utility / engineering cost |
+|Control|Security benefit|Utility / engineering cost|
 |---|---|---|
-| Argument validation | Blocks malformed, unknown, or unsafe parameters | Requires explicit schemas and per-tool validation logic |
-| Authorization | Prevents users from crossing permission boundaries | Policy maintenance becomes more complex |
-| User-intent scope | Prevents technically authorized but unrequested actions | Requires reliable extraction or establishment of approved task scope |
-| High-impact approval | Prevents automatic destructive actions | Adds user friction and approval-state management |
-| One-time approval | Prevents replay | Requires trusted storage and lifecycle handling |
-| Tool-output distrust | Reduces indirect prompt-injection impact | May require content isolation and repeated policy checks |
-| Audit logging | Improves traceability | Adds storage and operational monitoring requirements |
-| Fail-closed blocking | Prevents uncertain actions from executing | Can reduce legitimate completion if model routing is unreliable |
+|Argument validation|Blocks malformed, unknown, or unsafe parameters|Requires explicit schemas and per-tool validation logic|
+|Authorization|Prevents users from crossing permission boundaries|Policy maintenance becomes more complex|
+|User-intent scope|Prevents technically authorized but unrequested actions|Requires reliable extraction or establishment of approved task scope|
+|High-impact approval|Prevents automatic destructive actions|Adds user friction and approval-state management|
+|One-time approval|Prevents replay|Requires trusted storage and lifecycle handling|
+|Tool-output distrust|Reduces indirect prompt-injection impact|May require content isolation and repeated policy checks|
+|Audit logging|Improves traceability|Adds storage and operational monitoring requirements|
+|Fail-closed blocking|Prevents uncertain actions from executing|Can reduce legitimate completion if model routing is unreliable|
 
 ---
 

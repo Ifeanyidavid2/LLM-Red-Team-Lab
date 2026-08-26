@@ -70,11 +70,11 @@ This is a normal, benign user request. There’s no attempt to bypass safety rul
 
 Quick way to remember:
 
-|Attack Type  | 	Who gives the malicious instruction?  |
+|Attack Type|Who gives the malicious instruction?|
 |-------------|-----------------------------------------|
-|Jailbreak  	| The user, directly in chat              |
-|Prompt Injection  |  	Hidden in data the AI reads     |
-|Neither      |  	Normal use, no attack                 |
+|Jailbreak|The user, directly in chat|
+|Prompt Injection|Hidden in data the AI reads|
+|Neither|Normal use, no attack|
 
 ## Interview Answer
 
@@ -160,14 +160,14 @@ An indirect attack where malicious instructions are hidden inside data that the 
 
 ## 2.	Comparison Table
 
-|Items	          |Jailbreak               | 	Prompt Injection              |
+|Items|Jailbreak|Prompt Injection|
 |-----------------|------------------------|--------------------------------|
-|Attacker	        |The end user in the chat  |	A third party who poisons data the AI reads  |
-|Entry Point	    |Direct user message        |	External data: email, PDF, website, KB article  |
-|Goal	            |Get AI to bypass safety rules	|Get AI to follow hidden commands instead of user intent  |
-|Analogy          |	Convincing the security guard to break rules	|Hiding a fake note in paperwork the guard must read  |
-|Defense Focus    |	Safety training, refusal consistency  |	Instruction hierarchy, data sanitization            |
-|Example Target   |	Chatbots with weak policy enforcement  |	AI assistants that read/summarize untrusted content    |
+|Attacker|The end user in the chat|A third party who poisons data the AI reads|
+|Entry Point|Direct user message|External data: email, PDF, website, KB article|
+|Goal|Get AI to bypass safety rules|Get AI to follow hidden commands instead of user intent|
+|Analogy|Convincing the security guard to break rules|Hiding a fake note in paperwork the guard must read|
+|Defense Focus|Safety training, refusal consistency|Instruction hierarchy, data sanitization|
+|Example Target|Chatbots with weak policy enforcement|AI assistants that read/summarize untrusted content|
 
 ## 3. Three Examples of Each
 

@@ -453,14 +453,14 @@ Blast-Radius Reduction: 84.23%
 Legitimate Workflow Completion Rate: 100.00%
 ```
 
-| Compromise Entry Point | Control That Stopped Propagation |
+|Compromise Entry Point|Control That Stopped Propagation|
 |---|---|
-| Memory | `MEMORY_AUTHORITY` |
-| Agent B | `AGENT_B_TOOL_BINDING` |
-| MCP | `MCP_TOOL_BINDING` |
-| Parameters | `PARAMETER_SCHEMA` |
-| Authorization | `AUTH_CAPABILITY` |
-| Persistent State | `STATE_PROVENANCE` |
+|Memory|`MEMORY_AUTHORITY`|
+|Agent B|`AGENT_B_TOOL_BINDING`|
+|MCP|`MCP_TOOL_BINDING`|
+|Parameters|`PARAMETER_SCHEMA`|
+|Authorization|`AUTH_CAPABILITY`|
+|Persistent State|`STATE_PROVENANCE`|
 
 **Finding:** Defense-in-depth remained effective when compromise entered after earlier boundaries.
 
@@ -468,14 +468,14 @@ Legitimate Workflow Completion Rate: 100.00%
 
 # 9. Lab 16 — Final Comparative Analysis
 
-| Security Metric | Vulnerable | Hardened |
+|Security Metric|Vulnerable|Hardened|
 |---|---:|---:|
-| Attack Chain Completion Rate | 80.00% | 0.00% |
-| Unauthorized System Impact Rate | 80.00% | 0.00% |
-| Blast Radius | 92.50% | 14.58% |
-| Unsafe Execution Rate | — | 0.00% |
-| Defense-in-Depth Containment Rate | — | 100.00% |
-| Legitimate Workflow Completion Rate | 100.00% | 100.00% |
+|Attack Chain Completion Rate|80.00%|0.00%|
+|Unauthorized System Impact Rate|80.00%|0.00%|
+|Blast Radius|92.50%|14.58%|
+|Unsafe Execution Rate|—|0.00%|
+|Defense-in-Depth Containment Rate|—|100.00%|
+|Legitimate Workflow Completion Rate|100.00%|100.00%|
 
 ```text
 Vulnerable Average Compromised Components: 7.40 / 8

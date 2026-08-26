@@ -168,9 +168,9 @@ Key traits:
 
 ## Quick Comparison Table
 
-|   Items  |Direct        |Indirect            |
+|Items|Direct|Indirect|
 |----------|--------------|--------------------|
-|Who injects|The user     |An attacker via a document/email/webpage|
+|Who injects|The user|An attacker via a document/email/webpage|
 |Where AI sees it|Chat input|Tool output / retrieved data|
 |Analogy|Telling the teller directly|Hiding a note in a file for the teller to read|
 |Risk level for assistants|Medium|High - because assistants must read untrusted data|

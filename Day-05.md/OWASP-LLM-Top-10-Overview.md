@@ -105,11 +105,11 @@ Potential impact: HIPAA violation, lawsuits, huge fines, loss of patient trust, 
 ### Quick Recap Table
 
 |OWASP
-Category                |	Core Risk             	|Example Industry              	|Key Mitigation|
+Category|Core Risk|Example Industry|Key Mitigation|
 |-----------------------|-------------------------|-------------------------------|--------------------------------|
-|Prompt Injection       |	AI follows commands in data|   	Banking                 |  	Instruction hierarchy + HITL |
-|Insecure Output Handling|  	Unsafe AI output runs in apps|  	E-commerce  	|Sanitize output + validate APIs     |
-|Sensitive Info Disclosure|  	AI leaks PII across users   	|Healthcare	          |Access controls + PII filtering |
+|Prompt Injection|AI follows commands in data|Banking|Instruction hierarchy + HITL|
+|Insecure Output Handling|Unsafe AI output runs in apps|E-commerce|Sanitize output + validate APIs|
+|Sensitive Info Disclosure|AI leaks PII across users|Healthcare|Access controls + PII filtering|
 
 
 ## Interview Answer

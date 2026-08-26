@@ -113,11 +113,11 @@ Business Impact:
 
 Summary for Leadership
 
-|Risk        |	Core Threat            |	Must-Have Control        |
+|Risk|Core Threat|Must-Have Control|
 |------------|-------------------------|---------------------------|
-|Embedding Inversion  |	Reconstruct PHI from vectors  |	Redact before embedding + encrypt vectors  |
-|Vector DB Poisoning  |	Fake claims corrupt AI recommendations  |	Source tagging + drift monitoring  |
-|Cross-LOB Leakage  |	Wrong team sees other LOB’s claims  |	Namespace partitioning + LOB filters    |
+|Embedding Inversion|Reconstruct PHI from vectors|Redact before embedding + encrypt vectors|
+|Vector DB Poisoning|Fake claims corrupt AI recommendations|Source tagging + drift monitoring|
+|Cross-LOB Leakage|Wrong team sees other LOB’s claims|Namespace partitioning + LOB filters|
 
 Recommendation: Treat your vector DB with the same controls as your data warehouse. It’s not just "search" — it’s PHI storage.
 

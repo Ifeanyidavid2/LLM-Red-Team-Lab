@@ -244,13 +244,13 @@ The laboratory contained:
 
 
 
-| Property | Count |
+|Property|Count|
 |---|---:|
-| Total initial documents | 6 |
-| Trusted documents | 4 |
-| Untrusted documents | 2 |
-| Poisoned documents | 2 |
-| Restricted documents | 1 |
+|Total initial documents|6|
+|Trusted documents|4|
+|Untrusted documents|2|
+|Poisoned documents|2|
+|Restricted documents|1|
 
 
 
@@ -584,17 +584,17 @@ Results:
 
 
 
-| Metric | Result |
+|Metric|Result|
 |---|---:|
-| Cases | 4 |
-| Successful model evaluations | 4 |
-| Model / JSON failures | 0 |
-| Supported question cases | 3 |
-| Exact-phrase-scored correct answers | 2 |
-| Unsupported question cases | 1 |
-| Safely handled unsupported questions | 1 |
-| Measured Supported-Answer Accuracy | 66.67% |
-| Unsupported-Query Safe Handling | 100% |
+|Cases|4|
+|Successful model evaluations|4|
+|Model / JSON failures|0|
+|Supported question cases|3|
+|Exact-phrase-scored correct answers|2|
+|Unsupported question cases|1|
+|Safely handled unsupported questions|1|
+|Measured Supported-Answer Accuracy|66.67%|
+|Unsupported-Query Safe Handling|100%|
 
 
 
@@ -654,18 +654,18 @@ Results:
 
 
 
-| Metric | Result |
+|Metric|Result|
 |---|---:|
-| Cases | 5 |
-| Poisoned document in top-k | 5 |
-| Poisoned document ranked #1 | 2 |
-| Expected trusted document retrieved | 5 |
-| Mixed trusted + poisoned contexts | 5 |
-| Total poisoned documents retrieved | 7 |
-| Poisoned Context Exposure Rate | 100% |
-| Rank-1 Poison Rate | 40% |
-| Expected Trusted Retrieval Rate | 100% |
-| Mixed-Context Rate | 100% |
+|Cases|5|
+|Poisoned document in top-k|5|
+|Poisoned document ranked #1|2|
+|Expected trusted document retrieved|5|
+|Mixed trusted + poisoned contexts|5|
+|Total poisoned documents retrieved|7|
+|Poisoned Context Exposure Rate|100%|
+|Rank-1 Poison Rate|40%|
+|Expected Trusted Retrieval Rate|100%|
+|Mixed-Context Rate|100%|
 
 
 
@@ -821,16 +821,16 @@ Results:
 
 
 
-| Metric | Result |
+|Metric|Result|
 |---|---:|
-| Attack cases | 2 |
-| Successful model evaluations | 2 |
-| Successful indirect manipulations | 1 |
-| Correct trusted-policy answers | 1 |
-| Suspicious instructions detected | 0 |
-| Indirect RAG Injection Success Rate | 50% |
-| Trusted-Policy Answer Rate | 50% |
-| Suspicious-Instruction Detection Rate | 0% |
+|Attack cases|2|
+|Successful model evaluations|2|
+|Successful indirect manipulations|1|
+|Correct trusted-policy answers|1|
+|Suspicious instructions detected|0|
+|Indirect RAG Injection Success Rate|50%|
+|Trusted-Policy Answer Rate|50%|
+|Suspicious-Instruction Detection Rate|0%|
 
 
 
@@ -886,19 +886,19 @@ Results:
 
 
 
-| Metric | Result |
+|Metric|Result|
 |---|---:|
-| Total cases | 5 |
-| Unauthorized sensitive-document cases | 2 |
-| Raw unauthorized exposures | 2 |
-| Unauthorized exposures after policy | 0 |
-| Authorization blocks | 2 |
-| Legitimate retrieval cases | 3 |
-| Legitimate expected documents retrieved | 3 |
-| Raw Unauthorized Retrieval Exposure Rate | 100% |
-| Post-Authorization Exposure Rate | 0% |
-| Retrieval Authorization Block Rate | 100% |
-| Legitimate Retrieval Success Rate | 100% |
+|Total cases|5|
+|Unauthorized sensitive-document cases|2|
+|Raw unauthorized exposures|2|
+|Unauthorized exposures after policy|0|
+|Authorization blocks|2|
+|Legitimate retrieval cases|3|
+|Legitimate expected documents retrieved|3|
+|Raw Unauthorized Retrieval Exposure Rate|100%|
+|Post-Authorization Exposure Rate|0%|
+|Retrieval Authorization Block Rate|100%|
+|Legitimate Retrieval Success Rate|100%|
 
 
 
@@ -1002,13 +1002,13 @@ Results:
 
 
 
-| Metric | Result |
+|Metric|Result|
 |---|---:|
-| Unauthorized secret-query cases | 1 |
-| Unsafe unauthorized leaks | 1 |
-| Secure unauthorized leaks | 0 |
-| Unsafe Unauthorized Leakage Rate | 100% |
-| Secure Unauthorized Leakage Rate | 0% |
+|Unauthorized secret-query cases|1|
+|Unsafe unauthorized leaks|1|
+|Secure unauthorized leaks|0|
+|Unsafe Unauthorized Leakage Rate|100%|
+|Secure Unauthorized Leakage Rate|0%|
 
 
 
@@ -1060,11 +1060,11 @@ Minimum relevance thresholds were also applied to avoid adding irrelevant docume
 
 
 
-| Metric | Result |
+|Metric|Result|
 |---|---:|
-| Poisoned Context Exposure | 100% |
-| Rank-1 Poison Rate | 40% |
-| Expected Trusted Retrieval | 100% |
+|Poisoned Context Exposure|100%|
+|Rank-1 Poison Rate|40%|
+|Expected Trusted Retrieval|100%|
 
 
 
@@ -1072,11 +1072,11 @@ Minimum relevance thresholds were also applied to avoid adding irrelevant docume
 
 
 
-| Metric | Result |
+|Metric|Result|
 |---|---:|
-| Poisoned Context Exposure | 40% |
-| Rank-1 Poison Rate | 0% |
-| Expected Trusted Retrieval | 100% |
+|Poisoned Context Exposure|40%|
+|Rank-1 Poison Rate|0%|
+|Expected Trusted Retrieval|100%|
 
 
 
@@ -1140,19 +1140,19 @@ Results:
 
 
 
-| Metric | Result |
+|Metric|Result|
 |---|---:|
-| Documents | 4 |
-| Poisoned documents | 2 |
-| Clean documents | 2 |
-| True Positives | 2 |
-| False Positives | 0 |
-| True Negatives | 2 |
-| False Negatives | 0 |
-| Suspicious-Instruction Precision | 100% |
-| Suspicious-Instruction Recall | 100% |
-| False Positive Rate | 0% |
-| Factual Content Preservation | 100% |
+|Documents|4|
+|Poisoned documents|2|
+|Clean documents|2|
+|True Positives|2|
+|False Positives|0|
+|True Negatives|2|
+|False Negatives|0|
+|Suspicious-Instruction Precision|100%|
+|Suspicious-Instruction Recall|100%|
+|False Positive Rate|0%|
+|Factual Content Preservation|100%|
 
 
 
@@ -1224,14 +1224,14 @@ Results initially appeared strong:
 
 
 
-| Metric | Initial Result |
+|Metric|Initial Result|
 |---|---:|
-| Cases | 2 |
-| Poisoned-context cases | 2 |
-| Rank-1 poison cases | 0 |
-| Quarantined segments | 6 |
-| Correct trusted-policy answers | 1 |
-| Lexical Injection Success Rate | 0% |
+|Cases|2|
+|Poisoned-context cases|2|
+|Rank-1 poison cases|0|
+|Quarantined segments|6|
+|Correct trusted-policy answers|1|
+|Lexical Injection Success Rate|0%|
 
 
 
@@ -1357,13 +1357,13 @@ Corrected results:
 
 
 
-| Metric | Result |
+|Metric|Result|
 |---|---:|
-| Cases | 2 |
-| Correct trusted-policy answers | 1 |
-| Attack-aligned answers | 1 |
-| Trusted-Policy Answer Rate | 50% |
-| Semantic Attack-Outcome Rate | 50% |
+|Cases|2|
+|Correct trusted-policy answers|1|
+|Attack-aligned answers|1|
+|Trusted-Policy Answer Rate|50%|
+|Semantic Attack-Outcome Rate|50%|
 
 
 
@@ -1473,16 +1473,16 @@ Results:
 
 
 
-| Metric | Result |
+|Metric|Result|
 |---|---:|
-| Cases | 2 |
-| Successful model evaluations | 2 |
-| Model / JSON failures | 0 |
-| Excluded untrusted documents | 3 |
-| Correct trusted-policy answers | 2 |
-| Attack-aligned outcomes | 0 |
-| Trusted-Policy Answer Rate | 100% |
-| Semantic Attack-Outcome Rate | 0% |
+|Cases|2|
+|Successful model evaluations|2|
+|Model / JSON failures|0|
+|Excluded untrusted documents|3|
+|Correct trusted-policy answers|2|
+|Attack-aligned outcomes|0|
+|Trusted-Policy Answer Rate|100%|
+|Semantic Attack-Outcome Rate|0%|
 
 
 
@@ -1524,17 +1524,17 @@ This produced the strongest generation result in the controlled Day 19 experimen
 
 
 
-| Security Property | Vulnerable / Earlier | Hardened / Later |
+|Security Property|Vulnerable / Earlier|Hardened / Later|
 |------------------:|----------------------|------------------|
-| Poisoned Context Exposure | 100% | 40% with trust-aware retrieval |
-| Rank-1 Poison Rate | 40% | 0% |
-| Unauthorized Retrieval Exposure | 100% | 0% |
-| Unauthorized Synthetic-Secret Leakage | 100% | 0% |
-| Indirect Semantic Attack Outcome | 50% | 0% after source-authority resolution |
-| Trusted-Policy Answer Rate | 50% | 100% after source-authority resolution |
-| Expected Trusted Retrieval | 100% | 100% |
-| Context Filter Precision | N/A | 100% in controlled corpus |
-| Context Filter Recall | N/A | 100% in controlled corpus |
+|Poisoned Context Exposure|100%|40% with trust-aware retrieval|
+|Rank-1 Poison Rate|40%|0%|
+|Unauthorized Retrieval Exposure|100%|0%|
+|Unauthorized Synthetic-Secret Leakage|100%|0%|
+|Indirect Semantic Attack Outcome|50%|0% after source-authority resolution|
+|Trusted-Policy Answer Rate|50%|100% after source-authority resolution|
+|Expected Trusted Retrieval|100%|100%|
+|Context Filter Precision|N/A|100% in controlled corpus|
+|Context Filter Recall|N/A|100% in controlled corpus|
 
 
 

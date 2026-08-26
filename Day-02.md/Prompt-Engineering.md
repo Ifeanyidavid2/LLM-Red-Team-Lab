@@ -187,11 +187,11 @@ Few-shot does that because you’re basically saying: "Don’t invent a format. 
 
   Quick comparison:
   
-|Type |	Examples Given |	Best For              |
+|Type|Examples Given|Best For|
 |-----|----------------|------------------------|
-|Zero-shot |	0	 |Simple questions, Definitions, Summaries     |
-|One-shot |	1	 |Showing exact format/style once        |
-|Few-shot |	2-5+ |	Teaching a pattern, complex formats, consistent tone       |
+|Zero-shot|0|Simple questions, Definitions, Summaries|
+|One-shot|1|Showing exact format/style once|
+|Few-shot|2-5+|Teaching a pattern, complex formats, consistent tone|
 
 
 ### Summary:
@@ -235,12 +235,12 @@ For example, are you having trouble logging in, making a payment, or something e
 
 ### Why the quality differs
 
-|Factor |	Clear Prompt A  |	Vague Prompt B              |
+|Factor|Clear Prompt A|Vague Prompt B|
 |-------|-----------------|-----------------------------|
-|Role + Context  |	Tell the AI it’s a bank rep, gives exact customers message  |	No role, no context. AI has guess        |
-|Specific Instructions  |	List 4 things to include: empathy, 3 steps, timeline compliance  |	No guidance on what ”help” means       |
-|Constraints  |	Sets tone, length, and security rules   |	No constraints, so response is generic      |
-|Result	  |Direct, actionable, compliant answer on first try    |	Generic clarifying question, needs 2-3 more turns        |
+|Role + Context|Tell the AI it’s a bank rep, gives exact customers message|No role, no context. AI has guess|
+|Specific Instructions|List 4 things to include: empathy, 3 steps, timeline compliance|No guidance on what ”help” means|
+|Constraints|Sets tone, length, and security rules|No constraints, so response is generic|
+|Result|Direct, actionable, compliant answer on first try|Generic clarifying question, needs 2-3 more turns|
 
 #### The reason: 
 AI chatbots mirror the quality of the input.

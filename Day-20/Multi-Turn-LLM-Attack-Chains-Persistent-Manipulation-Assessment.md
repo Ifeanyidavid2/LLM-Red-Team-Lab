@@ -814,17 +814,17 @@ Results:
 
 
 
-| Metric | Result |
+|Metric|Result|
 |---|---:|
-| Cases | 3 |
-| Successful model evaluations | 3 |
-| Model / JSON failures | 0 |
-| Context-memory successes | 1 |
-| Trusted-role matches | 3 |
-| Complete successful cases | 1 |
-| Context Persistence Accuracy | 33.33% |
-| Trusted Role Preservation Rate | 100.00% |
-| Clean Multi-Turn Success Rate | 33.33% |
+|Cases|3|
+|Successful model evaluations|3|
+|Model / JSON failures|0|
+|Context-memory successes|1|
+|Trusted-role matches|3|
+|Complete successful cases|1|
+|Context Persistence Accuracy|33.33%|
+|Trusted Role Preservation Rate|100.00%|
+|Clean Multi-Turn Success Rate|33.33%|
 
 
 
@@ -896,16 +896,16 @@ Final results:
 
 
 
-| Metric | Result |
+|Metric|Result|
 |---|---:|
-| Cases | 3 |
-| Successful evaluations | 3 |
-| Trusted-role preserved | 3 |
-| Unsafe final allows | 0 |
-| Persistent manipulation successes | 0 |
-| Trusted Role Preservation Rate | 100% |
-| Unsafe Allow Rate | 0% |
-| Persistent Manipulation Success Rate | 0% |
+|Cases|3|
+|Successful evaluations|3|
+|Trusted-role preserved|3|
+|Unsafe final allows|0|
+|Persistent manipulation successes|0|
+|Trusted Role Preservation Rate|100%|
+|Unsafe Allow Rate|0%|
+|Persistent Manipulation Success Rate|0%|
 
 
 
@@ -995,17 +995,17 @@ Results:
 
 
 
-| Metric | Result |
+|Metric|Result|
 |---|---:|
-| Cases | 3 |
-| Intermediate turns | 12 |
-| Intermediate privilege drifts | 0 |
-| Intermediate unsafe allows | 0 |
-| Final role drifts | 0 |
-| Accumulated instruction accepts | 0 |
-| Final unsafe allows | 0 |
-| Final attack successes | 0 |
-| Final Instruction-Accumulation Success Rate | 0% |
+|Cases|3|
+|Intermediate turns|12|
+|Intermediate privilege drifts|0|
+|Intermediate unsafe allows|0|
+|Final role drifts|0|
+|Accumulated instruction accepts|0|
+|Final unsafe allows|0|
+|Final attack successes|0|
+|Final Instruction-Accumulation Success Rate|0%|
 
 
 
@@ -1081,17 +1081,17 @@ Final results:
 
 
 
-| Metric | Result |
+|Metric|Result|
 |---|---:|
-| Cases | 3 |
-| Intermediate turns | 12 |
-| Intermediate trigger accepts | 0 |
-| Intermediate unsafe allows | 0 |
-| Final delayed activations | 0 |
-| Role drifts | 0 |
-| Unsafe allows | 0 |
-| Final attack successes | 0 |
-| Delayed-Trigger Attack Success Rate | 0% |
+|Cases|3|
+|Intermediate turns|12|
+|Intermediate trigger accepts|0|
+|Intermediate unsafe allows|0|
+|Final delayed activations|0|
+|Role drifts|0|
+|Unsafe allows|0|
+|Final attack successes|0|
+|Delayed-Trigger Attack Success Rate|0%|
 
 
 
@@ -1295,18 +1295,18 @@ Results:
 
 
 
-| Metric | Result |
+|Metric|Result|
 |---|---:|
-| Tests | 8 |
-| Correct decisions | 8/8 |
-| Successful executions | 2 |
-| Unsafe approval-reuse successes | 0 |
-| Replay blocks | 1 |
-| Scope mismatch blocks | 1 |
-| Cross-session blocks | 1 |
-| Authorization blocks | 2 |
-| Control Decision Accuracy | 100% |
-| Approval Reuse Attack Success Rate | 0% |
+|Tests|8|
+|Correct decisions|8/8|
+|Successful executions|2|
+|Unsafe approval-reuse successes|0|
+|Replay blocks|1|
+|Scope mismatch blocks|1|
+|Cross-session blocks|1|
+|Authorization blocks|2|
+|Control Decision Accuracy|100%|
+|Approval Reuse Attack Success Rate|0%|
 
 
 
@@ -1356,18 +1356,18 @@ Results:
 
 
 
-| Metric | Result |
+|Metric|Result|
 |---|---:|
-| Cases | 3 |
-| Total turns | 15 |
-| Successful turns | 14 |
-| Model / JSON failures | 1 |
-| Role drift turns | 0 |
-| Unsafe allow turns | 0 |
-| Any-drift cases | 0 |
-| Unsafe final decisions | 0 |
-| Safe-to-unsafe transitions | 0 |
-| Final Security-State Drift Rate | 0% |
+|Cases|3|
+|Total turns|15|
+|Successful turns|14|
+|Model / JSON failures|1|
+|Role drift turns|0|
+|Unsafe allow turns|0|
+|Any-drift cases|0|
+|Unsafe final decisions|0|
+|Safe-to-unsafe transitions|0|
+|Final Security-State Drift Rate|0%|
 
 
 
@@ -1561,18 +1561,18 @@ Results:
 
 
 
-| Metric | Result |
+|Metric|Result|
 |---|---:|
-| Tests | 8 |
-| Correct outcomes | 8/8 |
-| Successful executions | 2 |
-| Unsafe executions | 0 |
-| Validation blocks | 1 |
-| Authorization blocks | 2 |
-| Scope blocks | 2 |
-| Approval blocks | 1 |
-| Control Outcome Accuracy | 100% |
-| Unsafe Execution Rate | 0% |
+|Tests|8|
+|Correct outcomes|8/8|
+|Successful executions|2|
+|Unsafe executions|0|
+|Validation blocks|1|
+|Authorization blocks|2|
+|Scope blocks|2|
+|Approval blocks|1|
+|Control Outcome Accuracy|100%|
+|Unsafe Execution Rate|0%|
 
 
 
@@ -1616,19 +1616,19 @@ Results:
 
 
 
-| Metric | Result |
+|Metric|Result|
 |---|---:|
-| Cases | 3 |
-| Successful model runs | 3 |
-| Model / JSON failures | 0 |
-| Dangerous model proposals | 3 |
-| Blocked dangerous proposals | 3 |
-| Unsafe executions | 0 |
-| Correct system outcomes | 3 |
-| Dangerous Proposal Rate | 100% |
-| Dangerous Proposal Block Rate | 100% |
-| Unauthorized System Impact Rate | 0% |
-| System Outcome Accuracy | 100% |
+|Cases|3|
+|Successful model runs|3|
+|Model / JSON failures|0|
+|Dangerous model proposals|3|
+|Blocked dangerous proposals|3|
+|Unsafe executions|0|
+|Correct system outcomes|3|
+|Dangerous Proposal Rate|100%|
+|Dangerous Proposal Block Rate|100%|
+|Unauthorized System Impact Rate|0%|
+|System Outcome Accuracy|100%|
 
 
 
@@ -1684,19 +1684,19 @@ The model may be manipulated at the reasoning or proposal layer while trusted ap
 
 
 
-| Security Property | Result |
+|Security Property|Result|
 |---|---:|
-| Clean Context Persistence | 33.33% |
-| Clean Trusted Role Preservation | 100% |
-| Persistent Manipulation Success | 0% |
-| Instruction Accumulation Success | 0% |
-| Delayed Trigger Success | 0% |
-| Cross-Turn Privilege Success | 0% |
-| Stale Verification Reuse | 0% |
-| Approval Reuse Attack Success | 0% |
-| Security-State Drift | 0% |
-| Session Boundary Accuracy | 100% |
-| Hardened Control Outcome Accuracy | 100% |
+|Clean Context Persistence|33.33%|
+|Clean Trusted Role Preservation|100%|
+|Persistent Manipulation Success|0%|
+|Instruction Accumulation Success|0%|
+|Delayed Trigger Success|0%|
+|Cross-Turn Privilege Success|0%|
+|Stale Verification Reuse|0%|
+|Approval Reuse Attack Success|0%|
+|Security-State Drift|0%|
+|Session Boundary Accuracy|100%|
+|Hardened Control Outcome Accuracy|100%|
 | Hardened Unsafe Execution Rate | 0%
 | Dangerous Final Proposal Rate | 100% |
 | Dangerous Proposal Block Rate | 100% |
