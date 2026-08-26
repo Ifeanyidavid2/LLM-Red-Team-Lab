@@ -1,0 +1,734 @@
+{
+  "engagement_id": "ENG-2901",
+  "system_id": "ENT-AI-2901",
+  "trace_id": "TRACE-2913",
+  "timestamp_utc": "2026-08-26T17:10:35.326987+00:00",
+  "consolidated_findings": [
+    {
+      "finding_id": "CF-2901",
+      "title": "Untrusted Instructions Can Alter Trusted AI Tasks and Targets",
+      "severity": "CRITICAL",
+      "domain": "INSTRUCTION_TRUST",
+      "source_findings": [
+        "FIND-2902",
+        "FIND-2904",
+        "FIND-2906",
+        "FIND-2908",
+        "FIND-2919",
+        "FIND-2920"
+      ],
+      "affected_assets": [
+        "System Instruction Integrity",
+        "Trusted Task",
+        "Trusted Target",
+        "Agent Goal"
+      ],
+      "root_cause": "Natural-language input and retrieved content are not sufficiently separated from trusted task, goal, target, or authority state.",
+      "business_impact": "Attackers can redirect approved workflows toward restricted targets or privileged actions.",
+      "control_failures": [
+        "Instruction Trust Separation",
+        "Trusted Task Binding",
+        "Trusted Target Binding",
+        "Independent Authority Validation"
+      ],
+      "risk_ids": [
+        "RISK-2912-03",
+        "RISK-2912-05"
+      ],
+      "owner": "AI Security Engineering",
+      "remediation_priority": "IMMEDIATE",
+      "remediation": [
+        "Enforce explicit instruction hierarchy.",
+        "Treat user and retrieved content as untrusted data.",
+        "Cryptographically or structurally bind trusted tasks and targets outside the model.",
+        "Reject model or user claims of authorization."
+      ],
+      "retest_criteria": [
+        "Prompt injection cannot alter trusted task.",
+        "Retrieved instructions cannot alter trusted target.",
+        "User-supplied approval claims are rejected.",
+        "Model-generated authority cannot satisfy authorization."
+      ]
+    },
+    {
+      "finding_id": "CF-2902",
+      "title": "RAG Trust Boundary Permits Poisoned Context and Indirect Prompt Injection",
+      "severity": "CRITICAL",
+      "domain": "RAG_SECURITY",
+      "source_findings": [
+        "FIND-2918",
+        "FIND-2919",
+        "FIND-2920",
+        "FIND-2921",
+        "FIND-2922",
+        "FIND-2923",
+        "FIND-2924"
+      ],
+      "affected_assets": [
+        "RAG Knowledge System",
+        "Retrieved Context",
+        "Persistent Memory",
+        "Agent Planner"
+      ],
+      "root_cause": "Retrieved documents are admitted without sufficient source provenance, context classification, instruction isolation, or fail-closed admission controls.",
+      "business_impact": "Malicious retrieval content can manipulate model behavior, persist into memory, influence agents, expose sensitive information, and support privileged execution.",
+      "control_failures": [
+        "RAG Source Validation",
+        "Document Provenance",
+        "Indirect Prompt Injection Detection",
+        "Fail-Closed Context Admission",
+        "Retrieved Data Minimization"
+      ],
+      "risk_ids": [
+        "RISK-2912-02",
+        "RISK-2912-08"
+      ],
+      "owner": "RAG Platform Team",
+      "remediation_priority": "IMMEDIATE",
+      "remediation": [
+        "Require trusted provenance for retrieved sources.",
+        "Classify retrieved documents as untrusted by default.",
+        "Scan for indirect instruction behavior.",
+        "Fail closed when provenance or context trust cannot be established.",
+        "Minimize sensitive retrieved content exposed to the model."
+      ],
+      "retest_criteria": [
+        "Poisoned documents are quarantined.",
+        "Indirect prompt injection is rejected.",
+        "Retrieved target substitution fails.",
+        "RAG content cannot directly create persistent state."
+      ]
+    },
+    {
+      "finding_id": "CF-2903",
+      "title": "Persistent AI Memory Enables Cross-Session and Cross-Agent Compromise",
+      "severity": "CRITICAL",
+      "domain": "MEMORY_SECURITY",
+      "source_findings": [
+        "FIND-2921",
+        "FIND-2927",
+        "FIND-2928",
+        "FIND-2929",
+        "FIND-2930",
+        "FIND-2931",
+        "FIND-2932",
+        "FIND-2933",
+        "FIND-2934"
+      ],
+      "affected_assets": [
+        "Persistent Memory",
+        "Session State",
+        "Agent State",
+        "Trusted Goal",
+        "Trusted Target",
+        "Authorization Context"
+      ],
+      "root_cause": "Persistent memory lacks sufficient write authorization, provenance, session binding, agent binding, expiry enforcement, and trust-level isolation.",
+      "business_impact": "Attacker-controlled state survives the originating interaction and can compromise future sessions, agents, targets, and privileged workflows.",
+      "control_failures": [
+        "Memory Write Authorization",
+        "Memory Provenance",
+        "Cross-Session Isolation",
+        "Cross-Agent Isolation",
+        "Memory Expiry",
+        "Memory Trust Classification"
+      ],
+      "risk_ids": [
+        "RISK-2912-02"
+      ],
+      "owner": "AI Platform Team",
+      "remediation_priority": "IMMEDIATE",
+      "remediation": [
+        "Authorize memory writes outside model-generated state.",
+        "Bind memory records to provenance, user, session, agent, trust level, and expiry.",
+        "Treat persistent memory as non-authoritative input.",
+        "Require validation before memory influences goals, targets, or authorization."
+      ],
+      "retest_criteria": [
+        "Unauthorized memory writes fail.",
+        "Malicious memory cannot cross sessions.",
+        "Malicious memory cannot cross agents.",
+        "Expired or provenance-invalid memory is rejected.",
+        "Memory cannot supply execution authority."
+      ]
+    },
+    {
+      "finding_id": "CF-2904",
+      "title": "Agent and Tool Boundaries Permit Privileged Execution Manipulation",
+      "severity": "CRITICAL",
+      "domain": "AGENT_TOOL_SECURITY",
+      "source_findings": [
+        "FIND-2937",
+        "FIND-2938",
+        "FIND-2939",
+        "FIND-2940",
+        "FIND-2945",
+        "FIND-2946"
+      ],
+      "affected_assets": [
+        "Agent Planner",
+        "Privileged Tool",
+        "Tool Parameters",
+        "Restricted Business Data"
+      ],
+      "root_cause": "Agent-generated plans are not sufficiently constrained by trusted goal binding, tool allowlisting, target binding, parameter validation, or resource-level authorization.",
+      "business_impact": "Compromised model state can reach destructive enterprise capabilities and create direct business impact.",
+      "control_failures": [
+        "Agent Goal Binding",
+        "Tool Allowlisting",
+        "Trusted Target Binding",
+        "Strict Parameter Validation",
+        "Resource-Level Authorization"
+      ],
+      "risk_ids": [
+        "RISK-2912-03",
+        "RISK-2912-04"
+      ],
+      "owner": "Agent Security Team",
+      "remediation_priority": "IMMEDIATE",
+      "remediation": [
+        "Bind agents to approved goals.",
+        "Allow only tools explicitly authorized for the task.",
+        "Bind tool targets outside model control.",
+        "Validate parameters against signed or trusted task context.",
+        "Require resource-level authorization at execution time."
+      ],
+      "retest_criteria": [
+        "Agent cannot change read task into delete task.",
+        "Unauthorized privileged tools are unavailable.",
+        "Target substitution fails.",
+        "Unsafe parameters are rejected.",
+        "Restricted business data cannot be modified without independent authorization."
+      ]
+    },
+    {
+      "finding_id": "CF-2905",
+      "title": "Authorization Enforcement Fails Closed Inconsistently",
+      "severity": "CRITICAL",
+      "domain": "AUTHORIZATION",
+      "source_findings": [
+        "FIND-2906",
+        "FIND-2923",
+        "FIND-2932",
+        "FIND-2941",
+        "FIND-2943"
+      ],
+      "affected_assets": [
+        "Authorization Service",
+        "Authorization Decision",
+        "Privileged Tool",
+        "Restricted Business Data"
+      ],
+      "root_cause": "Authorization claims can originate from model-controlled state and explicit authorization denial does not reliably terminate the execution path.",
+      "business_impact": "Privileged actions may execute without valid independent approval or even after explicit denial.",
+      "control_failures": [
+        "Independent Authorization",
+        "Fail-Closed Enforcement",
+        "External Approval Verification",
+        "Authorization-to-Execution Binding"
+      ],
+      "risk_ids": [
+        "RISK-2912-05",
+        "RISK-2912-03"
+      ],
+      "owner": "Identity Security",
+      "remediation_priority": "IMMEDIATE",
+      "remediation": [
+        "Require authorization from an independent policy decision point.",
+        "Never accept model-generated approval as authority.",
+        "Terminate execution immediately after denial.",
+        "Bind authorization decisions to tool, target, parameters, identity, and time."
+      ],
+      "retest_criteria": [
+        "Model-generated approval is rejected.",
+        "User-supplied approval is rejected.",
+        "Authorization denial blocks downstream execution.",
+        "Authorization cannot be reused for another tool or target."
+      ]
+    },
+    {
+      "finding_id": "CF-2906",
+      "title": "Task Credentials Are Not Sufficiently Scoped to Authorized Operations",
+      "severity": "HIGH",
+      "domain": "CREDENTIAL_SECURITY",
+      "source_findings": [
+        "FIND-2944"
+      ],
+      "affected_assets": [
+        "Credential Broker",
+        "Task Credential",
+        "Privileged Tool"
+      ],
+      "root_cause": "Credentials are not tightly bound to approved tool, target, task, scope, and lifetime.",
+      "business_impact": "Valid credentials can be reused to amplify unauthorized privileged operations.",
+      "control_failures": [
+        "Least Privilege",
+        "Task-Bound Credentials",
+        "Short-Lived Credentials",
+        "Credential-to-Tool Binding"
+      ],
+      "risk_ids": [
+        "RISK-2912-06"
+      ],
+      "owner": "Platform Identity Team",
+      "remediation_priority": "HIGH",
+      "remediation": [
+        "Issue short-lived credentials per approved task.",
+        "Bind credentials to tool, target, scope, and transaction.",
+        "Prevent credential reuse across privileged operations."
+      ],
+      "retest_criteria": [
+        "read_record credentials cannot invoke delete_record.",
+        "Expired task credentials fail.",
+        "Credentials cannot be reused against a different target."
+      ]
+    },
+    {
+      "finding_id": "CF-2907",
+      "title": "Sensitive Model-Visible Data Can Be Exposed or Aggregated",
+      "severity": "CRITICAL",
+      "domain": "DATA_PROTECTION",
+      "source_findings": [
+        "FIND-2910",
+        "FIND-2911",
+        "FIND-2913",
+        "FIND-2914",
+        "FIND-2916"
+      ],
+      "affected_assets": [
+        "Retrieved Context",
+        "Persistent Memory",
+        "Authorization Metadata",
+        "Restricted Business Data"
+      ],
+      "root_cause": "Sensitive information is exposed to model context without sufficient authorization, isolation, minimization, or independent output DLP enforcement.",
+      "business_impact": "Restricted and sensitive enterprise information can be disclosed or aggregated beyond intended need-to-know scope.",
+      "control_failures": [
+        "RAG Data Minimization",
+        "Memory Access Isolation",
+        "Authorization Metadata Protection",
+        "Restricted Data DLP",
+        "Output DLP"
+      ],
+      "risk_ids": [
+        "RISK-2912-01",
+        "RISK-2912-08"
+      ],
+      "owner": "Data Security",
+      "remediation_priority": "IMMEDIATE",
+      "remediation": [
+        "Minimize sensitive information before model context.",
+        "Enforce source-level authorization before retrieval.",
+        "Isolate memory per identity/session.",
+        "Protect authorization metadata.",
+        "Apply independent output DLP and classification-aware filtering."
+      ],
+      "retest_criteria": [
+        "Restricted records cannot be disclosed.",
+        "Cross-user memory disclosure fails.",
+        "Authorization metadata is protected.",
+        "Sensitive multi-source aggregation is blocked."
+      ]
+    },
+    {
+      "finding_id": "CF-2908",
+      "title": "AI Detection Engineering Misses Early Attack Stages",
+      "severity": "HIGH",
+      "domain": "DETECTION_ENGINEERING",
+      "source_findings": [],
+      "affected_assets": [
+        "Security Telemetry",
+        "Detection Engine",
+        "Incident Response"
+      ],
+      "root_cause": "Security telemetry exists, but detection rules do not adequately correlate prompt, retrieval, memory, cross-session, agent, and model-authority anomalies.",
+      "business_impact": "Attackers can progress through multiple AI-specific stages before defensive action begins.",
+      "control_failures": [
+        "Prompt Detection",
+        "RAG Correlation",
+        "Memory Persistence Detection",
+        "Cross-Session Detection",
+        "Agent Goal Anomaly Detection",
+        "Authority Spoofing Detection"
+      ],
+      "risk_ids": [
+        "RISK-2912-07"
+      ],
+      "owner": "AI SOC",
+      "remediation_priority": "HIGH",
+      "remediation": [
+        "Correlate prompt injection with later RAG and memory events.",
+        "Alert on unauthorized persistent memory writes.",
+        "Detect cross-session and cross-agent malicious-state activation.",
+        "Detect trusted-goal or target changes.",
+        "Alert on model-generated authority and authorization anomalies."
+      ],
+      "retest_criteria": [
+        "Prompt/RAG attack chain generates an early alert.",
+        "Unauthorized memory write generates a high-severity alert.",
+        "Cross-session malicious memory activation is detected.",
+        "Detection occurs before privileged execution."
+      ]
+    }
+  ],
+  "root_cause_themes": [
+    {
+      "theme_id": "ROOT-2901",
+      "theme": "Trust Boundary Failure",
+      "findings": [
+        "CF-2901",
+        "CF-2902",
+        "CF-2903"
+      ]
+    },
+    {
+      "theme_id": "ROOT-2902",
+      "theme": "Model-Controlled State Reaches Privilege",
+      "findings": [
+        "CF-2904",
+        "CF-2905",
+        "CF-2906"
+      ]
+    },
+    {
+      "theme_id": "ROOT-2903",
+      "theme": "Insufficient Sensitive-Data Isolation",
+      "findings": [
+        "CF-2907"
+      ]
+    },
+    {
+      "theme_id": "ROOT-2904",
+      "theme": "Detection Lag Across AI-Specific Attack Stages",
+      "findings": [
+        "CF-2908"
+      ]
+    }
+  ],
+  "owner_distribution": {
+    "AI Security Engineering": 1,
+    "RAG Platform Team": 1,
+    "AI Platform Team": 1,
+    "Agent Security Team": 1,
+    "Identity Security": 1,
+    "Platform Identity Team": 1,
+    "Data Security": 1,
+    "AI SOC": 1
+  },
+  "control_gap_frequency": {
+    "Instruction Trust Separation": 1,
+    "Trusted Task Binding": 1,
+    "Trusted Target Binding": 2,
+    "Independent Authority Validation": 1,
+    "RAG Source Validation": 1,
+    "Document Provenance": 1,
+    "Indirect Prompt Injection Detection": 1,
+    "Fail-Closed Context Admission": 1,
+    "Retrieved Data Minimization": 1,
+    "Memory Write Authorization": 1,
+    "Memory Provenance": 1,
+    "Cross-Session Isolation": 1,
+    "Cross-Agent Isolation": 1,
+    "Memory Expiry": 1,
+    "Memory Trust Classification": 1,
+    "Agent Goal Binding": 1,
+    "Tool Allowlisting": 1,
+    "Strict Parameter Validation": 1,
+    "Resource-Level Authorization": 1,
+    "Independent Authorization": 1,
+    "Fail-Closed Enforcement": 1,
+    "External Approval Verification": 1,
+    "Authorization-to-Execution Binding": 1,
+    "Least Privilege": 1,
+    "Task-Bound Credentials": 1,
+    "Short-Lived Credentials": 1,
+    "Credential-to-Tool Binding": 1,
+    "RAG Data Minimization": 1,
+    "Memory Access Isolation": 1,
+    "Authorization Metadata Protection": 1,
+    "Restricted Data DLP": 1,
+    "Output DLP": 1,
+    "Prompt Detection": 1,
+    "RAG Correlation": 1,
+    "Memory Persistence Detection": 1,
+    "Cross-Session Detection": 1,
+    "Agent Goal Anomaly Detection": 1,
+    "Authority Spoofing Detection": 1
+  },
+  "risk_ids": [
+    "RISK-2912-01",
+    "RISK-2912-02",
+    "RISK-2912-03",
+    "RISK-2912-04",
+    "RISK-2912-05",
+    "RISK-2912-06",
+    "RISK-2912-07",
+    "RISK-2912-08"
+  ],
+  "retest_requirements": [
+    {
+      "retest_id": "RETEST-CF-2901-01",
+      "finding_id": "CF-2901",
+      "severity": "CRITICAL",
+      "criterion": "Prompt injection cannot alter trusted task.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2901-02",
+      "finding_id": "CF-2901",
+      "severity": "CRITICAL",
+      "criterion": "Retrieved instructions cannot alter trusted target.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2901-03",
+      "finding_id": "CF-2901",
+      "severity": "CRITICAL",
+      "criterion": "User-supplied approval claims are rejected.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2901-04",
+      "finding_id": "CF-2901",
+      "severity": "CRITICAL",
+      "criterion": "Model-generated authority cannot satisfy authorization.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2902-01",
+      "finding_id": "CF-2902",
+      "severity": "CRITICAL",
+      "criterion": "Poisoned documents are quarantined.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2902-02",
+      "finding_id": "CF-2902",
+      "severity": "CRITICAL",
+      "criterion": "Indirect prompt injection is rejected.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2902-03",
+      "finding_id": "CF-2902",
+      "severity": "CRITICAL",
+      "criterion": "Retrieved target substitution fails.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2902-04",
+      "finding_id": "CF-2902",
+      "severity": "CRITICAL",
+      "criterion": "RAG content cannot directly create persistent state.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2903-01",
+      "finding_id": "CF-2903",
+      "severity": "CRITICAL",
+      "criterion": "Unauthorized memory writes fail.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2903-02",
+      "finding_id": "CF-2903",
+      "severity": "CRITICAL",
+      "criterion": "Malicious memory cannot cross sessions.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2903-03",
+      "finding_id": "CF-2903",
+      "severity": "CRITICAL",
+      "criterion": "Malicious memory cannot cross agents.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2903-04",
+      "finding_id": "CF-2903",
+      "severity": "CRITICAL",
+      "criterion": "Expired or provenance-invalid memory is rejected.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2903-05",
+      "finding_id": "CF-2903",
+      "severity": "CRITICAL",
+      "criterion": "Memory cannot supply execution authority.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2904-01",
+      "finding_id": "CF-2904",
+      "severity": "CRITICAL",
+      "criterion": "Agent cannot change read task into delete task.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2904-02",
+      "finding_id": "CF-2904",
+      "severity": "CRITICAL",
+      "criterion": "Unauthorized privileged tools are unavailable.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2904-03",
+      "finding_id": "CF-2904",
+      "severity": "CRITICAL",
+      "criterion": "Target substitution fails.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2904-04",
+      "finding_id": "CF-2904",
+      "severity": "CRITICAL",
+      "criterion": "Unsafe parameters are rejected.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2904-05",
+      "finding_id": "CF-2904",
+      "severity": "CRITICAL",
+      "criterion": "Restricted business data cannot be modified without independent authorization.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2905-01",
+      "finding_id": "CF-2905",
+      "severity": "CRITICAL",
+      "criterion": "Model-generated approval is rejected.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2905-02",
+      "finding_id": "CF-2905",
+      "severity": "CRITICAL",
+      "criterion": "User-supplied approval is rejected.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2905-03",
+      "finding_id": "CF-2905",
+      "severity": "CRITICAL",
+      "criterion": "Authorization denial blocks downstream execution.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2905-04",
+      "finding_id": "CF-2905",
+      "severity": "CRITICAL",
+      "criterion": "Authorization cannot be reused for another tool or target.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2906-01",
+      "finding_id": "CF-2906",
+      "severity": "HIGH",
+      "criterion": "read_record credentials cannot invoke delete_record.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2906-02",
+      "finding_id": "CF-2906",
+      "severity": "HIGH",
+      "criterion": "Expired task credentials fail.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2906-03",
+      "finding_id": "CF-2906",
+      "severity": "HIGH",
+      "criterion": "Credentials cannot be reused against a different target.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2907-01",
+      "finding_id": "CF-2907",
+      "severity": "CRITICAL",
+      "criterion": "Restricted records cannot be disclosed.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2907-02",
+      "finding_id": "CF-2907",
+      "severity": "CRITICAL",
+      "criterion": "Cross-user memory disclosure fails.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2907-03",
+      "finding_id": "CF-2907",
+      "severity": "CRITICAL",
+      "criterion": "Authorization metadata is protected.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2907-04",
+      "finding_id": "CF-2907",
+      "severity": "CRITICAL",
+      "criterion": "Sensitive multi-source aggregation is blocked.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2908-01",
+      "finding_id": "CF-2908",
+      "severity": "HIGH",
+      "criterion": "Prompt/RAG attack chain generates an early alert.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2908-02",
+      "finding_id": "CF-2908",
+      "severity": "HIGH",
+      "criterion": "Unauthorized memory write generates a high-severity alert.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2908-03",
+      "finding_id": "CF-2908",
+      "severity": "HIGH",
+      "criterion": "Cross-session malicious memory activation is detected.",
+      "status": "PENDING"
+    },
+    {
+      "retest_id": "RETEST-CF-2908-04",
+      "finding_id": "CF-2908",
+      "severity": "HIGH",
+      "criterion": "Detection occurs before privileged execution.",
+      "status": "PENDING"
+    }
+  ],
+  "metrics": {
+    "material_findings": 8,
+    "critical_findings": 6,
+    "high_findings": 2,
+    "technical_findings_consolidated": 33,
+    "root_cause_themes": 4,
+    "remediation_owners": 8,
+    "risk_scenarios_covered": 8,
+    "retest_requirements": 33,
+    "immediate_remediation_findings": 6
+  },
+  "security_checks": {
+    "Unique Consolidated Finding IDs": true,
+    "Unique Root Cause Theme IDs": true,
+    "All Root Cause Theme Findings Valid": true,
+    "Critical Findings Present": true,
+    "Instruction Trust Finding Present": true,
+    "RAG Finding Present": true,
+    "Memory Finding Present": true,
+    "Agent / Tool Finding Present": true,
+    "Authorization Finding Present": true,
+    "Credential Finding Present": true,
+    "Data Protection Finding Present": true,
+    "Detection Finding Present": true,
+    "All Findings Have Owners": true,
+    "All Findings Have Root Causes": true,
+    "All Findings Have Remediation": true,
+    "All Findings Have Retest Criteria": true,
+    "Risk Register Coverage Present": true,
+    "Retest Register Generated": true,
+    "Consolidated Findings Assessment Valid": true
+  },
+  "evidence_hash": "a2ed9f24fce68d77630a9f54a9495bc8b43c0f160d4806503c85275795301f28"
+}

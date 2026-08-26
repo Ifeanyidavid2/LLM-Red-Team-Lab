@@ -1,0 +1,366 @@
+{
+  "engagement_id": "ENG-2901",
+  "system_id": "ENT-AI-2901",
+  "trace_id": "TRACE-2902",
+  "timestamp_utc": "2026-08-26T09:49:55.866433+00:00",
+  "components": [
+    {
+      "id": "COMP-2901",
+      "name": "Enterprise User",
+      "type": "identity",
+      "trust": "external_authenticated",
+      "criticality": "HIGH",
+      "exposure": "external",
+      "data": [
+        "user_identity",
+        "user_prompt"
+      ]
+    },
+    {
+      "id": "COMP-2902",
+      "name": "AI Assistant",
+      "type": "application",
+      "trust": "application_boundary",
+      "criticality": "HIGH",
+      "exposure": "external",
+      "data": [
+        "prompt",
+        "response",
+        "session_context"
+      ]
+    },
+    {
+      "id": "COMP-2903",
+      "name": "LLM Runtime",
+      "type": "model",
+      "trust": "trusted_runtime",
+      "criticality": "CRITICAL",
+      "exposure": "internal",
+      "data": [
+        "system_prompt",
+        "runtime_context",
+        "model_output"
+      ]
+    },
+    {
+      "id": "COMP-2904",
+      "name": "RAG Knowledge System",
+      "type": "retrieval",
+      "trust": "mixed_trust",
+      "criticality": "HIGH",
+      "exposure": "internal",
+      "data": [
+        "documents",
+        "embeddings",
+        "retrieved_context"
+      ]
+    },
+    {
+      "id": "COMP-2905",
+      "name": "Persistent Memory",
+      "type": "memory",
+      "trust": "sensitive_persistent_state",
+      "criticality": "CRITICAL",
+      "exposure": "internal",
+      "data": [
+        "memory_records",
+        "preferences",
+        "persistent_context"
+      ]
+    },
+    {
+      "id": "COMP-2906",
+      "name": "Agent Planner",
+      "type": "agent",
+      "trust": "model_influenced",
+      "criticality": "CRITICAL",
+      "exposure": "internal",
+      "data": [
+        "goals",
+        "plans",
+        "tool_requests"
+      ]
+    },
+    {
+      "id": "COMP-2907",
+      "name": "Tools / APIs",
+      "type": "execution",
+      "trust": "privileged_boundary",
+      "criticality": "CRITICAL",
+      "exposure": "privileged",
+      "data": [
+        "tool_parameters",
+        "api_requests",
+        "execution_results"
+      ]
+    },
+    {
+      "id": "COMP-2908",
+      "name": "Authorization Service",
+      "type": "security_control",
+      "trust": "independent_trusted_control",
+      "criticality": "CRITICAL",
+      "exposure": "restricted",
+      "data": [
+        "identity_context",
+        "authorization_decision"
+      ]
+    },
+    {
+      "id": "COMP-2909",
+      "name": "Business Data",
+      "type": "business_asset",
+      "trust": "restricted",
+      "criticality": "CRITICAL",
+      "exposure": "restricted",
+      "data": [
+        "enterprise_records",
+        "restricted_records"
+      ]
+    },
+    {
+      "id": "COMP-2910",
+      "name": "Security Telemetry",
+      "type": "observability",
+      "trust": "trusted_security_evidence",
+      "criticality": "HIGH",
+      "exposure": "restricted",
+      "data": [
+        "audit_events",
+        "security_alerts",
+        "forensic_logs"
+      ]
+    },
+    {
+      "id": "COMP-2911",
+      "name": "Credential Broker",
+      "type": "secret_management",
+      "trust": "restricted",
+      "criticality": "CRITICAL",
+      "exposure": "restricted",
+      "data": [
+        "api_credentials",
+        "task_tokens"
+      ]
+    }
+  ],
+  "interfaces": [
+    {
+      "id": "IFACE-2901",
+      "source": "Enterprise User",
+      "destination": "AI Assistant",
+      "data": "User Prompt",
+      "trust_crossing": true
+    },
+    {
+      "id": "IFACE-2902",
+      "source": "AI Assistant",
+      "destination": "LLM Runtime",
+      "data": "Prompt + Session Context",
+      "trust_crossing": true
+    },
+    {
+      "id": "IFACE-2903",
+      "source": "LLM Runtime",
+      "destination": "RAG Knowledge System",
+      "data": "Retrieval Query",
+      "trust_crossing": true
+    },
+    {
+      "id": "IFACE-2904",
+      "source": "RAG Knowledge System",
+      "destination": "LLM Runtime",
+      "data": "Retrieved Documents",
+      "trust_crossing": true
+    },
+    {
+      "id": "IFACE-2905",
+      "source": "LLM Runtime",
+      "destination": "Persistent Memory",
+      "data": "Proposed Memory Write",
+      "trust_crossing": true
+    },
+    {
+      "id": "IFACE-2906",
+      "source": "Persistent Memory",
+      "destination": "Agent Planner",
+      "data": "Persistent Context",
+      "trust_crossing": true
+    },
+    {
+      "id": "IFACE-2907",
+      "source": "LLM Runtime",
+      "destination": "Agent Planner",
+      "data": "Proposed Goal / Plan",
+      "trust_crossing": true
+    },
+    {
+      "id": "IFACE-2908",
+      "source": "Agent Planner",
+      "destination": "Authorization Service",
+      "data": "Proposed Tool Action",
+      "trust_crossing": true
+    },
+    {
+      "id": "IFACE-2909",
+      "source": "Authorization Service",
+      "destination": "Tools / APIs",
+      "data": "Authorization Decision",
+      "trust_crossing": true
+    },
+    {
+      "id": "IFACE-2910",
+      "source": "Credential Broker",
+      "destination": "Tools / APIs",
+      "data": "Task Credential",
+      "trust_crossing": true
+    },
+    {
+      "id": "IFACE-2911",
+      "source": "Tools / APIs",
+      "destination": "Business Data",
+      "data": "Business Transaction",
+      "trust_crossing": true
+    },
+    {
+      "id": "IFACE-2912",
+      "source": "All Components",
+      "destination": "Security Telemetry",
+      "data": "Security Events",
+      "trust_crossing": true
+    }
+  ],
+  "security_assets": [
+    {
+      "asset_id": "ASSET-2901",
+      "name": "System Prompt",
+      "criticality": "CRITICAL"
+    },
+    {
+      "asset_id": "ASSET-2902",
+      "name": "User Prompt",
+      "criticality": "HIGH"
+    },
+    {
+      "asset_id": "ASSET-2903",
+      "name": "Retrieved Context",
+      "criticality": "HIGH"
+    },
+    {
+      "asset_id": "ASSET-2904",
+      "name": "Persistent Memory",
+      "criticality": "CRITICAL"
+    },
+    {
+      "asset_id": "ASSET-2905",
+      "name": "Agent Goal / Plan",
+      "criticality": "CRITICAL"
+    },
+    {
+      "asset_id": "ASSET-2906",
+      "name": "Tool Parameters",
+      "criticality": "CRITICAL"
+    },
+    {
+      "asset_id": "ASSET-2907",
+      "name": "Authorization Decision",
+      "criticality": "CRITICAL"
+    },
+    {
+      "asset_id": "ASSET-2908",
+      "name": "API Credentials",
+      "criticality": "CRITICAL"
+    },
+    {
+      "asset_id": "ASSET-2909",
+      "name": "Restricted Business Records",
+      "criticality": "CRITICAL"
+    },
+    {
+      "asset_id": "ASSET-2910",
+      "name": "Security Telemetry",
+      "criticality": "HIGH"
+    }
+  ],
+  "attack_surface_hints": [
+    {
+      "surface": "User Prompt Interface",
+      "component": "AI Assistant",
+      "risk": "prompt_injection"
+    },
+    {
+      "surface": "System Instruction Boundary",
+      "component": "LLM Runtime",
+      "risk": "instruction_override"
+    },
+    {
+      "surface": "Retrieved Document Admission",
+      "component": "RAG Knowledge System",
+      "risk": "rag_poisoning"
+    },
+    {
+      "surface": "Persistent Memory Write",
+      "component": "Persistent Memory",
+      "risk": "memory_poisoning"
+    },
+    {
+      "surface": "Persistent Memory Read",
+      "component": "Persistent Memory",
+      "risk": "cross_session_influence"
+    },
+    {
+      "surface": "Agent Goal Generation",
+      "component": "Agent Planner",
+      "risk": "goal_hijacking"
+    },
+    {
+      "surface": "Tool Selection",
+      "component": "Tools / APIs",
+      "risk": "privileged_tool_abuse"
+    },
+    {
+      "surface": "Tool Parameters",
+      "component": "Tools / APIs",
+      "risk": "parameter_manipulation"
+    },
+    {
+      "surface": "Authorization Decision",
+      "component": "Authorization Service",
+      "risk": "authorization_bypass"
+    },
+    {
+      "surface": "Credential Delivery",
+      "component": "Credential Broker",
+      "risk": "credential_abuse"
+    },
+    {
+      "surface": "Business Resource",
+      "component": "Business Data",
+      "risk": "unauthorized_business_impact"
+    },
+    {
+      "surface": "Audit Pipeline",
+      "component": "Security Telemetry",
+      "risk": "telemetry_suppression"
+    }
+  ],
+  "security_checks": {
+    "Unique Component IDs": true,
+    "Unique Interface IDs": true,
+    "Enterprise User Identified": true,
+    "AI Assistant Identified": true,
+    "LLM Runtime Identified": true,
+    "RAG System Identified": true,
+    "Persistent Memory Identified": true,
+    "Agent Planner Identified": true,
+    "Tool / API Boundary Identified": true,
+    "Authorization Service Identified": true,
+    "Business Data Identified": true,
+    "Credential Broker Identified": true,
+    "Security Telemetry Identified": true,
+    "Trust Crossings Identified": true,
+    "Attack Surface Candidates Identified": true,
+    "Architecture Reconnaissance Valid": true
+  },
+  "evidence_hash": "386e71fc3a7ffe512a43f86f2900863f509b0204f5ee5fbe604862ee1fb812e1"
+}

@@ -1,0 +1,731 @@
+{
+  "engagement_id": "ENG-2901",
+  "system_id": "ENT-AI-2901",
+  "trace_id": "TRACE-2914",
+  "timestamp_utc": "2026-08-26T17:14:43.534549+00:00",
+  "security_zones": [
+    {
+      "zone_id": "ZONE-2901",
+      "name": "Untrusted Input Zone",
+      "trust_level": 0,
+      "components": [
+        "Enterprise User Input",
+        "External Content"
+      ]
+    },
+    {
+      "zone_id": "ZONE-2902",
+      "name": "Input Security Mediation Zone",
+      "trust_level": 2,
+      "components": [
+        "Input Gateway",
+        "Prompt Security Classifier",
+        "Instruction Trust Resolver"
+      ]
+    },
+    {
+      "zone_id": "ZONE-2903",
+      "name": "RAG Security Zone",
+      "trust_level": 2,
+      "components": [
+        "Source Trust Validator",
+        "Document Provenance Validator",
+        "Retrieval Authorization",
+        "Context Admission Gateway"
+      ]
+    },
+    {
+      "zone_id": "ZONE-2904",
+      "name": "Trusted LLM Runtime Zone",
+      "trust_level": 4,
+      "components": [
+        "System Prompt",
+        "LLM Runtime",
+        "Policy Engine"
+      ]
+    },
+    {
+      "zone_id": "ZONE-2905",
+      "name": "Persistent Memory Security Zone",
+      "trust_level": 3,
+      "components": [
+        "Memory Write Authorization",
+        "Memory Provenance Service",
+        "Session / Agent Binding",
+        "Memory Expiry Enforcement",
+        "Memory Integrity Validator",
+        "Memory Store"
+      ]
+    },
+    {
+      "zone_id": "ZONE-2906",
+      "name": "Agent Execution Security Zone",
+      "trust_level": 3,
+      "components": [
+        "Agent Planner",
+        "Trusted Goal Binder",
+        "Task Binding Service",
+        "Tool Allowlist",
+        "Target Binder",
+        "Parameter Validator"
+      ]
+    },
+    {
+      "zone_id": "ZONE-2907",
+      "name": "Independent Authorization Zone",
+      "trust_level": 5,
+      "components": [
+        "Identity Service",
+        "Policy Decision Point",
+        "Authorization Service",
+        "Approval Verification"
+      ]
+    },
+    {
+      "zone_id": "ZONE-2908",
+      "name": "Credential Security Zone",
+      "trust_level": 5,
+      "components": [
+        "Credential Broker",
+        "Short-Lived Token Service"
+      ]
+    },
+    {
+      "zone_id": "ZONE-2909",
+      "name": "Privileged Tool Zone",
+      "trust_level": 4,
+      "components": [
+        "Read Record Tool",
+        "Delete Record Tool"
+      ]
+    },
+    {
+      "zone_id": "ZONE-2910",
+      "name": "Business Data Security Zone",
+      "trust_level": 5,
+      "components": [
+        "Record Service",
+        "Restricted Business Records",
+        "Resource Authorization"
+      ]
+    },
+    {
+      "zone_id": "ZONE-2911",
+      "name": "Data Protection Zone",
+      "trust_level": 4,
+      "components": [
+        "Context Data Minimization",
+        "Output DLP",
+        "Classification Enforcement"
+      ]
+    },
+    {
+      "zone_id": "ZONE-2912",
+      "name": "AI Security Observability Zone",
+      "trust_level": 4,
+      "components": [
+        "Security Telemetry Pipeline",
+        "Detection Engine",
+        "Correlation Engine",
+        "Tamper-Evident Audit Store"
+      ]
+    }
+  ],
+  "security_controls": [
+    {
+      "control_id": "CTRL-2914-01",
+      "name": "Instruction Trust Separation",
+      "type": "PREVENTIVE",
+      "addresses": [
+        "CF-2901"
+      ],
+      "zone": "ZONE-2902",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "control_id": "CTRL-2914-02",
+      "name": "Trusted Task Binding",
+      "type": "PREVENTIVE",
+      "addresses": [
+        "CF-2901",
+        "CF-2904"
+      ],
+      "zone": "ZONE-2906",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "control_id": "CTRL-2914-03",
+      "name": "Trusted Target Binding",
+      "type": "PREVENTIVE",
+      "addresses": [
+        "CF-2901",
+        "CF-2904"
+      ],
+      "zone": "ZONE-2906",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "control_id": "CTRL-2914-04",
+      "name": "RAG Source Provenance Validation",
+      "type": "PREVENTIVE",
+      "addresses": [
+        "CF-2902"
+      ],
+      "zone": "ZONE-2903",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "control_id": "CTRL-2914-05",
+      "name": "Indirect Prompt Injection Detection",
+      "type": "PREVENTIVE",
+      "addresses": [
+        "CF-2902"
+      ],
+      "zone": "ZONE-2903",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "control_id": "CTRL-2914-06",
+      "name": "Fail-Closed RAG Context Admission",
+      "type": "PREVENTIVE",
+      "addresses": [
+        "CF-2902"
+      ],
+      "zone": "ZONE-2903",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "control_id": "CTRL-2914-07",
+      "name": "Authorized Memory Writes",
+      "type": "PREVENTIVE",
+      "addresses": [
+        "CF-2903"
+      ],
+      "zone": "ZONE-2905",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "control_id": "CTRL-2914-08",
+      "name": "Memory Provenance & Trust Classification",
+      "type": "PREVENTIVE",
+      "addresses": [
+        "CF-2903"
+      ],
+      "zone": "ZONE-2905",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "control_id": "CTRL-2914-09",
+      "name": "Session / Agent Memory Isolation",
+      "type": "PREVENTIVE",
+      "addresses": [
+        "CF-2903"
+      ],
+      "zone": "ZONE-2905",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "control_id": "CTRL-2914-10",
+      "name": "Memory Expiry Enforcement",
+      "type": "PREVENTIVE",
+      "addresses": [
+        "CF-2903"
+      ],
+      "zone": "ZONE-2905",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "control_id": "CTRL-2914-11",
+      "name": "Tool Allowlisting",
+      "type": "PREVENTIVE",
+      "addresses": [
+        "CF-2904"
+      ],
+      "zone": "ZONE-2906",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "control_id": "CTRL-2914-12",
+      "name": "Strict Tool Parameter Validation",
+      "type": "PREVENTIVE",
+      "addresses": [
+        "CF-2904"
+      ],
+      "zone": "ZONE-2906",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "control_id": "CTRL-2914-13",
+      "name": "Independent Fail-Closed Authorization",
+      "type": "PREVENTIVE",
+      "addresses": [
+        "CF-2905"
+      ],
+      "zone": "ZONE-2907",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "control_id": "CTRL-2914-14",
+      "name": "External Approval Verification",
+      "type": "PREVENTIVE",
+      "addresses": [
+        "CF-2905"
+      ],
+      "zone": "ZONE-2907",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "control_id": "CTRL-2914-15",
+      "name": "Authorization-to-Execution Binding",
+      "type": "PREVENTIVE",
+      "addresses": [
+        "CF-2905"
+      ],
+      "zone": "ZONE-2907",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "control_id": "CTRL-2914-16",
+      "name": "Short-Lived Task-Bound Credentials",
+      "type": "PREVENTIVE",
+      "addresses": [
+        "CF-2906"
+      ],
+      "zone": "ZONE-2908",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "control_id": "CTRL-2914-17",
+      "name": "Resource-Level Authorization",
+      "type": "PREVENTIVE",
+      "addresses": [
+        "CF-2904",
+        "CF-2905"
+      ],
+      "zone": "ZONE-2910",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "control_id": "CTRL-2914-18",
+      "name": "Sensitive Context Minimization",
+      "type": "PREVENTIVE",
+      "addresses": [
+        "CF-2907"
+      ],
+      "zone": "ZONE-2911",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "control_id": "CTRL-2914-19",
+      "name": "Independent Output DLP",
+      "type": "PREVENTIVE",
+      "addresses": [
+        "CF-2907"
+      ],
+      "zone": "ZONE-2911",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "control_id": "CTRL-2914-20",
+      "name": "AI Attack-Chain Correlation",
+      "type": "DETECTIVE",
+      "addresses": [
+        "CF-2908"
+      ],
+      "zone": "ZONE-2912",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "control_id": "CTRL-2914-21",
+      "name": "Prompt / RAG / Memory Early Detection",
+      "type": "DETECTIVE",
+      "addresses": [
+        "CF-2908"
+      ],
+      "zone": "ZONE-2912",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "control_id": "CTRL-2914-22",
+      "name": "Tamper-Evident AI Audit Logging",
+      "type": "DETECTIVE",
+      "addresses": [
+        "CF-2908"
+      ],
+      "zone": "ZONE-2912",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "control_id": "CTRL-2914-23",
+      "name": "Soft Delete & Business Recovery",
+      "type": "CORRECTIVE",
+      "addresses": [
+        "CF-2904"
+      ],
+      "zone": "ZONE-2910",
+      "status": "IMPLEMENTED"
+    }
+  ],
+  "trust_boundaries": [
+    {
+      "boundary_id": "HTB-2901",
+      "source": "Untrusted Input Zone",
+      "destination": "Input Security Mediation Zone",
+      "enforcement": [
+        "Prompt classification",
+        "Instruction trust separation",
+        "Input normalization"
+      ]
+    },
+    {
+      "boundary_id": "HTB-2902",
+      "source": "RAG Security Zone",
+      "destination": "Trusted LLM Runtime Zone",
+      "enforcement": [
+        "Source provenance",
+        "Indirect injection scanning",
+        "Fail-closed context admission"
+      ]
+    },
+    {
+      "boundary_id": "HTB-2903",
+      "source": "Trusted LLM Runtime Zone",
+      "destination": "Persistent Memory Security Zone",
+      "enforcement": [
+        "Explicit memory-write authorization",
+        "Provenance binding",
+        "Trust classification"
+      ]
+    },
+    {
+      "boundary_id": "HTB-2904",
+      "source": "Persistent Memory Security Zone",
+      "destination": "Agent Execution Security Zone",
+      "enforcement": [
+        "Session binding",
+        "Agent binding",
+        "Expiry validation",
+        "Non-authoritative memory treatment"
+      ]
+    },
+    {
+      "boundary_id": "HTB-2905",
+      "source": "Trusted LLM Runtime Zone",
+      "destination": "Agent Execution Security Zone",
+      "enforcement": [
+        "Trusted goal binding",
+        "Trusted task binding"
+      ]
+    },
+    {
+      "boundary_id": "HTB-2906",
+      "source": "Agent Execution Security Zone",
+      "destination": "Independent Authorization Zone",
+      "enforcement": [
+        "Independent identity validation",
+        "External approval verification",
+        "Fail-closed policy decision"
+      ]
+    },
+    {
+      "boundary_id": "HTB-2907",
+      "source": "Independent Authorization Zone",
+      "destination": "Privileged Tool Zone",
+      "enforcement": [
+        "Authorization-to-execution binding",
+        "Tool allowlisting",
+        "Target binding",
+        "Parameter validation"
+      ]
+    },
+    {
+      "boundary_id": "HTB-2908",
+      "source": "Credential Security Zone",
+      "destination": "Privileged Tool Zone",
+      "enforcement": [
+        "Short-lived task credential",
+        "Tool-bound scope",
+        "Target-bound scope"
+      ]
+    },
+    {
+      "boundary_id": "HTB-2909",
+      "source": "Privileged Tool Zone",
+      "destination": "Business Data Security Zone",
+      "enforcement": [
+        "Resource-level authorization",
+        "Transaction validation",
+        "Destructive-action approval"
+      ]
+    },
+    {
+      "boundary_id": "HTB-2910",
+      "source": "All Runtime Zones",
+      "destination": "AI Security Observability Zone",
+      "enforcement": [
+        "Independent telemetry",
+        "Correlation identifiers",
+        "Hash-linked audit evidence"
+      ]
+    }
+  ],
+  "finding_control_map": {
+    "CF-2901": [
+      "CTRL-2914-01",
+      "CTRL-2914-02",
+      "CTRL-2914-03"
+    ],
+    "CF-2902": [
+      "CTRL-2914-04",
+      "CTRL-2914-05",
+      "CTRL-2914-06"
+    ],
+    "CF-2903": [
+      "CTRL-2914-07",
+      "CTRL-2914-08",
+      "CTRL-2914-09",
+      "CTRL-2914-10"
+    ],
+    "CF-2904": [
+      "CTRL-2914-02",
+      "CTRL-2914-03",
+      "CTRL-2914-11",
+      "CTRL-2914-12",
+      "CTRL-2914-17",
+      "CTRL-2914-23"
+    ],
+    "CF-2905": [
+      "CTRL-2914-13",
+      "CTRL-2914-14",
+      "CTRL-2914-15",
+      "CTRL-2914-17"
+    ],
+    "CF-2906": [
+      "CTRL-2914-16"
+    ],
+    "CF-2907": [
+      "CTRL-2914-18",
+      "CTRL-2914-19"
+    ],
+    "CF-2908": [
+      "CTRL-2914-20",
+      "CTRL-2914-21",
+      "CTRL-2914-22"
+    ]
+  },
+  "attack_chain_breakpoints": [
+    {
+      "attack_stage": "Prompt Injection",
+      "controls": [
+        "CTRL-2914-01",
+        "CTRL-2914-02"
+      ]
+    },
+    {
+      "attack_stage": "Poisoned RAG Admission",
+      "controls": [
+        "CTRL-2914-04",
+        "CTRL-2914-05",
+        "CTRL-2914-06"
+      ]
+    },
+    {
+      "attack_stage": "Persistent Memory Poisoning",
+      "controls": [
+        "CTRL-2914-07",
+        "CTRL-2914-08",
+        "CTRL-2914-09",
+        "CTRL-2914-10"
+      ]
+    },
+    {
+      "attack_stage": "Agent Goal Hijacking",
+      "controls": [
+        "CTRL-2914-02",
+        "CTRL-2914-11"
+      ]
+    },
+    {
+      "attack_stage": "Target / Parameter Manipulation",
+      "controls": [
+        "CTRL-2914-03",
+        "CTRL-2914-12"
+      ]
+    },
+    {
+      "attack_stage": "Authorization Bypass",
+      "controls": [
+        "CTRL-2914-13",
+        "CTRL-2914-14",
+        "CTRL-2914-15"
+      ]
+    },
+    {
+      "attack_stage": "Credential Abuse",
+      "controls": [
+        "CTRL-2914-16"
+      ]
+    },
+    {
+      "attack_stage": "Restricted Business Impact",
+      "controls": [
+        "CTRL-2914-17",
+        "CTRL-2914-23"
+      ]
+    },
+    {
+      "attack_stage": "Sensitive Data Disclosure",
+      "controls": [
+        "CTRL-2914-18",
+        "CTRL-2914-19"
+      ]
+    },
+    {
+      "attack_stage": "Detection Evasion",
+      "controls": [
+        "CTRL-2914-20",
+        "CTRL-2914-21",
+        "CTRL-2914-22"
+      ]
+    }
+  ],
+  "remediation_plan": [
+    {
+      "finding_id": "CF-2901",
+      "owner": "AI Security Engineering",
+      "status": "IMPLEMENTED",
+      "retest_required": true
+    },
+    {
+      "finding_id": "CF-2902",
+      "owner": "RAG Platform Team",
+      "status": "IMPLEMENTED",
+      "retest_required": true
+    },
+    {
+      "finding_id": "CF-2903",
+      "owner": "AI Platform Team",
+      "status": "IMPLEMENTED",
+      "retest_required": true
+    },
+    {
+      "finding_id": "CF-2904",
+      "owner": "Agent Security Team",
+      "status": "IMPLEMENTED",
+      "retest_required": true
+    },
+    {
+      "finding_id": "CF-2905",
+      "owner": "Identity Security",
+      "status": "IMPLEMENTED",
+      "retest_required": true
+    },
+    {
+      "finding_id": "CF-2906",
+      "owner": "Platform Identity Team",
+      "status": "IMPLEMENTED",
+      "retest_required": true
+    },
+    {
+      "finding_id": "CF-2907",
+      "owner": "Data Security",
+      "status": "IMPLEMENTED",
+      "retest_required": true
+    },
+    {
+      "finding_id": "CF-2908",
+      "owner": "AI SOC",
+      "status": "IMPLEMENTED",
+      "retest_required": true
+    }
+  ],
+  "deployment_gates": [
+    {
+      "gate_id": "GATE-2914-01",
+      "name": "Instruction Trust Controls Implemented",
+      "required": true,
+      "passed": true
+    },
+    {
+      "gate_id": "GATE-2914-02",
+      "name": "RAG Provenance & Admission Controls Implemented",
+      "required": true,
+      "passed": true
+    },
+    {
+      "gate_id": "GATE-2914-03",
+      "name": "Memory Security Controls Implemented",
+      "required": true,
+      "passed": true
+    },
+    {
+      "gate_id": "GATE-2914-04",
+      "name": "Agent / Tool Controls Implemented",
+      "required": true,
+      "passed": true
+    },
+    {
+      "gate_id": "GATE-2914-05",
+      "name": "Fail-Closed Authorization Implemented",
+      "required": true,
+      "passed": true
+    },
+    {
+      "gate_id": "GATE-2914-06",
+      "name": "Task-Bound Credentials Implemented",
+      "required": true,
+      "passed": true
+    },
+    {
+      "gate_id": "GATE-2914-07",
+      "name": "Sensitive Data Controls Implemented",
+      "required": true,
+      "passed": true
+    },
+    {
+      "gate_id": "GATE-2914-08",
+      "name": "Early Detection Controls Implemented",
+      "required": true,
+      "passed": true
+    },
+    {
+      "gate_id": "GATE-2914-09",
+      "name": "Adversarial Retest Completed",
+      "required": true,
+      "passed": false
+    }
+  ],
+  "metrics": {
+    "security_zones": 12,
+    "trust_boundaries": 10,
+    "security_controls": 23,
+    "preventive_controls": 19,
+    "detective_controls": 3,
+    "corrective_controls": 1,
+    "material_findings_covered": 8,
+    "attack_chain_breakpoints": 10,
+    "remediation_implementation_rate": 100.0,
+    "required_gates_passed": 8,
+    "required_gates_total": 9,
+    "deployment_approved": false
+  },
+  "security_checks": {
+    "Unique Control IDs": true,
+    "All Control Zones Valid": true,
+    "All Material Findings Have Controls": true,
+    "All Attack Stages Have Breakpoints": true,
+    "Instruction Trust Hardened": true,
+    "RAG Hardened": true,
+    "Memory Hardened": true,
+    "Agent / Tool Hardened": true,
+    "Authorization Hardened": true,
+    "Credential Security Hardened": true,
+    "Data Protection Hardened": true,
+    "Detection Engineering Hardened": true,
+    "All Remediation Marked Implemented": true,
+    "Adversarial Retest Still Required": true,
+    "Production Not Yet Approved": true,
+    "Hardened Architecture Assessment Valid": true
+  },
+  "evidence_hash": "88046bdf936cdd6f96cf71c33136be5418f69fae2212d6d94a7885683c25c857"
+}

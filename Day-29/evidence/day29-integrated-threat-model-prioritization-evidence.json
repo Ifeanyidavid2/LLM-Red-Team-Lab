@@ -1,0 +1,1231 @@
+{
+  "engagement_id": "ENG-2901",
+  "system_id": "ENT-AI-2901",
+  "trace_id": "TRACE-2904",
+  "timestamp_utc": "2026-08-26T10:01:27.086623+00:00",
+  "assets": [
+    {
+      "asset_id": "ASSET-2901",
+      "name": "System Prompt",
+      "criticality": "CRITICAL"
+    },
+    {
+      "asset_id": "ASSET-2902",
+      "name": "Retrieved Context",
+      "criticality": "HIGH"
+    },
+    {
+      "asset_id": "ASSET-2903",
+      "name": "Persistent Memory",
+      "criticality": "CRITICAL"
+    },
+    {
+      "asset_id": "ASSET-2904",
+      "name": "Agent Goal / Plan",
+      "criticality": "CRITICAL"
+    },
+    {
+      "asset_id": "ASSET-2905",
+      "name": "Authorization Decision",
+      "criticality": "CRITICAL"
+    },
+    {
+      "asset_id": "ASSET-2906",
+      "name": "Task Credential",
+      "criticality": "CRITICAL"
+    },
+    {
+      "asset_id": "ASSET-2907",
+      "name": "Privileged Tool",
+      "criticality": "CRITICAL"
+    },
+    {
+      "asset_id": "ASSET-2908",
+      "name": "Restricted Business Data",
+      "criticality": "CRITICAL"
+    },
+    {
+      "asset_id": "ASSET-2909",
+      "name": "Security Telemetry",
+      "criticality": "HIGH"
+    }
+  ],
+  "threats": [
+    {
+      "threat_id": "THREAT-2901",
+      "name": "Direct Prompt Injection",
+      "category": "PROMPT",
+      "attack_surface": "AS-2901",
+      "trust_boundary": "TB-2901",
+      "affected_assets": [
+        "ASSET-2901",
+        "ASSET-2904"
+      ],
+      "likelihood": 5,
+      "impact": 4,
+      "persistence": 1,
+      "privilege": 2,
+      "blast_radius": 2,
+      "detectability": 2,
+      "chain_feasibility": 5,
+      "business_consequence": "Untrusted user instructions may alter intended AI behavior.",
+      "priority_score": 32,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2902",
+      "name": "Instruction Hierarchy Override",
+      "category": "PROMPT",
+      "attack_surface": "AS-2902",
+      "trust_boundary": "TB-2902",
+      "affected_assets": [
+        "ASSET-2901",
+        "ASSET-2904"
+      ],
+      "likelihood": 4,
+      "impact": 5,
+      "persistence": 1,
+      "privilege": 3,
+      "blast_radius": 3,
+      "detectability": 3,
+      "chain_feasibility": 4,
+      "business_consequence": "Trusted instruction integrity may be compromised.",
+      "priority_score": 34,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2903",
+      "name": "RAG Source Poisoning",
+      "category": "RAG",
+      "attack_surface": "AS-2903",
+      "trust_boundary": "TB-2903",
+      "affected_assets": [
+        "ASSET-2902",
+        "ASSET-2903"
+      ],
+      "likelihood": 4,
+      "impact": 5,
+      "persistence": 4,
+      "privilege": 2,
+      "blast_radius": 4,
+      "detectability": 3,
+      "chain_feasibility": 4,
+      "business_consequence": "Malicious retrieved content may influence multiple AI sessions.",
+      "priority_score": 37,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2904",
+      "name": "Indirect Prompt Injection",
+      "category": "RAG",
+      "attack_surface": "AS-2904",
+      "trust_boundary": "TB-2903",
+      "affected_assets": [
+        "ASSET-2902",
+        "ASSET-2904"
+      ],
+      "likelihood": 5,
+      "impact": 5,
+      "persistence": 3,
+      "privilege": 3,
+      "blast_radius": 4,
+      "detectability": 4,
+      "chain_feasibility": 5,
+      "business_consequence": "Retrieved instructions may manipulate model or agent behavior.",
+      "priority_score": 44,
+      "severity": "CRITICAL"
+    },
+    {
+      "threat_id": "THREAT-2905",
+      "name": "Persistent Memory Poisoning",
+      "category": "MEMORY",
+      "attack_surface": "AS-2905",
+      "trust_boundary": "TB-2904",
+      "affected_assets": [
+        "ASSET-2903",
+        "ASSET-2904"
+      ],
+      "likelihood": 4,
+      "impact": 5,
+      "persistence": 5,
+      "privilege": 3,
+      "blast_radius": 5,
+      "detectability": 4,
+      "chain_feasibility": 4,
+      "business_consequence": "Malicious AI state may persist beyond the originating session.",
+      "priority_score": 41,
+      "severity": "CRITICAL"
+    },
+    {
+      "threat_id": "THREAT-2906",
+      "name": "Cross-Session Memory Influence",
+      "category": "MEMORY",
+      "attack_surface": "AS-2906",
+      "trust_boundary": "TB-2905",
+      "affected_assets": [
+        "ASSET-2903",
+        "ASSET-2904"
+      ],
+      "likelihood": 4,
+      "impact": 5,
+      "persistence": 5,
+      "privilege": 3,
+      "blast_radius": 5,
+      "detectability": 4,
+      "chain_feasibility": 4,
+      "business_consequence": "Compromised state may influence later sessions and users.",
+      "priority_score": 41,
+      "severity": "CRITICAL"
+    },
+    {
+      "threat_id": "THREAT-2907",
+      "name": "Agent Goal Hijacking",
+      "category": "AGENT",
+      "attack_surface": "AS-2907",
+      "trust_boundary": "TB-2906",
+      "affected_assets": [
+        "ASSET-2904",
+        "ASSET-2907"
+      ],
+      "likelihood": 4,
+      "impact": 5,
+      "persistence": 2,
+      "privilege": 5,
+      "blast_radius": 4,
+      "detectability": 3,
+      "chain_feasibility": 4,
+      "business_consequence": "Agent may pursue attacker-influenced goals.",
+      "priority_score": 38,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2908",
+      "name": "Task Binding Bypass",
+      "category": "AGENT",
+      "attack_surface": "AS-2908",
+      "trust_boundary": "TB-2906",
+      "affected_assets": [
+        "ASSET-2904",
+        "ASSET-2907"
+      ],
+      "likelihood": 4,
+      "impact": 5,
+      "persistence": 1,
+      "privilege": 5,
+      "blast_radius": 4,
+      "detectability": 3,
+      "chain_feasibility": 4,
+      "business_consequence": "Agent-generated actions may exceed approved task scope.",
+      "priority_score": 37,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2909",
+      "name": "Model-Generated Approval Spoofing",
+      "category": "AUTHORIZATION",
+      "attack_surface": "AS-2909",
+      "trust_boundary": "TB-2907",
+      "affected_assets": [
+        "ASSET-2905",
+        "ASSET-2907"
+      ],
+      "likelihood": 4,
+      "impact": 5,
+      "persistence": 1,
+      "privilege": 5,
+      "blast_radius": 5,
+      "detectability": 4,
+      "chain_feasibility": 4,
+      "business_consequence": "Generated language may be mistaken for real approval.",
+      "priority_score": 39,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2910",
+      "name": "Authorization Bypass",
+      "category": "AUTHORIZATION",
+      "attack_surface": "AS-2910",
+      "trust_boundary": "TB-2908",
+      "affected_assets": [
+        "ASSET-2905",
+        "ASSET-2907",
+        "ASSET-2908"
+      ],
+      "likelihood": 3,
+      "impact": 5,
+      "persistence": 1,
+      "privilege": 5,
+      "blast_radius": 5,
+      "detectability": 4,
+      "chain_feasibility": 4,
+      "business_consequence": "Privileged actions may execute despite denied authorization.",
+      "priority_score": 34,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2911",
+      "name": "Privileged Tool Abuse",
+      "category": "TOOL",
+      "attack_surface": "AS-2911",
+      "trust_boundary": "TB-2908",
+      "affected_assets": [
+        "ASSET-2907",
+        "ASSET-2908"
+      ],
+      "likelihood": 4,
+      "impact": 5,
+      "persistence": 1,
+      "privilege": 5,
+      "blast_radius": 5,
+      "detectability": 3,
+      "chain_feasibility": 5,
+      "business_consequence": "Compromised AI decisions may trigger privileged business operations.",
+      "priority_score": 39,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2912",
+      "name": "Target Substitution",
+      "category": "TOOL",
+      "attack_surface": "AS-2912",
+      "trust_boundary": "TB-2908",
+      "affected_assets": [
+        "ASSET-2907",
+        "ASSET-2908"
+      ],
+      "likelihood": 4,
+      "impact": 5,
+      "persistence": 1,
+      "privilege": 5,
+      "blast_radius": 5,
+      "detectability": 3,
+      "chain_feasibility": 5,
+      "business_consequence": "A valid action may be redirected to a restricted target.",
+      "priority_score": 39,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2913",
+      "name": "Tool Parameter Manipulation",
+      "category": "TOOL",
+      "attack_surface": "AS-2913",
+      "trust_boundary": "TB-2908",
+      "affected_assets": [
+        "ASSET-2907",
+        "ASSET-2908"
+      ],
+      "likelihood": 4,
+      "impact": 5,
+      "persistence": 1,
+      "privilege": 5,
+      "blast_radius": 5,
+      "detectability": 3,
+      "chain_feasibility": 5,
+      "business_consequence": "Tool parameters may transform legitimate functionality into unsafe execution.",
+      "priority_score": 39,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2914",
+      "name": "Credential Scope Abuse",
+      "category": "SECRET",
+      "attack_surface": "AS-2914",
+      "trust_boundary": "TB-2909",
+      "affected_assets": [
+        "ASSET-2906",
+        "ASSET-2907",
+        "ASSET-2908"
+      ],
+      "likelihood": 3,
+      "impact": 5,
+      "persistence": 3,
+      "privilege": 5,
+      "blast_radius": 5,
+      "detectability": 4,
+      "chain_feasibility": 4,
+      "business_consequence": "Valid credentials may be used beyond their intended scope.",
+      "priority_score": 36,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2915",
+      "name": "Unauthorized Restricted Data Access",
+      "category": "BUSINESS_DATA",
+      "attack_surface": "AS-2915",
+      "trust_boundary": "TB-2910",
+      "affected_assets": [
+        "ASSET-2908"
+      ],
+      "likelihood": 3,
+      "impact": 5,
+      "persistence": 1,
+      "privilege": 5,
+      "blast_radius": 4,
+      "detectability": 3,
+      "chain_feasibility": 4,
+      "business_consequence": "Restricted business information may be disclosed.",
+      "priority_score": 32,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2916",
+      "name": "Unauthorized Restricted Data Modification",
+      "category": "BUSINESS_DATA",
+      "attack_surface": "AS-2916",
+      "trust_boundary": "TB-2910",
+      "affected_assets": [
+        "ASSET-2908"
+      ],
+      "likelihood": 3,
+      "impact": 5,
+      "persistence": 4,
+      "privilege": 5,
+      "blast_radius": 5,
+      "detectability": 3,
+      "chain_feasibility": 4,
+      "business_consequence": "Restricted business records may be altered.",
+      "priority_score": 36,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2917",
+      "name": "Restricted Business Data Destruction",
+      "category": "BUSINESS_DATA",
+      "attack_surface": "AS-2917",
+      "trust_boundary": "TB-2910",
+      "affected_assets": [
+        "ASSET-2908"
+      ],
+      "likelihood": 3,
+      "impact": 5,
+      "persistence": 5,
+      "privilege": 5,
+      "blast_radius": 5,
+      "detectability": 3,
+      "chain_feasibility": 4,
+      "business_consequence": "Critical business records may be destroyed.",
+      "priority_score": 37,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2918",
+      "name": "Security Telemetry Suppression",
+      "category": "OBSERVABILITY",
+      "attack_surface": "AS-2918",
+      "trust_boundary": "TB-2911",
+      "affected_assets": [
+        "ASSET-2909"
+      ],
+      "likelihood": 3,
+      "impact": 4,
+      "persistence": 2,
+      "privilege": 3,
+      "blast_radius": 4,
+      "detectability": 5,
+      "chain_feasibility": 3,
+      "business_consequence": "Security monitoring may fail to detect malicious AI activity.",
+      "priority_score": 29,
+      "severity": "MEDIUM"
+    },
+    {
+      "threat_id": "THREAT-2919",
+      "name": "Forensic Evidence Tampering",
+      "category": "OBSERVABILITY",
+      "attack_surface": "AS-2919",
+      "trust_boundary": "TB-2911",
+      "affected_assets": [
+        "ASSET-2909"
+      ],
+      "likelihood": 3,
+      "impact": 5,
+      "persistence": 4,
+      "privilege": 3,
+      "blast_radius": 4,
+      "detectability": 5,
+      "chain_feasibility": 3,
+      "business_consequence": "Incident reconstruction and accountability may be impaired.",
+      "priority_score": 34,
+      "severity": "HIGH"
+    }
+  ],
+  "prioritized_threats": [
+    {
+      "threat_id": "THREAT-2904",
+      "name": "Indirect Prompt Injection",
+      "category": "RAG",
+      "attack_surface": "AS-2904",
+      "trust_boundary": "TB-2903",
+      "affected_assets": [
+        "ASSET-2902",
+        "ASSET-2904"
+      ],
+      "likelihood": 5,
+      "impact": 5,
+      "persistence": 3,
+      "privilege": 3,
+      "blast_radius": 4,
+      "detectability": 4,
+      "chain_feasibility": 5,
+      "business_consequence": "Retrieved instructions may manipulate model or agent behavior.",
+      "priority_score": 44,
+      "severity": "CRITICAL"
+    },
+    {
+      "threat_id": "THREAT-2905",
+      "name": "Persistent Memory Poisoning",
+      "category": "MEMORY",
+      "attack_surface": "AS-2905",
+      "trust_boundary": "TB-2904",
+      "affected_assets": [
+        "ASSET-2903",
+        "ASSET-2904"
+      ],
+      "likelihood": 4,
+      "impact": 5,
+      "persistence": 5,
+      "privilege": 3,
+      "blast_radius": 5,
+      "detectability": 4,
+      "chain_feasibility": 4,
+      "business_consequence": "Malicious AI state may persist beyond the originating session.",
+      "priority_score": 41,
+      "severity": "CRITICAL"
+    },
+    {
+      "threat_id": "THREAT-2906",
+      "name": "Cross-Session Memory Influence",
+      "category": "MEMORY",
+      "attack_surface": "AS-2906",
+      "trust_boundary": "TB-2905",
+      "affected_assets": [
+        "ASSET-2903",
+        "ASSET-2904"
+      ],
+      "likelihood": 4,
+      "impact": 5,
+      "persistence": 5,
+      "privilege": 3,
+      "blast_radius": 5,
+      "detectability": 4,
+      "chain_feasibility": 4,
+      "business_consequence": "Compromised state may influence later sessions and users.",
+      "priority_score": 41,
+      "severity": "CRITICAL"
+    },
+    {
+      "threat_id": "THREAT-2909",
+      "name": "Model-Generated Approval Spoofing",
+      "category": "AUTHORIZATION",
+      "attack_surface": "AS-2909",
+      "trust_boundary": "TB-2907",
+      "affected_assets": [
+        "ASSET-2905",
+        "ASSET-2907"
+      ],
+      "likelihood": 4,
+      "impact": 5,
+      "persistence": 1,
+      "privilege": 5,
+      "blast_radius": 5,
+      "detectability": 4,
+      "chain_feasibility": 4,
+      "business_consequence": "Generated language may be mistaken for real approval.",
+      "priority_score": 39,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2911",
+      "name": "Privileged Tool Abuse",
+      "category": "TOOL",
+      "attack_surface": "AS-2911",
+      "trust_boundary": "TB-2908",
+      "affected_assets": [
+        "ASSET-2907",
+        "ASSET-2908"
+      ],
+      "likelihood": 4,
+      "impact": 5,
+      "persistence": 1,
+      "privilege": 5,
+      "blast_radius": 5,
+      "detectability": 3,
+      "chain_feasibility": 5,
+      "business_consequence": "Compromised AI decisions may trigger privileged business operations.",
+      "priority_score": 39,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2912",
+      "name": "Target Substitution",
+      "category": "TOOL",
+      "attack_surface": "AS-2912",
+      "trust_boundary": "TB-2908",
+      "affected_assets": [
+        "ASSET-2907",
+        "ASSET-2908"
+      ],
+      "likelihood": 4,
+      "impact": 5,
+      "persistence": 1,
+      "privilege": 5,
+      "blast_radius": 5,
+      "detectability": 3,
+      "chain_feasibility": 5,
+      "business_consequence": "A valid action may be redirected to a restricted target.",
+      "priority_score": 39,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2913",
+      "name": "Tool Parameter Manipulation",
+      "category": "TOOL",
+      "attack_surface": "AS-2913",
+      "trust_boundary": "TB-2908",
+      "affected_assets": [
+        "ASSET-2907",
+        "ASSET-2908"
+      ],
+      "likelihood": 4,
+      "impact": 5,
+      "persistence": 1,
+      "privilege": 5,
+      "blast_radius": 5,
+      "detectability": 3,
+      "chain_feasibility": 5,
+      "business_consequence": "Tool parameters may transform legitimate functionality into unsafe execution.",
+      "priority_score": 39,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2907",
+      "name": "Agent Goal Hijacking",
+      "category": "AGENT",
+      "attack_surface": "AS-2907",
+      "trust_boundary": "TB-2906",
+      "affected_assets": [
+        "ASSET-2904",
+        "ASSET-2907"
+      ],
+      "likelihood": 4,
+      "impact": 5,
+      "persistence": 2,
+      "privilege": 5,
+      "blast_radius": 4,
+      "detectability": 3,
+      "chain_feasibility": 4,
+      "business_consequence": "Agent may pursue attacker-influenced goals.",
+      "priority_score": 38,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2903",
+      "name": "RAG Source Poisoning",
+      "category": "RAG",
+      "attack_surface": "AS-2903",
+      "trust_boundary": "TB-2903",
+      "affected_assets": [
+        "ASSET-2902",
+        "ASSET-2903"
+      ],
+      "likelihood": 4,
+      "impact": 5,
+      "persistence": 4,
+      "privilege": 2,
+      "blast_radius": 4,
+      "detectability": 3,
+      "chain_feasibility": 4,
+      "business_consequence": "Malicious retrieved content may influence multiple AI sessions.",
+      "priority_score": 37,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2908",
+      "name": "Task Binding Bypass",
+      "category": "AGENT",
+      "attack_surface": "AS-2908",
+      "trust_boundary": "TB-2906",
+      "affected_assets": [
+        "ASSET-2904",
+        "ASSET-2907"
+      ],
+      "likelihood": 4,
+      "impact": 5,
+      "persistence": 1,
+      "privilege": 5,
+      "blast_radius": 4,
+      "detectability": 3,
+      "chain_feasibility": 4,
+      "business_consequence": "Agent-generated actions may exceed approved task scope.",
+      "priority_score": 37,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2917",
+      "name": "Restricted Business Data Destruction",
+      "category": "BUSINESS_DATA",
+      "attack_surface": "AS-2917",
+      "trust_boundary": "TB-2910",
+      "affected_assets": [
+        "ASSET-2908"
+      ],
+      "likelihood": 3,
+      "impact": 5,
+      "persistence": 5,
+      "privilege": 5,
+      "blast_radius": 5,
+      "detectability": 3,
+      "chain_feasibility": 4,
+      "business_consequence": "Critical business records may be destroyed.",
+      "priority_score": 37,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2914",
+      "name": "Credential Scope Abuse",
+      "category": "SECRET",
+      "attack_surface": "AS-2914",
+      "trust_boundary": "TB-2909",
+      "affected_assets": [
+        "ASSET-2906",
+        "ASSET-2907",
+        "ASSET-2908"
+      ],
+      "likelihood": 3,
+      "impact": 5,
+      "persistence": 3,
+      "privilege": 5,
+      "blast_radius": 5,
+      "detectability": 4,
+      "chain_feasibility": 4,
+      "business_consequence": "Valid credentials may be used beyond their intended scope.",
+      "priority_score": 36,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2916",
+      "name": "Unauthorized Restricted Data Modification",
+      "category": "BUSINESS_DATA",
+      "attack_surface": "AS-2916",
+      "trust_boundary": "TB-2910",
+      "affected_assets": [
+        "ASSET-2908"
+      ],
+      "likelihood": 3,
+      "impact": 5,
+      "persistence": 4,
+      "privilege": 5,
+      "blast_radius": 5,
+      "detectability": 3,
+      "chain_feasibility": 4,
+      "business_consequence": "Restricted business records may be altered.",
+      "priority_score": 36,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2902",
+      "name": "Instruction Hierarchy Override",
+      "category": "PROMPT",
+      "attack_surface": "AS-2902",
+      "trust_boundary": "TB-2902",
+      "affected_assets": [
+        "ASSET-2901",
+        "ASSET-2904"
+      ],
+      "likelihood": 4,
+      "impact": 5,
+      "persistence": 1,
+      "privilege": 3,
+      "blast_radius": 3,
+      "detectability": 3,
+      "chain_feasibility": 4,
+      "business_consequence": "Trusted instruction integrity may be compromised.",
+      "priority_score": 34,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2910",
+      "name": "Authorization Bypass",
+      "category": "AUTHORIZATION",
+      "attack_surface": "AS-2910",
+      "trust_boundary": "TB-2908",
+      "affected_assets": [
+        "ASSET-2905",
+        "ASSET-2907",
+        "ASSET-2908"
+      ],
+      "likelihood": 3,
+      "impact": 5,
+      "persistence": 1,
+      "privilege": 5,
+      "blast_radius": 5,
+      "detectability": 4,
+      "chain_feasibility": 4,
+      "business_consequence": "Privileged actions may execute despite denied authorization.",
+      "priority_score": 34,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2919",
+      "name": "Forensic Evidence Tampering",
+      "category": "OBSERVABILITY",
+      "attack_surface": "AS-2919",
+      "trust_boundary": "TB-2911",
+      "affected_assets": [
+        "ASSET-2909"
+      ],
+      "likelihood": 3,
+      "impact": 5,
+      "persistence": 4,
+      "privilege": 3,
+      "blast_radius": 4,
+      "detectability": 5,
+      "chain_feasibility": 3,
+      "business_consequence": "Incident reconstruction and accountability may be impaired.",
+      "priority_score": 34,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2901",
+      "name": "Direct Prompt Injection",
+      "category": "PROMPT",
+      "attack_surface": "AS-2901",
+      "trust_boundary": "TB-2901",
+      "affected_assets": [
+        "ASSET-2901",
+        "ASSET-2904"
+      ],
+      "likelihood": 5,
+      "impact": 4,
+      "persistence": 1,
+      "privilege": 2,
+      "blast_radius": 2,
+      "detectability": 2,
+      "chain_feasibility": 5,
+      "business_consequence": "Untrusted user instructions may alter intended AI behavior.",
+      "priority_score": 32,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2915",
+      "name": "Unauthorized Restricted Data Access",
+      "category": "BUSINESS_DATA",
+      "attack_surface": "AS-2915",
+      "trust_boundary": "TB-2910",
+      "affected_assets": [
+        "ASSET-2908"
+      ],
+      "likelihood": 3,
+      "impact": 5,
+      "persistence": 1,
+      "privilege": 5,
+      "blast_radius": 4,
+      "detectability": 3,
+      "chain_feasibility": 4,
+      "business_consequence": "Restricted business information may be disclosed.",
+      "priority_score": 32,
+      "severity": "HIGH"
+    },
+    {
+      "threat_id": "THREAT-2918",
+      "name": "Security Telemetry Suppression",
+      "category": "OBSERVABILITY",
+      "attack_surface": "AS-2918",
+      "trust_boundary": "TB-2911",
+      "affected_assets": [
+        "ASSET-2909"
+      ],
+      "likelihood": 3,
+      "impact": 4,
+      "persistence": 2,
+      "privilege": 3,
+      "blast_radius": 4,
+      "detectability": 5,
+      "chain_feasibility": 3,
+      "business_consequence": "Security monitoring may fail to detect malicious AI activity.",
+      "priority_score": 29,
+      "severity": "MEDIUM"
+    }
+  ],
+  "attack_hypotheses": [
+    {
+      "hypothesis_id": "HYP-2901",
+      "name": "Prompt Injection to Privileged Execution",
+      "threats": [
+        "THREAT-2901",
+        "THREAT-2902",
+        "THREAT-2907",
+        "THREAT-2908",
+        "THREAT-2909",
+        "THREAT-2911"
+      ],
+      "business_objective": "Unauthorized privileged tool execution",
+      "aggregate_score": 219,
+      "critical_threats": 0,
+      "high_critical_threats": 6,
+      "unique_categories": 4,
+      "affected_assets": [
+        "ASSET-2901",
+        "ASSET-2904",
+        "ASSET-2905",
+        "ASSET-2907",
+        "ASSET-2908"
+      ]
+    },
+    {
+      "hypothesis_id": "HYP-2902",
+      "name": "RAG Poisoning to Persistent Cross-Session Compromise",
+      "threats": [
+        "THREAT-2903",
+        "THREAT-2904",
+        "THREAT-2905",
+        "THREAT-2906"
+      ],
+      "business_objective": "Persistent compromise affecting future sessions",
+      "aggregate_score": 163,
+      "critical_threats": 3,
+      "high_critical_threats": 4,
+      "unique_categories": 2,
+      "affected_assets": [
+        "ASSET-2902",
+        "ASSET-2903",
+        "ASSET-2904"
+      ]
+    },
+    {
+      "hypothesis_id": "HYP-2903",
+      "name": "Persistent Memory to Destructive Business Impact",
+      "threats": [
+        "THREAT-2905",
+        "THREAT-2906",
+        "THREAT-2907",
+        "THREAT-2911",
+        "THREAT-2912",
+        "THREAT-2917"
+      ],
+      "business_objective": "Restricted business record destruction",
+      "aggregate_score": 235,
+      "critical_threats": 2,
+      "high_critical_threats": 6,
+      "unique_categories": 4,
+      "affected_assets": [
+        "ASSET-2903",
+        "ASSET-2904",
+        "ASSET-2907",
+        "ASSET-2908"
+      ]
+    },
+    {
+      "hypothesis_id": "HYP-2904",
+      "name": "Authorization Failure to Destructive Execution",
+      "threats": [
+        "THREAT-2909",
+        "THREAT-2910",
+        "THREAT-2911",
+        "THREAT-2912",
+        "THREAT-2917"
+      ],
+      "business_objective": "Unauthorized destructive privileged action",
+      "aggregate_score": 188,
+      "critical_threats": 0,
+      "high_critical_threats": 5,
+      "unique_categories": 3,
+      "affected_assets": [
+        "ASSET-2905",
+        "ASSET-2907",
+        "ASSET-2908"
+      ]
+    },
+    {
+      "hypothesis_id": "HYP-2905",
+      "name": "Credential Scope Abuse to Restricted Data",
+      "threats": [
+        "THREAT-2914",
+        "THREAT-2911",
+        "THREAT-2915"
+      ],
+      "business_objective": "Unauthorized restricted-data access",
+      "aggregate_score": 107,
+      "critical_threats": 0,
+      "high_critical_threats": 3,
+      "unique_categories": 3,
+      "affected_assets": [
+        "ASSET-2906",
+        "ASSET-2907",
+        "ASSET-2908"
+      ]
+    },
+    {
+      "hypothesis_id": "HYP-2906",
+      "name": "Telemetry Evasion During Destructive Impact",
+      "threats": [
+        "THREAT-2918",
+        "THREAT-2919",
+        "THREAT-2911",
+        "THREAT-2917"
+      ],
+      "business_objective": "Business impact with degraded forensic visibility",
+      "aggregate_score": 139,
+      "critical_threats": 0,
+      "high_critical_threats": 3,
+      "unique_categories": 3,
+      "affected_assets": [
+        "ASSET-2907",
+        "ASSET-2908",
+        "ASSET-2909"
+      ]
+    }
+  ],
+  "prioritized_attack_hypotheses": [
+    {
+      "hypothesis_id": "HYP-2903",
+      "name": "Persistent Memory to Destructive Business Impact",
+      "threats": [
+        "THREAT-2905",
+        "THREAT-2906",
+        "THREAT-2907",
+        "THREAT-2911",
+        "THREAT-2912",
+        "THREAT-2917"
+      ],
+      "business_objective": "Restricted business record destruction",
+      "aggregate_score": 235,
+      "critical_threats": 2,
+      "high_critical_threats": 6,
+      "unique_categories": 4,
+      "affected_assets": [
+        "ASSET-2903",
+        "ASSET-2904",
+        "ASSET-2907",
+        "ASSET-2908"
+      ]
+    },
+    {
+      "hypothesis_id": "HYP-2901",
+      "name": "Prompt Injection to Privileged Execution",
+      "threats": [
+        "THREAT-2901",
+        "THREAT-2902",
+        "THREAT-2907",
+        "THREAT-2908",
+        "THREAT-2909",
+        "THREAT-2911"
+      ],
+      "business_objective": "Unauthorized privileged tool execution",
+      "aggregate_score": 219,
+      "critical_threats": 0,
+      "high_critical_threats": 6,
+      "unique_categories": 4,
+      "affected_assets": [
+        "ASSET-2901",
+        "ASSET-2904",
+        "ASSET-2905",
+        "ASSET-2907",
+        "ASSET-2908"
+      ]
+    },
+    {
+      "hypothesis_id": "HYP-2904",
+      "name": "Authorization Failure to Destructive Execution",
+      "threats": [
+        "THREAT-2909",
+        "THREAT-2910",
+        "THREAT-2911",
+        "THREAT-2912",
+        "THREAT-2917"
+      ],
+      "business_objective": "Unauthorized destructive privileged action",
+      "aggregate_score": 188,
+      "critical_threats": 0,
+      "high_critical_threats": 5,
+      "unique_categories": 3,
+      "affected_assets": [
+        "ASSET-2905",
+        "ASSET-2907",
+        "ASSET-2908"
+      ]
+    },
+    {
+      "hypothesis_id": "HYP-2902",
+      "name": "RAG Poisoning to Persistent Cross-Session Compromise",
+      "threats": [
+        "THREAT-2903",
+        "THREAT-2904",
+        "THREAT-2905",
+        "THREAT-2906"
+      ],
+      "business_objective": "Persistent compromise affecting future sessions",
+      "aggregate_score": 163,
+      "critical_threats": 3,
+      "high_critical_threats": 4,
+      "unique_categories": 2,
+      "affected_assets": [
+        "ASSET-2902",
+        "ASSET-2903",
+        "ASSET-2904"
+      ]
+    },
+    {
+      "hypothesis_id": "HYP-2906",
+      "name": "Telemetry Evasion During Destructive Impact",
+      "threats": [
+        "THREAT-2918",
+        "THREAT-2919",
+        "THREAT-2911",
+        "THREAT-2917"
+      ],
+      "business_objective": "Business impact with degraded forensic visibility",
+      "aggregate_score": 139,
+      "critical_threats": 0,
+      "high_critical_threats": 3,
+      "unique_categories": 3,
+      "affected_assets": [
+        "ASSET-2907",
+        "ASSET-2908",
+        "ASSET-2909"
+      ]
+    },
+    {
+      "hypothesis_id": "HYP-2905",
+      "name": "Credential Scope Abuse to Restricted Data",
+      "threats": [
+        "THREAT-2914",
+        "THREAT-2911",
+        "THREAT-2915"
+      ],
+      "business_objective": "Unauthorized restricted-data access",
+      "aggregate_score": 107,
+      "critical_threats": 0,
+      "high_critical_threats": 3,
+      "unique_categories": 3,
+      "affected_assets": [
+        "ASSET-2906",
+        "ASSET-2907",
+        "ASSET-2908"
+      ]
+    }
+  ],
+  "red_team_execution_plan": [
+    {
+      "execution_order": 1,
+      "hypothesis_id": "HYP-2903",
+      "test_name": "Persistent Memory to Destructive Business Impact",
+      "business_objective": "Restricted business record destruction",
+      "priority_score": 235,
+      "required_evidence": [
+        "test input",
+        "observed model behavior",
+        "trust-boundary transition",
+        "authorization result",
+        "tool / business impact where applicable",
+        "security telemetry",
+        "risk rating"
+      ]
+    },
+    {
+      "execution_order": 2,
+      "hypothesis_id": "HYP-2901",
+      "test_name": "Prompt Injection to Privileged Execution",
+      "business_objective": "Unauthorized privileged tool execution",
+      "priority_score": 219,
+      "required_evidence": [
+        "test input",
+        "observed model behavior",
+        "trust-boundary transition",
+        "authorization result",
+        "tool / business impact where applicable",
+        "security telemetry",
+        "risk rating"
+      ]
+    },
+    {
+      "execution_order": 3,
+      "hypothesis_id": "HYP-2904",
+      "test_name": "Authorization Failure to Destructive Execution",
+      "business_objective": "Unauthorized destructive privileged action",
+      "priority_score": 188,
+      "required_evidence": [
+        "test input",
+        "observed model behavior",
+        "trust-boundary transition",
+        "authorization result",
+        "tool / business impact where applicable",
+        "security telemetry",
+        "risk rating"
+      ]
+    },
+    {
+      "execution_order": 4,
+      "hypothesis_id": "HYP-2902",
+      "test_name": "RAG Poisoning to Persistent Cross-Session Compromise",
+      "business_objective": "Persistent compromise affecting future sessions",
+      "priority_score": 163,
+      "required_evidence": [
+        "test input",
+        "observed model behavior",
+        "trust-boundary transition",
+        "authorization result",
+        "tool / business impact where applicable",
+        "security telemetry",
+        "risk rating"
+      ]
+    },
+    {
+      "execution_order": 5,
+      "hypothesis_id": "HYP-2906",
+      "test_name": "Telemetry Evasion During Destructive Impact",
+      "business_objective": "Business impact with degraded forensic visibility",
+      "priority_score": 139,
+      "required_evidence": [
+        "test input",
+        "observed model behavior",
+        "trust-boundary transition",
+        "authorization result",
+        "tool / business impact where applicable",
+        "security telemetry",
+        "risk rating"
+      ]
+    },
+    {
+      "execution_order": 6,
+      "hypothesis_id": "HYP-2905",
+      "test_name": "Credential Scope Abuse to Restricted Data",
+      "business_objective": "Unauthorized restricted-data access",
+      "priority_score": 107,
+      "required_evidence": [
+        "test input",
+        "observed model behavior",
+        "trust-boundary transition",
+        "authorization result",
+        "tool / business impact where applicable",
+        "security telemetry",
+        "risk rating"
+      ]
+    }
+  ],
+  "metrics": {
+    "threat_scenarios": 19,
+    "threat_categories": 9,
+    "high_critical_threats": 18,
+    "attack_hypotheses": 6,
+    "red_team_tests": 6
+  },
+  "security_checks": {
+    "Unique Threat IDs": true,
+    "All Affected Asset References Valid": true,
+    "Prompt Threats Identified": true,
+    "RAG Threats Identified": true,
+    "Memory Threats Identified": true,
+    "Agent Threats Identified": true,
+    "Authorization Threats Identified": true,
+    "Tool Threats Identified": true,
+    "Credential Threat Identified": true,
+    "Business Impact Threats Identified": true,
+    "Observability Threats Identified": true,
+    "All Threats Prioritized": true,
+    "Attack Hypotheses Defined": true,
+    "All Attack Hypothesis Threats Valid": true,
+    "Red Team Execution Plan Generated": true,
+    "Integrated Threat Model Valid": true
+  },
+  "evidence_hash": "b772c01015ae604cef11ef17a54c91b71721632905eca15d20b34df0fc04f850"
+}
