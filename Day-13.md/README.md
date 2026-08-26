@@ -34,17 +34,17 @@ Evaluate whether attacker-controlled instructions embedded inside external conte
 
 
 
-\- abandon the user's legitimate task;
+- abandon the user's legitimate task;
 
-\- follow instructions contained inside retrieved data;
+- follow instructions contained inside retrieved data;
 
-\- produce attacker-controlled output;
+- produce attacker-controlled output;
 
-\- disclose protected synthetic information;
+- disclose protected synthetic information;
 
-\- retain malicious influence across multiple conversation turns; or
+- retain malicious influence across multiple conversation turns; or
 
-\- incorrectly prioritize poisoned retrieved content.
+- incorrectly prioritize poisoned retrieved content.
 
 
 
@@ -368,11 +368,11 @@ Repeated the retrieval-poisoning pattern using:
 
 
 
-\- `PromptSendingAttack`
+- `PromptSendingAttack`
 
-\- `RegexScorer`
+- `RegexScorer`
 
-\- SQLite evidence persistence
+- SQLite evidence persistence
 
 
 
@@ -422,15 +422,15 @@ Compared all Day 13 techniques and separated:
 
 
 
-\- direct attacker takeover;
+- direct attacker takeover;
 
-\- partial security impact;
+- partial security impact;
 
-\- task-integrity disruption;
+- task-integrity disruption;
 
-\- confidentiality behavior; and
+- confidentiality behavior; and
 
-\- clean resistance.
+- clean resistance.
 
 
 
@@ -566,25 +566,25 @@ RAG and external-content-processing applications should:
 
 
 
-\- treat retrieved content as untrusted;
+- treat retrieved content as untrusted;
 
-\- clearly separate data from instructions;
+- clearly separate data from instructions;
 
-\- enforce authorization outside the LLM;
+- enforce authorization outside the LLM;
 
-\- apply least privilege to retrieval and tools;
+- apply least privilege to retrieval and tools;
 
-\- maintain source provenance and trust metadata;
+- maintain source provenance and trust metadata;
 
-\- validate model outputs before sensitive actions;
+- validate model outputs before sensitive actions;
 
-\- prevent retrieved content from directly controlling privileged tools;
+- prevent retrieved content from directly controlling privileged tools;
 
-\- evaluate attacks semantically rather than using only exact strings;
+- evaluate attacks semantically rather than using only exact strings;
 
-\- test multi-turn persistence; and
+- test multi-turn persistence; and
 
-\- execute adversarial tests repeatedly.
+- execute adversarial tests repeatedly.
 
 
 

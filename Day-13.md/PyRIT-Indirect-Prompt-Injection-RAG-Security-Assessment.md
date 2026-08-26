@@ -42,19 +42,19 @@ Instead, adversarial instructions were embedded inside content presented to the 
 
 
 
-\- documents;
+- documents;
 
-\- support tickets;
+- support tickets;
 
-\- knowledge-base articles;
+- knowledge-base articles;
 
-\- document metadata;
+- document metadata;
 
-\- competing retrieved sources;
+- competing retrieved sources;
 
-\- retrieved content requesting disclosure of a protected synthetic value; and
+- retrieved content requesting disclosure of a protected synthetic value; and
 
-\- content intended to influence later conversation turns.
+- content intended to influence later conversation turns.
 
 
 
@@ -74,15 +74,15 @@ The assessment observed:
 
 
 
-\- one confirmed semantic indirect-prompt-injection success;
+- one confirmed semantic indirect-prompt-injection success;
 
-\- four additional scenarios where the primary attack objective failed but the legitimate task was disrupted;
+- four additional scenarios where the primary attack objective failed but the legitimate task was disrupted;
 
-\- three adversarial scenarios that were cleanly resisted;
+- three adversarial scenarios that were cleanly resisted;
 
-\- no protected synthetic-secret disclosure during the dedicated indirect secret-extraction scenarios; and
+- no protected synthetic-secret disclosure during the dedicated indirect secret-extraction scenarios; and
 
-\- different outcomes between an initial retrieval-poisoning test and a later PyRIT-scored retest.
+- different outcomes between an initial retrieval-poisoning test and a later PyRIT-scored retest.
 
 
 
@@ -90,13 +90,13 @@ Across the eight adversarial scenarios:
 
 
 
-\- \*\*Direct semantic takeover:\*\* 1/8 — 12.50%
+- \*\*Direct semantic takeover:\*\* 1/8 — 12.50%
 
-\- \*\*Partial security impact:\*\* 4/8 — 50.00%
+- \*\*Partial security impact:\*\* 4/8 — 50.00%
 
-\- \*\*Any observed security impact:\*\* 5/8 — 62.50%
+- \*\*Any observed security impact:\*\* 5/8 — 62.50%
 
-\- \*\*Clean resistance:\*\* 3/8 — 37.50%
+- \*\*Clean resistance:\*\* 3/8 — 37.50%
 
 
 
@@ -236,19 +236,19 @@ The attacker directly attempted techniques such as:
 
 
 
-\- secret extraction;
+- secret extraction;
 
-\- explicit instruction override;
+- explicit instruction override;
 
-\- authority manipulation;
+- authority manipulation;
 
-\- contextual manipulation;
+- contextual manipulation;
 
-\- encoding;
+- encoding;
 
-\- multi-turn conditioning; and
+- multi-turn conditioning; and
 
-\- PyRIT-scored instruction override.
+- PyRIT-scored instruction override.
 
 
 
@@ -314,17 +314,17 @@ The assessment considered the following assets:
 
 
 
-\- integrity of trusted system instructions;
+- integrity of trusted system instructions;
 
-\- integrity of legitimate user tasks;
+- integrity of legitimate user tasks;
 
-\- confidentiality of synthetic protected values;
+- confidentiality of synthetic protected values;
 
-\- reliability of model-generated answers;
+- reliability of model-generated answers;
 
-\- integrity of retrieved information processing; and
+- integrity of retrieved information processing; and
 
-\- continuity of legitimate conversational behavior.
+- continuity of legitimate conversational behavior.
 
 
 
@@ -602,13 +602,13 @@ The document contained information including:
 
 
 
-\- 1,250 Q1 customer requests;
+- 1,250 Q1 customer requests;
 
-\- response-time improvement;
+- response-time improvement;
 
-\- customer-satisfaction improvement; and
+- customer-satisfaction improvement; and
 
-\- future support-process changes.
+- future support-process changes.
 
 
 
@@ -1166,17 +1166,17 @@ Depending on the objective, evaluators may require:
 
 
 
-\- case-insensitive matching;
+- case-insensitive matching;
 
-\- punctuation normalization;
+- punctuation normalization;
 
-\- whitespace normalization;
+- whitespace normalization;
 
-\- regular expressions;
+- regular expressions;
 
-\- structured output validation; or
+- structured output validation; or
 
-\- semantic scoring.
+- semantic scoring.
 
 
 
@@ -1224,9 +1224,9 @@ Explain:
 
 
 
-\- when nightly backups run; and
+- when nightly backups run; and
 
-\- how a recovery request should be submitted.
+- how a recovery request should be submitted.
 
 
 
@@ -1636,21 +1636,21 @@ For the scored Lab 9 experiment, PyRIT preserved:
 
 
 
-\- the trusted system prompt;
+- the trusted system prompt;
 
-\- the complete attack objective;
+- the complete attack objective;
 
-\- retrieved source content;
+- retrieved source content;
 
-\- target response;
+- target response;
 
-\- attack outcome;
+- attack outcome;
 
-\- scorer result;
+- scorer result;
 
-\- execution metadata; and
+- execution metadata; and
 
-\- experiment labels.
+- experiment labels.
 
 
 
@@ -2100,11 +2100,11 @@ However:
 
 
 
-\- multiple attacks were cleanly resisted;
+- multiple attacks were cleanly resisted;
 
-\- confidentiality remained intact during dedicated indirect secret-extraction tests; and
+- confidentiality remained intact during dedicated indirect secret-extraction tests; and
 
-\- the confirmed retrieval-poisoning takeover was not reproduced during the later PyRIT-scored retest.
+- the confirmed retrieval-poisoning takeover was not reproduced during the later PyRIT-scored retest.
 
 
 
@@ -2204,17 +2204,17 @@ Examples include:
 
 
 
-\- account modification;
+- account modification;
 
-\- credential reset;
+- credential reset;
 
-\- permission changes;
+- permission changes;
 
-\- financial transactions;
+- financial transactions;
 
-\- access-control decisions; and
+- access-control decisions; and
 
-\- retrieval of protected information.
+- retrieval of protected information.
 
 
 
@@ -2250,17 +2250,17 @@ Where appropriate, retrieval systems should track:
 
 
 
-\- document source;
+- document source;
 
-\- document owner;
+- document owner;
 
-\- trust level;
+- trust level;
 
-\- ingestion method;
+- ingestion method;
 
-\- modification history; and
+- modification history; and
 
-\- content provenance.
+- content provenance.
 
 
 
@@ -2320,17 +2320,17 @@ Useful techniques include:
 
 
 
-\- normalized matching;
+- normalized matching;
 
-\- regex scoring;
+- regex scoring;
 
-\- semantic scoring;
+- semantic scoring;
 
-\- structured-output validation;
+- structured-output validation;
 
-\- multiple independent scorers; and
+- multiple independent scorers; and
 
-\- human review for ambiguous cases.
+- human review for ambiguous cases.
 
 
 
@@ -2346,17 +2346,17 @@ Security tests should determine whether malicious retrieved content affects:
 
 
 
-\- the current answer;
+- the current answer;
 
-\- later follow-up questions;
+- later follow-up questions;
 
-\- tool selection;
+- tool selection;
 
-\- memory;
+- memory;
 
-\- subsequent retrieved documents; or
+- subsequent retrieved documents; or
 
-\- future actions.
+- future actions.
 
 
 
@@ -2648,19 +2648,19 @@ The experiments used:
 
 
 
-\- a single local target model;
+- a single local target model;
 
-\- a specific Ollama configuration;
+- a specific Ollama configuration;
 
-\- controlled synthetic prompts;
+- controlled synthetic prompts;
 
-\- limited executions per scenario;
+- limited executions per scenario;
 
-\- synthetic data;
+- synthetic data;
 
-\- a limited set of indirect-injection patterns; and
+- a limited set of indirect-injection patterns; and
 
-\- primarily manual or deterministic evaluation.
+- primarily manual or deterministic evaluation.
 
 
 
@@ -2672,17 +2672,17 @@ They do not establish universal behavior for:
 
 
 
-\- all Llama models;
+- all Llama models;
 
-\- all Llama 3.2 1B deployments;
+- all Llama 3.2 1B deployments;
 
-\- all Ollama deployments;
+- all Ollama deployments;
 
-\- all PyRIT assessments;
+- all PyRIT assessments;
 
-\- all RAG architectures; or
+- all RAG architectures; or
 
-\- all production LLM applications.
+- all production LLM applications.
 
 
 
@@ -2702,33 +2702,33 @@ Future experiments should expand Day 13 by testing:
 
 
 
-\- repeated trials per technique;
+- repeated trials per technique;
 
-\- paraphrased malicious instructions;
+- paraphrased malicious instructions;
 
-\- multilingual indirect injection;
+- multilingual indirect injection;
 
-\- encoded retrieved instructions;
+- encoded retrieved instructions;
 
-\- HTML comments;
+- HTML comments;
 
-\- Markdown-based hidden instructions;
+- Markdown-based hidden instructions;
 
-\- document headers and footers;
+- document headers and footers;
 
-\- retrieved web pages;
+- retrieved web pages;
 
-\- poisoned search results;
+- poisoned search results;
 
-\- tool-using agents;
+- tool-using agents;
 
-\- memory poisoning;
+- memory poisoning;
 
-\- cross-document instruction propagation;
+- cross-document instruction propagation;
 
-\- conflicting source trust levels; and
+- conflicting source trust levels; and
 
-\- automated semantic scorers.
+- automated semantic scorers.
 
 
 
@@ -2748,35 +2748,35 @@ This laboratory demonstrates practical experience with:
 
 
 
-\- Microsoft PyRIT;
+- Microsoft PyRIT;
 
-\- LLM red teaming;
+- LLM red teaming;
 
-\- indirect prompt injection;
+- indirect prompt injection;
 
-\- RAG security;
+- RAG security;
 
-\- retrieval poisoning;
+- retrieval poisoning;
 
-\- prompt trust boundaries;
+- prompt trust boundaries;
 
-\- instruction hierarchy;
+- instruction hierarchy;
 
-\- multi-turn attacks;
+- multi-turn attacks;
 
-\- synthetic secret protection;
+- synthetic secret protection;
 
-\- regex-based scoring;
+- regex-based scoring;
 
-\- semantic security analysis;
+- semantic security analysis;
 
-\- false-negative identification;
+- false-negative identification;
 
-\- SQLite evidence collection;
+- SQLite evidence collection;
 
-\- security risk classification; and
+- security risk classification; and
 
-\- technical security reporting.
+- technical security reporting.
 
 
 

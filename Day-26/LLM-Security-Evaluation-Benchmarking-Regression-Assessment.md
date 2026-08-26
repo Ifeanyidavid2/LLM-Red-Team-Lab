@@ -38,11 +38,11 @@ The same security corpus was then used to compare three system states:
 
 
 
-\- a vulnerable baseline,
+- a vulnerable baseline,
 
-\- a hardened reference system,
+- a hardened reference system,
 
-\- and a changed system containing intentional security regressions.
+- and a changed system containing intentional security regressions.
 
 
 
@@ -110,23 +110,23 @@ A system may successfully resist an attack during one test session but later bec
 
 
 
-\- model versions,
+- model versions,
 
-\- system prompts,
+- system prompts,
 
-\- guardrails,
+- guardrails,
 
-\- retrieval logic,
+- retrieval logic,
 
-\- authorization policy,
+- authorization policy,
 
-\- tool configuration,
+- tool configuration,
 
-\- application code,
+- application code,
 
-\- deployment architecture,
+- deployment architecture,
 
-\- or upstream dependencies.
+- or upstream dependencies.
 
 
 
@@ -180,27 +180,27 @@ The program additionally evaluated:
 
 
 
-\- vulnerable versus hardened security posture,
+- vulnerable versus hardened security posture,
 
-\- changed-system regression,
+- changed-system regression,
 
-\- automated PASS → FAIL detection,
+- automated PASS → FAIL detection,
 
-\- severity-based regression analysis,
+- severity-based regression analysis,
 
-\- release-security gates,
+- release-security gates,
 
-\- benchmark completeness,
+- benchmark completeness,
 
-\- repeated execution,
+- repeated execution,
 
-\- flakiness,
+- flakiness,
 
-\- stability,
+- stability,
 
-\- security-score variance,
+- security-score variance,
 
-\- and legitimate utility preservation.
+- and legitimate utility preservation.
 
 
 

@@ -40,29 +40,29 @@ A synthetic AI application was instrumented to generate security telemetry acros
 
 
 
-\- prompt ingestion;
+- prompt ingestion;
 
-\- prompt classification;
+- prompt classification;
 
-\- RAG retrieval;
+- RAG retrieval;
 
-\- context admission;
+- context admission;
 
-\- persistent memory;
+- persistent memory;
 
-\- agent planning;
+- agent planning;
 
-\- tool selection;
+- tool selection;
 
-\- tool parameters;
+- tool parameters;
 
-\- authorization decisions;
+- authorization decisions;
 
-\- privileged tool execution;
+- privileged tool execution;
 
-\- downstream system impact; and
+- downstream system impact; and
 
-\- response generation.
+- response generation.
 
 
 
@@ -86,33 +86,33 @@ The assessment also implemented:
 
 
 
-\- trusted forensic logging;
+- trusted forensic logging;
 
-\- attack detection rules;
+- attack detection rules;
 
-\- cross-event correlation;
+- cross-event correlation;
 
-\- forensic timeline reconstruction;
+- forensic timeline reconstruction;
 
-\- cryptographic evidence integrity validation;
+- cryptographic evidence integrity validation;
 
-\- chain-of-custody tracking;
+- chain-of-custody tracking;
 
-\- AI Indicators of Compromise (IoCs);
+- AI Indicators of Compromise (IoCs);
 
-\- AI Indicators of Behavior (IoBs);
+- AI Indicators of Behavior (IoBs);
 
-\- incident severity classification;
+- incident severity classification;
 
-\- blast-radius analysis;
+- blast-radius analysis;
 
-\- containment and eradication;
+- containment and eradication;
 
-\- secure recovery;
+- secure recovery;
 
-\- post-recovery adversarial validation; and
+- post-recovery adversarial validation; and
 
-\- post-incident detection-engineering improvements.
+- post-incident detection-engineering improvements.
 
 
 
@@ -380,27 +380,27 @@ Security telemetry was generated across:
 
 
 
-\- prompt receipt;
+- prompt receipt;
 
-\- prompt classification;
+- prompt classification;
 
-\- RAG retrieval;
+- RAG retrieval;
 
-\- context loading;
+- context loading;
 
-\- memory access;
+- memory access;
 
-\- agent planning;
+- agent planning;
 
-\- tool selection;
+- tool selection;
 
-\- parameter handling;
+- parameter handling;
 
-\- authorization;
+- authorization;
 
-\- execution; and
+- execution; and
 
-\- response generation.
+- response generation.
 
 
 
@@ -450,25 +450,25 @@ Each event contained:
 
 
 
-\- stable event identifiers;
+- stable event identifiers;
 
-\- UTC timestamps;
+- UTC timestamps;
 
-\- sequence numbers;
+- sequence numbers;
 
-\- session identifiers;
+- session identifiers;
 
-\- trace identifiers;
+- trace identifiers;
 
-\- component provenance;
+- component provenance;
 
-\- system-version information;
+- system-version information;
 
-\- event payloads;
+- event payloads;
 
-\- cryptographic hashes; and
+- cryptographic hashes; and
 
-\- previous-event hashes.
+- previous-event hashes.
 
 
 
@@ -528,29 +528,29 @@ Detection coverage included:
 
 
 
-\- instruction override attempts;
+- instruction override attempts;
 
-\- untrusted RAG retrieval;
+- untrusted RAG retrieval;
 
-\- poisoned context admission;
+- poisoned context admission;
 
-\- unauthorized memory writes;
+- unauthorized memory writes;
 
-\- persistent malicious memory;
+- persistent malicious memory;
 
-\- cross-session memory influence;
+- cross-session memory influence;
 
-\- privileged action proposals;
+- privileged action proposals;
 
-\- restricted target selection;
+- restricted target selection;
 
-\- authorization denial;
+- authorization denial;
 
-\- authorization bypass;
+- authorization bypass;
 
-\- unauthorized tool execution; and
+- unauthorized tool execution; and
 
-\- unauthorized system impact.
+- unauthorized system impact.
 
 
 

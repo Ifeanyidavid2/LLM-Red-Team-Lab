@@ -22,27 +22,27 @@ The lab focuses on the principle:
 
 
 
-\- Synthetic tool execution
+- Synthetic tool execution
 
-\- Authorization enforcement
+- Authorization enforcement
 
-\- Least privilege
+- Least privilege
 
-\- High-impact action approval
+- High-impact action approval
 
-\- Approval replay protection
+- Approval replay protection
 
-\- Tool argument validation
+- Tool argument validation
 
-\- Indirect prompt injection through tool output
+- Indirect prompt injection through tool output
 
-\- Excessive agency
+- Excessive agency
 
-\- User-intent and task-scope enforcement
+- User-intent and task-scope enforcement
 
-\- Hardened end-to-end agent architecture
+- Hardened end-to-end agent architecture
 
-\- Security vs utility trade-offs
+- Security vs utility trade-offs
 
 
 
@@ -54,11 +54,11 @@ The lab focuses on the principle:
 
 
 
-\- Unauthorized Tool Attempt Rate: 50.00%
+- Unauthorized Tool Attempt Rate: 50.00%
 
-\- Unauthorized Action Success Rate: 0.00%
+- Unauthorized Action Success Rate: 0.00%
 
-\- Unauthorized Proposal Block Rate: 100.00%
+- Unauthorized Proposal Block Rate: 100.00%
 
 
 
@@ -66,11 +66,11 @@ The lab focuses on the principle:
 
 
 
-\- Action-Proposal Rate: 100.00%
+- Action-Proposal Rate: 100.00%
 
-\- Policy Block Rate: 100.00%
+- Policy Block Rate: 100.00%
 
-\- System Impact Rate: 0.00%
+- System Impact Rate: 0.00%
 
 
 
@@ -78,11 +78,11 @@ The lab focuses on the principle:
 
 
 
-\- Correct outcomes: 6/6
+- Correct outcomes: 6/6
 
-\- Control Outcome Accuracy: 100.00%
+- Control Outcome Accuracy: 100.00%
 
-\- Unsafe Executions: 0
+- Unsafe Executions: 0
 
 
 

@@ -30,31 +30,31 @@ The core security principle is:
 
 
 
-\- Context persistence
+- Context persistence
 
-\- Persistent privilege claims
+- Persistent privilege claims
 
-\- Instruction accumulation
+- Instruction accumulation
 
-\- Delayed-trigger prompt injection
+- Delayed-trigger prompt injection
 
-\- Cross-turn privilege assumptions
+- Cross-turn privilege assumptions
 
-\- Claimed prior MFA / verification
+- Claimed prior MFA / verification
 
-\- Approval replay and reuse
+- Approval replay and reuse
 
-\- Security-state drift
+- Security-state drift
 
-\- Session-boundary enforcement
+- Session-boundary enforcement
 
-\- Current user-intent scope
+- Current user-intent scope
 
-\- Approval freshness
+- Approval freshness
 
-\- Session / actor / action / target binding
+- Session / actor / action / target binding
 
-\- Hardened multi-turn execution
+- Hardened multi-turn execution
 
 
 
@@ -66,11 +66,11 @@ The core security principle is:
 
 
 
-\- Context Persistence Accuracy: 33.33%
+- Context Persistence Accuracy: 33.33%
 
-\- Trusted Role Preservation Rate: 100.00%
+- Trusted Role Preservation Rate: 100.00%
 
-\- Clean Multi-Turn Success Rate: 33.33%
+- Clean Multi-Turn Success Rate: 33.33%
 
 
 
@@ -78,11 +78,11 @@ The core security principle is:
 
 
 
-\- Trusted Role Preservation Rate: 100.00%
+- Trusted Role Preservation Rate: 100.00%
 
-\- Persistent Manipulation Success Rate: 0.00%
+- Persistent Manipulation Success Rate: 0.00%
 
-\- Unsafe Allow Rate: 0.00%
+- Unsafe Allow Rate: 0.00%
 
 
 
@@ -90,11 +90,11 @@ The core security principle is:
 
 
 
-\- Intermediate Privilege Drift Rate: 0.00%
+- Intermediate Privilege Drift Rate: 0.00%
 
-\- Intermediate Unsafe-Allow Rate: 0.00%
+- Intermediate Unsafe-Allow Rate: 0.00%
 
-\- Final Instruction-Accumulation Success Rate: 0.00%
+- Final Instruction-Accumulation Success Rate: 0.00%
 
 
 
@@ -102,11 +102,11 @@ The core security principle is:
 
 
 
-\- Trigger Recognition Rate: 0.00%
+- Trigger Recognition Rate: 0.00%
 
-\- Delayed Instruction Activation Rate: 0.00%
+- Delayed Instruction Activation Rate: 0.00%
 
-\- Delayed-Trigger Attack Success Rate: 0.00%
+- Delayed-Trigger Attack Success Rate: 0.00%
 
 
 
@@ -114,11 +114,11 @@ The core security principle is:
 
 
 
-\- Cross-Turn Privilege Attack Success Rate: 0.00%
+- Cross-Turn Privilege Attack Success Rate: 0.00%
 
-\- Stale Verification Reuse Rate: 0.00%
+- Stale Verification Reuse Rate: 0.00%
 
-\- Final Unsafe-Allow Rate: 0.00%
+- Final Unsafe-Allow Rate: 0.00%
 
 
 
@@ -126,9 +126,9 @@ The core security principle is:
 
 
 
-\- Control Decision Accuracy: 100.00%
+- Control Decision Accuracy: 100.00%
 
-\- Approval Reuse Attack Success Rate: 0.00%
+- Approval Reuse Attack Success Rate: 0.00%
 
 
 
@@ -136,11 +136,11 @@ The core security principle is:
 
 
 
-\- Role Drift Rate: 0.00%
+- Role Drift Rate: 0.00%
 
-\- Unsafe-Allow Drift Rate: 0.00%
+- Unsafe-Allow Drift Rate: 0.00%
 
-\- Final Security-State Drift Rate: 0.00%
+- Final Security-State Drift Rate: 0.00%
 
 
 
@@ -148,15 +148,15 @@ The core security principle is:
 
 
 
-\- Session Boundary Control Accuracy: 100.00%
+- Session Boundary Control Accuracy: 100.00%
 
-\- Old Conversation Role Claim Persisted: False
+- Old Conversation Role Claim Persisted: False
 
-\- Old Delayed Trigger Persisted: False
+- Old Delayed Trigger Persisted: False
 
-\- Old Conversation Approval Persisted: False
+- Old Conversation Approval Persisted: False
 
-\- Old Trusted Approval Valid in New Session: False
+- Old Trusted Approval Valid in New Session: False
 
 
 
@@ -164,9 +164,9 @@ The core security principle is:
 
 
 
-\- Control Outcome Accuracy: 100.00%
+- Control Outcome Accuracy: 100.00%
 
-\- Unsafe Execution Rate: 0.00%
+- Unsafe Execution Rate: 0.00%
 
 
 
@@ -174,13 +174,13 @@ The core security principle is:
 
 
 
-\- Dangerous Proposal Rate: 100.00%
+- Dangerous Proposal Rate: 100.00%
 
-\- Dangerous Proposal Block Rate: 100.00%
+- Dangerous Proposal Block Rate: 100.00%
 
-\- Unauthorized System Impact Rate: 0.00%
+- Unauthorized System Impact Rate: 0.00%
 
-\- System Outcome Accuracy: 100.00%
+- System Outcome Accuracy: 100.00%
 
 
 

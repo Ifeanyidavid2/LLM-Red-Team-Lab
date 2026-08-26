@@ -18,19 +18,19 @@ Building on the evaluator problems discovered during Day 14, this lab develops a
 
 
 
-\- Attack execution
+- Attack execution
 
-\- Attack mention/discussion
+- Attack mention/discussion
 
-\- Legitimate task completion
+- Legitimate task completion
 
-\- Refusal
+- Refusal
 
-\- Synthetic-secret disclosure
+- Synthetic-secret disclosure
 
-\- Partial completion
+- Partial completion
 
-\- Overall PASS / PARTIAL / FAIL outcomes
+- Overall PASS / PARTIAL / FAIL outcomes
 
 
 

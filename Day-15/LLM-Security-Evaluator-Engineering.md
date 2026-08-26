@@ -48,11 +48,11 @@ Development-set final-classification accuracy improved from:
 
 
 
-\- Evaluator v1: 75.00%
+- Evaluator v1: 75.00%
 
-\- Evaluator v2: 95.83%
+- Evaluator v2: 95.83%
 
-\- Evaluator v3: 100.00%
+- Evaluator v3: 100.00%
 
 
 
@@ -138,11 +138,11 @@ These signals were then combined into a final security classification:
 
 
 
-\- PASS
+- PASS
 
-\- PARTIAL
+- PARTIAL
 
-\- FAIL
+- FAIL
 
 
 
@@ -238,29 +238,29 @@ The corpus included:
 
 
 
-\- clean successful responses;
+- clean successful responses;
 
-\- direct attack execution;
+- direct attack execution;
 
-\- semantic attack execution;
+- semantic attack execution;
 
-\- attack-marker discussion;
+- attack-marker discussion;
 
-\- safe discussion of malicious instructions;
+- safe discussion of malicious instructions;
 
-\- refusals;
+- refusals;
 
-\- secret disclosure;
+- secret disclosure;
 
-\- attack execution combined with secret disclosure;
+- attack execution combined with secret disclosure;
 
-\- legitimate task completion combined with secret disclosure;
+- legitimate task completion combined with secret disclosure;
 
-\- refusal combined with attack discussion;
+- refusal combined with attack discussion;
 
-\- negation traps;
+- negation traps;
 
-\- partial task completion.
+- partial task completion.
 
 
 
@@ -268,13 +268,13 @@ The development corpus contained:
 
 
 
-\- 7 attack-execution positives;
+- 7 attack-execution positives;
 
-\- 9 task-completion positives;
+- 9 task-completion positives;
 
-\- 5 refusal positives;
+- 5 refusal positives;
 
-\- 5 secret-disclosure positives.
+- 5 secret-disclosure positives.
 
 
 
@@ -282,11 +282,11 @@ Final analyst classifications were:
 
 
 
-\- PASS: 8
+- PASS: 8
 
-\- PARTIAL: 6
+- PARTIAL: 6
 
-\- FAIL: 10
+- FAIL: 10
 
 
 
@@ -312,9 +312,9 @@ Results:
 
 
 
-\- Final classification accuracy: 75.00%
+- Final classification accuracy: 75.00%
 
-\- Complete signal accuracy: 66.67%
+- Complete signal accuracy: 66.67%
 
 
 
@@ -342,15 +342,15 @@ The evaluator also experienced errors involving:
 
 
 
-\- attack mention;
+- attack mention;
 
-\- safe attack discussion;
+- safe attack discussion;
 
-\- refusal combined with attack mention;
+- refusal combined with attack mention;
 
-\- negation;
+- negation;
 
-\- partial task completion.
+- partial task completion.
 
 
 
@@ -370,17 +370,17 @@ for reliable security classification.
 
 
 
-\- Precision: 54.55%
+- Precision: 54.55%
 
-\- Recall: 85.71%
+- Recall: 85.71%
 
-\- F1 score: 66.67%
+- F1 score: 66.67%
 
-\- Specificity: 70.59%
+- Specificity: 70.59%
 
-\- False Positive Rate: 29.41%
+- False Positive Rate: 29.41%
 
-\- False Negative Rate: 14.29%
+- False Negative Rate: 14.29%
 
 
 
@@ -400,15 +400,15 @@ confused attack discussion with actual attack execution.
 
 
 
-\- Precision: 88.89%
+- Precision: 88.89%
 
-\- Recall: 88.89%
+- Recall: 88.89%
 
-\- F1 score: 88.89%
+- F1 score: 88.89%
 
-\- False Positive Rate: 6.67%
+- False Positive Rate: 6.67%
 
-\- False Negative Rate: 11.11%
+- False Negative Rate: 11.11%
 
 
 
@@ -418,15 +418,15 @@ confused attack discussion with actual attack execution.
 
 
 
-\- Precision: 100.00%
+- Precision: 100.00%
 
-\- Recall: 80.00%
+- Recall: 80.00%
 
-\- F1 score: 88.89%
+- F1 score: 88.89%
 
-\- False Positive Rate: 0.00%
+- False Positive Rate: 0.00%
 
-\- False Negative Rate: 20.00%
+- False Negative Rate: 20.00%
 
 
 
@@ -436,15 +436,15 @@ confused attack discussion with actual attack execution.
 
 
 
-\- Precision: 100.00%
+- Precision: 100.00%
 
-\- Recall: 100.00%
+- Recall: 100.00%
 
-\- F1 score: 100.00%
+- F1 score: 100.00%
 
-\- False Positive Rate: 0.00%
+- False Positive Rate: 0.00%
 
-\- False Negative Rate: 0.00%
+- False Negative Rate: 0.00%
 
 
 
@@ -470,17 +470,17 @@ The updated rules attempted to distinguish:
 
 
 
-\- executing an attack instruction;
+- executing an attack instruction;
 
-\- describing an attack instruction;
+- describing an attack instruction;
 
-\- rejecting an attack;
+- rejecting an attack;
 
-\- negating attack success;
+- negating attack success;
 
-\- legitimate task completion;
+- legitimate task completion;
 
-\- refusal language.
+- refusal language.
 
 
 
@@ -492,9 +492,9 @@ Evaluator v2 achieved:
 
 
 
-\- Final classification accuracy: 95.83%
+- Final classification accuracy: 95.83%
 
-\- Complete signal accuracy: 95.83%
+- Complete signal accuracy: 95.83%
 
 
 
@@ -524,15 +524,15 @@ Development results:
 
 
 
-\- Cases: 24
+- Cases: 24
 
-\- Final-class matches: 24/24
+- Final-class matches: 24/24
 
-\- All-signal matches: 24/24
+- All-signal matches: 24/24
 
-\- Final classification accuracy: 100.00%
+- Final classification accuracy: 100.00%
 
-\- Complete signal accuracy: 100.00%
+- Complete signal accuracy: 100.00%
 
 
 
@@ -578,9 +578,9 @@ From v1 to v2:
 
 
 
-\- Final classification improved by 20.83 percentage points.
+- Final classification improved by 20.83 percentage points.
 
-\- Complete signal accuracy improved by 29.17 percentage points.
+- Complete signal accuracy improved by 29.17 percentage points.
 
 
 
@@ -608,23 +608,23 @@ The holdout corpus contained previously unseen wording for:
 
 
 
-\- clean task completion;
+- clean task completion;
 
-\- attack execution;
+- attack execution;
 
-\- semantic attack execution;
+- semantic attack execution;
 
-\- attack mention;
+- attack mention;
 
-\- refusal;
+- refusal;
 
-\- secret disclosure;
+- secret disclosure;
 
-\- combined attack and disclosure;
+- combined attack and disclosure;
 
-\- negation;
+- negation;
 
-\- partial completion.
+- partial completion.
 
 
 
@@ -646,13 +646,13 @@ The frozen evaluator produced:
 
 
 
-\- Final-class matches: 12/20
+- Final-class matches: 12/20
 
-\- Final classification accuracy: 60.00%
+- Final classification accuracy: 60.00%
 
-\- Complete-signal matches: 7/20
+- Complete-signal matches: 7/20
 
-\- Complete signal accuracy: 35.00%
+- Complete signal accuracy: 35.00%
 
 
 
@@ -670,13 +670,13 @@ Evaluator v3 achieved:
 
 
 
-\- Development final-classification accuracy: 100.00%
+- Development final-classification accuracy: 100.00%
 
-\- Development complete-signal accuracy: 100.00%
+- Development complete-signal accuracy: 100.00%
 
-\- Holdout final-classification accuracy: 60.00%
+- Holdout final-classification accuracy: 60.00%
 
-\- Holdout complete-signal accuracy: 35.00%
+- Holdout complete-signal accuracy: 35.00%
 
 
 
@@ -684,9 +684,9 @@ The observed generalization gap was therefore:
 
 
 
-\- Final classification: 40 percentage points
+- Final classification: 40 percentage points
 
-\- Complete signal accuracy: 65 percentage points
+- Complete signal accuracy: 65 percentage points
 
 
 
@@ -712,13 +712,13 @@ Confusion matrix:
 
 
 
-\- TP: 1
+- TP: 1
 
-\- FP: 0
+- FP: 0
 
-\- TN: 15
+- TN: 15
 
-\- FN: 4
+- FN: 4
 
 
 
@@ -726,17 +726,17 @@ Metrics:
 
 
 
-\- Precision: 100.00%
+- Precision: 100.00%
 
-\- Recall: 20.00%
+- Recall: 20.00%
 
-\- F1: 33.33%
+- F1: 33.33%
 
-\- Specificity: 100.00%
+- Specificity: 100.00%
 
-\- FPR: 0.00%
+- FPR: 0.00%
 
-\- FNR: 80.00%
+- FNR: 80.00%
 
 
 
@@ -760,13 +760,13 @@ Confusion matrix:
 
 
 
-\- TP: 3
+- TP: 3
 
-\- FP: 0
+- FP: 0
 
-\- TN: 12
+- TN: 12
 
-\- FN: 5
+- FN: 5
 
 
 
@@ -774,17 +774,17 @@ Metrics:
 
 
 
-\- Precision: 100.00%
+- Precision: 100.00%
 
-\- Recall: 37.50%
+- Recall: 37.50%
 
-\- F1: 54.55%
+- F1: 54.55%
 
-\- Specificity: 100.00%
+- Specificity: 100.00%
 
-\- FPR: 0.00%
+- FPR: 0.00%
 
-\- FNR: 62.50%
+- FNR: 62.50%
 
 
 
@@ -804,13 +804,13 @@ Confusion matrix:
 
 
 
-\- TP: 0
+- TP: 0
 
-\- FP: 0
+- FP: 0
 
-\- TN: 16
+- TN: 16
 
-\- FN: 4
+- FN: 4
 
 
 
@@ -818,13 +818,13 @@ Metrics:
 
 
 
-\- Recall: 0.00%
+- Recall: 0.00%
 
-\- Specificity: 100.00%
+- Specificity: 100.00%
 
-\- FPR: 0.00%
+- FPR: 0.00%
 
-\- FNR: 100.00%
+- FNR: 100.00%
 
 
 
@@ -850,13 +850,13 @@ Confusion matrix:
 
 
 
-\- TP: 4
+- TP: 4
 
-\- FP: 0
+- FP: 0
 
-\- TN: 16
+- TN: 16
 
-\- FN: 0
+- FN: 0
 
 
 
@@ -864,17 +864,17 @@ Metrics:
 
 
 
-\- Precision: 100.00%
+- Precision: 100.00%
 
-\- Recall: 100.00%
+- Recall: 100.00%
 
-\- F1: 100.00%
+- F1: 100.00%
 
-\- Specificity: 100.00%
+- Specificity: 100.00%
 
-\- FPR: 0.00%
+- FPR: 0.00%
 
-\- FNR: 0.00%
+- FNR: 0.00%
 
 
 
@@ -896,9 +896,9 @@ The holdout assessment produced:
 
 
 
-\- 8 final-classification errors;
+- 8 final-classification errors;
 
-\- 13 cases containing at least one signal-level error.
+- 13 cases containing at least one signal-level error.
 
 
 
@@ -1094,21 +1094,21 @@ Additional limitations include:
 
 
 
-\- handcrafted synthetic responses;
+- handcrafted synthetic responses;
 
-\- limited linguistic diversity;
+- limited linguistic diversity;
 
-\- deterministic synthetic-secret representation;
+- deterministic synthetic-secret representation;
 
-\- relatively small development and holdout datasets;
+- relatively small development and holdout datasets;
 
-\- rule-based rather than model-based semantic evaluation;
+- rule-based rather than model-based semantic evaluation;
 
-\- no multilingual evaluation;
+- no multilingual evaluation;
 
-\- no adversarial evaluator-evasion testing;
+- no adversarial evaluator-evasion testing;
 
-\- no independent human inter-rater agreement study.
+- no independent human inter-rater agreement study.
 
 
 
@@ -1202,27 +1202,27 @@ Reliable LLM security evaluation requires:
 
 
 
-\- analyst-labelled ground truth;
+- analyst-labelled ground truth;
 
-\- confusion matrices;
+- confusion matrices;
 
-\- precision;
+- precision;
 
-\- recall;
+- recall;
 
-\- specificity;
+- specificity;
 
-\- F1 score;
+- F1 score;
 
-\- false-positive and false-negative analysis;
+- false-positive and false-negative analysis;
 
-\- per-signal evaluation;
+- per-signal evaluation;
 
-\- frozen holdout testing;
+- frozen holdout testing;
 
-\- error analysis;
+- error analysis;
 
-\- independent validation.
+- independent validation.
 
 
 

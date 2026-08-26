@@ -44,31 +44,31 @@ Instead, the system was modeled as an interconnected collection of:
 
 
 
-\- prompts and instructions;
+- prompts and instructions;
 
-\- LLM runtime components;
+- LLM runtime components;
 
-\- RAG knowledge sources;
+- RAG knowledge sources;
 
-\- retrieved context;
+- retrieved context;
 
-\- persistent AI memory;
+- persistent AI memory;
 
-\- agent planners;
+- agent planners;
 
-\- tools;
+- tools;
 
-\- authorization services;
+- authorization services;
 
-\- identities;
+- identities;
 
-\- credentials and secrets;
+- credentials and secrets;
 
-\- business data;
+- business data;
 
-\- downstream services; and
+- downstream services; and
 
-\- security telemetry.
+- security telemetry.
 
 
 
@@ -76,31 +76,31 @@ The threat-modeling process identified:
 
 
 
-\- \*\*14 security assets\*\*
+- \*\*14 security assets\*\*
 
-\- \*\*8 critical assets\*\*
+- \*\*8 critical assets\*\*
 
-\- \*\*17 attack surfaces\*\*
+- \*\*17 attack surfaces\*\*
 
-\- \*\*6 privileged attack surfaces\*\*
+- \*\*6 privileged attack surfaces\*\*
 
-\- \*\*7 business-impact surfaces\*\*
+- \*\*7 business-impact surfaces\*\*
 
-\- \*\*32 STRIDE threats\*\*
+- \*\*32 STRIDE threats\*\*
 
-\- \*\*101 specialized AI threat scenarios\*\*
+- \*\*101 specialized AI threat scenarios\*\*
 
-\- \*\*20 attack-tree nodes\*\*
+- \*\*20 attack-tree nodes\*\*
 
-\- \*\*8 multi-stage attack paths\*\*
+- \*\*8 multi-stage attack paths\*\*
 
-\- \*\*21 formal risk records\*\*
+- \*\*21 formal risk records\*\*
 
-\- \*\*12 risk owners\*\*
+- \*\*12 risk owners\*\*
 
-\- \*\*15 high-value controls\*\*
+- \*\*15 high-value controls\*\*
 
-\- \*\*9 architectural choke points\*\*
+- \*\*9 architectural choke points\*\*
 
 
 
@@ -120,15 +120,15 @@ The hardened reference architecture contained:
 
 
 
-\- 11 security zones;
+- 11 security zones;
 
-\- 10 trust boundaries;
+- 10 trust boundaries;
 
-\- 18 architectural security controls;
+- 18 architectural security controls;
 
-\- 12 secure data flows; and
+- 12 secure data flows; and
 
-\- 9 deployment security gates.
+- 9 deployment security gates.
 
 
 
@@ -318,19 +318,19 @@ Confidentiality was particularly important for:
 
 
 
-\- system prompts;
+- system prompts;
 
-\- RAG knowledge;
+- RAG knowledge;
 
-\- persistent memory;
+- persistent memory;
 
-\- user identity;
+- user identity;
 
-\- API credentials;
+- API credentials;
 
-\- restricted business records;
+- restricted business records;
 
-\- security telemetry.
+- security telemetry.
 
 
 
@@ -354,19 +354,19 @@ Availability requirements applied to:
 
 
 
-\- LLM runtime;
+- LLM runtime;
 
-\- RAG services;
+- RAG services;
 
-\- persistent memory;
+- persistent memory;
 
-\- tools;
+- tools;
 
-\- authorization;
+- authorization;
 
-\- business data;
+- business data;
 
-\- security telemetry.
+- security telemetry.
 
 
 

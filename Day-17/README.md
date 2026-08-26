@@ -30,19 +30,19 @@ Observed Day 16 results:
 
 
 
-\- Operational Final Accuracy: 55.00%
+- Operational Final Accuracy: 55.00%
 
-\- Complete-Signal Accuracy: 20.00%
+- Complete-Signal Accuracy: 20.00%
 
-\- Attack Recall: 20.00%
+- Attack Recall: 20.00%
 
-\- Task Recall: 12.50%
+- Task Recall: 12.50%
 
-\- Refusal Recall: 0.00%
+- Refusal Recall: 0.00%
 
-\- Secret Recall: 100.00%
+- Secret Recall: 100.00%
 
-\- Observed JMSR: 66.67% (2/3 qualified pairs)
+- Observed JMSR: 66.67% (2/3 qualified pairs)
 
 
 
@@ -54,23 +54,23 @@ Day 17 introduced:
 
 
 
-\- explicit trust boundaries;
+- explicit trust boundaries;
 
-\- input isolation;
+- input isolation;
 
-\- schema validation;
+- schema validation;
 
-\- deterministic security checks;
+- deterministic security checks;
 
-\- fail-closed escalation;
+- fail-closed escalation;
 
-\- evaluator-targeted instruction detection;
+- evaluator-targeted instruction detection;
 
-\- deterministic final classification;
+- deterministic final classification;
 
-\- repeated manipulation testing;
+- repeated manipulation testing;
 
-\- policy-configured protected-value detection.
+- policy-configured protected-value detection.
 
 
 
@@ -82,15 +82,15 @@ Repeated qualified trials produced:
 
 
 
-\- Qualified attack trials: 7
+- Qualified attack trials: 7
 
-\- Successful manipulations: 0
+- Successful manipulations: 0
 
-\- Repeated JMSR: 0.00%
+- Repeated JMSR: 0.00%
 
-\- Protected Rate: 100.00%
+- Protected Rate: 100.00%
 
-\- Automatic Resistance Rate: 0.00%
+- Automatic Resistance Rate: 0.00%
 
 
 
@@ -106,17 +106,17 @@ Across 15 repeated clean trials:
 
 
 
-\- Correct automatic accepts: 7
+- Correct automatic accepts: 7
 
-\- Incorrect automatic accepts: 2
+- Incorrect automatic accepts: 2
 
-\- Escalations: 6
+- Escalations: 6
 
-\- Clean Correct-Accept Rate: 46.67%
+- Clean Correct-Accept Rate: 46.67%
 
-\- Clean Incorrect-Accept Rate: 13.33%
+- Clean Incorrect-Accept Rate: 13.33%
 
-\- Clean Escalation Rate: 40.00%
+- Clean Escalation Rate: 40.00%
 
 
 
@@ -128,15 +128,15 @@ After repairing a protected-value policy mismatch:
 
 
 
-\- Automatic Evaluation Rate: 85.00%
+- Automatic Evaluation Rate: 85.00%
 
-\- Escalation Rate: 15.00%
+- Escalation Rate: 15.00%
 
-\- Operational Final Accuracy: 40.00%
+- Operational Final Accuracy: 40.00%
 
-\- Conditional Automatic Accuracy: 47.06%
+- Conditional Automatic Accuracy: 47.06%
 
-\- Operational Complete-Signal Accuracy: 15.00%
+- Operational Complete-Signal Accuracy: 15.00%
 
 
 
@@ -144,13 +144,13 @@ After repairing a protected-value policy mismatch:
 
 
 
-\- Attack Recall: 0.00%
+- Attack Recall: 0.00%
 
-\- Task Recall: 25.00%
+- Task Recall: 25.00%
 
-\- Refusal Recall: 50.00%
+- Refusal Recall: 50.00%
 
-\- Secret Recall: 100.00%
+- Secret Recall: 100.00%
 
 
 
@@ -166,9 +166,9 @@ Root cause:
 
 
 
-\- the reused Day 15 holdout contained `DAY15\_SYNTHETIC\_SECRET\_8K3P`;
+- the reused Day 15 holdout contained `DAY15\_SYNTHETIC\_SECRET\_8K3P`;
 
-\- the Day 17 evaluator was configured for `DAY17\_SYNTHETIC\_SECRET\_4R9K`.
+- the Day 17 evaluator was configured for `DAY17\_SYNTHETIC\_SECRET\_4R9K`.
 
 
 
@@ -180,9 +180,9 @@ Regression test result:
 
 
 
-\- 7/7 tests passed
+- 7/7 tests passed
 
-\- Deterministic Detector Accuracy: 100.00%
+- Deterministic Detector Accuracy: 100.00%
 
 
 

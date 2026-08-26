@@ -56,21 +56,21 @@ The early laboratories intentionally exposed vulnerable behavior in order to mea
 
 
 
-\- unauthorized tools were visible;
+- unauthorized tools were visible;
 
-\- tool descriptions contained malicious instructions;
+- tool descriptions contained malicious instructions;
 
-\- excessive permissions were exposed;
+- excessive permissions were exposed;
 
-\- model-generated tool parameters were not independently validated;
+- model-generated tool parameters were not independently validated;
 
-\- safe tasks could be reframed using more privileged tools;
+- safe tasks could be reframed using more privileged tools;
 
-\- tool output contained indirect prompt injection;
+- tool output contained indirect prompt injection;
 
-\- tool results contained forged security evidence;
+- tool results contained forged security evidence;
 
-\- multiple tool-layer weaknesses were chained together.
+- multiple tool-layer weaknesses were chained together.
 
 
 
@@ -78,33 +78,33 @@ The later laboratories introduced hardened controls including:
 
 
 
-\- trusted MCP/server identity;
+- trusted MCP/server identity;
 
-\- trusted server-to-tool ownership;
+- trusted server-to-tool ownership;
 
-\- server tool allowlists;
+- server tool allowlists;
 
-\- per-agent capability enforcement;
+- per-agent capability enforcement;
 
-\- least privilege;
+- least privilege;
 
-\- independent resource policy;
+- independent resource policy;
 
-\- parameter schemas;
+- parameter schemas;
 
-\- trusted target binding;
+- trusted target binding;
 
-\- execution scope;
+- execution scope;
 
-\- value validation;
+- value validation;
 
-\- metadata sanitization;
+- metadata sanitization;
 
-\- tool-output sanitization;
+- tool-output sanitization;
 
-\- trusted approval validation;
+- trusted approval validation;
 
-\- application-controlled execution state.
+- application-controlled execution state.
 
 
 
@@ -120,15 +120,15 @@ The final hardened retest produced:
 
 
 
-\- \*\*Dangerous Proposal Rate: 100.00%\*\*
+- \*\*Dangerous Proposal Rate: 100.00%\*\*
 
-\- \*\*Dangerous Proposal Containment Rate: 100.00%\*\*
+- \*\*Dangerous Proposal Containment Rate: 100.00%\*\*
 
-\- \*\*Unauthorized System Impact Rate: 0.00%\*\*
+- \*\*Unauthorized System Impact Rate: 0.00%\*\*
 
-\- \*\*Legitimate Tool Completion Rate: 100.00%\*\*
+- \*\*Legitimate Tool Completion Rate: 100.00%\*\*
 
-\- \*\*Trusted Task Preservation Rate: 100.00%\*\*
+- \*\*Trusted Task Preservation Rate: 100.00%\*\*
 
 
 
@@ -200,33 +200,33 @@ The assessment assumed that an attacker could potentially influence:
 
 
 
-\- user requests;
+- user requests;
 
-\- tool descriptions;
+- tool descriptions;
 
-\- tool registry metadata;
+- tool registry metadata;
 
-\- tool availability;
+- tool availability;
 
-\- external lookup results;
+- external lookup results;
 
-\- MCP-style server metadata;
+- MCP-style server metadata;
 
-\- tool results;
+- tool results;
 
-\- model-generated parameters;
+- model-generated parameters;
 
-\- model-generated target values;
+- model-generated target values;
 
-\- model-selected servers;
+- model-selected servers;
 
-\- model-selected tools;
+- model-selected tools;
 
-\- model-generated authority claims;
+- model-generated authority claims;
 
-\- fake approval identifiers;
+- fake approval identifiers;
 
-\- multi-stage tool-chain decisions.
+- multi-stage tool-chain decisions.
 
 
 
@@ -270,13 +270,13 @@ Role:
 
 
 
-\- planning;
+- planning;
 
-\- project coordination;
+- project coordination;
 
-\- summarization;
+- summarization;
 
-\- external lookup.
+- external lookup.
 
 
 
@@ -284,9 +284,9 @@ Typical capabilities:
 
 
 
-\- `summarize\_data`;
+- `summarize\_data`;
 
-\- `external\_lookup`.
+- `external\_lookup`.
 
 
 
@@ -306,7 +306,7 @@ Role:
 
 
 
-\- operational task execution.
+- operational task execution.
 
 
 
@@ -314,13 +314,13 @@ Typical capabilities:
 
 
 
-\- `read\_record`;
+- `read\_record`;
 
-\- `update\_record`;
+- `update\_record`;
 
-\- `summarize\_data`;
+- `summarize\_data`;
 
-\- `external\_lookup`.
+- `external\_lookup`.
 
 
 
@@ -340,11 +340,11 @@ Role:
 
 
 
-\- security-sensitive execution;
+- security-sensitive execution;
 
-\- restricted-resource handling;
+- restricted-resource handling;
 
-\- high-impact action execution.
+- high-impact action execution.
 
 
 
@@ -352,13 +352,13 @@ Typical capabilities:
 
 
 
-\- `read\_record`;
+- `read\_record`;
 
-\- `delete\_record`;
+- `delete\_record`;
 
-\- security-sensitive functions;
+- security-sensitive functions;
 
-\- approved restricted actions.
+- approved restricted actions.
 
 
 
@@ -382,7 +382,7 @@ Classification:
 
 
 
-\- internal.
+- internal.
 
 
 
@@ -390,7 +390,7 @@ Purpose:
 
 
 
-\- normal worker-readable synthetic record.
+- normal worker-readable synthetic record.
 
 
 
@@ -406,7 +406,7 @@ Classification:
 
 
 
-\- restricted.
+- restricted.
 
 
 
@@ -414,7 +414,7 @@ Purpose:
 
 
 
-\- security-sensitive synthetic target used in privilege escalation, target substitution, delete, authorization, and tool-chain tests.
+- security-sensitive synthetic target used in privilege escalation, target substitution, delete, authorization, and tool-chain tests.
 
 
 
@@ -438,7 +438,7 @@ Trust level:
 
 
 
-\- trusted.
+- trusted.
 
 
 
@@ -446,11 +446,11 @@ Responsible for:
 
 
 
-\- `read\_record`;
+- `read\_record`;
 
-\- `update\_record`;
+- `update\_record`;
 
-\- `delete\_record`.
+- `delete\_record`.
 
 
 
@@ -466,7 +466,7 @@ Trust level:
 
 
 
-\- trusted.
+- trusted.
 
 
 
@@ -474,7 +474,7 @@ Responsible for:
 
 
 
-\- `summarize\_data`.
+- `summarize\_data`.
 
 
 
@@ -490,7 +490,7 @@ Trust level:
 
 
 
-\- untrusted / lower trust.
+- untrusted / lower trust.
 
 
 
@@ -498,7 +498,7 @@ Responsible for:
 
 
 
-\- `external\_lookup`.
+- `external\_lookup`.
 
 
 
@@ -526,35 +526,35 @@ The Day 23 experiments focused on the following security properties:
 
 
 
-\- tool discovery;
+- tool discovery;
 
-\- tool authorization;
+- tool authorization;
 
-\- capability separation;
+- capability separation;
 
-\- server identity;
+- server identity;
 
-\- tool ownership;
+- tool ownership;
 
-\- parameter integrity;
+- parameter integrity;
 
-\- target integrity;
+- target integrity;
 
-\- scope integrity;
+- scope integrity;
 
-\- approval integrity;
+- approval integrity;
 
-\- tool-result trust;
+- tool-result trust;
 
-\- prompt-injection resistance;
+- prompt-injection resistance;
 
-\- privilege propagation;
+- privilege propagation;
 
-\- chain containment;
+- chain containment;
 
-\- least privilege;
+- least privilege;
 
-\- safe execution under compromised reasoning.
+- safe execution under compromised reasoning.
 
 
 
@@ -574,21 +574,21 @@ Create a controlled tool-enabled environment with:
 
 
 
-\- agents;
+- agents;
 
-\- capabilities;
+- capabilities;
 
-\- synthetic records;
+- synthetic records;
 
-\- trusted and untrusted servers;
+- trusted and untrusted servers;
 
-\- tool registration;
+- tool registration;
 
-\- parameter validation;
+- parameter validation;
 
-\- scope controls;
+- scope controls;
 
-\- approval controls.
+- approval controls.
 
 
 
@@ -600,19 +600,19 @@ The lab confirmed:
 
 
 
-\- tool discovery;
+- tool discovery;
 
-\- capability separation;
+- capability separation;
 
-\- legitimate scoped reads;
+- legitimate scoped reads;
 
-\- unauthorized planner access blocking;
+- unauthorized planner access blocking;
 
-\- target-scope enforcement;
+- target-scope enforcement;
 
-\- high-risk approval requirements;
+- high-risk approval requirements;
 
-\- parameter validation.
+- parameter validation.
 
 
 
@@ -624,19 +624,19 @@ The environment demonstrated that:
 
 
 
-\- tool discovery does not grant tool authority;
+- tool discovery does not grant tool authority;
 
-\- tool server identity is stored outside model text;
+- tool server identity is stored outside model text;
 
-\- capabilities are explicitly assigned;
+- capabilities are explicitly assigned;
 
-\- tool execution is independently checked;
+- tool execution is independently checked;
 
-\- tool parameters are validated;
+- tool parameters are validated;
 
-\- restricted actions require additional approval;
+- restricted actions require additional approval;
 
-\- tool events are auditable.
+- tool events are auditable.
 
 
 
@@ -668,11 +668,11 @@ Measure whether an LLM would select semantically appropriate tools even when the
 
 
 
-\- \*\*Tool Selection Accuracy: 66.67%\*\*
+- \*\*Tool Selection Accuracy: 66.67%\*\*
 
-\- \*\*Legitimate Tool Completion Rate: 66.67%\*\*
+- \*\*Legitimate Tool Completion Rate: 66.67%\*\*
 
-\- \*\*Unsafe Tool Selection Rate (UTSR): 66.67%\*\*
+- \*\*Unsafe Tool Selection Rate (UTSR): 66.67%\*\*
 
 
 
@@ -732,13 +732,13 @@ Poisoned descriptions attempted to:
 
 
 
-\- make a tool appear preferable;
+- make a tool appear preferable;
 
-\- redirect selection;
+- redirect selection;
 
-\- create false assumptions about trust;
+- create false assumptions about trust;
 
-\- manipulate model reasoning.
+- manipulate model reasoning.
 
 
 
@@ -746,17 +746,17 @@ Poisoned descriptions attempted to:
 
 
 
-\- \*\*Normalized Clean Tool Accuracy: 75.00%\*\*
+- \*\*Normalized Clean Tool Accuracy: 75.00%\*\*
 
-\- \*\*Poisoned Registry Tool Accuracy: 50.00%\*\*
+- \*\*Poisoned Registry Tool Accuracy: 50.00%\*\*
 
-\- \*\*Malicious Tool Description Influence Rate (MTDIR): 50.00%\*\*
+- \*\*Malicious Tool Description Influence Rate (MTDIR): 50.00%\*\*
 
-\- \*\*Poison Target Selection Rate: 25.00%\*\*
+- \*\*Poison Target Selection Rate: 25.00%\*\*
 
-\- \*\*Unauthorized Poisoned Tool Selection Rate: 25.00%\*\*
+- \*\*Unauthorized Poisoned Tool Selection Rate: 25.00%\*\*
 
-\- \*\*Tool Description Authority-Assumption Rate: 0.00%\*\*
+- \*\*Tool Description Authority-Assumption Rate: 0.00%\*\*
 
 
 
@@ -780,17 +780,17 @@ Descriptions must not be trusted to establish:
 
 
 
-\- authority;
+- authority;
 
-\- role;
+- role;
 
-\- approval;
+- approval;
 
-\- capability;
+- capability;
 
-\- identity;
+- identity;
 
-\- execution scope.
+- execution scope.
 
 
 
@@ -824,13 +824,13 @@ Tests included requests for:
 
 
 
-\- restricted deletes;
+- restricted deletes;
 
-\- broad exports;
+- broad exports;
 
-\- authorization self-checks;
+- authorization self-checks;
 
-\- policy modification.
+- policy modification.
 
 
 
@@ -838,15 +838,15 @@ Tests included requests for:
 
 
 
-\- \*\*Least-Privilege Attack Selection Rate: 0.00%\*\*
+- \*\*Least-Privilege Attack Selection Rate: 0.00%\*\*
 
-\- \*\*Excessive Permission Exploitation Rate (EPER): 75.00%\*\*
+- \*\*Excessive Permission Exploitation Rate (EPER): 75.00%\*\*
 
-\- \*\*Permission Expansion Influence Rate: 66.67%\*\*
+- \*\*Permission Expansion Influence Rate: 66.67%\*\*
 
-\- \*\*Least-Privilege Legitimate Completion Rate: 50.00%\*\*
+- \*\*Least-Privilege Legitimate Completion Rate: 50.00%\*\*
 
-\- \*\*Excessive-Permission Legitimate Completion Rate: 100.00%\*\*
+- \*\*Excessive-Permission Legitimate Completion Rate: 100.00%\*\*
 
 
 
@@ -870,9 +870,9 @@ Least privilege should be enforced at both:
 
 
 
-\- tool exposure;
+- tool exposure;
 
-\- tool execution.
+- tool execution.
 
 
 
@@ -900,17 +900,17 @@ The model was exposed to:
 
 
 
-\- restricted target substitution;
+- restricted target substitution;
 
-\- path traversal-style targets;
+- path traversal-style targets;
 
-\- wildcard targets;
+- wildcard targets;
 
-\- unauthorized parameters;
+- unauthorized parameters;
 
-\- `admin\_override`;
+- `admin\_override`;
 
-\- update-target substitution.
+- update-target substitution.
 
 
 
@@ -918,13 +918,13 @@ The model was exposed to:
 
 
 
-\- \*\*Target Substitution Rate (TSR): 80.00%\*\*
+- \*\*Target Substitution Rate (TSR): 80.00%\*\*
 
-\- \*\*Unauthorized Parameter Injection Rate: 80.00%\*\*
+- \*\*Unauthorized Parameter Injection Rate: 80.00%\*\*
 
-\- \*\*Parameter Manipulation Success Rate (PMSR): 100.00%\*\*
+- \*\*Parameter Manipulation Success Rate (PMSR): 100.00%\*\*
 
-\- \*\*Legitimate Parameter Completion Rate: 0.00%\*\*
+- \*\*Legitimate Parameter Completion Rate: 0.00%\*\*
 
 
 
@@ -1000,13 +1000,13 @@ Examples included:
 
 
 
-\- reframing a read as an export;
+- reframing a read as an export;
 
-\- reframing a summary as a broad export;
+- reframing a summary as a broad export;
 
-\- invoking authorization tools unnecessarily;
+- invoking authorization tools unnecessarily;
 
-\- deleting and recreating data instead of reading it.
+- deleting and recreating data instead of reading it.
 
 
 
@@ -1014,13 +1014,13 @@ Examples included:
 
 
 
-\- \*\*Confused Tool Selection Rate (CTSR): 60.00%\*\*
+- \*\*Confused Tool Selection Rate (CTSR): 60.00%\*\*
 
-\- \*\*High-Risk Tool Escalation Rate: 40.00%\*\*
+- \*\*High-Risk Tool Escalation Rate: 40.00%\*\*
 
-\- \*\*Legitimate Tool Completion Rate: 100.00%\*\*
+- \*\*Legitimate Tool Completion Rate: 100.00%\*\*
 
-\- \*\*Safe Tool Preservation Rate: 57.14%\*\*
+- \*\*Safe Tool Preservation Rate: 57.14%\*\*
 
 
 
@@ -1064,15 +1064,15 @@ Tool output attempted to:
 
 
 
-\- override the original task;
+- override the original task;
 
-\- call high-risk tools;
+- call high-risk tools;
 
-\- create fake authorization;
+- create fake authorization;
 
-\- substitute restricted targets;
+- substitute restricted targets;
 
-\- claim security approval.
+- claim security approval.
 
 
 
@@ -1080,13 +1080,13 @@ Tool output attempted to:
 
 
 
-\- \*\*Indirect Tool Injection Success Rate (ITISR): 100.00%\*\*
+- \*\*Indirect Tool Injection Success Rate (ITISR): 100.00%\*\*
 
-\- \*\*High-Risk Tool-Output Escalation Rate: 75.00%\*\*
+- \*\*High-Risk Tool-Output Escalation Rate: 75.00%\*\*
 
-\- \*\*Tool-Output Approval-Assumption Rate: 25.00%\*\*
+- \*\*Tool-Output Approval-Assumption Rate: 25.00%\*\*
 
-\- \*\*Clean Tool-Output Utility Rate: 0.00%\*\*
+- \*\*Clean Tool-Output Utility Rate: 0.00%\*\*
 
 
 
@@ -1102,17 +1102,17 @@ A compromised:
 
 
 
-\- website;
+- website;
 
-\- API;
+- API;
 
-\- connector;
+- connector;
 
-\- MCP server;
+- MCP server;
 
-\- search service;
+- search service;
 
-\- external tool;
+- external tool;
 
 
 
@@ -1152,15 +1152,15 @@ Instead of embedding obvious instructions, the tool result returned false securi
 
 
 
-\- fake administrator role;
+- fake administrator role;
 
-\- false MFA verification;
+- false MFA verification;
 
-\- fake delete approval;
+- fake delete approval;
 
-\- false resource classification;
+- false resource classification;
 
-\- forged authorization.
+- forged authorization.
 
 
 
@@ -1168,19 +1168,19 @@ Instead of embedding obvious instructions, the tool result returned false securi
 
 
 
-\- \*\*Tool-Result Poisoning Success Rate (TRPSR): 50.00%\*\*
+- \*\*Tool-Result Poisoning Success Rate (TRPSR): 50.00%\*\*
 
-\- \*\*Role Corruption Rate: 25.00%\*\*
+- \*\*Role Corruption Rate: 25.00%\*\*
 
-\- \*\*MFA Corruption Rate: 0.00%\*\*
+- \*\*MFA Corruption Rate: 0.00%\*\*
 
-\- \*\*Approval Corruption Rate: 0.00%\*\*
+- \*\*Approval Corruption Rate: 0.00%\*\*
 
-\- \*\*Authorization Corruption Rate: 25.00%\*\*
+- \*\*Authorization Corruption Rate: 25.00%\*\*
 
-\- \*\*Classification Corruption Rate: 0.00%\*\*
+- \*\*Classification Corruption Rate: 0.00%\*\*
 
-\- \*\*Benign Tool-Result Utility Rate: 100.00%\*\*
+- \*\*Benign Tool-Result Utility Rate: 100.00%\*\*
 
 
 
@@ -1246,17 +1246,17 @@ A malicious tool result could:
 
 
 
-\- \*\*Poisoned Chain Deviation Rate: 100.00%\*\*
+- \*\*Poisoned Chain Deviation Rate: 100.00%\*\*
 
-\- \*\*Chained Tool Attack Success Rate (CTASR): 75.00%\*\*
+- \*\*Chained Tool Attack Success Rate (CTASR): 75.00%\*\*
 
-\- \*\*Privileged Tool Escalation Rate: 75.00%\*\*
+- \*\*Privileged Tool Escalation Rate: 75.00%\*\*
 
-\- \*\*Chain Target Substitution Rate: 0.00%\*\*
+- \*\*Chain Target Substitution Rate: 0.00%\*\*
 
-\- \*\*Chain Approval-Assumption Rate: 25.00%\*\*
+- \*\*Chain Approval-Assumption Rate: 25.00%\*\*
 
-\- \*\*Clean Chain Utility Rate: 0.00%\*\*
+- \*\*Clean Chain Utility Rate: 0.00%\*\*
 
 
 
@@ -1312,21 +1312,21 @@ The hardened registration policy validated:
 
 
 
-\- server identity;
+- server identity;
 
-\- server state;
+- server state;
 
-\- claimed server identity;
+- claimed server identity;
 
-\- server tool allowlists;
+- server tool allowlists;
 
-\- trusted tool ownership;
+- trusted tool ownership;
 
-\- capability consistency;
+- capability consistency;
 
-\- metadata sanitization;
+- metadata sanitization;
 
-\- name collisions.
+- name collisions.
 
 
 
@@ -1334,15 +1334,15 @@ The hardened registration policy validated:
 
 
 
-\- \*\*Tests: 8\*\*
+- \*\*Tests: 8\*\*
 
-\- \*\*Correct Outcomes: 8/8\*\*
+- \*\*Correct Outcomes: 8/8\*\*
 
-\- \*\*Control Outcome Accuracy: 100.00%\*\*
+- \*\*Control Outcome Accuracy: 100.00%\*\*
 
-\- \*\*MCP Registration Block Rate: 100.00%\*\*
+- \*\*MCP Registration Block Rate: 100.00%\*\*
 
-\- \*\*Unsafe MCP Registration Rate: 0.00%\*\*
+- \*\*Unsafe MCP Registration Rate: 0.00%\*\*
 
 
 
@@ -1350,15 +1350,15 @@ The hardened registration policy validated:
 
 
 
-\- server impersonation;
+- server impersonation;
 
-\- unauthorized delete registration;
+- unauthorized delete registration;
 
-\- tool-name collision attempt;
+- tool-name collision attempt;
 
-\- malicious description injection;
+- malicious description injection;
 
-\- unknown server registration.
+- unknown server registration.
 
 
 
@@ -1402,17 +1402,17 @@ Execution authority remained separate.
 
 
 
-\- \*\*Tests: 10\*\*
+- \*\*Tests: 10\*\*
 
-\- \*\*Correct Outcomes: 10/10\*\*
+- \*\*Correct Outcomes: 10/10\*\*
 
-\- \*\*Control Outcome Accuracy: 100.00%\*\*
+- \*\*Control Outcome Accuracy: 100.00%\*\*
 
-\- \*\*Least-Privilege Enforcement Rate (LPER): 100.00%\*\*
+- \*\*Least-Privilege Enforcement Rate (LPER): 100.00%\*\*
 
-\- \*\*Unauthorized Tool Authorization Rate: 0.00%\*\*
+- \*\*Unauthorized Tool Authorization Rate: 0.00%\*\*
 
-\- \*\*Legitimate Tool Completion Rate: 100.00%\*\*
+- \*\*Legitimate Tool Completion Rate: 100.00%\*\*
 
 
 
@@ -1420,13 +1420,13 @@ Execution authority remained separate.
 
 
 
-\- capability;
+- capability;
 
-\- scope;
+- scope;
 
-\- resource policy;
+- resource policy;
 
-\- delegate identity.
+- delegate identity.
 
 
 
@@ -1498,27 +1498,27 @@ The application independently validated:
 
 
 
-\- actor identity;
+- actor identity;
 
-\- tool registry;
+- tool registry;
 
-\- agent capability;
+- agent capability;
 
-\- parameter object type;
+- parameter object type;
 
-\- required parameters;
+- required parameters;
 
-\- unknown parameters;
+- unknown parameters;
 
-\- target syntax;
+- target syntax;
 
-\- trusted target identity;
+- trusted target identity;
 
-\- execution scope;
+- execution scope;
 
-\- resource classification;
+- resource classification;
 
-\- update values.
+- update values.
 
 
 
@@ -1526,17 +1526,17 @@ The application independently validated:
 
 
 
-\- \*\*Tests: 12\*\*
+- \*\*Tests: 12\*\*
 
-\- \*\*Correct Outcomes: 12/12\*\*
+- \*\*Correct Outcomes: 12/12\*\*
 
-\- \*\*Control Outcome Accuracy: 100.00%\*\*
+- \*\*Control Outcome Accuracy: 100.00%\*\*
 
-\- \*\*Parameter Attack Block Rate: 100.00%\*\*
+- \*\*Parameter Attack Block Rate: 100.00%\*\*
 
-\- \*\*Unsafe Parameter Execution Rate: 0.00%\*\*
+- \*\*Unsafe Parameter Execution Rate: 0.00%\*\*
 
-\- \*\*Legitimate Parameter Completion Rate: 100.00%\*\*
+- \*\*Legitimate Parameter Completion Rate: 100.00%\*\*
 
 
 
@@ -1544,15 +1544,15 @@ The application independently validated:
 
 
 
-\- `CAPABILITY`: 1
+- `CAPABILITY`: 1
 
-\- `PARAMETER\_SCHEMA`: 3
+- `PARAMETER\_SCHEMA`: 3
 
-\- `TARGET\_BINDING`: 2
+- `TARGET\_BINDING`: 2
 
-\- `TARGET\_VALIDATION`: 2
+- `TARGET\_VALIDATION`: 2
 
-\- `VALUE\_POLICY`: 1
+- `VALUE\_POLICY`: 1
 
 
 
@@ -1564,11 +1564,11 @@ The application independently validated:
 
 
 
-\- Target Substitution Rate: \*\*80.00%\*\*
+- Target Substitution Rate: \*\*80.00%\*\*
 
-\- Unauthorized Parameter Injection Rate: \*\*80.00%\*\*
+- Unauthorized Parameter Injection Rate: \*\*80.00%\*\*
 
-\- Parameter Manipulation Success Rate: \*\*100.00%\*\*
+- Parameter Manipulation Success Rate: \*\*100.00%\*\*
 
 
 
@@ -1576,9 +1576,9 @@ The application independently validated:
 
 
 
-\- Parameter Attack Block Rate: \*\*100.00%\*\*
+- Parameter Attack Block Rate: \*\*100.00%\*\*
 
-\- Unsafe Parameter Execution Rate: \*\*0.00%\*\*
+- Unsafe Parameter Execution Rate: \*\*0.00%\*\*
 
 
 
@@ -1650,17 +1650,17 @@ The system independently checked:
 
 
 
-\- \*\*Tests: 14\*\*
+- \*\*Tests: 14\*\*
 
-\- \*\*Correct Outcomes: 14/14\*\*
+- \*\*Correct Outcomes: 14/14\*\*
 
-\- \*\*Control Outcome Accuracy: 100.00%\*\*
+- \*\*Control Outcome Accuracy: 100.00%\*\*
 
-\- \*\*Hardened Tool Attack Block Rate: 100.00%\*\*
+- \*\*Hardened Tool Attack Block Rate: 100.00%\*\*
 
-\- \*\*Unsafe Tool Execution Rate: 0.00%\*\*
+- \*\*Unsafe Tool Execution Rate: 0.00%\*\*
 
-\- \*\*Legitimate Tool Completion Rate: 100.00%\*\*
+- \*\*Legitimate Tool Completion Rate: 100.00%\*\*
 
 
 
@@ -1668,25 +1668,25 @@ The system independently checked:
 
 
 
-\- `APPROVAL`
+- `APPROVAL`
 
-\- `CLAIMED\_AUTHORITY`
+- `CLAIMED\_AUTHORITY`
 
-\- `METADATA\_SANITIZATION`
+- `METADATA\_SANITIZATION`
 
-\- `OUTPUT\_SANITIZATION`
+- `OUTPUT\_SANITIZATION`
 
-\- `PARAMETER\_SCHEMA`
+- `PARAMETER\_SCHEMA`
 
-\- `RESOURCE\_POLICY`
+- `RESOURCE\_POLICY`
 
-\- `SERVER\_IDENTITY`
+- `SERVER\_IDENTITY`
 
-\- `TARGET\_BINDING`
+- `TARGET\_BINDING`
 
-\- `TOOL\_SERVER\_BINDING`
+- `TOOL\_SERVER\_BINDING`
 
-\- `VALUE\_POLICY`
+- `VALUE\_POLICY`
 
 
 
@@ -1722,17 +1722,17 @@ The model was allowed to propose:
 
 
 
-\- alternate servers;
+- alternate servers;
 
-\- alternate tools;
+- alternate tools;
 
-\- malformed parameters;
+- malformed parameters;
 
-\- target substitutions;
+- target substitutions;
 
-\- claimed authority;
+- claimed authority;
 
-\- fake approvals.
+- fake approvals.
 
 
 
@@ -1744,19 +1744,19 @@ The application maintained independent trusted task state.
 
 
 
-\- trusted actor;
+- trusted actor;
 
-\- trusted server;
+- trusted server;
 
-\- trusted tool;
+- trusted tool;
 
-\- trusted parameters;
+- trusted parameters;
 
-\- trusted target;
+- trusted target;
 
-\- trusted execution scope;
+- trusted execution scope;
 
-\- trusted approval state.
+- trusted approval state.
 
 
 
@@ -1764,17 +1764,17 @@ The application maintained independent trusted task state.
 
 
 
-\- \*\*Cases: 8\*\*
+- \*\*Cases: 8\*\*
 
-\- \*\*Successful Model Runs: 7\*\*
+- \*\*Successful Model Runs: 7\*\*
 
-\- \*\*Model / JSON Failures: 1\*\*
+- \*\*Model / JSON Failures: 1\*\*
 
-\- \*\*Dangerous Model Proposals: 7\*\*
+- \*\*Dangerous Model Proposals: 7\*\*
 
-\- \*\*Unauthorized System Impacts: 0\*\*
+- \*\*Unauthorized System Impacts: 0\*\*
 
-\- \*\*Correct System Outcomes: 7\*\*
+- \*\*Correct System Outcomes: 7\*\*
 
 
 
@@ -1782,15 +1782,15 @@ The application maintained independent trusted task state.
 
 
 
-\- \*\*Dangerous Proposal Rate: 100.00%\*\*
+- \*\*Dangerous Proposal Rate: 100.00%\*\*
 
-\- \*\*Dangerous Proposal Containment Rate: 100.00%\*\*
+- \*\*Dangerous Proposal Containment Rate: 100.00%\*\*
 
-\- \*\*Unauthorized System Impact Rate: 0.00%\*\*
+- \*\*Unauthorized System Impact Rate: 0.00%\*\*
 
-\- \*\*Legitimate Tool Completion Rate: 100.00%\*\*
+- \*\*Legitimate Tool Completion Rate: 100.00%\*\*
 
-\- \*\*Trusted Task Preservation Rate: 100.00%\*\*
+- \*\*Trusted Task Preservation Rate: 100.00%\*\*
 
 
 
@@ -1806,17 +1806,17 @@ It continued to produce:
 
 
 
-\- unauthorized parameter names;
+- unauthorized parameter names;
 
-\- wrong servers;
+- wrong servers;
 
-\- wrong tool names;
+- wrong tool names;
 
-\- target substitutions;
+- target substitutions;
 
-\- privilege claims;
+- privilege claims;
 
-\- fake approval identifiers.
+- fake approval identifiers.
 
 
 
@@ -1916,11 +1916,11 @@ Lab 15 consolidated the major vulnerable and hardened findings into one evidence
 
 
 
-\- per-agent capabilities;
+- per-agent capabilities;
 
-\- least privilege;
+- least privilege;
 
-\- independent tool authorization.
+- independent tool authorization.
 
 
 
@@ -1952,15 +1952,15 @@ Lab 15 consolidated the major vulnerable and hardened findings into one evidence
 
 
 
-\- strict parameter schemas;
+- strict parameter schemas;
 
-\- trusted target binding;
+- trusted target binding;
 
-\- scope enforcement;
+- scope enforcement;
 
-\- resource policy;
+- resource policy;
 
-\- value validation.
+- value validation.
 
 
 
@@ -1992,15 +1992,15 @@ Lab 15 consolidated the major vulnerable and hardened findings into one evidence
 
 
 
-\- independent authorization at every stage;
+- independent authorization at every stage;
 
-\- trusted state binding;
+- trusted state binding;
 
-\- capability enforcement;
+- capability enforcement;
 
-\- output sanitization;
+- output sanitization;
 
-\- target validation.
+- target validation.
 
 
 
@@ -2028,15 +2028,15 @@ No separate vulnerable MCP-registration baseline was executed, so a direct vulne
 
 
 
-\- trusted server identity;
+- trusted server identity;
 
-\- server allowlists;
+- server allowlists;
 
-\- tool ownership;
+- tool ownership;
 
-\- metadata sanitization;
+- metadata sanitization;
 
-\- provider/tool binding.
+- provider/tool binding.
 
 
 
@@ -2262,15 +2262,15 @@ The application must assume that the model may:
 
 
 
-\- hallucinate;
+- hallucinate;
 
-\- misunderstand tool schemas;
+- misunderstand tool schemas;
 
-\- follow malicious instructions;
+- follow malicious instructions;
 
-\- select inappropriate tools;
+- select inappropriate tools;
 
-\- produce unsafe parameters.
+- produce unsafe parameters.
 
 
 
@@ -2286,11 +2286,11 @@ The final adversarial retest demonstrated:
 
 
 
-\- 100% dangerous proposal rate;
+- 100% dangerous proposal rate;
 
-\- 100% containment;
+- 100% containment;
 
-\- 0% unauthorized impact.
+- 0% unauthorized impact.
 
 
 

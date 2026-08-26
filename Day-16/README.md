@@ -14,13 +14,13 @@ The experiment compares:
 
 
 
-\- Rule-based evaluator
+- Rule-based evaluator
 
-\- LLM-as-a-Judge evaluator
+- LLM-as-a-Judge evaluator
 
-\- Hybrid LLM + deterministic evaluator
+- Hybrid LLM + deterministic evaluator
 
-\- Analyst ground truth
+- Analyst ground truth
 
 
 

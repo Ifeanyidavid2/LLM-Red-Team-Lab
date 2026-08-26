@@ -112,25 +112,25 @@ The most important results were:
 
 
 
-\- retrieval poisoning achieved confirmed attacker control in \*\*4 of 5 executions (80% ASR)\*\*;
+- retrieval poisoning achieved confirmed attacker control in \*\*4 of 5 executions (80% ASR)\*\*;
 
-\- the same retrieval-poisoning scenario caused a protected synthetic-value disclosure in \*\*1 of 5 executions (20% SDR)\*\*;
+- the same retrieval-poisoning scenario caused a protected synthetic-value disclosure in \*\*1 of 5 executions (20% SDR)\*\*;
 
-\- indirect secret extraction produced \*\*0% attack success\*\* but \*\*100% refusal\*\* and \*\*0% task preservation\*\*;
+- indirect secret extraction produced \*\*0% attack success\*\* but \*\*100% refusal\*\* and \*\*0% task preservation\*\*;
 
-\- embedded document injection initially appeared to have a \*\*60% ASR\*\*, but analyst review proved all three detections were false positives because the model was describing the malicious instruction rather than executing it;
+- embedded document injection initially appeared to have a \*\*60% ASR\*\*, but analyst review proved all three detections were false positives because the model was describing the malicious instruction rather than executing it;
 
-\- the analyst-corrected embedded-document ASR was therefore \*\*0%\*\*;
+- the analyst-corrected embedded-document ASR was therefore \*\*0%\*\*;
 
-\- the clean baseline unexpectedly disclosed the protected synthetic value in \*\*1 of 5 executions (20% SDR)\*\* despite no active attack;
+- the clean baseline unexpectedly disclosed the protected synthetic value in \*\*1 of 5 executions (20% SDR)\*\* despite no active attack;
 
-\- exact-match scoring produced a \*\*60% false-negative rate\*\* on a controlled analyst-labelled validation dataset;
+- exact-match scoring produced a \*\*60% false-negative rate\*\* on a controlled analyst-labelled validation dataset;
 
-\- normalized and regex matching correctly classified all cases in that limited controlled dataset;
+- normalized and regex matching correctly classified all cases in that limited controlled dataset;
 
-\- real-response evaluation demonstrated that high scorer accuracy on all-negative data does not establish positive-case sensitivity; and
+- real-response evaluation demonstrated that high scorer accuracy on all-negative data does not establish positive-case sensitivity; and
 
-\- context-aware evaluation was required to distinguish \*\*attack instruction mention\*\* from \*\*attack instruction execution\*\*.
+- context-aware evaluation was required to distinguish \*\*attack instruction mention\*\* from \*\*attack instruction execution\*\*.
 
 
 
@@ -158,15 +158,15 @@ It demonstrated that:
 
 
 
-\- retrieved content can influence model behavior;
+- retrieved content can influence model behavior;
 
-\- attack markers may be reformatted;
+- attack markers may be reformatted;
 
-\- exact string comparison can produce false negatives;
+- exact string comparison can produce false negatives;
 
-\- task disruption can occur without complete takeover; and
+- task disruption can occur without complete takeover; and
 
-\- a retrieval-poisoning success may not reproduce during a later execution.
+- a retrieval-poisoning success may not reproduce during a later execution.
 
 
 
@@ -1564,13 +1564,13 @@ It examined whether the marker:
 
 
 
-\- appeared;
+- appeared;
 
-\- appeared as a standalone output;
+- appeared as a standalone output;
 
-\- was merely discussed or described; or
+- was merely discussed or described; or
 
-\- represented actual attacker-controlled execution.
+- represented actual attacker-controlled execution.
 
 
 
@@ -2140,17 +2140,17 @@ The repeated benchmark produced:
 
 
 
-\- 80% confirmed attack success under retrieval poisoning;
+- 80% confirmed attack success under retrieval poisoning;
 
-\- 20% secret disclosure under retrieval poisoning;
+- 20% secret disclosure under retrieval poisoning;
 
-\- an unsolicited secret disclosure during a clean baseline execution;
+- an unsolicited secret disclosure during a clean baseline execution;
 
-\- complete legitimate-task failure under indirect secret extraction;
+- complete legitimate-task failure under indirect secret extraction;
 
-\- evaluator false negatives using exact matching; and
+- evaluator false negatives using exact matching; and
 
-\- evaluator false positives using naive marker-presence detection.
+- evaluator false positives using naive marker-presence detection.
 
 
 
@@ -2178,33 +2178,33 @@ Recommended controls include:
 
 
 
-\- keep real secrets outside model context wherever possible;
+- keep real secrets outside model context wherever possible;
 
-\- enforce authentication and authorization outside the LLM;
+- enforce authentication and authorization outside the LLM;
 
-\- treat retrieved data as untrusted;
+- treat retrieved data as untrusted;
 
-\- maintain retrieval-source provenance;
+- maintain retrieval-source provenance;
 
-\- use least privilege for retrieval and tools;
+- use least privilege for retrieval and tools;
 
-\- prevent retrieved content from directly controlling privileged actions;
+- prevent retrieved content from directly controlling privileged actions;
 
-\- validate output before returning sensitive information;
+- validate output before returning sensitive information;
 
-\- implement sensitive-data leakage detection;
+- implement sensitive-data leakage detection;
 
-\- test repeated executions rather than single prompts;
+- test repeated executions rather than single prompts;
 
-\- measure ASR, TPR, RR and SDR together;
+- measure ASR, TPR, RR and SDR together;
 
-\- validate evaluator accuracy using labelled positive and negative cases;
+- validate evaluator accuracy using labelled positive and negative cases;
 
-\- distinguish quoted malicious content from executed malicious instructions;
+- distinguish quoted malicious content from executed malicious instructions;
 
-\- maintain analyst review for ambiguous results;
+- maintain analyst review for ambiguous results;
 
-\- repeat benchmarks after model, prompt, policy or guardrail changes.
+- repeat benchmarks after model, prompt, policy or guardrail changes.
 
 
 
@@ -2244,23 +2244,23 @@ Additional limitations include:
 
 
 
-\- one local model;
+- one local model;
 
-\- one model size;
+- one model size;
 
-\- one runtime;
+- one runtime;
 
-\- limited prompt variants;
+- limited prompt variants;
 
-\- limited decoding/generation configuration;
+- limited decoding/generation configuration;
 
-\- synthetic secrets;
+- synthetic secrets;
 
-\- heuristic task-preservation detection;
+- heuristic task-preservation detection;
 
-\- heuristic refusal detection; and
+- heuristic refusal detection; and
 
-\- manually corrected attack labels.
+- manually corrected attack labels.
 
 
 

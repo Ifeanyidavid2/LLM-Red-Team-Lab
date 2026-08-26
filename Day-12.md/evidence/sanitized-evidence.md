@@ -70,21 +70,21 @@ The following information has been sanitized:
 
 
 
-\- exact synthetic secret;
+- exact synthetic secret;
 
-\- conversation UUIDs;
+- conversation UUIDs;
 
-\- attack UUIDs;
+- attack UUIDs;
 
-\- score UUIDs;
+- score UUIDs;
 
-\- local Windows usernames;
+- local Windows usernames;
 
-\- absolute local filesystem paths;
+- absolute local filesystem paths;
 
-\- machine-specific metadata; and
+- machine-specific metadata; and
 
-\- unnecessary database identifiers.
+- unnecessary database identifiers.
 
 
 
@@ -92,21 +92,21 @@ The following evidence has been retained:
 
 
 
-\- trusted policy behavior;
+- trusted policy behavior;
 
-\- attacker technique;
+- attacker technique;
 
-\- relevant attack prompts;
+- relevant attack prompts;
 
-\- sanitized model responses;
+- sanitized model responses;
 
-\- PASS/FAIL classification;
+- PASS/FAIL classification;
 
-\- PyRIT scoring outcome;
+- PyRIT scoring outcome;
 
-\- security interpretation; and
+- security interpretation; and
 
-\- assessment observations.
+- assessment observations.
 
 
 
@@ -1730,11 +1730,11 @@ provides a reproducible foundation for continued LLM red-team testing.
 
 
 
-\- \[`../README.md`](../README.md) — Day 12 project overview
+- \[`../README.md`](../README.md) — Day 12 project overview
 
-\- \[`../PyRIT-Instruction-Hierarchy-Security-Assessment.md`](../PyRIT-Instruction-Hierarchy-Security-Assessment.md) — Full security assessment
+- \[`../PyRIT-Instruction-Hierarchy-Security-Assessment.md`](../PyRIT-Instruction-Hierarchy-Security-Assessment.md) — Full security assessment
 
-\- \[`../scripts/`](../scripts/) — Day 12 test scripts
+- \[`../scripts/`](../scripts/) — Day 12 test scripts
 
 
 

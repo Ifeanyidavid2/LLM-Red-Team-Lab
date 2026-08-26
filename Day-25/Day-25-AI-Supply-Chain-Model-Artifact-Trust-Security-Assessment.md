@@ -36,41 +36,41 @@ An AI-enabled application may load and trust:
 
 
 
-\- Models
+- Models
 
-\- Model adapters
+- Model adapters
 
-\- Prompt templates
+- Prompt templates
 
-\- System instructions
+- System instructions
 
-\- Configuration files
+- Configuration files
 
-\- Security policies
+- Security policies
 
-\- Datasets
+- Datasets
 
-\- Knowledge bases
+- Knowledge bases
 
-\- Retrieval artifacts
+- Retrieval artifacts
 
-\- Tool packages
+- Tool packages
 
-\- Python packages
+- Python packages
 
-\- Third-party dependencies
+- Third-party dependencies
 
-\- Model metadata
+- Model metadata
 
-\- Build metadata
+- Build metadata
 
-\- Software Bill of Materials (SBOM) references
+- Software Bill of Materials (SBOM) references
 
-\- Provenance attestations
+- Provenance attestations
 
-\- Integrity hashes
+- Integrity hashes
 
-\- Runtime configuration
+- Runtime configuration
 
 
 
@@ -94,29 +94,29 @@ The assessment constructed a synthetic AI supply-chain environment and systemati
 
 
 
-\- Prompt-template poisoning
+- Prompt-template poisoning
 
-\- Security-policy tampering
+- Security-policy tampering
 
-\- Dataset poisoning
+- Dataset poisoning
 
-\- Model and adapter substitution
+- Model and adapter substitution
 
-\- Tool-package compromise
+- Tool-package compromise
 
-\- Dependency confusion
+- Dependency confusion
 
-\- Artifact substitution
+- Artifact substitution
 
-\- Metadata spoofing
+- Metadata spoofing
 
-\- Provenance spoofing
+- Provenance spoofing
 
-\- Weak integrity verification
+- Weak integrity verification
 
-\- Transitive dependency compromise
+- Transitive dependency compromise
 
-\- Pre-runtime-to-runtime propagation
+- Pre-runtime-to-runtime propagation
 
 
 
@@ -152,25 +152,25 @@ A hardened architecture was then implemented using independently enforced contro
 
 
 
-\- Trusted artifact source
+- Trusted artifact source
 
-\- Artifact identity
+- Artifact identity
 
-\- Version binding
+- Version binding
 
-\- Publisher identity
+- Publisher identity
 
-\- Provenance verification
+- Provenance verification
 
-\- Full artifact integrity
+- Full artifact integrity
 
-\- Capability policy
+- Capability policy
 
-\- Runtime action binding
+- Runtime action binding
 
-\- Runtime target binding
+- Runtime target binding
 
-\- Runtime authorization
+- Runtime authorization
 
 
 
@@ -202,13 +202,13 @@ Even under these conditions:
 
 
 
-\- Defense-in-Depth Containment Rate remained \*\*100.00%\*\*
+- Defense-in-Depth Containment Rate remained \*\*100.00%\*\*
 
-\- Unsafe Runtime Execution Rate remained \*\*0.00%\*\*
+- Unsafe Runtime Execution Rate remained \*\*0.00%\*\*
 
-\- Unauthorized System Impact Rate remained \*\*0.00%\*\*
+- Unauthorized System Impact Rate remained \*\*0.00%\*\*
 
-\- Attack Chain Completion Rate remained \*\*0.00%\*\*
+- Attack Chain Completion Rate remained \*\*0.00%\*\*
 
 
 
@@ -244,33 +244,33 @@ An AI application can additionally depend on:
 
 
 
-\- Foundation models
+- Foundation models
 
-\- Fine-tuned models
+- Fine-tuned models
 
-\- LoRA adapters
+- LoRA adapters
 
-\- Prompt libraries
+- Prompt libraries
 
-\- System prompts
+- System prompts
 
-\- Vector databases
+- Vector databases
 
-\- Embedding models
+- Embedding models
 
-\- Retrieval datasets
+- Retrieval datasets
 
-\- Agent definitions
+- Agent definitions
 
-\- MCP servers
+- MCP servers
 
-\- Tool packages
+- Tool packages
 
-\- Safety policies
+- Safety policies
 
-\- Model configuration
+- Model configuration
 
-\- Evaluation artifacts
+- Evaluation artifacts
 
 
 
@@ -314,19 +314,19 @@ A component can be:
 
 
 
-\- Available
+- Available
 
-\- Loadable
+- Loadable
 
-\- Compatible
+- Compatible
 
-\- Functional
+- Functional
 
-\- Correctly named
+- Correctly named
 
-\- Correctly versioned
+- Correctly versioned
 
-\- Metadata-compatible
+- Metadata-compatible
 
 
 
@@ -484,19 +484,19 @@ Examples include:
 
 
 
-\- Selecting a restricted target
+- Selecting a restricted target
 
-\- Performing a privileged action
+- Performing a privileged action
 
-\- Changing authorization behavior
+- Changing authorization behavior
 
-\- Introducing fake approval
+- Introducing fake approval
 
-\- Expanding application capabilities
+- Expanding application capabilities
 
-\- Modifying security policy
+- Modifying security policy
 
-\- Causing unauthorized system impact
+- Causing unauthorized system impact
 
 
 
@@ -648,11 +648,11 @@ Trusted publishers included:
 
 
 
-\- `trusted\_ai\_team`
+- `trusted\_ai\_team`
 
-\- `trusted\_security\_team`
+- `trusted\_security\_team`
 
-\- `trusted\_data\_team`
+- `trusted\_data\_team`
 
 
 
@@ -846,15 +846,15 @@ The environment contained:
 
 
 
-\- Model artifact
+- Model artifact
 
-\- Prompt-template artifact
+- Prompt-template artifact
 
-\- Policy artifact
+- Policy artifact
 
-\- Dataset artifact
+- Dataset artifact
 
-\- Tool-package artifact
+- Tool-package artifact
 
 
 
@@ -870,13 +870,13 @@ The environment confirmed:
 
 
 
-\- All artifact identities valid
+- All artifact identities valid
 
-\- All integrity checks valid
+- All integrity checks valid
 
-\- All trusted artifacts loaded
+- All trusted artifacts loaded
 
-\- Legitimate workflow completed
+- Legitimate workflow completed
 
 
 
@@ -930,23 +930,23 @@ Each artifact was evaluated for:
 
 
 
-\- Identity
+- Identity
 
-\- Version
+- Version
 
-\- Publisher
+- Publisher
 
-\- Type
+- Type
 
-\- Purpose
+- Purpose
 
-\- Capabilities
+- Capabilities
 
-\- Dependency declarations
+- Dependency declarations
 
-\- Dependency availability
+- Dependency availability
 
-\- Integrity
+- Integrity
 
 
 
@@ -980,17 +980,17 @@ A model may itself be authentic while depending on a malicious:
 
 
 
-\- Prompt template
+- Prompt template
 
-\- Dataset
+- Dataset
 
-\- Policy
+- Policy
 
-\- Adapter
+- Adapter
 
-\- Library
+- Library
 
-\- Tool package
+- Tool package
 
 
 
@@ -1018,13 +1018,13 @@ Attack cases introduced instructions that attempted to:
 
 
 
-\- Delete restricted records
+- Delete restricted records
 
-\- Substitute restricted targets
+- Substitute restricted targets
 
-\- Introduce fake approval
+- Introduce fake approval
 
-\- Introduce false security authority
+- Introduce false security authority
 
 
 
@@ -1096,15 +1096,15 @@ Potential malicious changes include:
 
 
 
-\- Expanding permitted targets
+- Expanding permitted targets
 
-\- Expanding available actions
+- Expanding available actions
 
-\- Changing approval requirements
+- Changing approval requirements
 
-\- Modifying privilege rules
+- Modifying privilege rules
 
-\- Weakening access-control conditions
+- Weakening access-control conditions
 
 
 
@@ -1160,15 +1160,15 @@ Poisoned knowledge may contain:
 
 
 
-\- False target mappings
+- False target mappings
 
-\- False authorization claims
+- False authorization claims
 
-\- False approval information
+- False approval information
 
-\- Malicious operational instructions
+- Malicious operational instructions
 
-\- Incorrect security classifications
+- Incorrect security classifications
 
 
 
@@ -1212,13 +1212,13 @@ A substituted model may:
 
 
 
-\- Produce expected natural-language responses
+- Produce expected natural-language responses
 
-\- Load successfully
+- Load successfully
 
-\- Match expected interfaces
+- Match expected interfaces
 
-\- Pass superficial functionality tests
+- Pass superficial functionality tests
 
 
 
@@ -1226,13 +1226,13 @@ while also:
 
 
 
-\- Selecting restricted targets
+- Selecting restricted targets
 
-\- Expanding capabilities
+- Expanding capabilities
 
-\- Generating privileged operations
+- Generating privileged operations
 
-\- Manipulating security decisions
+- Manipulating security decisions
 
 
 
@@ -1280,17 +1280,17 @@ A compromised dependency may:
 
 
 
-\- Rewrite parameters
+- Rewrite parameters
 
-\- Redirect targets
+- Redirect targets
 
-\- Expand tool capabilities
+- Expand tool capabilities
 
-\- Bypass authorization
+- Bypass authorization
 
-\- Return false validation results
+- Return false validation results
 
-\- Alter runtime state
+- Alter runtime state
 
 
 
@@ -1326,15 +1326,15 @@ Attack scenarios included:
 
 
 
-\- Higher-version public substitution
+- Higher-version public substitution
 
-\- Same-version malicious substitution
+- Same-version malicious substitution
 
-\- Publisher impersonation
+- Publisher impersonation
 
-\- Artifact naming confusion
+- Artifact naming confusion
 
-\- Typosquatting
+- Typosquatting
 
 
 
@@ -1412,25 +1412,25 @@ Spoofed metadata included:
 
 
 
-\- Artifact ID
+- Artifact ID
 
-\- Name
+- Name
 
-\- Version
+- Version
 
-\- Publisher
+- Publisher
 
-\- Source
+- Source
 
-\- Build ID
+- Build ID
 
-\- Commit
+- Commit
 
-\- Signature-status claim
+- Signature-status claim
 
-\- Provenance claim
+- Provenance claim
 
-\- SBOM reference
+- SBOM reference
 
 
 
@@ -1676,13 +1676,13 @@ The top-level artifact may have:
 
 
 
-\- Correct identity
+- Correct identity
 
-\- Correct publisher
+- Correct publisher
 
-\- Correct hash
+- Correct hash
 
-\- Correct version
+- Correct version
 
 
 
@@ -1718,19 +1718,19 @@ The application should validate:
 
 
 
-\- Direct dependencies
+- Direct dependencies
 
-\- Transitive dependencies
+- Transitive dependencies
 
-\- Version constraints
+- Version constraints
 
-\- Publisher identities
+- Publisher identities
 
-\- Integrity
+- Integrity
 
-\- Provenance
+- Provenance
 
-\- Capability changes
+- Capability changes
 
 
 
@@ -2128,15 +2128,15 @@ The hardened architecture was tested against:
 
 
 
-\- Higher-version public substitution
+- Higher-version public substitution
 
-\- Full trusted metadata clone
+- Full trusted metadata clone
 
-\- Self-asserted trusted hash
+- Self-asserted trusted hash
 
-\- Capability expansion
+- Capability expansion
 
-\- Multi-control bypass attempts
+- Multi-control bypass attempts
 
 
 
@@ -2722,13 +2722,13 @@ A malicious component may:
 
 
 
-\- Parse correctly
+- Parse correctly
 
-\- Load correctly
+- Load correctly
 
-\- Execute correctly
+- Execute correctly
 
-\- Produce valid output
+- Produce valid output
 
 
 
@@ -2776,15 +2776,15 @@ Prompt templates influence runtime behavior and should receive:
 
 
 
-\- Integrity protection
+- Integrity protection
 
-\- Version control
+- Version control
 
-\- Provenance
+- Provenance
 
-\- Change review
+- Change review
 
-\- Deployment authorization
+- Deployment authorization
 
 
 
@@ -2816,13 +2816,13 @@ A poisoned dataset can influence:
 
 
 
-\- Target selection
+- Target selection
 
-\- Approval assumptions
+- Approval assumptions
 
-\- Authority assumptions
+- Authority assumptions
 
-\- Operational decisions
+- Operational decisions
 
 
 
@@ -2846,17 +2846,17 @@ Trust should bind the model to:
 
 
 
-\- Expected source
+- Expected source
 
-\- Expected publisher
+- Expected publisher
 
-\- Expected version
+- Expected version
 
-\- Expected digest
+- Expected digest
 
-\- Expected provenance
+- Expected provenance
 
-\- Expected capabilities
+- Expected capabilities
 
 
 
@@ -2924,17 +2924,17 @@ Secure integrity verification depends on:
 
 
 
-\- What is hashed
+- What is hashed
 
-\- How it is serialized
+- How it is serialized
 
-\- Where the trusted digest originates
+- Where the trusted digest originates
 
-\- Whether metadata is included
+- Whether metadata is included
 
-\- Whether security-sensitive fields are included
+- Whether security-sensitive fields are included
 
-\- Whether verification state is fresh
+- Whether verification state is fresh
 
 
 
@@ -3022,13 +3022,13 @@ When trust verification fails, the system should not:
 
 
 
-\- Warn and continue
+- Warn and continue
 
-\- Silently fall back
+- Silently fall back
 
-\- Accept self-declared trust
+- Accept self-declared trust
 
-\- Use the nearest matching artifact
+- Use the nearest matching artifact
 
 
 
@@ -3072,15 +3072,15 @@ Examples:
 
 
 
-\- Private model registries
+- Private model registries
 
-\- Internal package repositories
+- Internal package repositories
 
-\- Approved Hugging Face organizations
+- Approved Hugging Face organizations
 
-\- Controlled object storage
+- Controlled object storage
 
-\- Signed release repositories
+- Signed release repositories
 
 
 
@@ -3104,13 +3104,13 @@ Avoid trust decisions based only on:
 
 
 
-\- Filename
+- Filename
 
-\- Display name
+- Display name
 
-\- Repository search result
+- Repository search result
 
-\- Package description
+- Package description
 
 
 
@@ -3202,21 +3202,21 @@ Useful provenance properties include:
 
 
 
-\- Source repository
+- Source repository
 
-\- Build system
+- Build system
 
-\- Build identity
+- Build identity
 
-\- Commit
+- Commit
 
-\- Builder identity
+- Builder identity
 
-\- Release pipeline
+- Release pipeline
 
-\- Artifact digest
+- Artifact digest
 
-\- Signing identity
+- Signing identity
 
 
 
@@ -3240,15 +3240,15 @@ Avoid:
 
 
 
-\- Metadata-only hashing
+- Metadata-only hashing
 
-\- Partial hashing
+- Partial hashing
 
-\- Ignoring security-sensitive fields
+- Ignoring security-sensitive fields
 
-\- Trusting artifact-supplied digests
+- Trusting artifact-supplied digests
 
-\- Reusing stale verification state
+- Reusing stale verification state
 
 
 
@@ -3272,17 +3272,17 @@ Controls may include:
 
 
 
-\- Lockfiles
+- Lockfiles
 
-\- Exact versions
+- Exact versions
 
-\- Repository restrictions
+- Repository restrictions
 
-\- Hash pinning
+- Hash pinning
 
-\- Namespace controls
+- Namespace controls
 
-\- Private package indexes
+- Private package indexes
 
 
 
@@ -3346,21 +3346,21 @@ An AI-oriented SBOM or component inventory may include:
 
 
 
-\- Models
+- Models
 
-\- Adapters
+- Adapters
 
-\- Prompt packages
+- Prompt packages
 
-\- Datasets
+- Datasets
 
-\- Embedding models
+- Embedding models
 
-\- Libraries
+- Libraries
 
-\- Tool packages
+- Tool packages
 
-\- Runtime dependencies
+- Runtime dependencies
 
 
 
@@ -3830,31 +3830,31 @@ Recommended events include:
 
 
 
-\- Artifact source changes
+- Artifact source changes
 
-\- Artifact digest changes
+- Artifact digest changes
 
-\- Model version changes
+- Model version changes
 
-\- Prompt-template changes
+- Prompt-template changes
 
-\- Policy changes
+- Policy changes
 
-\- Dataset changes
+- Dataset changes
 
-\- Dependency changes
+- Dependency changes
 
-\- Provenance verification failures
+- Provenance verification failures
 
-\- Signature verification failures
+- Signature verification failures
 
-\- SBOM changes
+- SBOM changes
 
-\- Capability changes
+- Capability changes
 
-\- Runtime target deviations
+- Runtime target deviations
 
-\- Runtime action deviations
+- Runtime action deviations
 
 
 
@@ -4010,21 +4010,21 @@ AI supply-chain security shares many concerns with traditional software supply c
 
 
 
-\- Dependency confusion
+- Dependency confusion
 
-\- Package substitution
+- Package substitution
 
-\- Typosquatting
+- Typosquatting
 
-\- Compromised publishers
+- Compromised publishers
 
-\- Build-system compromise
+- Build-system compromise
 
-\- Artifact tampering
+- Artifact tampering
 
-\- Provenance spoofing
+- Provenance spoofing
 
-\- Integrity failures
+- Integrity failures
 
 
 
@@ -4032,19 +4032,19 @@ However, AI systems introduce additional artifact classes:
 
 
 
-\- Models
+- Models
 
-\- Adapters
+- Adapters
 
-\- Prompts
+- Prompts
 
-\- Datasets
+- Datasets
 
-\- Embeddings
+- Embeddings
 
-\- Retrieval indexes
+- Retrieval indexes
 
-\- Agent configurations
+- Agent configurations
 
 
 
@@ -4158,23 +4158,23 @@ The Day 25 work demonstrates concepts relevant to AI and software supply-chain t
 
 
 
-\- Supply-chain compromise
+- Supply-chain compromise
 
-\- Model poisoning
+- Model poisoning
 
-\- Data poisoning
+- Data poisoning
 
-\- Dependency compromise
+- Dependency compromise
 
-\- Trusted relationship abuse
+- Trusted relationship abuse
 
-\- Execution through compromised components
+- Execution through compromised components
 
-\- Defense evasion through metadata spoofing
+- Defense evasion through metadata spoofing
 
-\- Privilege expansion through compromised policy
+- Privilege expansion through compromised policy
 
-\- Persistence through trusted artifacts
+- Persistence through trusted artifacts
 
 
 
@@ -4194,17 +4194,17 @@ The assessment is relevant to AI security concerns including:
 
 
 
-\- Supply-chain vulnerabilities
+- Supply-chain vulnerabilities
 
-\- Excessive agency
+- Excessive agency
 
-\- Improper output handling
+- Improper output handling
 
-\- Data and model poisoning
+- Data and model poisoning
 
-\- System-prompt compromise
+- System-prompt compromise
 
-\- Excessive trust in external components
+- Excessive trust in external components
 
 
 
@@ -4224,23 +4224,23 @@ The project demonstrates security engineering concepts consistent with:
 
 
 
-\- Supply-chain risk management
+- Supply-chain risk management
 
-\- Software integrity
+- Software integrity
 
-\- Provenance
+- Provenance
 
-\- Access control
+- Access control
 
-\- Least privilege
+- Least privilege
 
-\- Configuration management
+- Configuration management
 
-\- Continuous monitoring
+- Continuous monitoring
 
-\- Secure development
+- Secure development
 
-\- Risk management
+- Risk management
 
 
 
@@ -4264,23 +4264,23 @@ It uses simulated:
 
 
 
-\- AI artifacts
+- AI artifacts
 
-\- Models
+- Models
 
-\- Package repositories
+- Package repositories
 
-\- Provenance claims
+- Provenance claims
 
-\- Signature status
+- Signature status
 
-\- SBOM references
+- SBOM references
 
-\- Dependency graphs
+- Dependency graphs
 
-\- Protected records
+- Protected records
 
-\- Runtime operations
+- Runtime operations
 
 
 
@@ -4304,17 +4304,17 @@ The labs did not implement a complete production cryptographic trust system invo
 
 
 
-\- PKI certificate chains
+- PKI certificate chains
 
-\- Hardware-backed keys
+- Hardware-backed keys
 
-\- Sigstore
+- Sigstore
 
-\- Transparency logs
+- Transparency logs
 
-\- Real signing authorities
+- Real signing authorities
 
-\- Production SLSA attestations
+- Production SLSA attestations
 
 
 
@@ -4358,17 +4358,17 @@ Real-world dataset poisoning may involve:
 
 
 
-\- Large-scale corpus manipulation
+- Large-scale corpus manipulation
 
-\- Training-data poisoning
+- Training-data poisoning
 
-\- Fine-tuning poisoning
+- Fine-tuning poisoning
 
-\- RAG corpus poisoning
+- RAG corpus poisoning
 
-\- Embedding manipulation
+- Embedding manipulation
 
-\- Retrieval-ranking attacks
+- Retrieval-ranking attacks
 
 
 
@@ -4422,63 +4422,63 @@ Day 25 demonstrates practical capability in:
 
 
 
-\- AI Red Teaming
+- AI Red Teaming
 
-\- LLM Security
+- LLM Security
 
-\- AI Supply-Chain Security
+- AI Supply-Chain Security
 
-\- Model Security
+- Model Security
 
-\- Model Artifact Trust
+- Model Artifact Trust
 
-\- Prompt Security
+- Prompt Security
 
-\- Prompt Supply-Chain Security
+- Prompt Supply-Chain Security
 
-\- Dataset Poisoning Analysis
+- Dataset Poisoning Analysis
 
-\- Model Substitution Testing
+- Model Substitution Testing
 
-\- Adapter Security
+- Adapter Security
 
-\- Dependency Security
+- Dependency Security
 
-\- Dependency Confusion Testing
+- Dependency Confusion Testing
 
-\- Tool Package Security
+- Tool Package Security
 
-\- Artifact Integrity Verification
+- Artifact Integrity Verification
 
-\- SHA-256 Integrity Analysis
+- SHA-256 Integrity Analysis
 
-\- Provenance Validation
+- Provenance Validation
 
-\- Metadata Spoofing Analysis
+- Metadata Spoofing Analysis
 
-\- SBOM Security Concepts
+- SBOM Security Concepts
 
-\- Transitive Dependency Analysis
+- Transitive Dependency Analysis
 
-\- Capability Security
+- Capability Security
 
-\- Least Privilege
+- Least Privilege
 
-\- Runtime Authorization
+- Runtime Authorization
 
-\- Trust-Boundary Analysis
+- Trust-Boundary Analysis
 
-\- Defense in Depth
+- Defense in Depth
 
-\- Security Architecture
+- Security Architecture
 
-\- Threat Modeling
+- Threat Modeling
 
-\- Adversarial Testing
+- Adversarial Testing
 
-\- Python Security Automation
+- Python Security Automation
 
-\- Quantitative Security Analysis
+- Quantitative Security Analysis
 
 
 
@@ -4880,21 +4880,21 @@ The vulnerable architecture demonstrated how weak assumptions around:
 
 
 
-\- Artifact availability
+- Artifact availability
 
-\- Package resolution
+- Package resolution
 
-\- Metadata
+- Metadata
 
-\- Publisher identity
+- Publisher identity
 
-\- Provenance
+- Provenance
 
-\- Hash verification
+- Hash verification
 
-\- Dependency trust
+- Dependency trust
 
-\- Capability declarations
+- Capability declarations
 
 
 

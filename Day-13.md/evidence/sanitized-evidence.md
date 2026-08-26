@@ -630,21 +630,21 @@ The scored experiment persisted:
 
 
 
-\- trusted system policy;
+- trusted system policy;
 
-\- attack objective;
+- attack objective;
 
-\- retrieved content;
+- retrieved content;
 
-\- target response;
+- target response;
 
-\- objective score;
+- objective score;
 
-\- attack result;
+- attack result;
 
-\- execution metadata; and
+- execution metadata; and
 
-\- test labels.
+- test labels.
 
 
 
@@ -802,17 +802,17 @@ Overall Risk: MODERATE
 
 
 
-\- One confirmed semantic indirect prompt-injection success.
+- One confirmed semantic indirect prompt-injection success.
 
-\- Multiple task-integrity disruptions.
+- Multiple task-integrity disruptions.
 
-\- No protected synthetic-secret disclosure in the dedicated indirect-secret tests.
+- No protected synthetic-secret disclosure in the dedicated indirect-secret tests.
 
-\- Evidence of multi-turn attacker influence.
+- Evidence of multi-turn attacker influence.
 
-\- Exact-match scoring produced a false negative.
+- Exact-match scoring produced a false negative.
 
-\- Retrieval-poisoning behavior varied across executions.
+- Retrieval-poisoning behavior varied across executions.
 
 
 
