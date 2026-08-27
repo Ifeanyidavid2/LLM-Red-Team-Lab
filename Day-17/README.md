@@ -195,21 +195,13 @@ The hardened judge reduced observed accepted manipulation, but overall evaluator
 
 
 | Metric | Day 16 Hybrid | Day 17 Corrected |
-
 |---|---:|---:|
-
 | Evaluation / Automatic Rate | 85.00% | 85.00% |
-
 | Operational Final Accuracy | 55.00% | 40.00% |
-
 | Complete-Signal Accuracy | 20.00% | 15.00% |
-
 | Attack Recall | 20.00% | 0.00% |
-
 | Task Recall | 12.50% | 25.00% |
-
 | Refusal Recall | 0.00% | 50.00% |
-
 | Secret Recall | 100.00% | 100.00% |
 
 

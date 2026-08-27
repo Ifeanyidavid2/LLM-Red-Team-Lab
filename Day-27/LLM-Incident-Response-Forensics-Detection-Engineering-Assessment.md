@@ -241,33 +241,19 @@ The environment included:
 
 
 | Component | Security Function |
-
 |---|---|
-
 | Input Gateway | Receives user prompts |
-
 | Security Classifier | Classifies suspicious prompt behavior |
-
 | Retrieval Service | Retrieves RAG documents |
-
 | Context Security Gateway | Controls retrieved context admission |
-
 | LLM Runtime | Processes trusted and untrusted context |
-
 | Memory Service | Reads and writes persistent AI memory |
-
 | Agent Planner | Generates agent actions |
-
 | Tool Router | Selects tools and targets |
-
 | Authorization Service | Evaluates execution authorization |
-
 | Tool Runtime | Executes approved operations |
-
 | Record Service | Represents downstream business impact |
-
 | Detection Engine | Generates AI security alerts |
-
 | Incident Response Service | Creates and manages incidents |
 
 
@@ -285,33 +271,19 @@ The assessment included the following representative assets:
 
 
 | Asset | Purpose |
-
 |---|---|
-
 | `R-2702` | Trusted record |
-
 | `R-2799` | Restricted record |
-
 | `read\_record` | Normal authorized tool |
-
 | `delete\_record` | Privileged tool |
-
 | `security\_controller` | Trusted authority |
-
 | `MEMORY-2701` | Persistent AI memory |
-
 | `RAG-2701` | Retrieval store |
-
 | `DOC-2791` | Poisoned RAG document |
-
 | `AGENT-2701` | Initial AI agent |
-
 | `AGENT-2702` | Later affected agent |
-
 | `SESSION-2701` | Initial compromised session |
-
 | `SESSION-2702` | Cross-session affected workflow |
-
 | `AUTHZ-2701` | Authorization boundary |
 
 
@@ -409,19 +381,12 @@ Security telemetry was generated across:
 
 
 | Metric | Result |
-
 |---|---:|
-
 | Total Events | 11 |
-
 | Complete Events | 11 |
-
 | Telemetry Completeness Rate | 100% |
-
 | Unique Components | 9 |
-
 | Unique Event Types | 11 |
-
 | Forensic Reconstruction Possible | Yes |
 
 
@@ -481,25 +446,15 @@ Events were hash-linked to create an integrity-verifiable evidence sequence.
 
 
 | Metric | Result |
-
 |---|---:|
-
 | Total Events | 8 |
-
 | Complete Events | 8 |
-
 | Forensic Completeness Rate | 100% |
-
 | Events With Valid Integrity | 8 |
-
 | Integrity Validation Rate | 100% |
-
 | Hash Chain Valid | Yes |
-
 | Sequence Valid | Yes |
-
 | Session Correlation Valid | Yes |
-
 | Trace Correlation Valid | Yes |
 
 

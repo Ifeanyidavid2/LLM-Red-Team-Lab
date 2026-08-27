@@ -129,21 +129,13 @@ The vulnerable end-to-end architecture ultimately produced:
 
 
 | Metric | Vulnerable Result |
-
 |---|---:|
-
 | Artifact Trust Bypass Rate | 100.00% |
-
 | Malicious Artifact Load Rate | 100.00% |
-
 | Supply-Chain Propagation Rate | 100.00% |
-
 | Runtime Compromise Rate | 100.00% |
-
 | Unauthorized System Impact Rate | 100.00% |
-
 | Attack Chain Completion Rate | 100.00% |
-
 | Legitimate Workflow Completion Rate | 100.00% |
 
 
@@ -179,17 +171,11 @@ The hardened architecture achieved:
 
 
 | Metric | Hardened Result |
-
 |---|---:|
-
 | Supply-Chain Containment Rate | 100.00% |
-
 | Malicious Artifact Load Rate | 0.00% |
-
 | Unauthorized System Impact Rate | 0.00% |
-
 | Attack Chain Completion Rate | 0.00% |
-
 | Legitimate Workflow Completion Rate | 100.00% |
 
 
@@ -629,17 +615,11 @@ The baseline environment defined five primary artifact classes.
 
 
 | Artifact | Example ID | Security Role |
-
 |---|---|---|
-
 | Model | MODEL-2501 | Performs project analysis |
-
 | Prompt Template | PROMPT-2501 | Provides trusted instructions |
-
 | Policy | POLICY-2501 | Restricts runtime capabilities |
-
 | Dataset | DATA-2501 | Provides reference information |
-
 | Tool Package | TOOL-2501 | Exposes approved record operations |
 
 
@@ -785,39 +765,22 @@ The assessment was divided into sixteen labs.
 
 
 | Lab | Assessment Area |
-
 |---|---|
-
 | Lab 1 | Synthetic AI Supply-Chain Environment |
-
 | Lab 2 | Trusted Artifact \& Model Baseline |
-
 | Lab 3 | Prompt-Template Supply-Chain Poisoning |
-
 | Lab 4 | Configuration / Policy Artifact Tampering |
-
 | Lab 5 | Dataset / Knowledge Artifact Poisoning |
-
 | Lab 6 | Model / Adapter Substitution |
-
 | Lab 7 | Tool Package / Dependency Compromise |
-
 | Lab 8 | Dependency Confusion \& Artifact Substitution |
-
 | Lab 9 | Artifact Metadata \& Provenance Spoofing |
-
 | Lab 10 | Hash / Integrity Verification Bypass |
-
 | Lab 11 | Transitive Dependency Compromise |
-
 | Lab 12 | Compromised Artifact → Runtime Propagation |
-
 | Lab 13 | Vulnerable End-to-End Supply-Chain Attack Chain |
-
 | Lab 14 | AI Supply-Chain Trust \& Containment Controls |
-
 | Lab 15 | Hardened AI Supply-Chain Adversarial Retest |
-
 | Lab 16 | Final Comparative Analysis |
 
 
@@ -1933,21 +1896,13 @@ Unauthorized System Impact
 
 
 | Metric | Result |
-
 |---|---:|
-
 | Artifact Trust Bypass Rate | 100.00% |
-
 | Malicious Artifact Load Rate | 100.00% |
-
 | Supply-Chain Propagation Rate | 100.00% |
-
 | Runtime Compromise Rate | 100.00% |
-
 | Unauthorized System Impact Rate | 100.00% |
-
 | Attack Chain Completion Rate | 100.00% |
-
 | Legitimate Workflow Completion Rate | 100.00% |
 
 
@@ -2525,15 +2480,10 @@ That separation significantly limits supply-chain blast radius.
 
 
 | Metric | Vulnerable | Hardened |
-
 |---|---:|---:|
-
 | Malicious Artifact Load Rate | 100.00% | 0.00% |
-
 | Unauthorized System Impact Rate | 100.00% | 0.00% |
-
 | Attack Chain Completion Rate | 100.00% | 0.00% |
-
 | Legitimate Workflow Completion Rate | 100.00% | 100.00% |
 
 
@@ -4117,27 +4067,16 @@ And critically:
 
 
 | Threat | Likelihood | Impact | Risk |
-
 |---|---|---|---|
-
 | Prompt-template poisoning | Medium | High | High |
-
 | Dataset poisoning | Medium | High | High |
-
 | Model substitution | Medium | Critical | High |
-
 | Adapter substitution | Medium | High | High |
-
 | Tool-package compromise | Medium | Critical | Critical |
-
 | Dependency confusion | Medium | High | High |
-
 | Metadata spoofing | High under weak validation | High | High |
-
 | Integrity bypass | Medium | Critical | Critical |
-
 | Transitive dependency compromise | Medium | High | High |
-
 | Runtime authority inheritance | Medium | Critical | Critical |
 
 

@@ -563,13 +563,9 @@ The iterative development process produced the following results:
 
 
 | Evaluator | Final Classification Accuracy | Complete Signal Accuracy |
-
 |---|---:|---:|
-
 | v1 | 75.00% | 66.67% |
-
 | v2 | 95.83% | 95.83% |
-
 | v3 | 100.00% | 100.00% |
 
 

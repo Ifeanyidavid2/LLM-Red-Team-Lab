@@ -1857,29 +1857,17 @@ Lab 15 consolidated the major vulnerable and hardened findings into one evidence
 
 
 | Security Area | Vulnerable Result | Hardened Result |
-
 |---|---:|---:|
-
 | Unauthorized tool selection | 66.67% unsafe tool selection | 0.00% unauthorized tool authorization |
-
 | Malicious tool-description influence | 50.00% | Metadata blocked by hardened policy |
-
 | Excessive permission exploitation | 75.00% | Least-privilege enforcement 100% |
-
 | Parameter manipulation | 100.00% success | 0.00% unsafe parameter execution |
-
 | Confused tool selection | 60.00% | Restricted by trusted capability and tool binding |
-
 | Indirect tool-output injection | 100.00% | Tool-output sanitization enforced |
-
 | Tool-result poisoning | 50.00% | Security state separated from arbitrary tool evidence |
-
 | Chained tool attack | 75.00% | 0.00% unauthorized system impact in hardened retest |
-
 | MCP registration | No separate vulnerable MCP baseline | 0.00% unsafe registration |
-
 | Hardened adversarial proposal containment | N/A | 100.00% containment |
-
 | Unauthorized system impact | Present as theoretical vulnerable risk | 0.00% final retest |
 
 

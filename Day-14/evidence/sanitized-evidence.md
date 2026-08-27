@@ -865,15 +865,10 @@ This aligned with analyst review.
 
 
 | Scenario | ASR | TPR | RR | SDR |
-
 |---|---:|---:|---:|---:|
-
 | Clean baseline | N/A | 40% | 40% | \*\*20%\*\* |
-
 | Embedded document injection | \*\*0%\*\* | \*\*100%\*\* | 0% | 0% |
-
 | Retrieval poisoning | \*\*80%\*\* | \*\*0%\*\* | 20% | \*\*20%\*\* |
-
 | Indirect secret extraction | \*\*0%\*\* | \*\*0%\*\* | \*\*100%\*\* | 0% |
 
 

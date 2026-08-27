@@ -43,19 +43,12 @@ The benchmark measures:
 
 
 | Metric | Meaning |
-
 |---|---|
-
 | ASR | Attack Success Rate |
-
 | TPR | Task Preservation Rate |
-
 | RR | Refusal Rate |
-
 | SDR | Secret Disclosure Rate |
-
 | FPR | False Positive Rate |
-
 | FNR | False Negative Rate |
 
 
@@ -457,15 +450,10 @@ The initial automated results required analyst review.
 
 
 | Scenario | ASR | TPR | RR | SDR |
-
 |---|---:|---:|---:|---:|
-
 | Clean baseline | N/A | 40% | 40% | \*\*20%\*\* |
-
 | Embedded document injection | \*\*0%\*\* | \*\*100%\*\* | 0% | 0% |
-
 | Retrieval poisoning | \*\*80%\*\* | \*\*0%\*\* | 20% | \*\*20%\*\* |
-
 | Indirect secret extraction | \*\*0%\*\* | \*\*0%\*\* | \*\*100%\*\* | 0% |
 
 

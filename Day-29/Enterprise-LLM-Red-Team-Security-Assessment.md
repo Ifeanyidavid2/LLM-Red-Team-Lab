@@ -155,25 +155,15 @@ Results:
 
 
 | Metric | Result |
-
 |---|---:|
-
 | Adversarial Retests | 33 |
-
 | Passed | 33 |
-
 | Failed | 0 |
-
 | Retest Pass Rate | 100% |
-
 | Material Findings Closed | 8 / 8 |
-
 | Critical Residual Risks | 0 |
-
 | High Residual Risks | 0 |
-
 | Legitimate Workflow Completion | 100% |
-
 | False Block Rate | 0% |
 
 
@@ -187,13 +177,9 @@ Detection also improved substantially:
 
 
 | Detection Metric | Baseline | Hardened |
-
 |---|---:|---:|
-
 | Early Detection Rate | 0% | 100% |
-
 | Event Detection Coverage | 43.75% | 100% |
-
 | Time to Detection | 64 seconds | 8 seconds |
 
 
@@ -267,29 +253,17 @@ The assessment covered the complete enterprise GenAI execution path.
 
 
 | Component | Security Role |
-
 |---|---|
-
 | Enterprise User | External authenticated actor |
-
 | AI Assistant | User-facing application boundary |
-
 | LLM Runtime | Model reasoning and generation |
-
 | RAG Knowledge System | Enterprise retrieval |
-
 | Persistent Memory | Long-lived AI state |
-
 | Agent Planner | Goal and action planning |
-
 | Tools / APIs | Business execution capabilities |
-
 | Authorization Service | Independent authorization |
-
 | Credential Broker | Task credential issuance |
-
 | Business Data | Restricted enterprise records |
-
 | Security Telemetry | Detection and forensic evidence |
 
 
@@ -463,27 +437,16 @@ The assessment identified the following high-value assets:
 
 
 | Asset | Classification |
-
 |---|---|
-
 | System Prompt | Confidential |
-
 | User Prompt | Untrusted |
-
 | Retrieved Context | Mixed Trust |
-
 | Persistent AI Memory | Sensitive |
-
 | Agent Goal / Plan | Critical Execution State |
-
 | Tool Parameters | Critical Execution State |
-
 | Authorization Decision | Restricted |
-
 | API Credentials | Restricted |
-
 | Restricted Business Records | Restricted |
-
 | Security Telemetry | Sensitive |
 
 
@@ -587,31 +550,18 @@ The primary attack surfaces identified were:
 
 
 | Attack Surface | Security Concern |
-
 |---|---|
-
 | User Prompt Interface | Direct prompt injection |
-
 | System Instruction Boundary | Instruction override |
-
 | RAG Document Admission | Indirect prompt injection |
-
 | Persistent Memory Write | Memory poisoning |
-
 | Persistent Memory Read | Cross-session influence |
-
 | Agent Goal Generation | Goal hijacking |
-
 | Tool Selection | Privileged capability abuse |
-
 | Tool Parameters | Parameter manipulation |
-
 | Authorization Decision | Authorization bypass |
-
 | Credential Delivery | Credential scope abuse |
-
 | Business Resource | Unauthorized impact |
-
 | Security Telemetry | Detection suppression |
 
 
@@ -825,23 +775,14 @@ Results:
 
 
 | Metric | Result |
-
 |---|---:|
-
 | Tests | 8 |
-
 | Passed | 4 |
-
 | Failed | 4 |
-
 | Security Pass Rate | 50% |
-
 | Attack Success Rate | 50% |
-
 | Confirmed Findings | 4 |
-
 | Critical Findings | 3 |
-
 | High Findings | 1 |
 
 
@@ -899,21 +840,13 @@ Results:
 
 
 | Metric | Result |
-
 |---|---:|
-
 | Tests | 8 |
-
 | Passed | 3 |
-
 | Failed | 5 |
-
 | Sensitive Disclosure Rate | 62.5% |
-
 | Confirmed Findings | 5 |
-
 | Critical Findings | 2 |
-
 | High Findings | 3 |
 
 
@@ -1437,25 +1370,15 @@ Baseline results:
 
 
 | Metric | Result |
-
 |---|---:|
-
 | Attack Events | 16 |
-
 | Telemetry Coverage | 100% |
-
 | Event Detection Coverage | 43.75% |
-
 | Detection Rule Success | 55.56% |
-
 | Early Detection Rate | 0% |
-
 | Time to First Detection | 64 seconds |
-
 | Time to Business Impact | 120 seconds |
-
 | Forensic Reconstruction | 100% |
-
 | Missed Critical Events | 7 |
 
 
@@ -1553,23 +1476,14 @@ Eight material findings were produced.
 
 
 | ID | Severity | Finding |
-
 |---|---|---|
-
 | CF-2901 | Critical | Untrusted Instructions Can Alter Trusted AI Tasks and Targets |
-
 | CF-2902 | Critical | RAG Trust Boundary Permits Poisoned Context and Indirect Prompt Injection |
-
 | CF-2903 | Critical | Persistent AI Memory Enables Cross-Session and Cross-Agent Compromise |
-
 | CF-2904 | Critical | Agent and Tool Boundaries Permit Privileged Execution Manipulation |
-
 | CF-2905 | Critical | Authorization Enforcement Fails Closed Inconsistently |
-
 | CF-2906 | High | Task Credentials Are Not Sufficiently Scoped to Authorized Operations |
-
 | CF-2907 | Critical | Sensitive Model-Visible Data Can Be Exposed or Aggregated |
-
 | CF-2908 | High | AI Detection Engineering Misses Early Attack Stages |
 
 
@@ -1915,13 +1829,9 @@ Detection improved significantly after remediation.
 
 
 | Metric | Baseline | Hardened |
-
 |---|---:|---:|
-
 | Early Detection | 0% | 100% |
-
 | Event Detection Coverage | 43.75% | 100% |
-
 | Time to Detection | 64 sec | 8 sec |
 
 
@@ -1951,23 +1861,14 @@ After remediation and adversarial retesting:
 
 
 | Risk | Residual Rating | Score |
-
 |---|---|---:|
-
 | Prompt / Instruction Manipulation | Low | 4 |
-
 | RAG Poisoning | Low | 4 |
-
 | Persistent Memory Compromise | Low | 5 |
-
 | Agent / Tool Abuse | Low | 5 |
-
 | Authorization Bypass | Low | 5 |
-
 | Credential Scope Abuse | Low | 4 |
-
 | Sensitive Data Exposure | Low | 5 |
-
 | Late AI Attack Detection | Low | 3 |
 
 
@@ -2117,23 +2018,14 @@ The following security indicators should be monitored continuously:
 
 
 | Metric | Required Security Threshold |
-
 |---|---|
-
 | Prompt / indirect-injection alerts | Investigate High/Critical correlations |
-
 | Unauthorized memory writes | Zero successful events |
-
 | Cross-session memory propagation | Zero unauthorized propagation |
-
 | Privileged tool requests | 100% independently authorized |
-
 | Execution after authorization denial | Zero |
-
 | Credential scope violations | Zero successful violations |
-
 | Restricted-data DLP violations | Zero confirmed disclosures |
-
 | AI security detection timing | Detect before privileged execution |
 
 
@@ -2147,25 +2039,15 @@ The following security indicators should be monitored continuously:
 
 
 | Security Metric | Baseline | Final |
-
 |---|---:|---:|
-
 | Attack Chain Successful | Yes | No |
-
 | Critical Findings | 6 | 0 |
-
 | High Findings | 2 | 0 |
-
 | Early Detection Rate | 0% | 100% |
-
 | Event Detection Coverage | 43.75% | 100% |
-
 | Time to Detection | 64 sec | 8 sec |
-
 | Material Findings Closed | 0/8 | 8/8 |
-
 | Retest Pass Rate | — | 100% |
-
 | Legitimate Workflow Completion | — | 100% |
 
 

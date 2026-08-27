@@ -219,19 +219,12 @@ The synthetic system modeled during Day 28 was:
 
 
 | Attribute | Value |
-
 |---|---|
-
 | System ID | AI-SYSTEM-2801 |
-
 | System | synthetic-enterprise-ai-assistant |
-
 | Environment | day28-threat-model-lab |
-
 | Version | v1.0.0 |
-
 | Business Function | Enterprise knowledge retrieval and authorized workflow automation |
-
 | Assessment Stage | Pre-deployment threat model |
 
 
@@ -257,35 +250,20 @@ Major assets included:
 
 
 | Asset | Type | Criticality |
-
 |---|---|---|
-
 | User Prompt | Instruction | High |
-
 | System Prompt | Instruction | Critical |
-
 | LLM | Model | Critical |
-
 | RAG Knowledge Store | Retrieval | High |
-
 | Retrieved Documents | Context | High |
-
 | Persistent AI Memory | Memory | Critical |
-
 | Agent Planner | Agent | Critical |
-
 | Read Record Tool | Tool | Medium |
-
 | Delete Record Tool | Privileged Tool | Critical |
-
 | Authorization Service | Security Control | Critical |
-
 | User Identity | Identity | High |
-
 | API Credential | Secret | Critical |
-
 | Restricted Record R-2899 | Business Data | Critical |
-
 | Security Telemetry | Security Data | High |
 
 
