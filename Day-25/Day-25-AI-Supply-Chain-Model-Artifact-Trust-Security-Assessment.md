@@ -6,21 +6,21 @@
 
 
 
-\*\*Assessment Type:\*\* AI / LLM Supply-Chain Security Assessment  
+**Assessment Type:** AI / LLM Supply-Chain Security Assessment
 
-\*\*Focus Area:\*\* Model, Prompt, Dataset, Dependency, Tool, Configuration \& Artifact Trust  
+**Focus Area:** Model, Prompt, Dataset, Dependency, Tool, Configuration \& Artifact Trust
 
-\*\*Testing Methodology:\*\* Synthetic Adversarial Security Testing  
+**Testing Methodology:** Synthetic Adversarial Security Testing
 
-\*\*Environment:\*\* Python / PyRIT-Lab  
+**Environment:** Python / PyRIT-Lab
 
-\*\*Day:\*\* 25  
+**Day:** 25
 
-\*\*Status:\*\* Completed
+**Status:** Completed
 
 
 
-\---
+---
 
 
 
@@ -210,7 +210,7 @@ The core security principle established by Day 25 is:
 
 
 
-\---
+---
 
 
 
@@ -320,7 +320,7 @@ while still being malicious.
 
 
 
-\---
+---
 
 
 
@@ -344,7 +344,7 @@ A secondary question is:
 
 
 
-\---
+---
 
 
 
@@ -392,7 +392,7 @@ A secure AI architecture must establish each property independently.
 
 
 
-\---
+---
 
 
 
@@ -446,7 +446,7 @@ The Day 25 assessment was designed to:
 
 
 
-\---
+---
 
 
 
@@ -486,7 +486,7 @@ Examples include:
 
 
 
-\---
+---
 
 
 
@@ -602,7 +602,7 @@ Each transition represents a security boundary.
 
 
 
-\---
+---
 
 
 
@@ -664,7 +664,7 @@ sha256
 
 
 
-\---
+---
 
 
 
@@ -752,7 +752,7 @@ The artifact must have verifiable origin and build history.
 
 
 
-\---
+---
 
 
 
@@ -785,7 +785,7 @@ The assessment was divided into sixteen labs.
 
 
 
-\---
+---
 
 
 
@@ -873,7 +873,7 @@ Without a known-good baseline, compromise cannot be measured reliably.
 
 
 
-\---
+---
 
 
 
@@ -961,7 +961,7 @@ Model trust therefore requires dependency trust.
 
 
 
-\---
+---
 
 
 
@@ -1039,7 +1039,7 @@ This demonstrates that prompt injection can also exist as a supply-chain problem
 
 
 
-\---
+---
 
 
 
@@ -1103,7 +1103,7 @@ Therefore policy artifacts require the same trust protections as executable code
 
 
 
-\---
+---
 
 
 
@@ -1155,7 +1155,7 @@ Dataset authenticity and provenance therefore form part of the AI application's 
 
 
 
-\---
+---
 
 
 
@@ -1223,7 +1223,7 @@ A model must therefore be bound to trusted identity and integrity information.
 
 
 
-\---
+---
 
 
 
@@ -1269,7 +1269,7 @@ A malicious dependency may remain invisible to the application because its funct
 
 
 
-\---
+---
 
 
 
@@ -1355,7 +1355,7 @@ A package manager or artifact loader must not treat version precedence as trust 
 
 
 
-\---
+---
 
 
 
@@ -1485,7 +1485,7 @@ does not authenticate the publisher.
 
 
 
-\---
+---
 
 
 
@@ -1595,7 +1595,7 @@ Is stale verification state reused?
 
 
 
-\---
+---
 
 
 
@@ -1697,7 +1697,7 @@ The application should validate:
 
 
 
-\---
+---
 
 
 
@@ -1803,7 +1803,7 @@ This became a central design principle for the hardened architecture.
 
 
 
-\---
+---
 
 
 
@@ -1931,7 +1931,7 @@ This reinforces the Day 25 core principle:
 
 
 
-\---
+---
 
 
 
@@ -2153,7 +2153,7 @@ At the same time, legitimate workflows remained functional.
 
 
 
-\---
+---
 
 
 
@@ -2205,7 +2205,7 @@ The attacker was therefore injected progressively deeper into the trust chain.
 
 
 
-\---
+---
 
 
 
@@ -2229,7 +2229,7 @@ ARTIFACT\_IDENTITY
 
 
 
-\---
+---
 
 
 
@@ -2263,7 +2263,7 @@ VERSION\_BINDING
 
 
 
-\---
+---
 
 
 
@@ -2303,7 +2303,7 @@ FULL\_INTEGRITY
 
 
 
-\---
+---
 
 
 
@@ -2327,7 +2327,7 @@ CAPABILITY\_POLICY
 
 
 
-\---
+---
 
 
 
@@ -2359,7 +2359,7 @@ No unauthorized action executed.
 
 
 
-\---
+---
 
 
 
@@ -2419,7 +2419,7 @@ RUNTIME\_ACTION\_BINDING
 
 
 
-\---
+---
 
 
 
@@ -2471,7 +2471,7 @@ That separation significantly limits supply-chain blast radius.
 
 
 
-\---
+---
 
 
 
@@ -2540,7 +2540,7 @@ The controls therefore reduced tested unauthorized impact without reducing legit
 
 
 
-\---
+---
 
 
 
@@ -2644,7 +2644,7 @@ No earlier component should automatically grant authority to a later component.
 
 
 
-\---
+---
 
 
 
@@ -2660,7 +2660,7 @@ An artifact being present in a repository does not establish that it came from t
 
 
 
-\---
+---
 
 
 
@@ -2686,7 +2686,7 @@ while still violating security policy.
 
 
 
-\---
+---
 
 
 
@@ -2714,7 +2714,7 @@ Artifact Authenticity
 
 
 
-\---
+---
 
 
 
@@ -2738,7 +2738,7 @@ Prompt templates influence runtime behavior and should receive:
 
 
 
-\---
+---
 
 
 
@@ -2754,7 +2754,7 @@ Security policies therefore require strong supply-chain controls.
 
 
 
-\---
+---
 
 
 
@@ -2780,7 +2780,7 @@ Knowledge must not become authority merely because the model retrieved it.
 
 
 
-\---
+---
 
 
 
@@ -2810,7 +2810,7 @@ Trust should bind the model to:
 
 
 
-\---
+---
 
 
 
@@ -2826,7 +2826,7 @@ Its supporting dependency graph must also be validated.
 
 
 
-\---
+---
 
 
 
@@ -2862,7 +2862,7 @@ cannot serve as independent proof.
 
 
 
-\---
+---
 
 
 
@@ -2888,7 +2888,7 @@ Secure integrity verification depends on:
 
 
 
-\---
+---
 
 
 
@@ -2920,7 +2920,7 @@ Available == Authorized
 
 
 
-\---
+---
 
 
 
@@ -2932,7 +2932,7 @@ Every security-relevant dependency must be validated.
 
 
 
-\---
+---
 
 
 
@@ -2960,7 +2960,7 @@ Capabilities require independent authorization.
 
 
 
-\---
+---
 
 
 
@@ -2986,7 +2986,7 @@ It should reject the artifact.
 
 
 
-\---
+---
 
 
 
@@ -3002,7 +3002,7 @@ Runtime controls provide containment when malicious artifacts survive pre-runtim
 
 
 
-\---
+---
 
 
 
@@ -3038,7 +3038,7 @@ Avoid automatic fallback to arbitrary public sources.
 
 
 
-\---
+---
 
 
 
@@ -3064,7 +3064,7 @@ Avoid trust decisions based only on:
 
 
 
-\---
+---
 
 
 
@@ -3104,7 +3104,7 @@ where security requirements demand deterministic artifact selection.
 
 
 
-\---
+---
 
 
 
@@ -3136,7 +3136,7 @@ must not independently establish publisher trust.
 
 
 
-\---
+---
 
 
 
@@ -3174,7 +3174,7 @@ Where appropriate, organizations can align this process with supply-chain framew
 
 
 
-\---
+---
 
 
 
@@ -3206,7 +3206,7 @@ Expected digests should originate from trusted infrastructure independent of the
 
 
 
-\---
+---
 
 
 
@@ -3236,7 +3236,7 @@ Controls may include:
 
 
 
-\---
+---
 
 
 
@@ -3280,7 +3280,7 @@ A compromise of `Dependency B` may still affect the application.
 
 
 
-\---
+---
 
 
 
@@ -3326,7 +3326,7 @@ The SBOM must be independently associated with the verified artifact.
 
 
 
-\---
+---
 
 
 
@@ -3388,7 +3388,7 @@ The application must independently enforce capability policy.
 
 
 
-\---
+---
 
 
 
@@ -3424,7 +3424,7 @@ The application must bind execution to trusted task state.
 
 
 
-\---
+---
 
 
 
@@ -3464,7 +3464,7 @@ without trusted authorization.
 
 
 
-\---
+---
 
 
 
@@ -3506,7 +3506,7 @@ This limits the consequence of supply-chain compromise.
 
 
 
-\---
+---
 
 
 
@@ -3572,7 +3572,7 @@ Security verification failures should not silently degrade into insecure fallbac
 
 
 
-\---
+---
 
 
 
@@ -3628,7 +3628,7 @@ This creates multiple containment opportunities.
 
 
 
-\---
+---
 
 
 
@@ -3736,7 +3736,7 @@ Even catastrophic failure of the entire pre-runtime verification chain does not 
 
 
 
-\---
+---
 
 
 
@@ -3764,7 +3764,7 @@ This avoids converting artifact identity into execution authority.
 
 
 
-\---
+---
 
 
 
@@ -3808,7 +3808,7 @@ Recommended events include:
 
 
 
-\---
+---
 
 
 
@@ -3868,7 +3868,7 @@ Example rejection event:
 
 
 
-\---
+---
 
 
 
@@ -3948,7 +3948,7 @@ Monitoring
 
 
 
-\---
+---
 
 
 
@@ -4002,7 +4002,7 @@ These components can alter application behavior without necessarily containing t
 
 
 
-\---
+---
 
 
 
@@ -4058,7 +4058,7 @@ And critically:
 
 
 
-\---
+---
 
 
 
@@ -4085,7 +4085,7 @@ And critically:
 
 
 
-\---
+---
 
 
 
@@ -4121,7 +4121,7 @@ Exact technique mapping should be validated against the current MITRE ATLAS and 
 
 
 
-\---
+---
 
 
 
@@ -4151,7 +4151,7 @@ Exact OWASP LLM / GenAI category numbering should be checked against the current
 
 
 
-\---
+---
 
 
 
@@ -4187,7 +4187,7 @@ The assessment is a technical learning project and should not be interpreted as 
 
 
 
-\---
+---
 
 
 
@@ -4227,7 +4227,7 @@ The project demonstrates architectural security properties rather than exploitat
 
 
 
-\---
+---
 
 
 
@@ -4261,7 +4261,7 @@ Therefore the project demonstrates \*\*trust-boundary logic\*\*, not production 
 
 
 
-\---
+---
 
 
 
@@ -4281,7 +4281,7 @@ The purpose is to evaluate architectural trust assumptions surrounding model loa
 
 
 
-\---
+---
 
 
 
@@ -4315,7 +4315,7 @@ Those areas could be evaluated separately in deeper research.
 
 
 
-\---
+---
 
 
 
@@ -4349,7 +4349,7 @@ The assessment produced ten major defensive lessons:
 
 
 
-\---
+---
 
 
 
@@ -4421,7 +4421,7 @@ Day 25 demonstrates practical capability in:
 
 
 
-\---
+---
 
 
 
@@ -4517,7 +4517,7 @@ Monitor
 
 
 
-\---
+---
 
 
 
@@ -4537,7 +4537,7 @@ The attacker does not necessarily need to attack the user prompt.
 
 
 
-\---
+---
 
 
 
@@ -4549,7 +4549,7 @@ A poisoned template can alter runtime behavior before user interaction begins.
 
 
 
-\---
+---
 
 
 
@@ -4561,7 +4561,7 @@ Security configuration must therefore receive integrity and provenance protectio
 
 
 
-\---
+---
 
 
 
@@ -4573,7 +4573,7 @@ Knowledge must remain separate from identity, approval, privilege, and policy st
 
 
 
-\---
+---
 
 
 
@@ -4585,7 +4585,7 @@ Successful inference is not evidence of model authenticity.
 
 
 
-\---
+---
 
 
 
@@ -4597,7 +4597,7 @@ Interface compatibility does not establish trust.
 
 
 
-\---
+---
 
 
 
@@ -4609,7 +4609,7 @@ Version precedence must not replace trust policy.
 
 
 
-\---
+---
 
 
 
@@ -4621,7 +4621,7 @@ Metadata must be cryptographically or independently bound to artifact identity a
 
 
 
-\---
+---
 
 
 
@@ -4633,7 +4633,7 @@ Integrity verification depends on architecture, not merely algorithm strength.
 
 
 
-\---
+---
 
 
 
@@ -4645,7 +4645,7 @@ A trusted top-level artifact may still rely on compromised lower-level component
 
 
 
-\---
+---
 
 
 
@@ -4657,7 +4657,7 @@ Pre-runtime trust failures can become runtime security failures.
 
 
 
-\---
+---
 
 
 
@@ -4669,7 +4669,7 @@ A loaded malicious artifact does not have to receive execution authority.
 
 
 
-\---
+---
 
 
 
@@ -4681,7 +4681,7 @@ Independent downstream controls prevented unauthorized execution during the adve
 
 
 
-\---
+---
 
 
 
@@ -4721,7 +4721,7 @@ Attack Chain Completion:
 
 
 
-\---
+---
 
 
 
@@ -4799,7 +4799,7 @@ Legitimate Workflow Completion Rate: 100.00%
 
 
 
-\---
+---
 
 
 
@@ -4965,7 +4965,7 @@ The final architectural lesson is therefore:
 
 
 
-\---
+---
 
 
 
@@ -4977,7 +4977,7 @@ The final architectural lesson is therefore:
 
 
 
-\---
+---
 
 
 
@@ -4985,13 +4985,13 @@ The final architectural lesson is therefore:
 
 
 
-\*\*Project:\*\* LLM Red Team Lab  
+**Project:** LLM Red Team Lab
 
-\*\*Day:\*\* 25  
+**Day:** 25
 
-\*\*Assessment:\*\* AI Supply-Chain, Model \& Artifact Trust Security Assessment  
+**Assessment:** AI Supply-Chain, Model \& Artifact Trust Security Assessment
 
-\*\*Artifact:\*\* `Day-25-AI-Supply-Chain-Model-Artifact-Trust-Security-Assessment.md`
+**Artifact:** `Day-25-AI-Supply-Chain-Model-Artifact-Trust-Security-Assessment.md`
 
 
 
@@ -5057,9 +5057,9 @@ Day-25/
 
 
 
-\---
+---
 
 
 
-\*\*End of Day 25 Assessment\*\*
+**End of Day 25 Assessment**
 

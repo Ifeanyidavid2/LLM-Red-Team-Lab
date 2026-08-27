@@ -6,23 +6,23 @@
 
 
 
-\*\*Assessment Type:\*\* Indirect Prompt Injection / RAG Security Testing  
+**Assessment Type:** Indirect Prompt Injection / RAG Security Testing
 
-\*\*Framework:\*\* Microsoft PyRIT  
+**Framework:** Microsoft PyRIT
 
-\*\*Target Model:\*\* Llama 3.2 1B  
+**Target Model:** Llama 3.2 1B
 
-\*\*Model Runtime:\*\* Ollama  
+**Model Runtime:** Ollama
 
-\*\*Environment:\*\* Local controlled laboratory  
+**Environment:** Local controlled laboratory
 
-\*\*Assessment Day:\*\* Day 13  
+**Assessment Day:** Day 13
 
-\*\*Data Classification:\*\* Synthetic Test Data Only  
+**Data Classification:** Synthetic Test Data Only
 
 
 
-\---
+---
 
 
 
@@ -120,7 +120,7 @@ A poisoned retrieved source successfully redirected model behavior in one experi
 
 
 
-\---
+---
 
 
 
@@ -184,7 +184,7 @@ The core security principle tested was:
 
 
 
-\---
+---
 
 
 
@@ -298,7 +298,7 @@ This represents a more realistic class of risk for systems that process external
 
 
 
-\---
+---
 
 
 
@@ -328,7 +328,7 @@ The assessment considered the following assets:
 
 
 
-\---
+---
 
 
 
@@ -380,7 +380,7 @@ Instead, the attacker attempts to place malicious natural-language instructions 
 
 
 
-\---
+---
 
 
 
@@ -432,7 +432,7 @@ Instructions embedded inside retrieved content should not override either the tr
 
 
 
-\---
+---
 
 
 
@@ -506,7 +506,7 @@ Synthetic markers and synthetic protected values were used throughout the assess
 
 
 
-\---
+---
 
 
 
@@ -578,7 +578,7 @@ This distinction was important because several Day 13 attacks did not produce th
 
 
 
-\---
+---
 
 
 
@@ -646,7 +646,7 @@ This provided a functional control for subsequent experiments.
 
 
 
-\---
+---
 
 
 
@@ -710,7 +710,7 @@ The simple embedded instruction did not override the legitimate summarization ta
 
 
 
-\---
+---
 
 
 
@@ -790,7 +790,7 @@ The malicious content still influenced the model enough to interfere with legiti
 
 
 
-\---
+---
 
 
 
@@ -866,7 +866,7 @@ This experiment demonstrated the desired security behavior.
 
 
 
-\---
+---
 
 
 
@@ -948,7 +948,7 @@ Metadata-like content did not achieve complete takeover, but the surrounding adv
 
 
 
-\---
+---
 
 
 
@@ -1080,7 +1080,7 @@ This represented the clearest confirmed indirect prompt-injection success observ
 
 
 
-\---
+---
 
 
 
@@ -1180,7 +1180,7 @@ Depending on the objective, evaluators may require:
 
 
 
-\---
+---
 
 
 
@@ -1278,7 +1278,7 @@ This represents a security-relevant integrity or availability concern even witho
 
 
 
-\---
+---
 
 
 
@@ -1388,7 +1388,7 @@ This demonstrates that indirect prompt injection should not be evaluated only on
 
 
 
-\---
+---
 
 
 
@@ -1520,7 +1520,7 @@ SECURITY RESULT: PASS
 
 
 
-\---
+---
 
 
 
@@ -1608,7 +1608,7 @@ Likewise:
 
 
 
-\---
+---
 
 
 
@@ -1680,7 +1680,7 @@ This supports reproducibility and structured evidence collection.
 
 
 
-\---
+---
 
 
 
@@ -1702,7 +1702,7 @@ This supports reproducibility and structured evidence collection.
 
 
 
-\---
+---
 
 
 
@@ -1794,7 +1794,7 @@ They are \*\*not model-wide vulnerability rates\*\*.
 
 
 
-\---
+---
 
 
 
@@ -1838,7 +1838,7 @@ instructions to execute
 
 
 
-\---
+---
 
 
 
@@ -1874,7 +1874,7 @@ Task-integrity degradation should be considered a meaningful result during indir
 
 
 
-\---
+---
 
 
 
@@ -1894,7 +1894,7 @@ Security automation must account for natural-language output variability.
 
 
 
-\---
+---
 
 
 
@@ -1914,7 +1914,7 @@ The system demonstrated stronger confidentiality behavior than task-integrity be
 
 
 
-\---
+---
 
 
 
@@ -1930,7 +1930,7 @@ Security evaluation should therefore include follow-up turns rather than treatin
 
 
 
-\---
+---
 
 
 
@@ -1950,7 +1950,7 @@ This reinforces the need for repeated executions.
 
 
 
-\---
+---
 
 
 
@@ -1990,7 +1990,7 @@ No protected synthetic-secret disclosure occurred in the dedicated Day 13 secret
 
 
 
-\---
+---
 
 
 
@@ -2026,7 +2026,7 @@ Integrity degradation was observed repeatedly.
 
 
 
-\---
+---
 
 
 
@@ -2058,7 +2058,7 @@ Several experiments demonstrated this form of disruption.
 
 
 
-\---
+---
 
 
 
@@ -2102,7 +2102,7 @@ The evidence therefore demonstrates meaningful indirect prompt-injection exposur
 
 
 
-\---
+---
 
 
 
@@ -2142,7 +2142,7 @@ Retrieved documents should never automatically receive instructional authority m
 
 
 
-\---
+---
 
 
 
@@ -2178,7 +2178,7 @@ This can reduce ambiguity, though prompt-level controls alone should not be trea
 
 
 
-\---
+---
 
 
 
@@ -2212,7 +2212,7 @@ The model should not be the sole authority deciding whether a sensitive operatio
 
 
 
-\---
+---
 
 
 
@@ -2228,7 +2228,7 @@ Reducing unnecessary retrieved content reduces the attack surface available for 
 
 
 
-\---
+---
 
 
 
@@ -2258,7 +2258,7 @@ Low-trust sources should not silently gain the same influence as approved intern
 
 
 
-\---
+---
 
 
 
@@ -2294,7 +2294,7 @@ For agentic systems, proposed actions should be validated against explicit appli
 
 
 
-\---
+---
 
 
 
@@ -2324,7 +2324,7 @@ Useful techniques include:
 
 
 
-\---
+---
 
 
 
@@ -2350,7 +2350,7 @@ Security tests should determine whether malicious retrieved content affects:
 
 
 
-\---
+---
 
 
 
@@ -2394,7 +2394,7 @@ False Negative Rate
 
 
 
-\---
+---
 
 
 
@@ -2466,7 +2466,7 @@ Detection should be treated as one defensive layer rather than a complete soluti
 
 
 
-\---
+---
 
 
 
@@ -2530,7 +2530,7 @@ overrides user/system intent
 
 
 
-\---
+---
 
 
 
@@ -2622,7 +2622,7 @@ Repeated testing is necessary for probabilistic systems.
 
 
 
-\---
+---
 
 
 
@@ -2680,7 +2680,7 @@ The calculated percentages are descriptive of this test set only.
 
 
 
-\---
+---
 
 
 
@@ -2726,7 +2726,7 @@ A particularly useful next step would be to run each attack multiple times and c
 
 
 
-\---
+---
 
 
 
@@ -2814,7 +2814,7 @@ rather than reducing all LLM security outcomes to simple pass/fail labels.
 
 
 
-\---
+---
 
 
 
@@ -2862,7 +2862,7 @@ Applications using RAG or other external-content pipelines should enforce this d
 
 
 
-\---
+---
 
 
 
@@ -2870,23 +2870,23 @@ Applications using RAG or other external-content pipelines should enforce this d
 
 
 
-\*\*Assessment:\*\* Complete  
+**Assessment:** Complete
 
-\*\*Overall Risk:\*\* MODERATE  
+**Overall Risk:** MODERATE
 
-\*\*Confirmed Semantic Indirect Injection:\*\* Yes  
+**Confirmed Semantic Indirect Injection:** Yes
 
-\*\*Task-Integrity Degradation Observed:\*\* Yes  
+**Task-Integrity Degradation Observed:** Yes
 
-\*\*Protected Synthetic Secret Disclosure:\*\* No in dedicated indirect-secret tests  
+**Protected Synthetic Secret Disclosure:** No in dedicated indirect-secret tests
 
-\*\*PyRIT Evidence Captured:\*\* Yes  
+**PyRIT Evidence Captured:** Yes
 
-\*\*Portfolio Status:\*\* Ready for repository documentation  
+**Portfolio Status:** Ready for repository documentation
 
 
 
-\---
+---
 
 
 

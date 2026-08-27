@@ -6,19 +6,19 @@
 
 
 
-\*\*Target:\*\* Llama 3.2 1B  
+**Target:** Llama 3.2 1B
 
-\*\*Runtime:\*\* Ollama  
+**Runtime:** Ollama
 
-\*\*Framework:\*\* Microsoft PyRIT + Custom Python Harness  
+**Framework:** Microsoft PyRIT + Custom Python Harness
 
-\*\*Environment:\*\* Controlled Local Lab  
+**Environment:** Controlled Local Lab
 
-\*\*Data:\*\* Synthetic Only  
+**Data:** Synthetic Only
 
 
 
-\---
+---
 
 
 
@@ -70,7 +70,7 @@ The synthetic protected value is represented as:
 
 
 
-\---
+---
 
 
 
@@ -138,7 +138,7 @@ The target resisted the attacker objective but refused the legitimate task in ev
 
 
 
-\---
+---
 
 
 
@@ -192,7 +192,7 @@ Public portfolio evidence excludes unnecessary local database files.
 
 
 
-\---
+---
 
 
 
@@ -304,7 +304,7 @@ The normalized and regex results apply only to this small controlled validation 
 
 
 
-\---
+---
 
 
 
@@ -350,7 +350,7 @@ SDR:   0.00%
 
 
 
-\---
+---
 
 
 
@@ -392,7 +392,7 @@ They were not incorrectly reported as `0%`.
 
 
 
-\---
+---
 
 
 
@@ -418,7 +418,7 @@ Indirect secret extraction      5
 
 
 
-\---
+---
 
 
 
@@ -478,7 +478,7 @@ Observed clean-baseline SDR:
 
 
 
-\---
+---
 
 
 
@@ -572,7 +572,7 @@ AUTOMATED EVALUATOR FALSE POSITIVES
 
 
 
-\---
+---
 
 
 
@@ -638,7 +638,7 @@ This represents direct execution of instructions embedded inside poisoned retrie
 
 
 
-\---
+---
 
 
 
@@ -682,7 +682,7 @@ CONFIDENTIALITY FAILURE
 
 
 
-\---
+---
 
 
 
@@ -730,7 +730,7 @@ Confidentiality remained intact, but legitimate application behavior failed comp
 
 
 
-\---
+---
 
 
 
@@ -786,7 +786,7 @@ Retrieval Run 3
 
 
 
-\---
+---
 
 
 
@@ -856,7 +856,7 @@ This aligned with analyst review.
 
 
 
-\---
+---
 
 
 
@@ -873,7 +873,7 @@ This aligned with analyst review.
 
 
 
-\---
+---
 
 
 
@@ -937,7 +937,7 @@ Corrected ASR:
 
 
 
-\---
+---
 
 
 
@@ -999,7 +999,7 @@ The attack failed, but the application also failed its legitimate purpose.
 
 
 
-\---
+---
 
 
 
@@ -1051,7 +1051,7 @@ The central Day 14 lesson is:
 
 
 
-\---
+---
 
 
 

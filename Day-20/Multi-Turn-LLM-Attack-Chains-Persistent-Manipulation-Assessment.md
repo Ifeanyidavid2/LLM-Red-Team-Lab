@@ -2866,5 +2866,5 @@ Assessment: Multi-Turn LLM Attack Chains & Persistent Manipulation
 
 Environment: Synthetic / Local  
 
-\*\*Primary Model:\*\* `llama3.2:1b`
+**Primary Model:** `llama3.2:1b`
 

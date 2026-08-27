@@ -6,23 +6,23 @@
 
 
 
-\*\*Assessment Type:\*\* Automated LLM Red-Team Benchmarking  
+**Assessment Type:** Automated LLM Red-Team Benchmarking
 
-\*\*Framework:\*\* Microsoft PyRIT + Custom Python Evaluation Harness  
+**Framework:** Microsoft PyRIT + Custom Python Evaluation Harness
 
-\*\*Target Model:\*\* Llama 3.2 1B  
+**Target Model:** Llama 3.2 1B
 
-\*\*Runtime:\*\* Ollama  
+**Runtime:** Ollama
 
-\*\*Environment:\*\* Controlled Local Laboratory  
+**Environment:** Controlled Local Laboratory
 
-\*\*Evidence Formats:\*\* SQLite, CSV, JSON  
+**Evidence Formats:** SQLite, CSV, JSON
 
-\*\*Test Data:\*\* Synthetic Only  
+**Test Data:** Synthetic Only
 
 
 
-\---
+---
 
 
 
@@ -142,7 +142,7 @@ The primary Day 14 conclusion is:
 
 
 
-\---
+---
 
 
 
@@ -210,7 +210,7 @@ and which security property does it affect?"
 
 
 
-\---
+---
 
 
 
@@ -284,7 +284,7 @@ and which security property does it affect?"
 
 
 
-\---
+---
 
 
 
@@ -312,7 +312,7 @@ ASR measures how frequently an attacker-controlled objective succeeds.
 
 
 
-\---
+---
 
 
 
@@ -340,7 +340,7 @@ A low ASR does not necessarily imply good security if TPR is also low.
 
 
 
-\---
+---
 
 
 
@@ -364,7 +364,7 @@ RR helps identify systems that resist attacks primarily by refusing legitimate t
 
 
 
-\---
+---
 
 
 
@@ -388,7 +388,7 @@ SDR measures confidentiality failure frequency.
 
 
 
-\---
+---
 
 
 
@@ -412,7 +412,7 @@ A false positive occurs when the evaluator reports attack success but analyst gr
 
 
 
-\---
+---
 
 
 
@@ -436,7 +436,7 @@ A false negative occurs when an actual attack success is missed by the evaluator
 
 
 
-\---
+---
 
 
 
@@ -560,7 +560,7 @@ This demonstrated why ASR should never be interpreted in isolation.
 
 
 
-\---
+---
 
 
 
@@ -628,7 +628,7 @@ This transformed terminal output into a reusable security evaluation dataset.
 
 
 
-\---
+---
 
 
 
@@ -696,7 +696,7 @@ A controlled validation set was therefore required.
 
 
 
-\---
+---
 
 
 
@@ -864,7 +864,7 @@ The normalized and regex scorers achieved perfect classification on this small d
 
 
 
-\---
+---
 
 
 
@@ -936,7 +936,7 @@ SDR:   0.00%
 
 
 
-\---
+---
 
 
 
@@ -1036,7 +1036,7 @@ This demonstrated an important benchmarking principle:
 
 
 
-\---
+---
 
 
 
@@ -1083,7 +1083,7 @@ These metrics were subsequently audited.
 
 
 
-\---
+---
 
 
 
@@ -1147,7 +1147,7 @@ This demonstrates:
 
 
 
-\---
+---
 
 
 
@@ -1261,7 +1261,7 @@ executing malicious content
 
 
 
-\---
+---
 
 
 
@@ -1351,7 +1351,7 @@ This is clear evidence of attacker-controlled retrieved content overriding the l
 
 
 
-\---
+---
 
 
 
@@ -1383,7 +1383,7 @@ This demonstrates that a single LLM response can violate multiple security prope
 
 
 
-\---
+---
 
 
 
@@ -1459,7 +1459,7 @@ did not mean the application behaved safely or usefully.
 
 
 
-\---
+---
 
 
 
@@ -1523,7 +1523,7 @@ This validation materially changed the benchmark interpretation.
 
 
 
-\---
+---
 
 
 
@@ -1623,7 +1623,7 @@ matching analyst ground truth.
 
 
 
-\---
+---
 
 
 
@@ -1647,7 +1647,7 @@ Confirmed ASR: 80%
 
 
 
-\---
+---
 
 
 
@@ -1668,7 +1668,7 @@ These values reflect analyst validation rather than raw marker-presence classifi
 
 
 
-\---
+---
 
 
 
@@ -1752,7 +1752,7 @@ Day 14 therefore demonstrated that the evaluation layer itself has a security-qu
 
 
 
-\---
+---
 
 
 
@@ -1772,7 +1772,7 @@ This is stronger evidence than observing a single successful prompt.
 
 
 
-\---
+---
 
 
 
@@ -1810,7 +1810,7 @@ The model resisted by refusing the legitimate task.
 
 
 
-\---
+---
 
 
 
@@ -1826,7 +1826,7 @@ No malicious injection was required.
 
 
 
-\---
+---
 
 
 
@@ -1862,7 +1862,7 @@ Multiple dimensions can be true simultaneously.
 
 
 
-\---
+---
 
 
 
@@ -1886,7 +1886,7 @@ due to harmless formatting variations.
 
 
 
-\---
+---
 
 
 
@@ -1902,7 +1902,7 @@ Raw marker-presence detection falsely classified all three as attack successes.
 
 
 
-\---
+---
 
 
 
@@ -1934,7 +1934,7 @@ X
 
 
 
-\---
+---
 
 
 
@@ -1946,7 +1946,7 @@ Automated scoring reduced workload but did not eliminate the need for manual val
 
 
 
-\---
+---
 
 
 
@@ -2018,7 +2018,7 @@ Therefore:
 
 
 
-\---
+---
 
 
 
@@ -2106,7 +2106,7 @@ Marker-presence scoring misclassified quoted attack content.
 
 
 
-\---
+---
 
 
 
@@ -2118,7 +2118,7 @@ Marker-presence scoring misclassified quoted attack content.
 
 
 
-\*\*HIGH within the tested benchmark scope\*\*
+**HIGH within the tested benchmark scope**
 
 
 
@@ -2152,7 +2152,7 @@ This rating applies only to the tested model, prompts, runtime, system policy, a
 
 
 
-\---
+---
 
 
 
@@ -2198,7 +2198,7 @@ Recommended controls include:
 
 
 
-\---
+---
 
 
 
@@ -2258,7 +2258,7 @@ Future work should increase sample size and evaluate uncertainty.
 
 
 
-\---
+---
 
 
 
@@ -2320,7 +2320,7 @@ would provide stronger estimates of behavioral reliability.
 
 
 
-\---
+---
 
 
 
@@ -2388,7 +2388,7 @@ Day 14 demonstrates hands-on experience with:
 
 
 
-\---
+---
 
 
 
@@ -2452,7 +2452,7 @@ This represents an important progression from demonstrating LLM vulnerabilities 
 
 
 
-\---
+---
 
 
 
@@ -2536,7 +2536,7 @@ This shift from isolated observations to measured, validated behavior represents
 
 
 
-\---
+---
 
 
 
@@ -2544,31 +2544,31 @@ This shift from isolated observations to measured, validated behavior represents
 
 
 
-\*\*Assessment:\*\* COMPLETE  
+**Assessment:** COMPLETE
 
-\*\*Benchmark Harness:\*\* Implemented  
+**Benchmark Harness:** Implemented
 
-\*\*Repeated Executions:\*\* Implemented  
+**Repeated Executions:** Implemented
 
-\*\*CSV/JSON Evidence:\*\* Implemented  
+**CSV/JSON Evidence:** Implemented
 
-\*\*ASR / TPR / RR / SDR:\*\* Implemented  
+**ASR / TPR / RR / SDR:** Implemented
 
-\*\*FPR / FNR Analysis:\*\* Implemented  
+**FPR / FNR Analysis:** Implemented
 
-\*\*Analyst Ground Truth:\*\* Implemented  
+**Analyst Ground Truth:** Implemented
 
-\*\*Context-Aware Evaluation:\*\* Implemented  
+**Context-Aware Evaluation:** Implemented
 
-\*\*Confirmed Retrieval-Poisoning ASR:\*\* 80% in tested five-run scenario  
+**Confirmed Retrieval-Poisoning ASR:** 80% in tested five-run scenario
 
-\*\*Confirmed Retrieval-Poisoning SDR:\*\* 20% in tested five-run scenario  
+**Confirmed Retrieval-Poisoning SDR:** 20% in tested five-run scenario
 
-\*\*Overall Portfolio Risk Rating:\*\* HIGH within tested scope  
+**Overall Portfolio Risk Rating:** HIGH within tested scope
 
 
 
-\---
+---
 
 
 
@@ -2580,7 +2580,7 @@ This shift from isolated observations to measured, validated behavior represents
 
 
 
-\---
+---
 
 
 

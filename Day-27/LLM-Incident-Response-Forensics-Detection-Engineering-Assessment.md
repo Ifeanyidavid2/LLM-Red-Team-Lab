@@ -6,17 +6,17 @@
 
 
 
-\*\*Assessment Type:\*\* AI Security Incident Response, Forensics, Detection Engineering \& Recovery  
+**Assessment Type:** AI Security Incident Response, Forensics, Detection Engineering \& Recovery
 
-\*\*Environment:\*\* Synthetic AI / LLM Security Lab  
+**Environment:** Synthetic AI / LLM Security Lab
 
-\*\*Portfolio:\*\* LLM Red Team Lab  
+**Portfolio:** LLM Red Team Lab
 
-\*\*Day:\*\* 27  
+**Day:** 27
 
 
 
-\---
+---
 
 
 
@@ -140,7 +140,7 @@ Post-incident detection engineering reduced simulated time to detection from:
 
 
 
-\*\*192 seconds → 8 seconds\*\*
+**192 seconds → 8 seconds**
 
 
 
@@ -148,7 +148,7 @@ representing a:
 
 
 
-\*\*95.83% detection-time improvement.\*\*
+**95.83% detection-time improvement.**
 
 
 
@@ -160,7 +160,7 @@ Security teams require correlated telemetry across the complete AI execution cha
 
 
 
-\---
+---
 
 
 
@@ -172,7 +172,7 @@ Security teams require correlated telemetry across the complete AI execution cha
 
 
 
-\---
+---
 
 
 
@@ -220,7 +220,7 @@ The objectives of Day 27 were to determine whether an AI security program could:
 
 
 
-\---
+---
 
 
 
@@ -258,7 +258,7 @@ The environment included:
 
 
 
-\---
+---
 
 
 
@@ -288,7 +288,7 @@ The assessment included the following representative assets:
 
 
 
-\---
+---
 
 
 
@@ -336,7 +336,7 @@ The labs moved through:
 
 
 
-\---
+---
 
 
 
@@ -399,7 +399,7 @@ This established that AI observability must extend beyond traditional applicatio
 
 
 
-\---
+---
 
 
 
@@ -467,7 +467,7 @@ Hash linking does not automatically establish legal-grade chain of custody, but 
 
 
 
-\---
+---
 
 
 
@@ -513,7 +513,7 @@ This approach recognizes that many AI attacks become dangerous only when multipl
 
 
 
-\---
+---
 
 
 

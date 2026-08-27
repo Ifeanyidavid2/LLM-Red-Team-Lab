@@ -6,17 +6,17 @@
 
 
 
-\*\*Assessment Type:\*\* AI Threat Modeling, Risk Assessment \& Secure Architecture  
+**Assessment Type:** AI Threat Modeling, Risk Assessment \& Secure Architecture
 
-\*\*Environment:\*\* Synthetic Enterprise AI Assistant  
+**Environment:** Synthetic Enterprise AI Assistant
 
-\*\*Assessment Stage:\*\* Pre-Deployment Security Engineering  
+**Assessment Stage:** Pre-Deployment Security Engineering
 
-\*\*Day:\*\* 28
+**Day:** 28
 
 
 
-\---
+---
 
 
 
@@ -136,7 +136,7 @@ All nine required deployment gates passed in the synthetic target architecture.
 
 
 
-\---
+---
 
 
 
@@ -148,7 +148,7 @@ All nine required deployment gates passed in the synthetic target architecture.
 
 
 
-\---
+---
 
 
 
@@ -206,7 +206,7 @@ The assessment objectives were to:
 
 
 
-\---
+---
 
 
 
@@ -233,7 +233,7 @@ The system combines an LLM with retrieval, memory, agent planning, tools, identi
 
 
 
-\---
+---
 
 
 
@@ -276,7 +276,7 @@ This demonstrated that the LLM itself represents only one part of the AI attack 
 
 
 
-\---
+---
 
 
 
@@ -348,7 +348,7 @@ Availability requirements applied to:
 
 
 
-\---
+---
 
 
 
@@ -382,7 +382,7 @@ Persistent memory and restricted business data received particularly high exposu
 
 
 
-\---
+---
 
 
 

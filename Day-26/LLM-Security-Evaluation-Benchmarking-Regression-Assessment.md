@@ -6,11 +6,11 @@
 
 
 
-\*\*File:\*\* `Day-26/LLM-Security-Evaluation-Benchmarking-Regression-Assessment.md`
+**File:** `Day-26/LLM-Security-Evaluation-Benchmarking-Regression-Assessment.md`
 
 
 
-\---
+---
 
 
 
@@ -86,7 +86,7 @@ The overall conclusion is that LLM security must be treated as a continuous, mea
 
 
 
-\---
+---
 
 
 
@@ -134,7 +134,7 @@ Security therefore requires repeatable evaluation rather than one-time validatio
 
 
 
-\---
+---
 
 
 
@@ -150,7 +150,7 @@ This principle guided the entire Day 26 assessment.
 
 
 
-\---
+---
 
 
 
@@ -204,7 +204,7 @@ The program additionally evaluated:
 
 
 
-\---
+---
 
 
 

@@ -3010,5 +3010,5 @@ Assessment: RAG Security & Retrieval Poisoning
 
 Environment: Synthetic / Local  
 
-\*\*Primary Security Principle:\*\* \*\*Retrieved content is evidence, not authority.\*\*
+**Primary Security Principle:** **Retrieved content is evidence, not authority.**
 

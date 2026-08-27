@@ -6,17 +6,17 @@
 
 
 
-\*\*Assessment Title:\*\* LLM Tool-Chain \& MCP Security Assessment  
+**Assessment Title:** LLM Tool-Chain \& MCP Security Assessment
 
-\*\*Day:\*\* 23  
+**Day:** 23
 
-\*\*Lab Track:\*\* LLM Red Teaming / Agentic AI Security  
+**Lab Track:** LLM Red Teaming / Agentic AI Security
 
-\*\*Primary Focus:\*\* Tool poisoning, malicious tool descriptions, excessive tool permissions, parameter manipulation, confused tool selection, indirect prompt injection through tool output, tool-result poisoning, chained tool attacks, MCP-style trust boundaries, least privilege, independent authorization, and hardened execution architecture.
+**Primary Focus:** Tool poisoning, malicious tool descriptions, excessive tool permissions, parameter manipulation, confused tool selection, indirect prompt injection through tool output, tool-result poisoning, chained tool attacks, MCP-style trust boundaries, least privilege, independent authorization, and hardened execution architecture.
 
 
 
-\---
+---
 
 
 
@@ -28,7 +28,7 @@
 
 
 
-\---
+---
 
 
 
@@ -144,7 +144,7 @@ The overall Day 23 conclusion is therefore:
 
 
 
-\---
+---
 
 
 
@@ -188,7 +188,7 @@ The Day 23 assessment was designed to answer the following questions:
 
 
 
-\---
+---
 
 
 
@@ -246,7 +246,7 @@ The design goal was:
 
 
 
-\---
+---
 
 
 
@@ -294,7 +294,7 @@ The planner intentionally did not possess direct record-reading or security-dele
 
 
 
-\---
+---
 
 
 
@@ -328,7 +328,7 @@ The worker could perform ordinary internal operations but was prevented from inh
 
 
 
-\---
+---
 
 
 
@@ -362,7 +362,7 @@ Typical capabilities:
 
 
 
-\---
+---
 
 
 
@@ -394,7 +394,7 @@ Purpose:
 
 
 
-\---
+---
 
 
 
@@ -418,7 +418,7 @@ Purpose:
 
 
 
-\---
+---
 
 
 
@@ -454,7 +454,7 @@ Responsible for:
 
 
 
-\---
+---
 
 
 
@@ -478,7 +478,7 @@ Responsible for:
 
 
 
-\---
+---
 
 
 
@@ -514,7 +514,7 @@ A server claiming to provide a tool did not automatically become the trusted own
 
 
 
-\---
+---
 
 
 
@@ -558,7 +558,7 @@ The Day 23 experiments focused on the following security properties:
 
 
 
-\---
+---
 
 
 
@@ -648,7 +648,7 @@ The environment demonstrated that:
 
 
 
-\---
+---
 
 
 
@@ -708,7 +708,7 @@ Applications must independently check whether the current principal possesses th
 
 
 
-\---
+---
 
 
 
@@ -794,7 +794,7 @@ Descriptions must not be trusted to establish:
 
 
 
-\---
+---
 
 
 
@@ -876,7 +876,7 @@ Least privilege should be enforced at both:
 
 
 
-\---
+---
 
 
 
@@ -976,7 +976,7 @@ Even an authorized tool must not execute model-generated arguments without indep
 
 
 
-\---
+---
 
 
 
@@ -1040,7 +1040,7 @@ Therefore:
 
 
 
-\---
+---
 
 
 
@@ -1128,7 +1128,7 @@ Therefore:
 
 
 
-\---
+---
 
 
 
@@ -1204,7 +1204,7 @@ Therefore:
 
 
 
-\---
+---
 
 
 
@@ -1280,7 +1280,7 @@ Authorization must therefore be evaluated at every step rather than only at the 
 
 
 
-\---
+---
 
 
 
@@ -1374,7 +1374,7 @@ Tool names and descriptions do not authenticate the provider.
 
 
 
-\---
+---
 
 
 
@@ -1474,7 +1474,7 @@ And:
 
 
 
-\---
+---
 
 
 
@@ -1590,7 +1590,7 @@ The application independently validated:
 
 
 
-\---
+---
 
 
 
@@ -1702,7 +1702,7 @@ The security model was implemented as an application-layer execution pipeline ra
 
 
 
-\---
+---
 
 
 
@@ -1836,7 +1836,7 @@ The security improvement came from ensuring that model-generated proposals could
 
 
 
-\---
+---
 
 
 
@@ -1872,7 +1872,7 @@ Lab 15 consolidated the major vulnerable and hardened findings into one evidence
 
 
 
-\---
+---
 
 
 
@@ -1888,7 +1888,7 @@ Lab 15 consolidated the major vulnerable and hardened findings into one evidence
 
 
 
-\*\*66.67% Unsafe Tool Selection Rate\*\*
+**66.67% Unsafe Tool Selection Rate**
 
 
 
@@ -1896,7 +1896,7 @@ Lab 15 consolidated the major vulnerable and hardened findings into one evidence
 
 
 
-\*\*0.00% Unauthorized Tool Authorization Rate\*\*
+**0.00% Unauthorized Tool Authorization Rate**
 
 
 
@@ -1912,7 +1912,7 @@ Lab 15 consolidated the major vulnerable and hardened findings into one evidence
 
 
 
-\---
+---
 
 
 
@@ -1924,7 +1924,7 @@ Lab 15 consolidated the major vulnerable and hardened findings into one evidence
 
 
 
-\*\*100.00% Parameter Manipulation Success Rate\*\*
+**100.00% Parameter Manipulation Success Rate**
 
 
 
@@ -1932,7 +1932,7 @@ Lab 15 consolidated the major vulnerable and hardened findings into one evidence
 
 
 
-\*\*0.00% Unsafe Parameter Execution Rate\*\*
+**0.00% Unsafe Parameter Execution Rate**
 
 
 
@@ -1952,7 +1952,7 @@ Lab 15 consolidated the major vulnerable and hardened findings into one evidence
 
 
 
-\---
+---
 
 
 
@@ -1964,7 +1964,7 @@ Lab 15 consolidated the major vulnerable and hardened findings into one evidence
 
 
 
-\*\*75.00% Chained Tool Attack Success Rate\*\*
+**75.00% Chained Tool Attack Success Rate**
 
 
 
@@ -1972,7 +1972,7 @@ Lab 15 consolidated the major vulnerable and hardened findings into one evidence
 
 
 
-\*\*0.00% Unauthorized System Impact Rate\*\*
+**0.00% Unauthorized System Impact Rate**
 
 
 
@@ -1992,7 +1992,7 @@ Lab 15 consolidated the major vulnerable and hardened findings into one evidence
 
 
 
-\---
+---
 
 
 
@@ -2004,7 +2004,7 @@ Lab 15 consolidated the major vulnerable and hardened findings into one evidence
 
 
 
-\*\*0.00% Unsafe MCP Registration Rate\*\*
+**0.00% Unsafe MCP Registration Rate**
 
 
 
@@ -2028,7 +2028,7 @@ No separate vulnerable MCP-registration baseline was executed, so a direct vulne
 
 
 
-\---
+---
 
 
 
@@ -2086,7 +2086,7 @@ The Day 23 research demonstrated the following tool-layer attack classes:
 
 
 
-\---
+---
 
 
 
@@ -2102,7 +2102,7 @@ A visible or registered tool must not automatically become executable.
 
 
 
-\---
+---
 
 
 
@@ -2114,7 +2114,7 @@ Tool metadata is model-visible and therefore potentially attacker-controlled.
 
 
 
-\---
+---
 
 
 
@@ -2126,7 +2126,7 @@ Tool output can contain indirect prompt injection or misleading security informa
 
 
 
-\---
+---
 
 
 
@@ -2142,7 +2142,7 @@ Arguments, targets, values, and scope require independent validation.
 
 
 
-\---
+---
 
 
 
@@ -2154,7 +2154,7 @@ Unnecessary tool exposure increases attack surface.
 
 
 
-\---
+---
 
 
 
@@ -2166,7 +2166,7 @@ Server identity must be independently authenticated and bound to specific tools.
 
 
 
-\---
+---
 
 
 
@@ -2178,7 +2178,7 @@ An attacker-controlled provider must not be able to register a trusted tool mere
 
 
 
-\---
+---
 
 
 
@@ -2190,7 +2190,7 @@ Role, MFA, approval, resource classification, and authorization should come from
 
 
 
-\---
+---
 
 
 
@@ -2202,7 +2202,7 @@ Authority should be revalidated at every tool transition.
 
 
 
-\---
+---
 
 
 
@@ -2214,7 +2214,7 @@ A requester cannot grant permissions it does not possess.
 
 
 
-\---
+---
 
 
 
@@ -2226,7 +2226,7 @@ Model-generated approval claims cannot substitute for trusted approval records.
 
 
 
-\---
+---
 
 
 
@@ -2238,7 +2238,7 @@ The model may suggest a different target, but the execution layer must enforce t
 
 
 
-\---
+---
 
 
 
@@ -2262,7 +2262,7 @@ The application must assume that the model may:
 
 
 
-\---
+---
 
 
 
@@ -2290,7 +2290,7 @@ Therefore:
 
 
 
-\---
+---
 
 
 

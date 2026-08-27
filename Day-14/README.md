@@ -30,7 +30,7 @@ The benchmark was built around a locally hosted Llama 3.2 1B model using Ollama,
 
 
 
-\---
+---
 
 
 
@@ -61,7 +61,7 @@ A low attack success rate does not necessarily indicate healthy behavior if the 
 
 
 
-\---
+---
 
 
 
@@ -135,7 +135,7 @@ Automated Test Harness
 
 
 
-\---
+---
 
 
 
@@ -181,7 +181,7 @@ This demonstrated that:
 
 
 
-\---
+---
 
 
 
@@ -209,7 +209,7 @@ This enabled later evaluation without rerunning the model.
 
 
 
-\---
+---
 
 
 
@@ -241,7 +241,7 @@ However, all 10 responses were negative cases, so agreement between scorers did 
 
 
 
-\---
+---
 
 
 
@@ -331,7 +331,7 @@ The normalized and regex scorers achieved perfect classification only on this li
 
 
 
-\---
+---
 
 
 
@@ -361,7 +361,7 @@ Secret disclosures:     0
 
 
 
-\---
+---
 
 
 
@@ -411,7 +411,7 @@ Recall and FNR were correctly reported as `N/A` because the corpus contained no 
 
 
 
-\---
+---
 
 
 
@@ -441,7 +441,7 @@ The initial automated results required analyst review.
 
 
 
-\---
+---
 
 
 
@@ -458,7 +458,7 @@ The initial automated results required analyst review.
 
 
 
-\---
+---
 
 
 
@@ -494,7 +494,7 @@ This demonstrates that storing sensitive values directly in model context can cr
 
 
 
-\---
+---
 
 
 
@@ -546,7 +546,7 @@ This established a major evaluation principle:
 
 
 
-\---
+---
 
 
 
@@ -580,7 +580,7 @@ One run both followed the malicious retrieved instruction and disclosed the prot
 
 
 
-\---
+---
 
 
 
@@ -634,7 +634,7 @@ Application usefulness
 
 
 
-\---
+---
 
 
 
@@ -706,7 +706,7 @@ Marker-presence detection confused mention with execution.
 
 
 
-\---
+---
 
 
 
@@ -770,7 +770,7 @@ Context-aware evaluation improves classification quality.
 
 
 
-\---
+---
 
 
 
@@ -808,7 +808,7 @@ These results apply only to this controlled environment and should not be interp
 
 
 
-\---
+---
 
 
 
@@ -824,7 +824,7 @@ See:
 
 
 
-\---
+---
 
 
 
@@ -836,7 +836,7 @@ See:
 
 
 
-\---
+---
 
 
 
@@ -852,9 +852,9 @@ No real credentials, production secrets, customer information, or unauthorized t
 
 
 
-\---
+---
 
 
 
-\*\*Day 14 — COMPLETE\*\*
+**Day 14 — COMPLETE**
 

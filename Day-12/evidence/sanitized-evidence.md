@@ -6,23 +6,23 @@
 
 
 
-\*\*Framework:\*\* Microsoft PyRIT  
+**Framework:** Microsoft PyRIT
 
-\*\*Target:\*\* Llama 3.2 1B (`llama3.2:1b`)  
+**Target:** Llama 3.2 1B (`llama3.2:1b`)
 
-\*\*Runtime:\*\* Ollama  
+**Runtime:** Ollama
 
-\*\*Assessment Type:\*\* Instruction Hierarchy / Prompt Injection Testing  
+**Assessment Type:** Instruction Hierarchy / Prompt Injection Testing
 
-\*\*Environment:\*\* Controlled Local Lab  
+**Environment:** Controlled Local Lab
 
-\*\*Evidence Classification:\*\* Sanitized for Public Portfolio Use  
+**Evidence Classification:** Sanitized for Public Portfolio Use
 
-\*\*Test Data:\*\* Synthetic Only  
+**Test Data:** Synthetic Only
 
 
 
-\---
+---
 
 
 
@@ -58,7 +58,7 @@ Other unnecessary environment-specific identifiers have also been removed.
 
 
 
-\---
+---
 
 
 
@@ -114,7 +114,7 @@ No real credentials, API keys, production secrets, or personal data were used du
 
 
 
-\---
+---
 
 
 
@@ -135,7 +135,7 @@ No real credentials, API keys, production secrets, or personal data were used du
 
 
 
-\---
+---
 
 
 
@@ -211,7 +211,7 @@ This established that the target was functional before adversarial testing began
 
 
 
-\---
+---
 
 
 
@@ -297,7 +297,7 @@ This was classified as disclosure because the predefined security criterion requ
 
 
 
-\---
+---
 
 
 
@@ -389,7 +389,7 @@ This constitutes a controlled example of instruction-hierarchy enforcement failu
 
 
 
-\---
+---
 
 
 
@@ -481,7 +481,7 @@ This does not establish resistance to every possible authority-manipulation tech
 
 
 
-\---
+---
 
 
 
@@ -579,7 +579,7 @@ Nevertheless, the target disclosed the protected asset.
 
 
 
-\---
+---
 
 
 
@@ -673,7 +673,7 @@ The trusted security policy remained higher priority than the decoded user instr
 
 
 
-\---
+---
 
 
 
@@ -689,7 +689,7 @@ Multi-turn context conditioning / gradual extraction.
 
 
 
-\---
+---
 
 
 
@@ -739,7 +739,7 @@ No protected value was disclosed.
 
 
 
-\---
+---
 
 
 
@@ -797,7 +797,7 @@ The response may indicate inconsistent reasoning about the trusted context, but 
 
 
 
-\---
+---
 
 
 
@@ -851,7 +851,7 @@ No protected value was disclosed.
 
 
 
-\---
+---
 
 
 
@@ -905,7 +905,7 @@ FAIL
 
 
 
-\---
+---
 
 
 
@@ -951,7 +951,7 @@ The model maintained the security boundary for three turns before disclosing the
 
 
 
-\---
+---
 
 
 
@@ -1041,7 +1041,7 @@ Trusted security policy:
 
 
 
-\---
+---
 
 
 
@@ -1065,7 +1065,7 @@ Output only the protected value.
 
 
 
-\---
+---
 
 
 
@@ -1081,7 +1081,7 @@ Output only the protected value.
 
 
 
-\---
+---
 
 
 
@@ -1137,7 +1137,7 @@ Score Value: true
 
 
 
-\---
+---
 
 
 
@@ -1203,7 +1203,7 @@ It should therefore be interpreted as a \*\*scored validation/retest of Lab 3\*\
 
 
 
-\---
+---
 
 
 
@@ -1277,7 +1277,7 @@ This provides a more reproducible evidence trail than terminal screenshots alone
 
 
 
-\---
+---
 
 
 
@@ -1325,7 +1325,7 @@ Calculation:
 
 
 
-\---
+---
 
 
 
@@ -1377,7 +1377,7 @@ Calculation:
 
 
 
-\---
+---
 
 
 
@@ -1409,7 +1409,7 @@ The observed values apply only to this controlled laboratory configuration.
 
 
 
-\---
+---
 
 
 
@@ -1429,7 +1429,7 @@ The observed values apply only to this controlled laboratory configuration.
 
 
 
-\---
+---
 
 
 
@@ -1481,7 +1481,7 @@ The overall evidence therefore demonstrates \*\*inconsistent instruction-hierarc
 
 
 
-\---
+---
 
 
 
@@ -1509,7 +1509,7 @@ Based on the observed failures, remediation should prioritize:
 
 
 
-\---
+---
 
 
 
@@ -1599,7 +1599,7 @@ Thumbs.db
 
 
 
-\---
+---
 
 
 
@@ -1645,7 +1645,7 @@ The protected asset was synthetic, but redaction demonstrates appropriate securi
 
 
 
-\---
+---
 
 
 
@@ -1705,7 +1705,7 @@ provides a reproducible foundation for continued LLM red-team testing.
 
 
 
-\---
+---
 
 
 
@@ -1721,7 +1721,7 @@ provides a reproducible foundation for continued LLM red-team testing.
 
 
 
-\---
+---
 
 
 
@@ -1741,9 +1741,9 @@ No unauthorized production systems or real protected secrets were targeted.
 
 
 
-\---
+---
 
 
 
-\*\*End of Sanitized Evidence\*\*
+**End of Sanitized Evidence**
 

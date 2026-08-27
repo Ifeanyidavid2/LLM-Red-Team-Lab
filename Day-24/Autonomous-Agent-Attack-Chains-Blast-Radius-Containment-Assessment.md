@@ -1,7 +1,7 @@
 # Day 24 — Autonomous Agent Attack Chains & Blast-Radius Containment Assessment
 
-**Portfolio Artifact:** `Day-24/Autonomous-Agent-Attack-Chains-Blast-Radius-Containment-Assessment.md`  
-**Assessment Type:** Synthetic LLM Red-Team / Autonomous Agent Security Assessment  
+**Portfolio Artifact:** `Day-24/Autonomous-Agent-Attack-Chains-Blast-Radius-Containment-Assessment.md`
+**Assessment Type:** Synthetic LLM Red-Team / Autonomous Agent Security Assessment
 **Focus:** Multi-stage autonomous attack chains, cross-component propagation, persistent compromise, MCP/tool abuse, privilege escalation, durable state manipulation, and blast-radius containment.
 
 ---

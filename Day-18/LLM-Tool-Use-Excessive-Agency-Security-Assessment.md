@@ -2,7 +2,7 @@
 
 **Security Evaluation of Tool Authorization, User Intent, Approval, Argument Validation, Indirect Prompt Injection, and Excessive Agency**
 
-**Portfolio Artifact:** LLM Red Team Lab  
+**Portfolio Artifact:** LLM Red Team Lab
 **Primary Principle:** *The model may propose an action; trusted application code must decide whether that action is authorized.*
 
 ---
