@@ -1,8 +1,8 @@
-\# Agentic AI Indirect Prompt-Injection Attack Chain
+# Agentic AI Indirect Prompt-Injection Attack Chain
 
 
 
-\## Vulnerable Path
+## Vulnerable Path
 
 
 

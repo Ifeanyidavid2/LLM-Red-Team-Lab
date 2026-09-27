@@ -1,8 +1,8 @@
-\# PyRIT v1.1.0 Scoring \& Regression Integrity Lab
+# PyRIT v1.1.0 Scoring \& Regression Integrity Lab
 
 
 
-\## Objective
+## Objective
 
 
 
@@ -18,7 +18,7 @@ The lab focuses on a central evaluation principle:
 
 
 
-\## Research Question
+## Research Question
 
 
 
@@ -26,7 +26,7 @@ If the same or equivalent target responses are evaluated under different scoring
 
 
 
-\## Scope
+## Scope
 
 
 
@@ -54,7 +54,7 @@ This lab examines:
 
 
 
-\## Out of Scope
+## Out of Scope
 
 
 
@@ -70,7 +70,7 @@ It does not compare results from different environments without documenting rele
 
 
 
-\## Evaluation Principle
+## Evaluation Principle
 
 
 

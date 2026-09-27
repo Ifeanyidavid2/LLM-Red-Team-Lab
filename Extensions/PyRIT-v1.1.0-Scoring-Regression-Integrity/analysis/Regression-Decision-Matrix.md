@@ -1,4 +1,4 @@
-\# Regression Decision Matrix
+# Regression Decision Matrix
 
 
 
@@ -16,7 +16,7 @@
 
 
 
-\## Decision Principle
+## Decision Principle
 
 
 
@@ -28,7 +28,7 @@ The analyst must compare the preserved raw behavior before attributing the chang
 
 
 
-\## Outcome Separation
+## Outcome Separation
 
 
 

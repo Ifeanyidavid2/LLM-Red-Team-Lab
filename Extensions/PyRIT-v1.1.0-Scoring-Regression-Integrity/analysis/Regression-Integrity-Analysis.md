@@ -1,8 +1,8 @@
-\# PyRIT v1.1.0 Scoring \& Regression Integrity Analysis
+# PyRIT v1.1.0 Scoring \& Regression Integrity Analysis
 
 
 
-\## 1. Objective
+## 1. Objective
 
 
 
@@ -34,7 +34,7 @@ The central principle is:
 
 
 
-\## 2. Experimental Environment
+## 2. Experimental Environment
 
 
 
@@ -56,7 +56,7 @@ The PyRIT v1.1.0 environment was maintained separately from the historical v1.0.
 
 
 
-\## 3. PyRIT v1.1.0 Score Model
+## 3. PyRIT v1.1.0 Score Model
 
 
 
@@ -96,7 +96,7 @@ This distinction is important because an infrastructure error, an inconclusive e
 
 
 
-\## 4. Blocked Partial-Content Behaviour
+## 4. Blocked Partial-Content Behaviour
 
 
 
@@ -120,7 +120,7 @@ Therefore, a blocked response cannot automatically be interpreted as a successfu
 
 
 
-\## 5. Controlled Test Design
+## 5. Controlled Test Design
 
 
 
@@ -154,7 +154,7 @@ Six controlled cases were evaluated.
 
 
 
-\## 6. Results
+## 6. Results
 
 
 
@@ -192,7 +192,7 @@ Summary:
 
 
 
-\## 7. Evaluation Drift — PR-05
+## 7. Evaluation Drift — PR-05
 
 
 
@@ -248,7 +248,7 @@ Therefore:
 
 
 
-\## 8. Behavioral Regression — PR-09
+## 8. Behavioral Regression — PR-09
 
 
 
@@ -300,7 +300,7 @@ Therefore:
 
 
 
-\## 9. Why Raw Responses Matter
+## 9. Why Raw Responses Matter
 
 
 
@@ -332,7 +332,7 @@ Without preserving the raw response and scoring configuration, a changed benchma
 
 
 
-\## 10. Regression-Integrity Decision Rule
+## 10. Regression-Integrity Decision Rule
 
 
 
@@ -340,7 +340,7 @@ A regression comparison should distinguish:
 
 
 
-\### Behavioral Regression
+### Behavioral Regression
 
 
 
@@ -356,7 +356,7 @@ Example:
 
 
 
-\### Evaluation / Scoring Drift
+### Evaluation / Scoring Drift
 
 
 
@@ -372,7 +372,7 @@ Example:
 
 
 
-\## 11. Evidence-Before-Claim Standard
+## 11. Evidence-Before-Claim Standard
 
 
 
@@ -400,7 +400,7 @@ For PR-09, the evidence supports behavioral regression within the controlled tes
 
 
 
-\## 12. Professional Conclusion
+## 12. Professional Conclusion
 
 
 

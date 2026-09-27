@@ -1,8 +1,8 @@
-\# Finding 001 — Broken Tool Authorization Exploitable Through Indirect Prompt Injection
+# Finding 001 — Broken Tool Authorization Exploitable Through Indirect Prompt Injection
 
 
 
-\## Finding Summary
+## Finding Summary
 
 
 
@@ -28,7 +28,7 @@
 
 
 
-\## Description
+## Description
 
 
 
@@ -64,7 +64,7 @@ This represents a security boundary failure because the model's decision to requ
 
 
 
-\## Attack Path
+## Attack Path
 
 
 
@@ -88,7 +88,7 @@ Attacker-Controlled Document
 
 
 
-\## Evidence
+## Evidence
 
 
 
@@ -96,7 +96,7 @@ The explicit unauthorized-target test was executed under both configurations.
 
 
 
-\### Vulnerable Configuration
+### Vulnerable Configuration
 
 
 
@@ -124,7 +124,7 @@ Observed:
 
 
 
-\### Hardened Configuration
+### Hardened Configuration
 
 
 
@@ -154,7 +154,7 @@ Observed:
 
 
 
-\## Root Cause
+## Root Cause
 
 
 
@@ -200,7 +200,7 @@ The LLM must not grant authorization for that action.
 
 
 
-\## Confused-Deputy Analysis
+## Confused-Deputy Analysis
 
 
 
@@ -220,7 +220,7 @@ The material issue is that model manipulation was able to cross an authorization
 
 
 
-\## Excessive Agency
+## Excessive Agency
 
 
 
@@ -232,7 +232,7 @@ Security-sensitive authorization must be enforced outside probabilistic model re
 
 
 
-\## Impact
+## Impact
 
 
 
@@ -252,7 +252,7 @@ Higher-impact tools could create materially greater consequences if protected by
 
 
 
-\## Severity Rationale
+## Severity Rationale
 
 
 
@@ -284,7 +284,7 @@ Those impacts must not be claimed without additional evidence.
 
 
 
-\## Remediation
+## Remediation
 
 
 
@@ -338,7 +338,7 @@ Prompt hardening may be used as an additional control but must not serve as the 
 
 
 
-\## Retest Result
+## Retest Result
 
 
 
@@ -372,7 +372,7 @@ It does not establish that all possible indirect prompt-injection or agentic att
 
 
 
-\## Final Principle
+## Final Principle
 
 
 

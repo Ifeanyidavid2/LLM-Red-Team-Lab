@@ -1,4 +1,4 @@
-\# Evidence Register
+# Evidence Register
 
 
 
@@ -24,7 +24,7 @@
 
 
 
-\## Evidence Summary
+## Evidence Summary
 
 
 
@@ -52,7 +52,7 @@ PR-09 demonstrates a behavioral regression where the underlying target response 
 
 
 
-\## Evidence Standard
+## Evidence Standard
 
 
 

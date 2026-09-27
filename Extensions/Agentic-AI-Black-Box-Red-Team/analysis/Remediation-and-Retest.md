@@ -1,8 +1,8 @@
-\# Remediation and Adversarial Retest Report
+# Remediation and Adversarial Retest Report
 
 
 
-\## Original Security Condition
+## Original Security Condition
 
 
 
@@ -14,7 +14,7 @@ As a result, retrieved adversarial content could influence the agent and cause u
 
 
 
-\## Remediation
+## Remediation
 
 
 

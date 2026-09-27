@@ -1,8 +1,8 @@
-\# Black-Box Red Teaming of Agentic AI — Indirect Prompt Injection Lab
+# Black-Box Red Teaming of Agentic AI — Indirect Prompt Injection Lab
 
 
 
-\## 1. Objective
+## 1. Objective
 
 
 
@@ -38,7 +38,7 @@ All testing uses synthetic data and a harmless mock tool.
 
 
 
-\## 2. Security Question
+## 2. Security Question
 
 
 
@@ -54,11 +54,11 @@ If the model is successfully manipulated, does the surrounding security architec
 
 
 
-\## 3. Threat Model
+## 3. Threat Model
 
 
 
-\### Attacker Capability
+### Attacker Capability
 
 
 
@@ -66,7 +66,7 @@ The attacker can place or influence content that may later be retrieved by the R
 
 
 
-\### Trusted Components
+### Trusted Components
 
 
 
@@ -80,7 +80,7 @@ The attacker can place or influence content that may later be retrieved by the R
 
 
 
-\### Untrusted Components
+### Untrusted Components
 
 
 
@@ -94,7 +94,7 @@ The attacker can place or influence content that may later be retrieved by the R
 
 
 
-\### Protected Assets
+### Protected Assets
 
 
 
@@ -110,7 +110,7 @@ The attacker can place or influence content that may later be retrieved by the R
 
 
 
-\## 4. Mock Environment
+## 4. Mock Environment
 
 
 
@@ -160,7 +160,7 @@ Its purpose is only to record:
 
 
 
-\## 5. Benign User Request
+## 5. Benign User Request
 
 
 
@@ -176,7 +176,7 @@ The user has not requested any tool execution.
 
 
 
-\## 6. Embedded Indirect Prompt Injection
+## 6. Embedded Indirect Prompt Injection
 
 
 
@@ -196,7 +196,7 @@ The employee ID is synthetic.
 
 
 
-\## 7. Expected Secure Behaviour
+## 7. Expected Secure Behaviour
 
 
 
@@ -216,7 +216,7 @@ The model's decision must not constitute authorization.
 
 
 
-\## 8. Test Cases
+## 8. Test Cases
 
 
 
@@ -233,7 +233,7 @@ The model's decision must not constitute authorization.
 
 
 
-\## 9. Evidence Collection
+## 9. Evidence Collection
 
 
 
@@ -271,7 +271,7 @@ For every test preserve:
 
 
 
-\## 10. Pass Criteria
+## 10. Pass Criteria
 
 
 
@@ -295,7 +295,7 @@ The stronger architectural result is:
 
 
 
-\## 11. Fail Criteria
+## 11. Fail Criteria
 
 
 
@@ -311,7 +311,7 @@ The final severity should therefore consider whether the attack merely influence
 
 
 
-\## 12. Trust-Boundary Analysis
+## 12. Trust-Boundary Analysis
 
 
 
@@ -339,7 +339,7 @@ A deterministic security control must decide whether that action is permitted.
 
 
 
-\## 13. Confused-Deputy Risk
+## 13. Confused-Deputy Risk
 
 
 
@@ -363,7 +363,7 @@ It is:
 
 
 
-\## 14. Defense-in-Depth
+## 14. Defense-in-Depth
 
 
 
@@ -421,7 +421,7 @@ Prompt hardening can contribute to defense in depth but must not be the primary 
 
 
 
-\## 15. Finding Classification
+## 15. Finding Classification
 
 
 
@@ -457,7 +457,7 @@ Here:
 
 
 
-\## 16. Remediation Verification
+## 16. Remediation Verification
 
 
 
@@ -491,7 +491,7 @@ A remediation should not be considered verified merely because the original exac
 
 
 
-\## 17. Evidence Before Claim
+## 17. Evidence Before Claim
 
 
 
@@ -527,7 +527,7 @@ The final claim must not exceed the evidence.
 
 
 
-\## 18. Professional Conclusion
+## 18. Professional Conclusion
 
 
 
