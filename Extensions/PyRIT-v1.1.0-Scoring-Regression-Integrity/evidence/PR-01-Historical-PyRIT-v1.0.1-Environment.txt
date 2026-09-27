@@ -1,0 +1,10 @@
+Environment: Historical PyRIT Baseline
+Purpose: Preserve earlier PyRIT evaluation environment for comparison
+Python Executable: C:\Users\Ifean\PyRIT-Lab\.venv\Scripts\python.exe
+Captured: 2026-09-27T21:13:07.8815130+01:00
+
+Python Version:
+Python 3.12.10
+
+PyRIT Package:
+Name: pyrit Version: 1.0.1 Summary: The Python Risk Identification Tool for LLMs (PyRIT) is a library used to assess the robustness of LLMs Home-page:  Author:  Author-email: Microsoft AI Red Team <airedteam@microsoft.com> License-Expression: MIT Location: C:\Users\Ifean\PyRIT-Lab\.venv\Lib\site-packages Requires: aiofiles, alembic, appdirs, art, av, azure-ai-contentsafety, azure-core, azure-identity, azure-keyvault-secrets, azure-storage-blob, base2048, colorama, confusable-homoglyphs, confusables, datasets, ecoji, fastapi, httpx, jinja2, numpy, openai, openpyxl, pillow, pydantic, PyJWT, pyodbc, pypdf, python-docx, python-dotenv, reportlab, scipy, segno, SQLAlchemy, starlette, tenacity, termcolor, tinytag, tqdm, transformers, treelib, uvicorn, websockets Required-by:
